@@ -568,6 +568,7 @@ def get_libero_script_args(source_list):
     with open(source_list) as f:  # open the yaml file passed as an arg
         data = yaml.load(f, Loader=yaml.FullLoader)
         libero_script_args = data.get("gateware").get("build-args")
+        print ("Libero script args: ", libero_script_args)
         f.close()
 
     if libero_script_args is None:
@@ -621,7 +622,7 @@ def get_git_hash():
     return git_hash.decode('ascii').strip("'")
 
 
-# Build the gateware's top level name from the build option directory name and the git hassh of the gateware's
+# Build the gateware's top level name from the build option directory name and the git hash of the gateware's
 # repository.
 def get_top_level_name():
     git_hash = get_git_hash()
