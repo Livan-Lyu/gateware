@@ -115,11 +115,19 @@ if {[info exists MIPI_CSI_OPTION]} {
 }
 puts "MIPI CSI option option selected: $mipi_csi_option"
 
+if {[info exists MSS_CFG]} {
+    set mss_cfg_option "$MSS_CFG"
+} else {
+    set mss_cfg_option "MSS_LINUX"
+}
+puts "MSS_CFG option selected: $mss_cfg_option"
+
 if {[info exists PROJECT_LOCATION]} {
     set project_dir "$PROJECT_LOCATION"
 } else {
     set project_dir "$local_dir/$project_name"
 }
+puts "PROJECT_LOCATION: $project_dir"
 puts "PROJECT_LOCATION: $project_dir"
 
 if {[info exists DESIGN_VERSION]} {
@@ -127,6 +135,7 @@ if {[info exists DESIGN_VERSION]} {
 } else {
     set gateware_design_version "1"
 }
+puts "DESIGN_VERSION: $gateware_design_version"
 puts "DESIGN_VERSION: $gateware_design_version"
 
 if {[info exists SILICON_SIGNATURE]} {
@@ -195,7 +204,11 @@ new_project \
     -family {PolarFireSoC} \
     -die $die \
     -package $package \
+    -die $die \
+    -package $package \
     -speed {STD} \
+    -die_voltage $die_voltage \
+    -part_range $part_range \
     -die_voltage $die_voltage \
     -part_range $part_range \
     -adv_options {IO_DEFT_STD:LVCMOS 1.8V} \

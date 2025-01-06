@@ -44,6 +44,7 @@ import sys
 import subprocess
 import datetime
 import glob
+import glob
 
 from gateware_scripts.generate_gateware_overlays import generate_gateware_overlays
 from gateware_scripts.Logger import Logger
@@ -476,6 +477,9 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     init_workspace()
 
     sources = clone_sources(yaml_input_file)
+
+    with open(yaml_input_file_path, 'r') as file:
+        yaml_content = yaml.safe_load(file)
 
     build_options_list = get_libero_script_args(yaml_input_file)
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
