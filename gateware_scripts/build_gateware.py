@@ -28,95 +28,20 @@
 # https://github.com/polarfire-soc/icicle-kit-minimal-bring-up-design-bitstream-builder
 # 
 
-# Packages which form part of Python's standard library
-import shutil
-import sys
-import subprocess
-import platform
 
-
-def check_pip_installed():
-    if shutil.which("pip") is None:
-            print("Error: pip is not installed.")
-            print("Please install pip first.")
-            sys.exit()
-
-
-def check_dtc_installed():
-    if shutil.which("dtc") is None:
-            print("Error: dtc (device-tree-compiler) is not installed")
-            print("Please install it by running: sudo apt install device-tree-compiler")
-            exit()
-
-def check_pyyaml_installed():
-    try:
-        result = subprocess.run(["pip", "show", "pyyaml"], capture_output=True, text=True)
-        if result.returncode == 0 and "Name: PyYAML" in result.stdout:
-            print("PyYAML is installed.")
-        else:
-            raise ImportError
-    except ImportError:
-        print("Error: PyYAML is not installed.")
-        print("Please install it by running: pip install pyyaml")
-        sys.exit()
-
-def check_gitpython_installed():
-    try:
-        result = subprocess.run(["pip", "show", "gitpython"], capture_output=True, text=True)
-        if result.returncode == 0 and "Name: GitPython" in result.stdout:
-            print("GitPython is installed.")
-        else:
-            raise ImportError
-    except ImportError:
-        print("Error: GitPython is not installed.")
-        print("Please install it by running: pip install gitpython")
-        sys.exit()
-
-# Allow libero to generate components (DMA_CONTROLLER) which require a display
-def check_xvfb_installed():
-    if shutil.which("xvfb-run") is None:
-        print("Error: xvfb-run is not installed.")
-        print("Please install it by running: sudo apt-get install xvfb")
-        sys.exit()
-
-# Check if SmartHLS tool is added to path, only to be run if SMARTHLS argument in yaml file
-def check_shls_tool_status():
-    try:
-        result = subprocess.run(["shls", "-v"], capture_output=True, text=True, check=True)
-        output = result.stdout.strip()
-
-        # Expected output
-        prefix = "Smart High-Level Synthesis Tool Version "
-
-        if not output.startswith(prefix):
-            print("Unexpected output from 'shls -v':", output)
-            print("Check path to SmartHLS tool")
-            sys.exit(1)
-        else:
-            print("SHLS tool in path")
-
-    except subprocess.CalledProcessError as e:
-        print("Error running 'shls -v':", e)
-        sys.exit(1)
-    except Exception as e:
-        print("An unexpected error occurred:", e)
-        sys.exit(1)
-
-# Perform package checks before any other imports
-if platform.system() == "Linux" or platform.system() == "Linux2":
-    check_pip_installed()
-    check_dtc_installed()
-    check_pyyaml_installed()
-    check_gitpython_installed()
-    check_xvfb_installed()
 
 import argparse
 import io
 import os
+import platform
+import shutil
 import zipfile
+
 import git
 import requests
 import yaml
+import sys
+import subprocess
 import datetime
 import glob
 import glob
@@ -246,6 +171,11 @@ def check_tool_status():
             "The path to the RISC-V toolchain needs to be set in PATH to run this script")
         exit()
 
+    if platform.system() == "Linux" or platform.system() == "Linux2":
+        if shutil.which("dtc") is None:
+            print("Error: dtc (device-tree-compiler) not found in path")
+            exit()
+
     if platform.system() == "Windows":
         print("Running on Windows host")
         wsl_distributions_resp = subprocess.run(['wsl', '-l'], stdout=subprocess.PIPE)
@@ -331,6 +261,7 @@ def clone_sources(source_list):
                     continue
 
                 link_file = os.path.join(source_dir, "repo_link.txt")
+                target_branch = details.get("branch", "main")
 
                 if os.path.exists(source_dir):
                     # Check if the current link matches the new link
@@ -342,9 +273,39 @@ def clone_sources(source_list):
                             print(f"Updating {source}: New repository link detected. Replacing folder.")
                             shutil.rmtree(source_dir)
                         else:
-                            print(f"{source} folder is up-to-date with the current repository link.")
-                            source_directories[source] = source_dir
-                            continue
+                            try:
+                                repo = git.Repo(source_dir)
+
+                                # If a specific commit is requested, check it out
+                                if "commit" in details:
+                                    try:
+                                        repo.git.checkout(details["commit"])
+                                        print(f"{source} checked out at commit {details['commit']}")
+                                    except Exception as e:
+                                        print(f"Error checking out commit {details['commit']} for {source}: {e}")
+                                        continue
+                                else:
+                                    # No commit specified - ensure we're on the correct branch with latest changes
+                                    try:
+                                        # Force checkout of the remote branch to handle detached HEAD
+                                        repo.git.checkout('--force', target_branch)
+                                        # Reset to match remote branch exactly
+                                        repo.git.reset('--hard', f'origin/{target_branch}')
+                                        # Pull latest changes
+                                        repo.remotes.origin.pull()
+                                        print(f"{source} reset to latest commit on branch '{target_branch}'")
+                                    except git.exc.GitCommandError as e:
+                                        print(f"Error resetting to branch {target_branch} for {source}: {e}")
+                                        continue
+
+                                source_directories[source] = source_dir
+                                continue
+                            except git.exc.GitCommandError as e:
+                                print(f"Error with Git operations for {source}: {e}")
+                                continue
+                            except Exception as e:
+                                print(f"Unexpected error with repo {source}: {e}")
+                                continue
                     else:
                         print(f"Link file missing for {source}. Replacing folder.")
                         shutil.rmtree(source_dir)
@@ -360,38 +321,20 @@ def clone_sources(source_list):
                     os.makedirs(source_dir, exist_ok=True)
                     with open(link_file, "w") as lf:
                         lf.write(new_link)
+
+                    # Check out specific commit if specified
+                    if "commit" in details:
+                        try:
+                            repo.git.checkout(details["commit"])
+                            print(f"{source} checked out at commit {details['commit']}")
+                        except Exception as e:
+                            print(f"Error checking out commit {details['commit']} for {source}: {e}")
+                            continue
+
                     source_directories[source] = source_dir
                 except Exception as e:
                     print(f"Error cloning Git repo {source}: {e}")
                     continue
-
-                else:  # General Git handling
-                    if os.path.exists(source_dir):
-                        try:
-                            repo = git.Repo(source_dir)
-                            repo.git.checkout(details.get("branch", "main"))
-                            repo.remotes.origin.pull()
-                            source_directories[source] = source_dir
-                        except Exception as e:
-                            print(f"Error updating Git repo {source}: {e}")
-                    else:
-                        try:
-                            repo = git.Repo.clone_from(
-                                details.get("link"),
-                                source_dir,
-                                branch=details.get("branch", "main"),
-                            )
-                            source_directories[source] = source_dir
-                        except Exception as e:
-                            print(f"Error cloning Git repo {source}: {e}")
-                            continue
-
-                # Check out a specific commit if specified
-                if "commit" in details:
-                    try:
-                        repo.git.checkout(details["commit"])
-                    except Exception as e:
-                        print(f"Error checking out commit {details['commit']} for {source}: {e}")
 
             elif source_type == "zip":
                 source_dir = os.path.join("./sources", source)
@@ -415,8 +358,10 @@ def clone_sources(source_list):
                         continue
                     
                     source_dir = os.path.join("./sources", source)
-                    if not os.path.exists(source_dir):
-                        os.makedirs(source_dir)
+                    if os.path.exists(source_dir):
+                        shutil.rmtree(source_dir)
+
+                    os.makedirs(source_dir)
                         
                     try:
                         response = requests.get(download_link)
@@ -446,7 +391,7 @@ def make_mss_config(mss_configurator, config_file, output_dir):
 
 
 # Builds the HSS using a pre-defined config file using SoftConsole in headless mode
-def make_hss(hss_source, yaml_input_file):
+def make_hss(hss_source, yaml_input_file, board_selected):
     with open(yaml_input_file) as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         hss_info = data.get("HSS", {})
@@ -491,40 +436,61 @@ def make_hss(hss_source, yaml_input_file):
         print("                      Build Hart Software Services (HSS)")
         print("================================================================================\r\n", flush=True)
 
-        target_board = hss_info.get("board", "bvf")  # Default to "bvf" if board is not specified
+        target_board = board_selected
         print("Target board: " + target_board)
 
         xml_directory = os.path.join(hss_source, "boards", target_board, "soc_fpga_design", "xml")
-        xml_files = glob.glob(os.path.join(xml_directory, "*.xml"))
-
-        if not xml_files:
-            raise FileNotFoundError(f"No .xml files found in {xml_directory}")
+        if target_board == "mpfs-icicle-kit-es":
+            target_xml_name = "ICICLE_MSS_mss_cfg.xml"
+        else:
+            target_xml_name = "PF_SOC_MSS_mss_cfg.xml"
+        XML_file_abs_path = os.path.join(xml_directory, target_xml_name)
         
-        XML_file_abs_path = xml_files[0]
-        print(f"Found XML file: {XML_file_abs_path}")
-
-        # Remove existing XML file if it exists
+        # First, clean up any existing XML files in the target directory
+        print(f"Cleaning up existing XML files in {xml_directory}")
         try:
-            if os.path.exists(XML_file_abs_path):
-                os.remove(XML_file_abs_path)
+            existing_xml_files = glob.glob(os.path.join(xml_directory, "*.xml"))
+            for xml_file in existing_xml_files:
+                print(f"Removing {xml_file}")
+                os.remove(xml_file)
         except OSError as e:
-            print(f"Error removing XML file: {e}", flush=True)
+            print(f"Error cleaning up XML files: {e}", flush=True)
+            return None
 
         # Copy the XML configuration file to the specified location
-        xml_files = glob.glob("./work/MSS/*.xml")
+        xml_selected = hss_info.get("xml")  # Extract XML info from hss_info
+        if xml_selected:  # If xml_selected is provided, use it
+            xml_files = glob.glob(os.path.join("sources", "FPGA-design", "script_support", "xml", xml_selected, "*.xml"))
+        else:
+            xml_files = glob.glob(os.path.join("work", "MSS", "*.xml"))
+
         if xml_files:
-            generated_xml_file = xml_files[0]
+            generated_xml_file = os.path.normpath(xml_files[0])  # Normalize the path for safety
             try:
-                shutil.copyfile(generated_xml_file, XML_file_abs_path)
+                print(f"Copying new XML file from {generated_xml_file} to {os.path.normpath(XML_file_abs_path)}")
+                shutil.copyfile(generated_xml_file, os.path.normpath(XML_file_abs_path))
             except IOError as e:
                 print(f"Error copying XML file: {e}", flush=True)
                 return None
         else:
-            print("No MSS XML configuration file found in ./work/MSS")
+            print("No MSS XML configuration file found in specified location")
             return None
 
-        # Proceed with building the HSS
-        def_config_file = os.path.join(hss_source, "boards/" + target_board + "/def_config")
+        # Verify the XML file was copied successfully
+        if not os.path.exists(XML_file_abs_path):
+            print(f"XML file was not copied successfully to {XML_file_abs_path}", flush=True)
+            return None
+
+        def_config_file_select = hss_info.get("def_config_examples")  
+
+        if def_config_file_select:
+            def_config_file = os.path.join(hss_source, "boards", target_board, "def_config_examples", def_config_file_select)
+            print(f"!!                                                !!", flush=True)
+            print(f"Using def_config file: ", def_config_file_select, flush=True)
+            print(f"!!                                                !!", flush=True)
+        else:
+            # Proceed with building the HSS
+            def_config_file = os.path.join(hss_source, "boards", target_board, "def_config")
         try:
             shutil.copyfile(def_config_file, os.path.join(hss_source, "./.config"))
         except IOError as e:
@@ -532,23 +498,46 @@ def make_hss(hss_source, yaml_input_file):
             return None
 
         initial_directory = os.getcwd()
+
+        verbose = hss_info.get("verbose", False)
+        make_clean = hss_info.get("make_clean", False)
+
         try:
+            # Ensure `hss_source` exists and is a directory
+            if not os.path.isdir(hss_source):
+                raise ValueError(f"The source directory '{hss_source}' does not exist or is not a directory.")
+
             os.chdir(hss_source)
-            make_command = f"make BOARD={target_board}"
-            exe_sys_cmd(make_command)  # Replace with the command execution function
+
+            # Execute the make clean command if specified
+            if make_clean:
+                clean_command = f"make clean BOARD={target_board}"
+                if verbose:
+                    clean_command += " V=1"
+                exe_sys_cmd(clean_command)
+
+            # Build command
+            build_command = f"make BOARD={target_board}"
+            if verbose:
+                build_command += " V=1"
+            exe_sys_cmd(build_command)
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            raise
         finally:
             os.chdir(initial_directory)
 
         # Check if the build was successful and copy the artifact
         if target_board == 'bvf': # Openbeagle HSS - bvf HSS is outputted to a different folder
-            generated_hex_dir = os.path.join(hss_source, "Default", "bootmode1")
+            generated_hex_dir = os.path.normpath(os.path.join(hss_source, "Default", "bootmode1"))
         else:
-            generated_hex_dir = os.path.join(hss_source, "build", "bootmode1")
+            generated_hex_dir = os.path.normpath(os.path.join(hss_source, "build", "bootmode1"))
 
         hex_files = glob.glob(os.path.join(generated_hex_dir, "*.hex"))
         if hex_files:
-            source_hex_file = hex_files[0]
-            dest_hex_file = os.path.join("work", "HSS", os.path.basename(source_hex_file))
+            source_hex_file = os.path.normpath(hex_files[0])
+            dest_hex_file = os.path.normpath(os.path.join("work", "HSS", os.path.basename(source_hex_file)))
             shutil.copyfile(source_hex_file, dest_hex_file)
             selected_hex_file = os.path.abspath(dest_hex_file)
             print(f"HSS image copied from {source_hex_file} to {dest_hex_file}")
@@ -562,13 +551,11 @@ def make_hss(hss_source, yaml_input_file):
         return None
 
 
-
 def get_libero_script_args(source_list):
     libero_script_args = "NO_BUILD_ARGUMENT"
     with open(source_list) as f:  # open the yaml file passed as an arg
         data = yaml.load(f, Loader=yaml.FullLoader)
         libero_script_args = data.get("gateware").get("build-args")
-        print ("Libero script args: ", libero_script_args)
         f.close()
 
     if libero_script_args is None:
@@ -622,7 +609,7 @@ def get_git_hash():
     return git_hash.decode('ascii').strip("'")
 
 
-# Build the gateware's top level name from the build option directory name and the git hash of the gateware's
+# Build the gateware's top level name from the build option directory name and the git hassh of the gateware's
 # repository.
 def get_top_level_name():
     git_hash = get_git_hash()
@@ -636,28 +623,8 @@ def get_top_level_name():
 
 
 # Calls Libero and runs a script
-def call_libero(libero, script, script_args, project_location, prog_export_path, top_level_name, design_version, hss_image_location=""):
-    if platform.system() == "Linux":
-        # Use xvfb-run for Linux headless mode
-        libero_headless_prefix = "xvfb-run -a "
-    else:
-        libero_headless_prefix = ""
-
-    libero_cmd = (
-        f"{libero_headless_prefix}{libero} SCRIPT:{script} "
-        f'"SCRIPT_ARGS: {script_args} '
-        f"PROJECT_LOCATION:{project_location} "
-        f"PROG_EXPORT_PATH:{prog_export_path} "
-        f"TOP_LEVEL_NAME:{top_level_name} "
-        f"DESIGN_VERSION:{design_version} "
-    )
-
-    if hss_image_location and os.path.isfile(hss_image_location):
-        libero_cmd += f"HSS_IMAGE_PATH:{hss_image_location}\""
-    else:
-        libero_cmd += '"'
-
-    print("Libero command: ", libero_cmd, flush=True)
+def call_libero(libero, script, script_args, project_location, hss_image_location, prog_export_path, top_level_name, design_version):
+    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " DESIGN_VERSION:" + design_version + "\""
     exe_sys_cmd(libero_cmd)
 
 
@@ -688,14 +655,13 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
 
     design_version = get_design_version(yaml_input_file)
 
-
+    hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
     prog_export_path = os.path.join("..", "..", build_dir_path)
 
-    top_level_name = get_top_level_name() 
+    top_level_name = get_top_level_name()
     print("top level name: ", top_level_name)
 
-    call_libero(libero, script, script_args, project_location, prog_export_path, top_level_name, design_version, hss_image_location)
-
+    call_libero(libero, script, script_args, project_location, hss_image_location, prog_export_path, top_level_name, design_version)
     os.chdir(initial_directory)
 
 
@@ -718,9 +684,6 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     init_workspace()
 
     sources = clone_sources(yaml_input_file)
-
-    with open(yaml_input_file_path, 'r') as file:
-        yaml_content = yaml.safe_load(file)
 
     build_options_list = get_libero_script_args(yaml_input_file)
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
@@ -784,21 +747,7 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     work_mss_dir = os.path.join("work", "MSS")
     make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
 
-    hss_image_location = ""
-    if 'HSS' in yaml_content:
-        hss_info = yaml_content['HSS']
-        if 'HSS' not in sources:
-            print("Error: HSS source directory not found")
-            sys.exit(1)
-        try:
-            hss_image_location = make_hss(sources["HSS"], yaml_input_file)
-            if hss_image_location is None or not os.path.isfile(hss_image_location):
-                print(f"Error: HSS image not found at expected path: {hss_image_location}")
-                sys.exit(1)
-        except ValueError as e:
-            print(f"An error occurred: {e}")
-            sys.exit(1)
-
+    make_hss(sources["HSS"], yaml_input_file, board_selected)
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
     generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir, board_selected, die_selected, package_selected, die_voltage, part_range )

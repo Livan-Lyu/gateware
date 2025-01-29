@@ -115,13 +115,6 @@ if {[info exists MIPI_CSI_OPTION]} {
 }
 puts "MIPI CSI option option selected: $mipi_csi_option"
 
-if {[info exists MSS_CFG]} {
-    set mss_cfg_option "$MSS_CFG"
-} else {
-    set mss_cfg_option "MSS_LINUX"
-}
-puts "MSS_CFG option selected: $mss_cfg_option"
-
 if {[info exists PROJECT_LOCATION]} {
     set project_dir "$PROJECT_LOCATION"
 } else {

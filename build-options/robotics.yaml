@@ -3,7 +3,7 @@ HSS:
     type: git
     link: https://openbeagle.org/beaglev-fire/hart-software-services.git
     branch: main-beaglev-fire
-    board: bvf
+    make_clean: 1
 gateware:
     type: sources
     build-args: "CAPE_OPTION:ROBOTICS "
