@@ -43,6 +43,7 @@ import yaml
 import sys
 import subprocess
 import datetime
+import glob
 
 from gateware_scripts.generate_gateware_overlays import generate_gateware_overlays
 from gateware_scripts.Logger import Logger
@@ -419,7 +420,7 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
     exe_sys_cmd(libero_cmd)
 
 
-def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir_path):
+def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir_path, board_selected, die_selected, package_selected, die_voltage, part_range ):
     print("================================================================================")
     print("                            Generate Libero project")
     print("================================================================================\r\n", flush=True)
@@ -430,6 +431,20 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
     script = "BUILD_BVF_GATEWARE.tcl"
 
     script_args = get_libero_script_args(yaml_input_file)
+
+    if script_args == "NONE":
+        script_args = ""
+    else:
+        script_args += " "
+
+    script_args += (
+        f"BOARD:{board_selected} "
+        f"DIE:{die_selected} "
+        f"PACKAGE:{package_selected} "
+        f"DIE_VOLTAGE:{die_voltage} "
+        f"PART_RANGE:{part_range}"
+    )
+
     design_version = get_design_version(yaml_input_file)
 
     hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
@@ -442,7 +457,7 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
     os.chdir(initial_directory)
 
 
-def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir):
+def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_options_dir):
     global libero
     global mss_configurator
     global softconsole_headless
@@ -454,12 +469,10 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir):
 
     set_arguments(yaml_input_file_path)
 
-    # This function will check if all of the required tools are present and quit if they aren't
     check_tool_status()
 
     sources = {}
 
-    # Bitstream building starts here - see individual functions for a description of their purpose
     init_workspace()
 
     sources = clone_sources(yaml_input_file)
@@ -467,15 +480,69 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir):
     build_options_list = get_libero_script_args(yaml_input_file)
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
                                os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
+    
+    board_selected = None
+    die_selected = None
+    package_selected = None
+    
+    
+    # Load board configurations from YAML
+    board_options_path = os.path.join(board_options_dir, "board-selection.yaml")
+    if not os.path.exists(board_options_path):
+        print(f"Error: Board options file not found at {board_options_path}")
+        sys.exit(1)
 
-    mss_config_file_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", "MSS_Configuration.cfg")
+    with open(board_options_path, 'r') as f:
+        board_data = yaml.safe_load(f)
+
+    # First get the selected board from the YAML
+    board_selected = board_data.get('Board_Selected')
+    if not board_selected:
+        print("Error: 'Board_Selected' key missing in board-options YAML.")
+        sys.exit(1)
+
+    # Then get the boards configuration
+    boards = board_data.get('Boards')
+    if not boards:
+        print("Error: 'Boards' key missing in board-options YAML.")
+        sys.exit(1)
+
+    # Get the selected board's parameters
+    if board_selected not in boards:
+        print(f"Error: Board {board_selected} not found in board-options.")
+        sys.exit(1)
+
+    board_params = boards[board_selected]
+    print("The board selected is:", board_selected)
+    
+    die_selected = board_params.get('Die')
+    package_selected = board_params.get('Package')
+    die_voltage = board_params.get('Die_voltage')
+    part_range = board_params.get('Part_range') 
+
+    print("|| -- Board:", board_selected, "--||--", "Die:", die_selected, "--||--", "Package: ", 
+          package_selected, "--||--", "Die voltage: ", die_voltage, "--||--", "Part range: ", part_range, " --||")
+    
+    mss_folder_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", board_selected, 
+                                   die_selected, package_selected)
+    
+    print(f"MSS folder path: {mss_folder_path}")
+    cfg_files = glob.glob(os.path.join(mss_folder_path, "*.cfg"))
+
+    if cfg_files:
+        mss_config_file_path = cfg_files[0]
+        print(f"Selected config file: {mss_config_file_path}")
+    else:
+        print(f"No .cfg file found in {mss_folder_path}")
+        sys.exit(1)
+
     work_mss_dir = os.path.join("work", "MSS")
     make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
 
     make_hss(sources["HSS"], yaml_input_file)
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
-    generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir)
+    generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir, board_selected, die_selected, package_selected, die_voltage, part_range )
 
     sys.stdout.flush()
     sys.stdout = original_stdout

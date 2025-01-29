@@ -120,18 +120,60 @@ if {[info exists PROJECT_LOCATION]} {
 } else {
     set project_dir "$local_dir/$project_name"
 }
+puts "PROJECT_LOCATION: $project_dir"
 
 if {[info exists DESIGN_VERSION]} {
     set gateware_design_version "$DESIGN_VERSION"
 } else {
     set gateware_design_version "1"
 }
+puts "DESIGN_VERSION: $gateware_design_version"
 
 if {[info exists SILICON_SIGNATURE]} {
     set gateware_silicon_signature "$SILICON_SIGNATURE"
 } else {
     set gateware_silicon_signature "bea913b0"
 }
+puts "SILICON_SIGNATURE: $gateware_silicon_signature"
+
+
+################# Board , Die , Package #######################
+
+if {[info exists BOARD]} {
+    set board "$BOARD"
+} else {
+    set board "bvf"
+}
+puts "BOARD: $board"
+
+if {[info exists DIE]} {
+    set die "$DIE"
+} else {
+    set die "MPFS025T"
+}
+puts "DIE: $die"
+
+if {[info exists PACKAGE]} {
+    set package "$PACKAGE"
+} else {
+    set package "FCVG484"
+}
+puts "PACKAGE: $package"
+
+if {[info exists DIE_VOLTAGE]} {
+    set die_voltage "$DIE_VOLTAGE"
+} else {
+    set die_voltage 1.0
+}
+puts "DIE_VOLTAGE: $die_voltage"
+
+if {[info exists PART_RANGE]} {
+    set part_range "$PART_RANGE"
+} else {
+    set part_range "EXT"
+}
+puts "PART_RANGE: $part_range"
+
 
 source ./script_support/additional_configurations/functions.tcl
 
@@ -151,23 +193,23 @@ new_project \
     -linked_files_root_dir_env {} \
     -hdl {VERILOG} \
     -family {PolarFireSoC} \
-    -die {MPFS025T} \
-    -package {FCVG484} \
+    -die $die \
+    -package $package \
     -speed {STD} \
-    -die_voltage {1.0} \
-    -part_range {EXT} \
+    -die_voltage $die_voltage \
+    -part_range $part_range \
     -adv_options {IO_DEFT_STD:LVCMOS 1.8V} \
     -adv_options {RESTRICTPROBEPINS:0} \
     -adv_options {RESTRICTSPIPINS:0} \
     -adv_options {SYSTEM_CONTROLLER_SUSPEND_MODE:0} \
     -adv_options {TARGETDEVICESFORMIGRATION:MPFS095T;MPFS160T;MPFS095TL;MPFS160TL;} \
-    -adv_options {TEMPR:EXT} \
-    -adv_options {VCCI_1.2_VOLTR:EXT} \
-    -adv_options {VCCI_1.5_VOLTR:EXT} \
-    -adv_options {VCCI_1.8_VOLTR:EXT} \
-    -adv_options {VCCI_2.5_VOLTR:EXT} \
-    -adv_options {VCCI_3.3_VOLTR:EXT} \
-    -adv_options {VOLTR:EXT}
+    -adv_options "TEMPR:$part_range" \
+    -adv_options "VCCI_1.2_VOLTR:$part_range" \
+    -adv_options "VCCI_1.5_VOLTR:$part_range" \
+    -adv_options "VCCI_1.8_VOLTR:$part_range" \
+    -adv_options "VCCI_2.5_VOLTR:$part_range" \
+    -adv_options "VCCI_3.3_VOLTR:$part_range" \
+    -adv_options "VOLTR:$part_range"
 
 
 #
@@ -218,14 +260,14 @@ set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\
 
 import_files \
     -convert_EDN_to_HDL 0 \
-    -io_pdc "${constraint_path}/base_design.pdc" \
-    -fp_pdc "${constraint_path}/NW_PLL.pdc" \
+    -io_pdc "${constraint_path}/$board/$die/$package/base_design.pdc" \
+    -fp_pdc "${constraint_path}/$board/$die/$package/NW_PLL.pdc" \
+    -sdc "${constraint_path}/$board/$die/$package/fic_clocks.sdc" \
     -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/SYZYGY.pdc" \
-    -sdc "${constraint_path}/fic_clocks.sdc" \
-    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/cape.pdc" \
-    -io_pdc "./script_support/components/M2/$m2_option/constraints/M2.pdc" \
-    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/SYZYGY.pdc" \
-    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/MIPI_CSI_INTERFACE.pdc"
+    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$board/$die/$package/cape.pdc" \
+    -io_pdc "./script_support/components/M2/$m2_option/constraints/$board/$die/$package/M2.pdc" \
+    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$board/$die/$package/SYZYGY.pdc" \
+    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/$board/$die/$package/MIPI_CSI_INTERFACE.pdc"
 
 #
 # // Associate imported constraints with the design flow

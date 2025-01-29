@@ -1,0 +1,29 @@
+---
+Board_Selected: bvf
+
+Boards:
+  bvf:
+    Die: MPFS025T
+    Package: FCVG484
+    Die_voltage: 1.0
+    Part_range: EXT
+  mpfs-icicle-kit-es:
+    Die: MPFS250T_ES
+    Package: FCVG484
+    Die_voltage: 1.05
+    Part_range: EXT
+  mpfs-disco-kit:
+    Die: MPFS095T
+    Package: FCSG325
+    Die_voltage: 1.0
+    Part_range: EXT
+  mpfs-video-kit:
+    Die: MPFS250TS
+    Package: FCG1152
+    Die_voltage: 1.0
+    Part_range: IND
+  aries-m100pfsevp:
+    Die: MPFS250TS
+    Package: FCG1152
+    Die_voltage: 1.0
+    Part_range: IND

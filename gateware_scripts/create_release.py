@@ -6,6 +6,7 @@ import shutil
 from junit_xml import TestSuite, TestCase
 import yaml
 from distutils.dir_util import copy_tree
+import sys
 
 from gateware_scripts.build_gateware import build_gateware
 
@@ -22,13 +23,14 @@ def get_build_option_file_list(build_options_dir_name):
 def build_bitstreams(build_option_files):
     tester_top_dir = os.getcwd()
     build_dir = "builds"
+    board_options_dir = os.path.join(tester_top_dir, "board-options")
+    
     if not os.path.exists(build_dir):
         os.makedirs(build_dir)
 
     for build_option in build_option_files:
         option_build_dir_name = os.path.splitext(os.path.basename(build_option))[0]
         print("Build bistream configuration: ", option_build_dir_name)
-        cwd = os.getcwd()
         dst_dir = os.path.join(build_dir, option_build_dir_name)
 
         if not os.path.exists(dst_dir):
@@ -37,7 +39,8 @@ def build_bitstreams(build_option_files):
 
         build_option_path = os.path.join(tester_top_dir, build_option)
 
-        build_gateware(build_option_path, dst_dir, tester_top_dir)
+        build_gateware(build_option_path, dst_dir, tester_top_dir, board_options_dir)
+
         os.chdir('../..')
 
 

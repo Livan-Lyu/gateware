@@ -69,7 +69,7 @@ def main():
 
     parse_arguments()
 
-    build_gateware(yaml_input_file, ".", ".")
+    build_gateware(yaml_input_file, ".", ".", "board-options")
 
 
 if __name__ == '__main__':

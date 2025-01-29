@@ -2,8 +2,16 @@ if {[file isdirectory $local_dir/script_support/components/MSS]} {
     file delete -force $local_dir/script_support/components/MSS
 }
 file mkdir $local_dir/script_support/components/MSS
-exec $mss_config_loc -GENERATE -CONFIGURATION_FILE:$local_dir/../MSS_Configuration/MSS_Configuration.cfg -OUTPUT_DIR:$local_dir/script_support/components/MSS
-import_mss_component -file "$local_dir/script_support/components/MSS/PF_SOC_MSS.cxz"
+
+set cfg_file [glob -nocomplain $local_dir/../MSS_Configuration/$board/$die/$package/*.cfg]
+exec $mss_config_loc -GENERATE -CONFIGURATION_FILE:$cfg_file -OUTPUT_DIR:$local_dir/script_support/components/MSS
+
+set mss_component_file [glob -nocomplain $local_dir/script_support/components/MSS/*.cxz]
+set mss_component_name [file rootname [file tail $mss_component_file]]
+
+puts "MSS filename: $mss_component_name"
+
+import_mss_component -file $mss_component_file
 ::safe_source script_support/hdl_source.tcl
 ::safe_source script_support/components/CLOCKS_AND_RESETS/CORERESET_0.tcl
 ::safe_source script_support/components/CLOCKS_AND_RESETS/INIT_MONITOR.tcl 
@@ -21,4 +29,4 @@ import_mss_component -file "$local_dir/script_support/components/MSS/PF_SOC_MSS.
 ::safe_source script_support/components/IHC_SUBSYSTEM.tcl
 ::safe_source script_support/components/BVF_RISCV_SUBSYSTEM.tcl
 ::safe_source script_support/components/BVF_GATEWARE.tcl 
-set_root -module ${top_level_name}::work 
+set_root -module ${top_level_name}::work
