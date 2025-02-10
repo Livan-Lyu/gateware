@@ -29,21 +29,96 @@
 # 
 
 
+# Packages which form part of Python's standard library
+import shutil
+import sys
+import subprocess
+import platform
+
+
+def check_pip_installed():
+    if shutil.which("pip") is None:
+            print("Error: pip is not installed.")
+            print("Please install pip first.")
+            sys.exit()
+
+
+def check_dtc_installed():
+    if shutil.which("dtc") is None:
+            print("Error: dtc (device-tree-compiler) is not installed")
+            print("Please install it by running: sudo apt install device-tree-compiler")
+            exit()
+
+def check_pyyaml_installed():
+    try:
+        result = subprocess.run(["pip", "show", "pyyaml"], capture_output=True, text=True)
+        if result.returncode == 0 and "Name: PyYAML" in result.stdout:
+            print("PyYAML is installed.")
+        else:
+            raise ImportError
+    except ImportError:
+        print("Error: PyYAML is not installed.")
+        print("Please install it by running: pip install pyyaml")
+        sys.exit()
+
+def check_gitpython_installed():
+    try:
+        result = subprocess.run(["pip", "show", "gitpython"], capture_output=True, text=True)
+        if result.returncode == 0 and "Name: GitPython" in result.stdout:
+            print("GitPython is installed.")
+        else:
+            raise ImportError
+    except ImportError:
+        print("Error: GitPython is not installed.")
+        print("Please install it by running: pip install gitpython")
+        sys.exit()
+
+# Allow libero to generate components (DMA_CONTROLLER) which require a display
+def check_xvfb_installed():
+    if shutil.which("xvfb-run") is None:
+        print("Error: xvfb-run is not installed.")
+        print("Please install it by running: sudo apt-get install xvfb")
+        sys.exit()
+
+# Check if SmartHLS tool is added to path, only to be run if SMARTHLS argument in yaml file
+def check_shls_tool_status():
+    try:
+        result = subprocess.run(["shls", "-v"], capture_output=True, text=True, check=True)
+        output = result.stdout.strip()
+
+        # Expected output
+        prefix = "Smart High-Level Synthesis Tool Version "
+
+        if not output.startswith(prefix):
+            print("Unexpected output from 'shls -v':", output)
+            print("Check path to SmartHLS tool")
+            sys.exit(1)
+        else:
+            print("SHLS tool in path")
+
+    except subprocess.CalledProcessError as e:
+        print("Error running 'shls -v':", e)
+        sys.exit(1)
+    except Exception as e:
+        print("An unexpected error occurred:", e)
+        sys.exit(1)
+
+# Perform package checks before any other imports
+if platform.system() == "Linux" or platform.system() == "Linux2":
+    check_pip_installed()
+    check_dtc_installed()
+    check_pyyaml_installed()
+    check_gitpython_installed()
+    check_xvfb_installed()
 
 import argparse
 import io
 import os
-import platform
-import shutil
 import zipfile
-
 import git
 import requests
 import yaml
-import sys
-import subprocess
 import datetime
-import glob
 import glob
 
 from gateware_scripts.generate_gateware_overlays import generate_gateware_overlays
@@ -170,11 +245,6 @@ def check_tool_status():
         print(
             "The path to the RISC-V toolchain needs to be set in PATH to run this script")
         exit()
-
-    if platform.system() == "Linux" or platform.system() == "Linux2":
-        if shutil.which("dtc") is None:
-            print("Error: dtc (device-tree-compiler) not found in path")
-            exit()
 
     if platform.system() == "Windows":
         print("Running on Windows host")
@@ -686,6 +756,18 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     sources = clone_sources(yaml_input_file)
 
     build_options_list = get_libero_script_args(yaml_input_file)
+
+    if build_options_list != 'NONE':
+        options = build_options_list.split()
+
+        # Check if SmartHLS tool is in path
+        for option in options:
+            opt = option.split(':')
+            if len(opt) == 2:
+                key, value = opt
+                if key.startswith('SMARTHLS'):
+                    check_shls_tool_status()
+
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
                                os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
     

@@ -2,6 +2,51 @@ set_iobank -bank_name Bank1  \
     -vcci 3.30               \
     -fixed true             \
     -update_iostd true
+<<<<<<< HEAD
+    
+set_io -port_name MMUART_1_TXD \
+    -pin_name E13 \
+=======
+
+    
+set_io -port_name MMUART_1_TXD \
+    -pin_name E13 \
+
+
+set_io -port_name PHY_RSTn	\
+    -pin_name V19	\
+    -fixed true	\
+    -DIRECTION INOUT
+
+
+set_io -port_name PHY_INTn	\
+    -pin_name U18	\
+    -fixed true	\
+    -DIRECTION INOUT
+
+
+set_io -port_name ADC_MCLK	\
+    -pin_name W12	\
+    -fixed true	\
+    -DIRECTION OUT
+
+set_io -port_name USB0_RESETB \
+    -pin_name Y14 \
+>>>>>>> 2b5ce7d (Rebase onto main)
+    -fixed true \
+    -DIRECTION OUTPUT \
+    -io_std LVCMOS33 
+    
+set_io -port_name MMUART_1_RXD \
+    -pin_name G13 \
+    -fixed true \
+    -DIRECTION INPUT \
+    -io_std LVCMOS3
+
+set_iobank -bank_name Bank1  \
+    -vcci 3.30               \
+    -fixed true             \
+    -update_iostd true
     
 set_io -port_name MMUART_1_TXD \
     -pin_name E13 \
@@ -13,4 +58,4 @@ set_io -port_name MMUART_1_RXD \
     -pin_name G13 \
     -fixed true \
     -DIRECTION INPUT \
-    -io_std LVCMOS3
+    -io_std LVCMOS33

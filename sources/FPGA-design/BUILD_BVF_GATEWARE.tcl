@@ -121,14 +121,12 @@ if {[info exists PROJECT_LOCATION]} {
     set project_dir "$local_dir/$project_name"
 }
 puts "PROJECT_LOCATION: $project_dir"
-puts "PROJECT_LOCATION: $project_dir"
 
 if {[info exists DESIGN_VERSION]} {
     set gateware_design_version "$DESIGN_VERSION"
 } else {
     set gateware_design_version "1"
 }
-puts "DESIGN_VERSION: $gateware_design_version"
 puts "DESIGN_VERSION: $gateware_design_version"
 
 if {[info exists SILICON_SIGNATURE]} {
@@ -269,7 +267,7 @@ import_files \
     -io_pdc "${constraint_path}/$board/$die/$package/base_design.pdc" \
     -fp_pdc "${constraint_path}/$board/$die/$package/NW_PLL.pdc" \
     -sdc "${constraint_path}/$board/$die/$package/fic_clocks.sdc" \
-    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/SYZYGY.pdc" \
+    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$board/$die/$package/SYZYGY.pdc" \
     -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$board/$die/$package/cape.pdc" \
     -io_pdc "./script_support/components/M2/$m2_option/constraints/$board/$die/$package/M2.pdc" \
     -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$board/$die/$package/SYZYGY.pdc" \
