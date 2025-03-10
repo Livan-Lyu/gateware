@@ -3,7 +3,7 @@ HSS:
     type: git
     link: https://openbeagle.org/beaglev-fire/hart-software-services.git
     branch: main-beaglev-fire
-    make_clean: 1
+    make_clean: 0
 gateware:
     type: sources
     build-args: "M2_OPTION:PCIE_ONLY CAPE_OPTION:4_UARTS "
