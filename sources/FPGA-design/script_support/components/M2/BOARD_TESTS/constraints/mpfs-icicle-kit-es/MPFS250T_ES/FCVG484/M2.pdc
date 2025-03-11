@@ -1,25 +1,8 @@
-#set_io -port_name M2_UART_TXD  \
-    -pin_name R12              \
-    -fixed true                \
-    -DIRECTION OUTPUT
-
-# Becomes
-
 set_io -port_name M2_UART_TXD  \
     -pin_name A7               \
     -fixed true                \
     -io_std LVCMOS33           \
     -DIRECTION OUTPUT
-
- # ----------------------------- #
-
-#set_io -port_name M2_UART_RXD  \
-    -pin_name T13              \
-    -fixed true                \
-    -io_std LVCMOS33           \
-    -DIRECTION INPUT
-
-# Becomes
 
 set_io -port_name M2_UART_RXD  \
     -pin_name H15              \
