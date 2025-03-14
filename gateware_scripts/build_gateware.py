@@ -510,10 +510,16 @@ def make_hss(hss_source, yaml_input_file, board_selected):
         print("Target board: " + target_board)
 
         xml_directory = os.path.join(hss_source, "boards", target_board, "soc_fpga_design", "xml")
-        if target_board == "mpfs-icicle-kit-es":
-            target_xml_name = "ICICLE_MSS_mss_cfg.xml"
+        
+        
+        # Get the first XML file found in the directory
+        xml_files = [f for f in os.listdir(xml_directory) if f.endswith(".xml")]
+
+        if xml_files:
+            target_xml_name = xml_files[0]  # Picks the first XML file found
         else:
-            target_xml_name = "PF_SOC_MSS_mss_cfg.xml"
+            raise FileNotFoundError(f"No XML file found in {xml_directory}")
+
         XML_file_abs_path = os.path.join(xml_directory, target_xml_name)
         
         # First, clean up any existing XML files in the target directory
