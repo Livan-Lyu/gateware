@@ -71,10 +71,7 @@ def gather_dtso(gateware_dir, work_dir, build_options):
     os.makedirs(context_0_dir, exist_ok=True)
 
     dtso_subpath = os.path.join(
-        'device-tree-overlay',
-        board_selected,
-        die_selected,
-        package_selected
+        'device-tree-overlay'
     )
 
     print("Path to dtso files: ", dtso_subpath)

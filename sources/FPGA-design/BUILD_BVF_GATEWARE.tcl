@@ -195,11 +195,7 @@ new_project \
     -family {PolarFireSoC} \
     -die $die \
     -package $package \
-    -die $die \
-    -package $package \
     -speed {STD} \
-    -die_voltage $die_voltage \
-    -part_range $part_range \
     -die_voltage $die_voltage \
     -part_range $part_range \
     -adv_options {IO_DEFT_STD:LVCMOS 1.8V} \
@@ -242,7 +238,24 @@ download_core -vlnv {Actel:DirectCore:CoreUARTapb:5.7.100} -location {www.microc
 download_core -vlnv {Actel:SystemBuilder:PF_IOD_GENERIC_RX:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SgCore:PF_IO:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SystemBuilder:PF_XCVR_ERM:*} -location {www.microchip-ip.com/repositories/SgCore}
-download_core -vlnv {Microchip:SolutionCore:mipicsi2rxdecoderPF:4.7.0} -location {www.microchip-ip.com/repositories/DirectCore} 
+download_core -vlnv {Microchip:SolutionCore:mipicsi2rxdecoderPF:4.7.0} -location {www.microchip-ip.com/repositories/DirectCore}
+
+#
+# // Import I/O constraints
+#
+set import_pdc_files "-io_pdc \"./constraints/base_design.pdc\""
+set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\""
+
+import_files \
+    -convert_EDN_to_HDL 0 \
+    -io_pdc "${constraint_path}/$die/$package/$board/base_design.pdc" \
+    -fp_pdc "${constraint_path}/$die/$package/$board/NW_PLL.pdc" \
+    -sdc "${constraint_path}/$die/$package/$board/fic_clocks.sdc" \
+    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$die/$package/$board/SYZYGY.pdc" \
+    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$die/$package/$board/cape.pdc" \
+    -io_pdc "./script_support/components/M2/$m2_option/constraints/$die/$package/$board/M2.pdc" \
+    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$die/$package/$board/SYZYGY.pdc" \
+    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/$die/$package/$board/MIPI_CSI_INTERFACE.pdc"
 
 #
 # // Generate base design
@@ -255,23 +268,6 @@ safe_source ./script_support/B_V_F_recursive.tcl
 if {[info exists AXI_STOP_CAP]} {
     safe_source ./script_support/axi_stop_cap.tcl
 }
-
-#
-# // Import I/O constraints
-#
-set import_pdc_files "-io_pdc \"./constraints/base_design.pdc\""
-set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\""
-
-import_files \
-    -convert_EDN_to_HDL 0 \
-    -io_pdc "${constraint_path}/$board/$die/$package/base_design.pdc" \
-    -fp_pdc "${constraint_path}/$board/$die/$package/NW_PLL.pdc" \
-    -sdc "${constraint_path}/$board/$die/$package/fic_clocks.sdc" \
-    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$board/$die/$package/SYZYGY.pdc" \
-    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$board/$die/$package/cape.pdc" \
-    -io_pdc "./script_support/components/M2/$m2_option/constraints/$board/$die/$package/M2.pdc" \
-    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$board/$die/$package/SYZYGY.pdc" \
-    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/$board/$die/$package/MIPI_CSI_INTERFACE.pdc"
 
 #
 # // Associate imported constraints with the design flow

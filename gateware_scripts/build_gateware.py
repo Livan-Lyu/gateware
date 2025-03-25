@@ -819,8 +819,8 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     print("|| -- Board:", board_selected, "--||--", "Die:", die_selected, "--||--", "Package: ", 
           package_selected, "--||--", "Die voltage: ", die_voltage, "--||--", "Part range: ", part_range, " --||")
     
-    mss_folder_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", board_selected, 
-                                   die_selected, package_selected)
+    mss_folder_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", 
+                                   die_selected, package_selected, board_selected)
     
     print(f"MSS folder path: {mss_folder_path}")
     cfg_files = glob.glob(os.path.join(mss_folder_path, "*.cfg"))

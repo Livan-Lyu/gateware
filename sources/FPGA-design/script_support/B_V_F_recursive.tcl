@@ -3,7 +3,7 @@ if {[file isdirectory $local_dir/script_support/components/MSS]} {
 }
 file mkdir $local_dir/script_support/components/MSS
 
-set cfg_file [glob -nocomplain $local_dir/../MSS_Configuration/$board/$die/$package/*.cfg]
+set cfg_file [glob -nocomplain $local_dir/../MSS_Configuration/$die/$package/$board/*.cfg]
 exec $mss_config_loc -GENERATE -CONFIGURATION_FILE:$cfg_file -OUTPUT_DIR:$local_dir/script_support/components/MSS
 
 set mss_component_file [glob -nocomplain $local_dir/script_support/components/MSS/*.cxz]
