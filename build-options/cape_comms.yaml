@@ -1,8 +1,8 @@
 ---
 HSS:
     type: git
-    link: https://openbeagle.org/beaglev-fire/hart-software-services.git
-    branch: main-beaglev-fire
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: master
     make_clean: 0
 gateware:
     type: sources
