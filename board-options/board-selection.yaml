@@ -1,8 +1,8 @@
 ---
-Board_Selected: bvf
+Board_Selected: mpfs-beaglev-fire
 
 Boards:
-  bvf:
+  mpfs-beaglev-fire:
     Die: MPFS025T
     Package: FCVG484
     Die_voltage: 1.0
