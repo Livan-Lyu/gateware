@@ -1,9 +1,9 @@
 ---
 HSS:
     type: git
-    link: https://openbeagle.org/beaglev-fire/hart-software-services.git
-    branch: main-beaglev-fire
-    board: bvf
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: master
+    make_clean: 1
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE CAPE_OPTION:VERILOG_TUTORIAL"
