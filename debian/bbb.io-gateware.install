@@ -1,5 +1,6 @@
 debian/change-gateware.sh /usr/share/beagleboard/gateware
 debian/update-gateware.sh /usr/share/microchip/gateware
+debian/update-gateware-6-1.sh /usr/share/microchip/gateware
 debian/mcp356x_read.py /usr/share/microchip/gateware
 gateware-builds-tester/artifacts/bitstreams/board-tests/DirectC/* /usr/share/beagleboard/gateware/board-tests/DirectC
 gateware-builds-tester/artifacts/bitstreams/board-tests/FlashProExpress/* /usr/share/beagleboard/gateware/board-tests/FlashProExpress
