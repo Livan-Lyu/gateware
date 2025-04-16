@@ -652,6 +652,17 @@ def get_libero_script_args(source_list):
 # version number loops back every 45 days given the design version number stored in PolarFire SoC is 16 bit long.
 #
 def get_design_version(source_list):
+    version_file = "design_version.yaml"
+
+    # Read previous version from file if it exists
+    previous_design_version = None
+    if os.path.exists(version_file):
+        with open(version_file, "r") as vf:
+            try:
+                previous_design_version = int(vf.read().strip())
+            except ValueError:
+                print("Warning: Invalid value in design_version.yaml")
+
     with open(source_list) as f:  # open the yaml file passed as an arg
         data = yaml.load(f, Loader=yaml.FullLoader)
         unique_design_version = data.get("gateware").get("unique-design-version")
@@ -673,6 +684,23 @@ def get_design_version(source_list):
     # FPGA design version number stored in Polarfire SoC devices is 16 bits long.
     design_version = design_version % 65536
     print("Design version: ", design_version)
+
+    if previous_design_version is not None and previous_design_version == design_version:
+        response = input(
+            f"WARNING: The design version {design_version} is the same as the previously used one.\n"
+            f"Note: The gateware will not be updated by the change-gateware.sh script unless the design version is different.\n"
+            f"Do you want to update it? (y/n):\n"
+        ).strip().lower()
+        if response == 'y':
+            print("Aborting. Update the design version :)")
+            exit()
+
+
+    # Save current version to file
+    with open(version_file, "w") as vf:
+        vf.write(str(design_version))
+
+    print("Design version:", design_version)
     return str(design_version)
 
 
@@ -704,7 +732,7 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
     exe_sys_cmd(libero_cmd)
 
 
-def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir_path, board_selected, die_selected, package_selected, die_voltage, part_range ):
+def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir_path, board_selected, die_selected, package_selected, die_voltage, part_range, design_version):
     print("================================================================================")
     print("                            Generate Libero project")
     print("================================================================================\r\n", flush=True)
@@ -729,7 +757,7 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
         f"PART_RANGE:{part_range}"
     )
 
-    design_version = get_design_version(yaml_input_file)
+
 
     hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
     prog_export_path = os.path.join("..", "..", build_dir_path)
@@ -754,6 +782,8 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     set_arguments(yaml_input_file_path)
 
     check_tool_status()
+
+    design_version = get_design_version(yaml_input_file_path)
 
     sources = {}
 
@@ -838,7 +868,7 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     make_hss(sources["HSS"], yaml_input_file, board_selected)
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
-    generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir, board_selected, die_selected, package_selected, die_voltage, part_range )
+    generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir, board_selected, die_selected, package_selected, die_voltage, part_range, design_version )
 
     sys.stdout.flush()
     sys.stdout = original_stdout
