@@ -686,14 +686,22 @@ def get_design_version(source_list):
     print("Design version: ", design_version)
 
     if previous_design_version is not None and previous_design_version == design_version:
-        response = input(
-            f"WARNING: The design version {design_version} is the same as the previously used one.\n"
-            f"Note: The gateware will not be updated by the change-gateware.sh script unless the design version is different.\n"
-            f"Do you want to update it? (y/n):\n"
-        ).strip().lower()
+        print(f"WARNING: The design version {design_version} is the same as the previously used one.")
+        print("Note: The gateware will not be updated unless the design version is different.")
+        
+        response = input("Do you want to enter a new design version? (y/n): ").strip().lower()
         if response == 'y':
-            print("Aborting. Update the design version :)")
-            exit()
+            while True:
+                try:
+                    new_version = int(input("Enter new design version (0–65535): ").strip())
+                    if 0 <= new_version < 65536:
+                        design_version = new_version
+                        break
+                    else:
+                        print("Invalid range. Please enter a number between 0 and 65535.")
+                except ValueError:
+                    print("Invalid input. Please enter a valid integer.")
+
 
 
     # Save current version to file
