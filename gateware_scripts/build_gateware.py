@@ -688,19 +688,21 @@ def get_design_version(source_list):
     if previous_design_version is not None and previous_design_version == design_version:
         print(f"WARNING: The design version {design_version} is the same as the previously used one.")
         print("Note: The gateware will not be updated unless the design version is different.")
-        
-        response = input("Do you want to enter a new design version? (y/n): ").strip().lower()
-        if response == 'y':
-            while True:
-                try:
-                    new_version = int(input("Enter new design version (0–65535): ").strip())
-                    if 0 <= new_version < 65536:
-                        design_version = new_version
-                        break
-                    else:
-                        print("Invalid range. Please enter a number between 0 and 65535.")
-                except ValueError:
-                    print("Invalid input. Please enter a valid integer.")
+
+        prompt = f"Enter new version number, 'n' to keep current one, or <Enter> to auto-increment to ({design_version + 1}): "
+        response = input(prompt).strip().lower()
+
+        if response == "":
+            design_version = (design_version + 1) % 65536
+            print(f"Auto-incremented version: {design_version}")
+        elif response == "n":
+            print(f"Keeping existing design version: {design_version}")
+        else:
+            try:
+                design_version = int(response) % 65536
+                print(f"Using user-specified version: {design_version}")
+            except ValueError:
+                print("Invalid input. Keeping the original design version.")
 
 
 
