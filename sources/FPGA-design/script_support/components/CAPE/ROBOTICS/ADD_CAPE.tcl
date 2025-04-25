@@ -1,16 +1,6 @@
 puts "======== Add cape option: ROBOTICS ========"
 
-#-------------------------------------------------------------------------------
-# Import HDL source files
-#-------------------------------------------------------------------------------
-import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/apb_rotary_enc.v}
-import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/debounce.v}
-import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/rotary_encoder.v}
-import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/servos.v}
-
-build_design_hierarchy
 create_hdl_core -file $project_dir/hdl/apb_rotary_enc.v -module {apb_rotary_enc} -library {work} -package {}
-
 
 hdl_core_add_bif -hdl_core_name {apb_rotary_enc} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {BIF_1} -signal_map {} 
 hdl_core_assign_bif_signal -hdl_core_name {apb_rotary_enc} -bif_name {BIF_1} -bif_signal_name {PADDR} -core_signal_name {paddr} 

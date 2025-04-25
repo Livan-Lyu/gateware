@@ -1,18 +1,5 @@
 puts "======== Add cape option: VERILOG_TUTORIAL ========"
 
-#-------------------------------------------------------------------------------
-# Import HDL source files
-#-------------------------------------------------------------------------------
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/blinky.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/apb_ctrl_status.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/P8_IOPADS.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/P9_11_18_IOPADS.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/P9_21_31_IOPADS.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/P9_41_42_IOPADS.v}
-import_files -hdl_source {script_support/components/CAPE/VERILOG_TUTORIAL/HDL/CAPE.v}
-
-build_design_hierarchy
-
 create_hdl_core -file $project_dir/hdl/CAPE.v -module {CAPE} -library {work} -package {}
 
 hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {BIF_1} -signal_map {} 

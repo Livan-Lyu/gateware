@@ -10,6 +10,12 @@ import_files \
          -hdl_source {script_support/HDL/MIV_IHC/MIV_IHCIA/miv_ihcia.v} \
          -hdl_source {script_support/HDL/AXI4_address_shim/AXI4_address_shim.v} 
 
+set currentDir [pwd]
+
+foreach file [glob -nocomplain -type f "$currentDir/script_support/components/CAPE/$cape_option/HDL/*.v"] {
+    import_files -convert_EDN_to_HDL 0 -library {work} -hdl_source $file
+}
+
 build_design_hierarchy 
 
 create_hdl_core -file $project_dir/hdl/apb_arbiter.v -module {APB_ARBITER} -library {work} -package {} 
