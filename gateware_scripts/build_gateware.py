@@ -368,6 +368,16 @@ def clone_sources(source_list):
                                         print(f"Error resetting to branch {target_branch} for {source}: {e}")
                                         continue
 
+                                if "patches" in details:
+                                    for patch in details["patches"]:
+                                        patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
+                                        try:
+                                            stat = repo.git.am(patch_file)
+                                            print(stat)
+                                        except git.exc.GitCommandError as e:
+                                            print(f"Error with Git operations for {source}: {e}")
+                                            exit(e.status)
+
                                 source_directories[source] = source_dir
                                 continue
                             except git.exc.GitCommandError as e:
@@ -400,6 +410,16 @@ def clone_sources(source_list):
                         except Exception as e:
                             print(f"Error checking out commit {details['commit']} for {source}: {e}")
                             continue
+
+                    if "patches" in details:
+                        for patch in details["patches"]:
+                            patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
+                            try:
+                                stat = repo.git.am(patch_file)
+                                print(stat)
+                            except git.exc.GitCommandError as e:
+                                print(f"Error with Git operations for {source}: {e}")
+                                exit(e.status)
 
                     source_directories[source] = source_dir
                 except Exception as e:
