@@ -85,8 +85,6 @@ def create_dtbo_info(overlay_dir_path):
 
     dtbo_list = get_dtbo_files_list()
     print("number of gateware device tree overlays: ", len(dtbo_list))
-    for dtbo_file in dtbo_list:
-        print(dtbo_file)
     no_of_contexts = 1
     no_of_dtbo = len(dtbo_list)
 
@@ -133,29 +131,31 @@ def execute_dtc_cmd(dtc_cmd):
 def compile_dtso(work_dir):
     root_dir = os.path.join(work_dir, 'dtbo', 'context-0')
     git_version = get_gateware_git_version(work_dir)
+    print()
     for root, dirs, files in os.walk(root_dir):
         for file in files:
             if file.endswith(".dtso"):
                 dtso_file = os.path.join(root, file)
                 inject_git_info_into_src_dtso(dtso_file, git_version)
                 dtbo_file = os.path.splitext(dtso_file)[0] + '.dtbo'
+                print(" DTC       ", os.path.splitext(file)[0] + '.dtbo')
                 cmd = 'dtc -O dtb -I dts -o ' + dtbo_file + ' ' + dtso_file
                 execute_dtc_cmd(cmd)
 
 
-def generate_device_tree_overlays(fpga_design_src_path, overlay_dir_path, build_options_list):
+def generate_device_tree_overlays(fpga_design_src_path, overlay_dir_path, build_options_list, variant):
     print("================================================================================")
     print("                            Generate Device Tree Overlays")
     print("================================================================================\r\n", flush=True)
     bitstream_builder_root = "."
     work_dir = os.path.join(bitstream_builder_root, 'work')
-    gather_dtso(fpga_design_src_path, work_dir, build_options_list)
+    gather_dtso(fpga_design_src_path, work_dir, build_options_list, variant)
     compile_dtso(work_dir)
     create_dtbo_info(overlay_dir_path)
 
 
-def generate_gateware_overlays(fpga_design_src_path, overlay_dir_path, build_options_list):
-    generate_device_tree_overlays(fpga_design_src_path, overlay_dir_path, build_options_list)
+def generate_gateware_overlays(fpga_design_src_path, overlay_dir_path, build_options_list, variant):
+    generate_device_tree_overlays(fpga_design_src_path, overlay_dir_path, build_options_list, variant)
 
 
 if __name__ == '__main__':

@@ -9,6 +9,9 @@ HSS:
         - 0001-Disable-annoying-debug-message.patch
         - 0002-Bring-back-old-DESIGNVER-formatting.patch
     make_clean: 1
+MSS:
+    type: git
+    local: sources/FPGA-design/mss.bundle
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE CAPE_OPTION:VERILOG_TUTORIAL"

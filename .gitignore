@@ -1,6 +1,5 @@
 work/
 build_log.txt
-sources/FPGA-design/script_support/components/MSS/
 design_version.yaml
 gateware_scripts/__pycache__/
 bitstream/

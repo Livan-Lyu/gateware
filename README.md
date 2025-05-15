@@ -63,7 +63,7 @@ We recommend that you use either of these scripts as a starting point for your o
 The configuration item of `type: git` now supports a `patches` array, which can be used to apply  
 git formatted patches as needed, in case you don't have access to the referenced repository.
 
-An example of the formatting can be seen below:
+There are two different versions; an example of the version 1 formatting can be seen below:
 ```yaml
 HSS:
     type: git
@@ -76,11 +76,63 @@ HSS:
         - 0002-Bring-back-old-DESIGNVER-formatting.patch
     make_clean: 0
 ```
+
+and here is version 2:
+```yaml
+HSS:
+    type: git
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: next
+    commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
+    patches:
+        common:
+            - 0001-Disable-annoying-debug-message.patch
+            - 0002-Bring-back-old-DESIGNVER-formatting.patch
+        variants:
+            default:
+                - 0003-Change-IOMUX-on-pad-30-32-and-33.patch
+    make_clean: 0
+MSS:
+    type: git
+    local: sources/FPGA-design/mss.bundle
+    branch: default
+gateware:
+    type: sources
+    build-args: "CAPE_OPTION:GPIOS
+             MIPI_CSI_OPTION:NONE
+                   M2_OPTION:BOARD_TESTS
+               SYZYGY_OPTION:BOARD_TESTS_SEEED_STUDIO"
+    unique-design-version: 0.0.4
+```
+
+Version 2 supports running in two phases; phase one runs regardless of build variant and uses the `common` segment,  
+while phase two uses the segment selected by the `branch` option, located under `MSS`.
+
+Please note that the `default` segment will be used in phase two, in case you don't specify `branch` specifically.
+
+Furthermore, the `branch` option found in `MSS` also controls which MSS configuration is used during the build,  
+as well as where to find a specific set of overlays, should they prove necessary.
+
+Also note that you now have the option to specify either `link` or `local`,  
+depending on the location of the repository in question.  
+While you should only specify **one**, `local` will take precedence if both are found.
+
 Patch files will be found by searching the `patches/<object>` directory (`hss` in this instance).  
 The `hss` fragment is the top-object name, "lower-cased".
 
-The entire source repo can be cloned by setting `depth: full`. The depth can also be custom set as shown using `depth: 1`. A shallow clone is performed
-if no depth info is provided.
+The entire source repo can be cloned by setting `depth: full`, or custom if set as shown using `depth: 1`.  
+A shallow clone is performed if no depth info is provided.
+
+## MSS is now modularized
+MSS configuration files now live under `sources/MSS/` and specific overlays under `sources/MSS/device-tree-overlays/*`.
+
+It is delivered as a standard `git bundle` file in `sources/FPGA-design/mss.bundle`.  
+Unrolling it is as simple as doing a `git clone`.
+
+You can either use the unrolled repository directly by pointing the `MSS` > `local` variable at it's location  
+or use `git bundle create ~/builder/sources/FPGA-design/mss.bundle --all` to roll up a new file for the builder to use.
+
+We leverage `git` to provide a uniform interface for the builder to use by tapping into it's built-in branch functionality.
 
 ## SmartHLS Support
 [SmartHLS](https://www.microchip.com/en-us/products/fpgas-and-plds/fpga-and-soc-design-tools/smarthls-compiler) is a tool included with Libero that can automatically compile a C/C++ program into hardware described in Verilog HDL (Hardware Description Language). The generated hardware can then be integrated into the BeagleV Fire reference design.

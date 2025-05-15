@@ -308,21 +308,72 @@ def init_workspace():
     print("  directory: ./bitstream/FlashProExpress\r\n", flush=True)
 
 
-def clone_sources(source_list):
-    
+# clones the sources specified in the sources.yaml file
+def clone_sources(source_list, gateware_top_dir):
+    print("================================================================================")
+    print("                                 Clone sources")
+    print("================================================================================\r\n", flush=True)
+
+    def do_patches(details, mss_variant):
+
+        def apply_patches(patches, number: int):
+            if patches is not None:
+                if isinstance(number, int) and (number > 0):
+                    print(f"Pass {number}:")
+                for patch in patches:
+                    patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
+                    try:
+                        stat = repo.git.am(patch_file)
+                        print(f"- {stat}")
+                    except git.exc.GitCommandError as e:
+                        print(f"Error with Git operations for {source}: {e}")
+                        exit(e.status)
+
+        if "patches" in details:
+            patches = details["patches"]
+            if isinstance(patches, list):
+                print("Patching...")
+                apply_patches(patches, 0)
+            else:
+                if isinstance(patches, dict):
+                    if (details["patches"].get("common") or details["patches"].get(mss_variant)) is not None:
+                        print("Patching...")
+                        n = 1
+                        patches = details["patches"].get("common")
+                        if patches is not None:
+                            apply_patches(patches, n)
+                            n += 1
+                        patches = details["patches"]["variants"].get(mss_variant)
+                        if patches is not None:
+                            if n == 1: n = 0
+                            apply_patches(patches, n)
+
     def get_default_branch(repo_url):
-        try:
-            result = subprocess.run(
-                ["git", "ls-remote", "--symref", repo_url, "HEAD"],
-                capture_output=True, text=True, check=True
-            )
-            for line in result.stdout.splitlines():
-                if line.startswith("ref:"):
-                    # Example line: ref: refs/heads/main HEAD
-                    return line.split("/")[-1].split()[0]
-        except subprocess.CalledProcessError:
-            pass
-        return "master"  # fallback
+        if 'bundle' in repo_url.lower():
+            temp_dir = os.path.join("./sources", f"__temp__{source}")
+            try:
+                temp_repo = git.Repo.clone_from(repo_url, temp_dir, depth=1)
+                default_branch = temp_repo.active_branch.name
+                return default_branch
+            except Exception as e:
+                print(f"Warning: Could not determine default branch for {source}: {e}")
+                return "master"  # fallback
+            finally:
+                if os.path.exists(temp_dir):
+                    shutil.rmtree(temp_dir)
+        else:
+            try:
+                result = subprocess.run(
+                    ["git", "ls-remote", "--symref", repo_url, "HEAD"],
+                    capture_output=True, text=True, check=True
+                )
+                for line in result.stdout.splitlines():
+                    if line.startswith("ref:"):
+                        # Example line: ref: refs/heads/main HEAD
+                        return line.split("/")[-1].split()[0]
+            except subprocess.CalledProcessError:
+                pass
+            return "master"  # fallback
 
     def get_first_valid_branch(repo_url):
         """
@@ -394,14 +445,58 @@ def clone_sources(source_list):
             print(f"Failed to find commit '{commit_hash}' after fetching up to depth={max_depth}: {e}")
             sys.exit(1)
 
-    print("================================================================================")
-    print("                                 Clone sources")
-    print("================================================================================\r\n", flush=True)
-
     source_directories = {}
 
     with open(source_list) as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
+
+    # An MSS key is now mandatory for the builder to function
+    # Sanity checks follow:
+    source = 'MSS'
+    if source not in data:
+        print(f"ERROR: {source} must be present in '{source_list}'. STOP!")
+        sys.exit(1)
+
+    details = data[source]
+
+    if not isinstance(details, dict):
+        print(f"ERROR: {source} must be a dictionary object in '{source_list}'. STOP!")
+        sys.exit(1)
+
+    source_type = details.get("type")
+    local = details.get("local")
+    link = details.get("link")
+
+    commit = details.get("commit")
+    target_branch = details.get("branch")
+
+    if (source_type or "") != "git":
+        print(f"ERROR: {source}: type must be 'git' in '{source_list}'. STOP!")
+        sys.exit(1)
+
+    if all([local is None, link is None]):
+        print(f"ERROR: {source}: local or link must be present in '{source_list}'. STOP!")
+        sys.exit(1)
+
+    if local is not None:
+        # local file must be valid
+        link = os.path.join(gateware_top_dir, local)
+        if not os.path.exists(link):
+            print(f"ERROR: {source}: local must be valid in '{source_list}'. STOP!")
+            sys.exit(1)
+
+    if not target_branch:
+        target_branch = get_default_branch(link) if not commit else get_commit_branch(link, commit, source)
+
+    if isinstance(target_branch, list):
+        if len(target_branch) == 1:
+            target_branch = target_branch[0]
+        else:
+            print(f"ERROR: {source}: commit search inconclusive in '{source_list}'. STOP!")
+            sys.exit(1)
+
+    mss_variant = target_branch
+    print(f"MSS Variant: {mss_variant.upper()}\n")
 
     for source, details in data.items():
         if source == "gateware":
@@ -412,10 +507,14 @@ def clone_sources(source_list):
 
         source_type = details.get("type")
         source_dir = os.path.join("./sources", source)
-        repo_url = details.get("link")
+        local = details.get("local")
+        repo_url = details.get("link") if local is None else os.path.join(gateware_top_dir, local)
         branch = details.get("branch")
         commit = details.get("commit")
-        depth = details.get("depth", 1)
+        if 'mss' in source.lower():
+            depth = "full"
+        else:
+            depth = details.get("depth", 1)
 
         # --- Handle ZIP or DOWNLOAD sources ---
         if source_type in ("zip", "download"):
@@ -574,25 +673,12 @@ def clone_sources(source_list):
                 continue
 
         # --- Apply patches ---
-        if repo and "patches" in details:
-            for patch in details["patches"]:
-                patch_path = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
-                if not os.path.exists(patch_path):
-                    print(f"Patch file missing: {patch_path}")
-                    continue
-                try:
-                    repo.git.am(patch_path)
-                    # Print "Applying: <patch-name-without-extension>"
-                    print(f"Applying: {os.path.splitext(patch)[0]}")
-                except git.exc.GitCommandError as e:
-                    print(f"Patch failed for {source}: {e}")
-                    repo.git.am("--abort")
-                    sys.exit(1)
+        do_patches(details, mss_variant)
 
         print()  # blank line between repos
         source_directories[source] = source_dir
 
-    return source_directories
+    return source_directories, mss_variant
 
 
 # Calls the MSS Configurator and generate an MSS configuration in a directory based on a cfg file
@@ -1003,8 +1089,8 @@ def get_top_level_name():
 
 
 # Calls Libero and runs a script
-def call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, design_version):
-    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " MSS_COMPONENT_PATH:" + mss_component_file_location + " DESIGN_VERSION:" + design_version + "\""
+def call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version):
+    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " MSS_COMPONENT_PATH:" + mss_component_file_location + " INITIAL_DIRECTORY:" + initial_directory + " DESIGN_VERSION:" + design_version + "\""
     exe_sys_cmd(libero_cmd)
 
 
@@ -1041,7 +1127,7 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
     top_level_name = get_top_level_name()
     print("top level name: ", top_level_name)
 
-    call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, design_version)
+    call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version)
     os.chdir(initial_directory)
 
 
@@ -1065,7 +1151,7 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
 
     init_workspace()
 
-    sources = clone_sources(build_options_input_yaml_file)
+    (sources, mss_variant) = clone_sources(build_options_input_yaml_file, gateware_top_dir)
 
     build_options_list = get_libero_script_args(build_options_yaml_arg)
 
@@ -1081,7 +1167,8 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
                     check_shls_tool_status()
 
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
-                               os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
+                               os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"),
+                               build_options_list, mss_variant)
     
 
     die = None
@@ -1111,7 +1198,7 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
         die = "MPFS025T"
         package = "FCVG484"
     
-    mss_folder_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", 
+    mss_folder_path = os.path.join(os.getcwd(), "sources", "MSS", "configs",
                                    die, package, board)
     
     print(f"MSS folder path: {mss_folder_path}")
@@ -1159,10 +1246,10 @@ def main():
     # Bitstream building starts here - see individual functions for a description of their purpose
     init_workspace()
 
-    sources = clone_sources(build_options_input_yaml_file)
+    (sources, mss_variant) = clone_sources(build_options_input_yaml_file)
 
     build_options_list = get_libero_script_args(build_options_input_yaml_file, board_options_input_yaml_file)
-    generate_gateware_overlays(os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
+    generate_gateware_overlays(os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list, mss_variant)
 
     mss_config_file_path = os.path.join(".", "sources", "MSS_Configuration", "MSS_Configuration.cfg")
     work_mss_dir = os.path.join("work", "MSS")

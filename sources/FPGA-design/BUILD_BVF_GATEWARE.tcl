@@ -266,14 +266,7 @@ import_files \
 #
 # // Generate base design
 #
-safe_source ./script_support/B_V_F_recursive.tcl
-
-#
-# // Ensure no open-ended AXI4 BIF
-#
-if {[info exists AXI_STOP_CAP]} {
-    safe_source ./script_support/axi_stop_cap.tcl
-}
+safe_source [file join $INITIAL_DIRECTORY "sources" "MSS" "scripts" "B_V_F_recursive.tcl"]
 
 #
 # // Associate imported constraints with the design flow

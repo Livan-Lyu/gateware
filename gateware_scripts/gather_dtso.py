@@ -8,7 +8,7 @@ import sys
 import yaml
 
 
-def gather_dtso(gateware_dir, work_dir, build_options):
+def gather_dtso(gateware_dir, work_dir, build_options, variant):
     context_dir = os.path.join(gateware_dir, "script_support", "components")
 
     build_options_dict = {}
@@ -38,6 +38,26 @@ def gather_dtso(gateware_dir, work_dir, build_options):
 
     print("Path to dtso files: ", dtso_subpath)
 
+    component_name = "MSS"
+
+    def process_overlay(option_name):
+        print("  Device tree overlay selected:")
+        print("    component:                ", component_name)
+        print("    build option:             ", option_name)
+        print("    device tree overlay file: ", file)
+        component_dir = os.path.join(context_0_dir, component_name)
+        if not os.path.exists(component_dir):
+            os.makedirs(component_dir)
+        src_path = os.path.join(root, file)
+        dst_path = os.path.join(component_dir, file)
+        shutil.copy(src_path, dst_path)
+
+    for root, _, files in os.walk(os.path.join(os.getcwd(), "sources", component_name)):
+        for file in files:
+            if file.endswith(".dtso") or file.endswith(".dtbo"):
+                if dtso_subpath in root:
+                    process_overlay(variant.upper())
+
     for root, _, files in os.walk(context_dir):
         for file in files:
             if file.endswith(".dtso") or file.endswith(".dtbo"):
@@ -51,16 +71,7 @@ def gather_dtso(gateware_dir, work_dir, build_options):
                         desired_option = 'DEFAULT'
 
                     if option_name == desired_option:
-                        print("  Device tree overlay selected:")
-                        print("    component:                ", component_name)
-                        print("    build option:             ", option_name)
-                        print("    device tree overlay file: ", file)
-                        component_dir = os.path.join(context_0_dir, component_name)
-                        if not os.path.exists(component_dir):
-                            os.makedirs(component_dir)
-                        src_path = os.path.join(root, file)
-                        dst_path = os.path.join(component_dir, file)
-                        shutil.copy(src_path, dst_path)
+                        process_overlay(option_name)
 
 def parse_yaml(yaml_file):
     with open(yaml_file, 'r') as file:

@@ -21,6 +21,10 @@ fpga-hls-libraries:
 #    link: https://github.com/MicrochipTech/fpga-hls-examples.git
 #    branch: main
 
+MSS:
+    type: git
+    local: sources/FPGA-design/mss.bundle
+
 gateware:
     type: sources
     build-args: "CAPE_OPTION:DEFAULT

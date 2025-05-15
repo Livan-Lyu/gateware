@@ -1,12 +1,6 @@
 
-puts "======== Add High Speed Connector option: BOARD_VALIDATION_SEEED_STUDIO ========"
+puts "======== Add High Speed Connector option: BOARD_TESTS_SEEED_STUDIO ========"
 
-# Import source files
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/pattern_chk.v}
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/pattern_gen.v}
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/startup.v}
-
-build_design_hierarchy
 create_hdl_core -file $project_dir/hdl/startup.v -module {STARTUP} -library {work} -package {}
 create_hdl_core -file $project_dir/hdl/pattern_chk.v -module {PATTERN_CHK} -library {work} -package {}
 create_hdl_core -file $project_dir/hdl/pattern_gen.v -module {PATTERN_GEN} -library {work} -package {}

@@ -3,12 +3,6 @@ puts "======== Add High Speed Connector option: LOOPBACK_3_LANES_OPAL_KELLY ====
 
 #BOARD_VALIDATION_OPAL_KELLY_3_LANES
 
-# Import source files
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/pattern_chk.v}
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/pattern_gen.v}
-import_files -hdl_source {script_support/HDL/XCVR_LOOPBACK/startup.v}
-
-build_design_hierarchy
 create_hdl_core -file $project_dir/hdl/startup.v -module {STARTUP} -library {work} -package {}
 create_hdl_core -file $project_dir/hdl/pattern_chk.v -module {PATTERN_CHK} -library {work} -package {}
 create_hdl_core -file $project_dir/hdl/pattern_gen.v -module {PATTERN_GEN} -library {work} -package {}
