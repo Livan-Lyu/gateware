@@ -104,16 +104,64 @@ sd_instantiate_component -sd_name ${sd_name} -component_name {APB_BUS_CONVERTER}
 sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {apb_rotary_enc} -instance_name {apb_rotary_enc_0}
 
 
+# Adjust CAPE_DEFAULT_GPIOS
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_8_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_9_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_12_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_13_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_24_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_25_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_26_BIBUF}
+sd_delete_instances -sd_name {CAPE_DEFAULT_GPIOS} -instance_names {GPIO_27_BIBUF}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[8:8]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[9:9]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[12:12]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[13:13]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[24:24]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[25:25]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[26:26]} -value {GND}
+sd_connect_pins_to_constant -sd_name {CAPE_DEFAULT_GPIOS} -pin_names {GPIO_IN[27:27]} -value {GND}
+save_smartdesign -sd_name {CAPE_DEFAULT_GPIOS}
+generate_component -component_name {CAPE_DEFAULT_GPIOS}
 
 # Add CAPE_DEFAULT_GPIOS instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_DEFAULT_GPIOS} -instance_name {CAPE_DEFAULT_GPIOS}
 
 
+# Adjust CoreAPB3_CAPE
+configure_core -component_name {CoreAPB3_CAPE} -params { "APBSLOT3ENABLE:true" }
 
 # Add CoreAPB3_CAPE_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {CoreAPB3_CAPE} -instance_name {CoreAPB3_CAPE_0}
 
 
+# Adjust P8_GPIO_UPPER
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_2_BIBUF}
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_4_BIBUF}
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_8_BIBUF}
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_9_BIBUF}
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_10_BIBUF}
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_11_BIBUF}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[2:2]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[4:4]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[8:8]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[9:9]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[10:10]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[11:11]} -value {GND}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[2:2]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[4:4]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[8:8]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[9:9]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[10:10]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[11:11]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[2:2]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[4:4]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[8:8]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[9:9]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[10:10]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[11:11]}
+save_smartdesign -sd_name {P8_GPIO_UPPER}
+generate_component -component_name {P8_GPIO_UPPER}
 
 # Add P8_GPIO_UPPER_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {P8_GPIO_UPPER} -instance_name {P8_GPIO_UPPER_0}
@@ -121,11 +169,97 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8_GPIO_UPPER_0:INT} -pin_sl
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8_GPIO_UPPER_0:INT} -pin_slices {[7:0]}
 
 
+# Adjust CoreGPIO_P9
+configure_core -component_name {CoreGPIO_P9} -params {\
+"FIXED_CONFIG_0:false"  \
+"FIXED_CONFIG_1:false"  \
+"FIXED_CONFIG_2:false"  \
+"FIXED_CONFIG_3:false"  \
+"FIXED_CONFIG_4:false"  \
+"FIXED_CONFIG_5:false"  \
+"FIXED_CONFIG_6:false"  \
+"FIXED_CONFIG_7:false"  \
+"IO_NUM:8"     \
+"IO_TYPE_0:0"  \
+"IO_TYPE_1:0"  \
+"IO_TYPE_2:0"  \
+"IO_TYPE_3:0"  \
+"IO_TYPE_4:0"  \
+"IO_TYPE_5:0"  \
+"IO_TYPE_6:0"  \
+"IO_TYPE_7:0"  }
+
+sd_update_instance -sd_name {P9_GPIO} -instance_name {CoreGPIO_P9_0}
+
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_0} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_1} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_2} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_4} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_5} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_6} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD} -port_direction {INOUT} -port_is_pad {1}
+
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_0}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_1}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_2}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_3}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_5}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_6}
+sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_7}
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:D" "CoreGPIO_P9_0:GPIO_OUT[0:0]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:E" "CoreGPIO_P9_0:GPIO_OE[0:0]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:PAD" "PAD" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:Y" "CoreGPIO_P9_0:GPIO_IN[0:0]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:D" "CoreGPIO_P9_0:GPIO_OUT[1:1]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:E" "CoreGPIO_P9_0:GPIO_OE[1:1]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:PAD" "PAD_0" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:Y" "CoreGPIO_P9_0:GPIO_IN[1:1]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:D" "CoreGPIO_P9_0:GPIO_OUT[2:2]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:E" "CoreGPIO_P9_0:GPIO_OE[2:2]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:PAD" "PAD_1" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:Y" "CoreGPIO_P9_0:GPIO_IN[2:2]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:D" "CoreGPIO_P9_0:GPIO_OUT[3:3]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:E" "CoreGPIO_P9_0:GPIO_OE[3:3]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:PAD" "PAD_2" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:Y" "CoreGPIO_P9_0:GPIO_IN[3:3]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:D" "CoreGPIO_P9_0:GPIO_OUT[5:5]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:E" "CoreGPIO_P9_0:GPIO_OE[5:5]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:PAD" "PAD_4" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:Y" "CoreGPIO_P9_0:GPIO_IN[5:5]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:D" "CoreGPIO_P9_0:GPIO_OUT[6:6]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:E" "CoreGPIO_P9_0:GPIO_OE[6:6]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:PAD" "PAD_5" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:Y" "CoreGPIO_P9_0:GPIO_IN[6:6]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:D" "CoreGPIO_P9_0:GPIO_OUT[7:7]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:E" "CoreGPIO_P9_0:GPIO_OE[7:7]" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:PAD" "PAD_6" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:Y" "CoreGPIO_P9_0:GPIO_IN[7:7]" }
+
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_1_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_4_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_10_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_12_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_14_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_17_BIBUF}
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_19_BIBUF}
+
+sd_connect_pins_to_constant -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_IN[4:4]} -value {GND}
+sd_mark_pins_unused -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_OUT[4:4]}
+sd_mark_pins_unused -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_OE[4:4]}
+
+sd_delete_ports -sd_name {P9_GPIO} -port_names {INT}
+sd_create_bus_port -sd_name {P9_GPIO} -port_name {INT} -port_direction {OUT} -port_range {[7:0]}
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"CoreGPIO_P9_0:INT" "INT" }
+
+save_smartdesign -sd_name {P9_GPIO}
+generate_component -component_name {P9_GPIO}
 
 # Add P9_GPIO_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {P9_GPIO} -instance_name {P9_GPIO_0}
 
 
+# Adjust corepwm_C1
+configure_core -component_name {corepwm_C1} -params { "SHADOW_REG_EN1:false" "SHADOW_REG_EN2:false" }
 
 # Add PWM_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_PWM} -instance_name {PWM_0}

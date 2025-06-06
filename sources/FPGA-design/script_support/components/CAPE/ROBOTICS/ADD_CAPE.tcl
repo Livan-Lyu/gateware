@@ -30,16 +30,16 @@ hdl_core_rename_bif -hdl_core_name {servos} -current_bif_name {BIF_1} -new_bif_n
 #-------------------------------------------------------------------------------
 # Build cape's submodules
 #-------------------------------------------------------------------------------
-::safe_source script_support/components/CAPE/ROBOTICS/APB_BUS_CONVERTER.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CoreAPB3_CAPE.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CoreGPIO_P8_UPPER.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/P8_GPIO_UPPER.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CAPE_DEFAULT_GPIOS.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/corepwm_C1.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CAPE_PWM.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CoreGPIO_P9.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/P9_GPIO.tcl
-::safe_source script_support/components/CAPE/ROBOTICS/CAPE.tcl
+::safe_source script_support/components/CAPE/shared/APB_BUS_CONVERTER.tcl
+::safe_source script_support/components/CAPE/shared/CoreAPB3_CAPE.tcl
+::safe_source script_support/components/CAPE/shared/CoreGPIO_P8_UPPER.tcl
+::safe_source script_support/components/CAPE/shared/P8_GPIO_UPPER.tcl
+::safe_source script_support/components/CAPE/shared/CAPE_DEFAULT_GPIOS.tcl
+::safe_source script_support/components/CAPE/shared/CorePWM_C1.tcl
+::safe_source script_support/components/CAPE/shared/CAPE_PWM.tcl
+::safe_source script_support/components/CAPE/shared/CoreGPIO_P9.tcl
+::safe_source script_support/components/CAPE/shared/P9_GPIO.tcl
+::safe_source script_support/components/CAPE/$cape_option/CAPE.tcl
 
 #-------------------------------------------------------------------------------
 # Build the Cape module

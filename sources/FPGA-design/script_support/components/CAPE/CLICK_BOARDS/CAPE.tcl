@@ -120,6 +120,13 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8_GPIO_UPPER_0:INT} -pin_sl
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8_GPIO_UPPER_0:INT} -pin_slices {[7:0]}
 
 
+# Adjust P9_GPIO
+sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_17_BIBUF}
+sd_connect_pins_to_constant -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_IN[17:17]} -value {GND}
+sd_mark_pins_unused -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_OUT[17:17]}
+sd_mark_pins_unused -sd_name {P9_GPIO} -pin_names {CoreGPIO_P9_0:GPIO_OE[17:17]}
+save_smartdesign -sd_name {P9_GPIO}
+generate_component -component_name {P9_GPIO}
 
 # Add P9_GPIO_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {P9_GPIO} -instance_name {P9_GPIO_0}

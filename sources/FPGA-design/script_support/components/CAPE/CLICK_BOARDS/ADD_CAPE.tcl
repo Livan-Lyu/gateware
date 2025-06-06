@@ -3,17 +3,16 @@ puts "======== Add cape option: CLICK_BOARDS ========"
 #-------------------------------------------------------------------------------
 # Build cape's submodules
 #-------------------------------------------------------------------------------
-::safe_source script_support/components/CAPE/CLICK_BOARDS/APB_BUS_CONVERTER.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CoreAPB3_CAPE.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CoreGPIO_LCD.tcl
-#::safe_source script_support/components/CAPE/CLICK_BOARDS/P8_GPIO_LCD.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/P8_GPIO_UPPER.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CoreGPIO_P9.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/P9_GPIO.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CAPE_DEFAULT_GPIOS.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/corepwm_C1.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CAPE_PWM.tcl
-::safe_source script_support/components/CAPE/CLICK_BOARDS/CAPE.tcl
+::safe_source script_support/components/CAPE/shared/APB_BUS_CONVERTER.tcl
+::safe_source script_support/components/CAPE/shared/CoreAPB3_CAPE.tcl
+::safe_source script_support/components/CAPE/shared/CoreGPIO_P8_UPPER.tcl
+::safe_source script_support/components/CAPE/shared/P8_GPIO_UPPER.tcl
+::safe_source script_support/components/CAPE/shared/CoreGPIO_P9.tcl
+::safe_source script_support/components/CAPE/shared/P9_GPIO.tcl
+::safe_source script_support/components/CAPE/shared/CAPE_DEFAULT_GPIOS.tcl
+::safe_source script_support/components/CAPE/shared/CorePWM_C1.tcl
+::safe_source script_support/components/CAPE/shared/CAPE_PWM.tcl
+::safe_source script_support/components/CAPE/$cape_option/CAPE.tcl
 
 #-------------------------------------------------------------------------------
 # Build the Cape module

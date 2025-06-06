@@ -112,6 +112,17 @@ sd_instantiate_component -sd_name ${sd_name} -component_name {CoreAPB3_CAPE} -in
 
 
 
+# Adjust P8_GPIO_UPPER
+sd_delete_instances -sd_name {P8_GPIO_UPPER} -instance_names {GPIO_6_BIBUF GPIO_7_BIBUF}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[6:6]} -value {GND}
+sd_connect_pins_to_constant -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_IN[7:7]} -value {GND}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[6:6]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OE[7:7]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[6:6]}
+sd_mark_pins_unused -sd_name {P8_GPIO_UPPER} -pin_names {CoreGPIO_P8_UPPER_0:GPIO_OUT[7:7]}
+save_smartdesign -sd_name {P8_GPIO_UPPER}
+generate_component -component_name {P8_GPIO_UPPER}
+
 # Add P8_GPIO_UPPER_0 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {P8_GPIO_UPPER} -instance_name {P8_GPIO_UPPER_0}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8_GPIO_UPPER_0:INT} -pin_slices {[15:8]}
