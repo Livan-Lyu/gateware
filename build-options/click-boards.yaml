@@ -1,0 +1,14 @@
+---
+HSS:
+    type: git
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: master
+    patches:
+        - 0001-Disable-annoying-debug-message.patch
+        - 0002-Bring-back-old-DESIGNVER-formatting.patch
+    make_clean: 0
+gateware:
+    type: sources
+    build-args: "CAPE_OPTION:CLICK_BOARDS "
+    unique-design-version: 1.0.1
+
