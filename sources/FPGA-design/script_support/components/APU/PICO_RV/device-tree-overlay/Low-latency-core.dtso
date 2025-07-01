@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+/* Copyright (c) 2020-2021 Microchip Technology Inc */
+
+/dts-v1/;
+/plugin/;
+
+&{/chosen} {
+	overlays {
+		PICORV-CORE-GATEWARE = "GATEWARE_GIT_VERSION";
+	};
+};
+&{/} {
+	fabric-bus@40000000 {
+		fpgalsram: uio@60000000 {
+			compatible = "generic-uio";
+			linux,uio-name = "fpga_lsram"; //mandatory for program. If changed, please update program as well.
+			reg = <0x0 0x60000000 0x0 0x8000>;
+			status = "okay";
+		};
+	};
+};

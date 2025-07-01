@@ -1,0 +1,14 @@
+---
+HSS:
+    type: git
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: master
+    commit: v2025.03
+    patches:
+        - 0001-Disable-annoying-debug-message.patch
+        - 0002-Bring-back-old-DESIGNVER-formatting.patch
+    make_clean: 0
+gateware:
+    type: sources
+    unique-design-version: 2.0.4
+    build-args: "M2_OPTION:DEFAULT CAPE_OPTION:DEFAULT APU_OPTION:PICO_RV"

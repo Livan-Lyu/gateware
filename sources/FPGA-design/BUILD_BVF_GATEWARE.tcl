@@ -95,6 +95,12 @@ if {[info exists M2_OPTION]} {
 }
 puts "M.2 option selected: $m2_option"
 
+if {[info exists APU_OPTION]} {
+    set apu_option "$APU_OPTION"
+} else {
+    set apu_option "NONE"
+}
+puts "APU option selected: $apu_option"
 
 if {[info exists SYZYGY_OPTION]} {
     set syzygy_option "$SYZYGY_OPTION"
@@ -223,6 +229,7 @@ download_core -vlnv {Microsemi:SgCore:PFSOC_INIT_MONITOR:*} -location {www.micro
 download_core -vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:2.8.103} -location {www.microchip-ip.com/repositories/DirectCore}
 download_core -vlnv {Actel:SgCore:PF_CLK_DIV:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SgCore:PF_DRI:*} -location {www.microchip-ip.com/repositories/SgCore}
+download_core -vlnv {Actel:SgCore:PF_TPSRAM:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SgCore:PF_NGMUX:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SgCore:PF_PCIE:*} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:SgCore:PF_TX_PLL:*} -location {www.microchip-ip.com/repositories/SgCore}
@@ -230,6 +237,7 @@ download_core -vlnv {Actel:SgCore:PF_XCVR_REF_CLK:*} -location {www.microchip-ip
 download_core -vlnv {Actel:DirectCore:CoreAPB3:4.2.100} -location {www.microchip-ip.com/repositories/DirectCore}
 download_core -vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -location {www.microchip-ip.com/repositories/DirectCore}
 download_core -vlnv {Actel:SystemBuilder:PF_SRAM_AHBL_AXI:1.2.108} -location {www.microchip-ip.com/repositories/SgCore}
+download_core -vlnv {Actel:SystemBuilder:PF_SRAM_AHBL_AXI:1.2.111} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:Simulation:CLK_GEN:1.0.1} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:Simulation:RESET_GEN:1.0.1} -location {www.microchip-ip.com/repositories/SgCore}
 download_core -vlnv {Actel:DirectCore:corepwm:4.5.100} -location {www.microchip-ip.com/repositories/DirectCore} 
