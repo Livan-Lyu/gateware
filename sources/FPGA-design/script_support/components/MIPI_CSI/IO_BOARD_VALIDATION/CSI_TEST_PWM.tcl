@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component CSI_TEST_PWM
-create_and_configure_core -core_vlnv {Actel:DirectCore:corepwm:4.5.100} -component_name {CSI_TEST_PWM} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:corepwm:*} -component_name {CSI_TEST_PWM} -params {\
 "APB_DWIDTH:16"  \
 "CONFIG_MODE:0"  \
 "DAC_MODE1:false"  \

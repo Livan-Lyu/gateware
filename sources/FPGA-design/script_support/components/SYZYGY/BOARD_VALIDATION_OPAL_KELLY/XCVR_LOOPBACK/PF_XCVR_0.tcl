@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-1FCVG484I
 # Create and Configure the core component PF_XCVR_0
-create_and_configure_core -core_vlnv {Actel:SystemBuilder:PF_XCVR_ERM:*} -component_name {PF_XCVR_0} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:SystemBuilder:PF_XCVR_ERM:*} -component_name {PF_XCVR_0} -params {\
 "EXPOSE_ALL_DEBUG_PORTS:false" \
 "EXPOSE_FWF_EN_PORTS:false" \
 "SHOW_UNIVERSAL_SOLN_PORTS:true" \

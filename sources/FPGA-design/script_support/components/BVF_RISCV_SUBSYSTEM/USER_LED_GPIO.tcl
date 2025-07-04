@@ -1,4 +1,4 @@
-create_and_configure_core -core_vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -component_name {USER_LED_GPIO} -params { \
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreGPIO:*} -component_name {USER_LED_GPIO} -params { \
 "APB_WIDTH:32" \
 "FIXED_CONFIG_0:false" \
 "FIXED_CONFIG_10:false" \

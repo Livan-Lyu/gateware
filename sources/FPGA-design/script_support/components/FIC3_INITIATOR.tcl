@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS250T_ES-FCVG484E
 # Create and Configure the core component FIC3_INITIATOR
-create_and_configure_core -core_vlnv {Actel:DirectCore:CoreAPB3:4.2.100} -component_name {FIC3_INITIATOR} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreAPB3:*} -component_name {FIC3_INITIATOR} -params {\
 "APB_DWIDTH:32"  \
 "APBSLOT0ENABLE:false"  \
 "APBSLOT1ENABLE:true"  \

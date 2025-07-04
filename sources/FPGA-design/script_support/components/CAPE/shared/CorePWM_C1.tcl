@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component corepwm_C1
-create_and_configure_core -core_vlnv {Actel:DirectCore:corepwm:4.5.100} -component_name {corepwm_C1} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:corepwm:*} -component_name {corepwm_C1} -params {\
 "APB_DWIDTH:32"  \
 "CONFIG_MODE:0"  \
 "DAC_MODE1:false"  \

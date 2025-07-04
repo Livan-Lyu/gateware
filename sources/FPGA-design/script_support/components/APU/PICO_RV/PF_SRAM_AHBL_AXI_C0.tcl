@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component PF_SRAM_AHBL_AXI_C0
-create_and_configure_core -core_vlnv {Actel:SystemBuilder:PF_SRAM_AHBL_AXI:1.2.111} -component_name {PF_SRAM_AHBL_AXI_C0} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:SystemBuilder:PF_SRAM_AHBL_AXI:*} -component_name {PF_SRAM_AHBL_AXI_C0} -params {\
 "AXI4_AWIDTH:32" \
 "AXI4_DWIDTH:32" \
 "AXI4_IDWIDTH:9" \

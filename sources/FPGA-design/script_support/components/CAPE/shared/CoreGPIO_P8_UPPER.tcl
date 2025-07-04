@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component CoreGPIO_P8_UPPER
-create_and_configure_core -core_vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -component_name {CoreGPIO_P8_UPPER} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreGPIO:*} -component_name {CoreGPIO_P8_UPPER} -params {\
 "APB_WIDTH:32"  \
 "FIXED_CONFIG_0:true"  \
 "FIXED_CONFIG_1:true"  \

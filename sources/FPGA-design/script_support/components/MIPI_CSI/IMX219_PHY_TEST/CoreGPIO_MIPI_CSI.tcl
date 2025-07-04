@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component CoreGPIO_MIPI_CSI
-create_and_configure_core -core_vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -component_name {CoreGPIO_MIPI_CSI} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreGPIO:*} -component_name {CoreGPIO_MIPI_CSI} -params {\
 "APB_WIDTH:32"  \
 "FIXED_CONFIG_0:true"  \
 "FIXED_CONFIG_1:true"  \

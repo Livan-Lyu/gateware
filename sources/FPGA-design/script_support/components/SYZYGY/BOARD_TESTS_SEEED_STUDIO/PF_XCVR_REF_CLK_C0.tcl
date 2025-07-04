@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component PF_XCVR_REF_CLK_C0
-create_and_configure_core -core_vlnv {Actel:SgCore:PF_XCVR_REF_CLK:*} -component_name {PF_XCVR_REF_CLK_C0} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:SgCore:PF_XCVR_REF_CLK:*} -component_name {PF_XCVR_REF_CLK_C0} -params {\
 "ENABLE_FAB_CLK_0:true"  \
 "ENABLE_FAB_CLK_1:false"  \
 "ENABLE_REF_CLK_0:true"  \

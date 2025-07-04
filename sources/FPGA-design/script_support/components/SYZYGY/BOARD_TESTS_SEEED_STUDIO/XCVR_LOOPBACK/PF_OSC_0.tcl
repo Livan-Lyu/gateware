@@ -2,7 +2,7 @@
 # Family: PolarFire
 # Part Number: MPF300TS-1FCG1152I
 # Create and Configure the core component PF_OSC_0
-create_and_configure_core -core_vlnv Actel:SgCore:PF_OSC:1.0.102 -component_name {PF_OSC_0} -params {\
+create_and_configure_core -download_core -core_vlnv Actel:SgCore:PF_OSC:* -component_name {PF_OSC_0} -params {\
 "RCOSC_2MHZ_CLK_DIV_EN:false"  \
 "RCOSC_2MHZ_GL_EN:false"  \
 "RCOSC_2MHZ_NGMUX_EN:false"  \

@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484E
 # Create and Configure the core component COREAXI4INTERCONNECT_C0
-create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:2.8.103} -component_name {COREAXI4INTERCONNECT_C0} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*} -component_name {COREAXI4INTERCONNECT_C0} -params {\
 "ADDR_WIDTH:32"  \
 "CROSSBAR_MODE:0"  \
 "DATA_WIDTH:32"  \

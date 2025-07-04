@@ -2,7 +2,7 @@
 # Family: PolarFireSoC
 # Part Number: MPFS025T-FCVG484_EVALE
 # Create and Configure the core component PF_IO_C3
-create_and_configure_core -core_vlnv {Actel:SgCore:PF_IO:*} -component_name {PF_IO_C3} -params {\
+create_and_configure_core -download_core -core_vlnv {Actel:SgCore:PF_IO:*} -component_name {PF_IO_C3} -params {\
 "DIFFERENTIAL:true"  \
 "DIRECTION:2"  \
 "DYN_DELAY_LINE_EN:false"  \
