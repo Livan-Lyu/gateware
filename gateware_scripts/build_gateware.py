@@ -703,17 +703,28 @@ def get_design_version(source_list):
 
     # FPGA design version number stored in Polarfire SoC devices is 16 bits long.
     design_version = design_version % 65536
+
+    # Prevent version downgrade
+    if previous_design_version is not None and previous_design_version > design_version:
+        design_version = previous_design_version
+
     print("Design version: ", design_version)
 
-    if previous_design_version is not None and previous_design_version == design_version:
+    # Warn if unchanged
+    if previous_design_version is not None and previous_design_version >= design_version:
         print(f"WARNING: The design version {design_version} is the same as the previously used one.")
         print("Note: The gateware will not be updated unless the design version is different.")
 
-        prompt = f"Enter new version number, 'n' to keep current one, or <Enter> to auto-increment to ({design_version + 1}): "
+        # Use previous_design_version for auto-increment when it exists
+        if previous_design_version is not None:
+            incremented_version = previous_design_version
+        else:
+            incremented_version = design_version
+        prompt = f"Enter new version number, 'n' to keep current one, or <Enter> to auto-increment to ({incremented_version + 1}): "
         response = input(prompt).strip().lower()
 
         if response == "":
-            design_version = (design_version + 1) % 65536
+            design_version = (incremented_version + 1) % 65536
             print(f"Auto-incremented version: {design_version}")
         elif response == "n":
             print(f"Keeping existing design version: {design_version}")
