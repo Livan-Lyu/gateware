@@ -720,7 +720,7 @@ def get_design_version(source_list):
             incremented_version = previous_design_version
         else:
             incremented_version = design_version
-        prompt = f"Enter new version number, 'n' to keep current one, or <Enter> to auto-increment to ({incremented_version + 1}): "
+        prompt = f"Enter new version number (X.Y.Z format), 'n' to keep current version, or <Enter> to auto-increment to ({incremented_version + 1}): "
         response = input(prompt).strip().lower()
 
         if response == "":
@@ -730,8 +730,18 @@ def get_design_version(source_list):
             print(f"Keeping existing design version: {design_version}")
         else:
             try:
-                design_version = int(response) % 65536
-                print(f"Using user-specified version: {design_version}")
+                # Check if input is in X.Y.Z format
+                if "." in response:
+                    parts = response.split(".")
+                    if len(parts) == 3:
+                        design_version = (int(parts[0]) * 1000) + (int(parts[1]) * 10) + int(parts[2])
+                        design_version = design_version % 65536
+                        print(f"Using user-specified version: {design_version}")
+                    else:
+                        raise ValueError("Invalid X.Y.Z format")
+                else:
+                    design_version = int(response) % 65536
+                    print(f"Using user-specified version: {design_version}")
             except ValueError:
                 print("Invalid input. Keeping the original design version.")
 
