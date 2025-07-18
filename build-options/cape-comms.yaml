@@ -2,8 +2,8 @@
 HSS:
     type: git
     link: https://github.com/polarfire-soc/hart-software-services.git
-    branch: master
-    commit: v2025.03
+    branch: next
+    commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
     patches:
         - 0001-Disable-annoying-debug-message.patch
         - 0002-Bring-back-old-DESIGNVER-formatting.patch
