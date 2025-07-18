@@ -25,8 +25,7 @@ import_mss_component -file $mss_component_file
 ::safe_source script_support/components/CLOCKS_AND_RESETS/OSCILLATOR_160MHz.tcl
 ::safe_source script_support/components/CLOCKS_AND_RESETS/ADC_MCLK_CCC.tcl 
 ::safe_source script_support/components/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.tcl 
-::safe_source script_support/components/IHC_APB.tcl
-::safe_source script_support/components/IHC_SUBSYSTEM.tcl
+::safe_source script_support/components/MIV_IHC_C0.tcl
 ::safe_source script_support/components/BVF_RISCV_SUBSYSTEM.tcl
 ::safe_source script_support/components/BVF_GATEWARE.tcl 
 set_root -module ${top_level_name}::work
