@@ -331,7 +331,23 @@ def clone_sources(source_list):
                     continue
 
                 link_file = os.path.join(source_dir, "repo_link.txt")
+                commit = details.get("commit")
                 target_branch = details.get("branch")
+
+                # Helper: get default branch of a remote repo
+                def get_default_branch(repo_url):
+                    try:
+                        temp_dir = os.path.join("./sources", f"__temp__{source}")
+                        temp_repo = git.Repo.clone_from(repo_url, temp_dir, depth=1)
+                        default_branch = temp_repo.active_branch.name
+                        shutil.rmtree(temp_dir)
+                        return default_branch
+                    except Exception as e:
+                        print(f"Warning: Could not determine default branch for {source}: {e}")
+                        return "master"  # fallback
+
+                if not target_branch and not commit:
+                    target_branch = get_default_branch(new_link)
 
                 if os.path.exists(source_dir):
                     # Check if the current link matches the new link
