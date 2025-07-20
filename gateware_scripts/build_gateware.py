@@ -331,7 +331,7 @@ def clone_sources(source_list):
                     continue
 
                 link_file = os.path.join(source_dir, "repo_link.txt")
-                target_branch = details.get("branch", "main")
+                target_branch = details.get("branch")
 
                 if os.path.exists(source_dir):
                     # Check if the current link matches the new link
@@ -395,7 +395,6 @@ def clone_sources(source_list):
                     repo = git.Repo.clone_from(
                         new_link,
                         source_dir,
-                        branch=details.get("branch", "main"),
                     )
                     # Save the repository link for future comparison
                     os.makedirs(source_dir, exist_ok=True)
