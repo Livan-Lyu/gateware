@@ -37,12 +37,14 @@ import gateware_scripts
 from gateware_scripts.build_gateware import build_gateware
 
 
-global yaml_input_file
+global build_options_yaml_file
+global board_options_yaml_file
 
 
 # Parse command line arguments and set tool locations
 def parse_arguments():
-    global yaml_input_file
+    global build_options_yaml_file
+    global board_options_yaml_file
 
     # Initialize parser
     parser = argparse.ArgumentParser()
@@ -52,24 +54,42 @@ def parse_arguments():
                        type=str,
                        help='Path to the YAML file describing the list of sources used to build the bitstream.')
 
+    parser.add_argument('board_options_path',
+                         nargs='?',
+                         metavar='board_options_path',
+                         type=str,
+                         default=None,
+                         help='Optional: Path to the YAML file describing board-specific options.')
+
     # Read arguments from command line
     args = parser.parse_args()
-    yaml_input_file_arg = args.Path
+    build_options_yaml_file_arg = args.Path
+    board_options_yaml_arg = args.board_options_path
 
-    if not os.path.isfile(yaml_input_file_arg):
-        print("\r\n!!! The path specified for the YAML input file does not exist !!!\r\n")
+    if not os.path.isfile(build_options_yaml_file_arg):
+        print("\r\n!!! The path specified for the build options YAML input file does not exist !!!\r\n")
         parser.print_help()
         sys.exit()
 
-    yaml_input_file = os.path.abspath(yaml_input_file_arg)
+    build_options_yaml_file = os.path.abspath(build_options_yaml_file_arg)
+
+    # board options file optional
+    if board_options_yaml_arg:
+        if not os.path.isfile(board_options_yaml_arg):
+            print("\r\n!!! The path specified for the board options YAML input file does not exist !!!\r\n")
+            sys.exit()
+        board_options_yaml_file = os.path.abspath(board_options_yaml_arg)
+    else:
+        board_options_yaml_file = None
 
 
 def main():
-    global yaml_input_file
+    global build_options_yaml_file
+    global board_options_yaml_file
 
     parse_arguments()
 
-    build_gateware(yaml_input_file, ".", ".", "board-options")
+    build_gateware(build_options_yaml_file, board_options_yaml_file, ".", ".")
 
 
 if __name__ == '__main__':

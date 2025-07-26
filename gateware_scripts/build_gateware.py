@@ -140,14 +140,15 @@ def check_native_platform():
         return " --native"
 
 
-def set_arguments(yaml_input_file_path):
+def set_arguments(build_options_yaml_path, board_options_yaml_path=None):
     global libero
     global mss_configurator
     global softconsole_headless
     global programming
     global update
+    global build_options_input_yaml_file
+    global board_options_input_yaml_file
 
-    global yaml_input_file
 
     # Initialize parser
 #    parser = argparse.ArgumentParser()
@@ -161,12 +162,12 @@ def set_arguments(yaml_input_file_path):
 #    args = parser.parse_args()
 #    yaml_input_file_arg = args.Path
 
-    if not os.path.isfile(yaml_input_file_path):
+    if not os.path.isfile(build_options_yaml_path):
         print("\r\n!!! The path specified for the YAML input file does not exist !!!\r\n")
 #        parser.print_help()
         sys.exit()
 
-    yaml_input_file = os.path.abspath(yaml_input_file_path)
+    build_options_input_yaml_file = os.path.abspath(build_options_yaml_path)
 
     # Tool call variables - these are the names of the tools to run which will be called from os.system.
     # Full paths could be used here instead of assuming tools are in PATH
@@ -186,7 +187,9 @@ def parse_arguments():
     global programming
     global update
 
-    global yaml_input_file
+    global build_options_input_yaml_file
+    global board_options_input_yaml_file
+
 
     # Initialize parser
     parser = argparse.ArgumentParser()
@@ -196,16 +199,31 @@ def parse_arguments():
                        type=str,
                        help='Path to the YAML file describing the list of sources used to build the bitstream.')
 
+    parser.add_argument('board_options_path',
+                         nargs='?',
+                         metavar='board_options_path',
+                         type=str,
+                         help='Optional: Path to the YAML file describing board-specific options.')
+
     # Read arguments from command line
     args = parser.parse_args()
-    yaml_input_file_arg = args.Path
+    build_options_yaml_arg = args.Path
+    board_options_yaml_arg = args.board_options_path
 
-    if not os.path.isfile(yaml_input_file_arg):
-        print("\r\n!!! The path specified for the YAML input file does not exist !!!\r\n")
+    if not os.path.isfile(build_options_yaml_arg):
+        print("\r\n!!! The path specified for the build options YAML input file does not exist !!!\r\n")
         parser.print_help()
         sys.exit()
 
-    yaml_input_file = os.path.abspath(yaml_input_file_arg)
+    build_options_input_yaml_file = os.path.abspath(build_options_yaml_arg)
+
+    if board_options_yaml_arg:
+        if not os.path.isfile(board_options_yaml_arg):
+            print("\r\n!!! The path specified for the board options YAML input file does not exist !!!\r\n")
+            sys.exit()
+        board_options_input_yaml_file = os.path.abspath(board_options_yaml_arg)
+    else:
+        board_options_input_yaml_file = None
 
     # Tool call variables - these are the names of the tools to run which will be called from os.system.
     # Full paths could be used here instead of assuming tools are in PATH
@@ -496,10 +514,16 @@ def make_mss_config(mss_configurator, config_file, output_dir):
 
 
 # Builds the HSS using a pre-defined config file using SoftConsole in headless mode
-def make_hss(hss_source, yaml_input_file, board_selected):
-    with open(yaml_input_file) as f:
+def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml_file=None):
+    with open(build_options_input_yaml_file) as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         hss_info = data.get("HSS", {})
+
+    if board_options_input_yaml_file and os.path.exists(board_options_input_yaml_file):
+        board_filename = os.path.basename(board_options_input_yaml_file)
+        target_board = os.path.splitext(board_filename)[0]
+    else:
+        target_board = "mpfs-beaglev-fire" #default board
 
     hss_type = hss_info.get('type', 'git')  # Default to 'git' if 'type' is not provided
 
@@ -541,7 +565,6 @@ def make_hss(hss_source, yaml_input_file, board_selected):
         print("                      Build Hart Software Services (HSS)")
         print("================================================================================\r\n", flush=True)
 
-        target_board = board_selected
         print("Target board: " + target_board)
 
         xml_directory = os.path.join(hss_source, "boards", target_board, "soc_fpga_design", "xml")
@@ -662,12 +685,25 @@ def make_hss(hss_source, yaml_input_file, board_selected):
         return None
 
 
-def get_libero_script_args(source_list):
-    libero_script_args = "NO_BUILD_ARGUMENT"
-    with open(source_list) as f:  # open the yaml file passed as an arg
-        data = yaml.load(f, Loader=yaml.FullLoader)
-        libero_script_args = data.get("gateware").get("build-args")
-        f.close()
+def get_libero_script_args(build_options_yaml_path, board_options_yaml_path=None):
+    libero_script_args = ""
+
+    with open(build_options_yaml_path) as f:
+        build_options_data = yaml.load(f, Loader=yaml.FullLoader)
+        if build_options_data and build_options_data.get("gateware"):
+            libero_script_args = build_options_data["gateware"].get("build-args", "")
+
+    if board_options_yaml_path:
+        board_filename = os.path.basename(board_options_yaml_path)
+        board = os.path.splitext(board_filename)[0]
+        libero_script_args += f" BOARD:{board}"
+        with open(board_options_yaml_path) as f:
+            board_options_data = yaml.load(f, Loader=yaml.FullLoader)
+            if board_options_data:
+                for key, value in board_options_data.items():
+                    libero_script_args += f" {key}:{value}"
+    else:
+        libero_script_args += f" BOARD:mpfs-beaglev-fire"
 
     if libero_script_args is None:
         libero_script_args = "NONE"
@@ -783,7 +819,7 @@ def get_git_hash():
 # repository.
 def get_top_level_name():
     git_hash = get_git_hash()
-    top_level_name = str(os.path.splitext(os.path.basename(yaml_input_file))[0])
+    top_level_name = str(os.path.splitext(os.path.basename(build_options_input_yaml_file))[0])
     top_level_name = top_level_name.replace('-', '_')
     top_level_name = top_level_name + '_' + git_hash
     if len(top_level_name) > 30:
@@ -798,7 +834,7 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
     exe_sys_cmd(libero_cmd)
 
 
-def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir_path, board_selected, die_selected, package_selected, die_voltage, part_range, design_version):
+def generate_libero_project(libero, build_options_input_yaml_file, board_options_input_yaml_file, fpga_design_sources_path, build_dir_path, design_version):
     print("================================================================================")
     print("                            Generate Libero project")
     print("================================================================================\r\n", flush=True)
@@ -808,22 +844,12 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
     project_location = os.path.join("..", "..", build_dir_path, "work", "libero")
     script = "BUILD_BVF_GATEWARE.tcl"
 
-    script_args = get_libero_script_args(yaml_input_file)
+    script_args = get_libero_script_args(build_options_input_yaml_file, board_options_input_yaml_file)
 
     if script_args == "NONE":
         script_args = ""
     else:
         script_args += " "
-
-    script_args += (
-        f"BOARD:{board_selected} "
-        f"DIE:{die_selected} "
-        f"PACKAGE:{package_selected} "
-        f"DIE_VOLTAGE:{die_voltage} "
-        f"PART_RANGE:{part_range}"
-    )
-
-
 
     hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
     prog_export_path = os.path.join("..", "..", build_dir_path)
@@ -835,7 +861,7 @@ def generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, b
     os.chdir(initial_directory)
 
 
-def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_options_dir):
+def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, gateware_top_dir):
     global libero
     global mss_configurator
     global softconsole_headless
@@ -845,19 +871,19 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     original_stdout = sys.stdout
     sys.stdout = Logger(log_file_path)
 
-    set_arguments(yaml_input_file_path)
+    set_arguments(build_options_yaml_arg, board_options_yaml_arg)
 
     check_tool_status()
 
-    design_version = get_design_version(yaml_input_file_path)
+    design_version = get_design_version(build_options_yaml_arg)
 
     sources = {}
 
     init_workspace()
 
-    sources = clone_sources(yaml_input_file)
+    sources = clone_sources(build_options_input_yaml_file)
 
-    build_options_list = get_libero_script_args(yaml_input_file)
+    build_options_list = get_libero_script_args(build_options_yaml_arg)
 
     if build_options_list != 'NONE':
         options = build_options_list.split()
@@ -873,50 +899,33 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),
                                os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
     
-    board_selected = None
-    die_selected = None
-    package_selected = None
-    
-    
-    # Load board configurations from YAML
-    board_options_path = os.path.join(board_options_dir, "board-selection.yaml")
-    if not os.path.exists(board_options_path):
-        print(f"Error: Board options file not found at {board_options_path}")
-        sys.exit(1)
 
-    with open(board_options_path, 'r') as f:
-        board_data = yaml.safe_load(f)
+    die = None
+    package = None
 
-    # First get the selected board from the YAML
-    board_selected = board_data.get('Board_Selected')
-    if not board_selected:
-        print("Error: 'Board_Selected' key missing in board-options YAML.")
-        sys.exit(1)
+    if board_options_yaml_arg:
+        board_filename = os.path.basename(board_options_yaml_arg)
+        board = os.path.splitext(board_filename)[0]
 
-    # Then get the boards configuration
-    boards = board_data.get('Boards')
-    if not boards:
-        print("Error: 'Boards' key missing in board-options YAML.")
-        sys.exit(1)
+        with open(board_options_yaml_arg, "r") as f:
+            board_options = yaml.safe_load(f)
 
-    # Get the selected board's parameters
-    if board_selected not in boards:
-        print(f"Error: Board {board_selected} not found in board-options.")
-        sys.exit(1)
+        for key in board_options:
+            if key == "DIE":
+                die = board_options[key]
+            elif key == "PACKAGE":
+                package = board_options[key]
 
-    board_params = boards[board_selected]
-    print("The board selected is:", board_selected)
-    
-    die_selected = board_params.get('Die')
-    package_selected = board_params.get('Package')
-    die_voltage = board_params.get('Die_voltage')
-    part_range = board_params.get('Part_range') 
+        if not die or not package:
+            raise ValueError("DIE or PACKAGE missing from board options YAML")
 
-    print("|| -- Board:", board_selected, "--||--", "Die:", die_selected, "--||--", "Package: ", 
-          package_selected, "--||--", "Die voltage: ", die_voltage, "--||--", "Part range: ", part_range, " --||")
+    else:
+        board = "mpfs-beaglev-fire" #default board
+        die = "MPFS025T"
+        package = "FCVG484"
     
     mss_folder_path = os.path.join(gateware_top_dir, "sources", "MSS_Configuration", 
-                                   die_selected, package_selected, board_selected)
+                                   die, package, board)
     
     print(f"MSS folder path: {mss_folder_path}")
     cfg_files = glob.glob(os.path.join(mss_folder_path, "*.cfg"))
@@ -931,10 +940,10 @@ def build_gateware(yaml_input_file_path, build_dir, gateware_top_dir, board_opti
     work_mss_dir = os.path.join("work", "MSS")
     make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
 
-    make_hss(sources["HSS"], yaml_input_file, board_selected)
+    make_hss(sources["HSS"], build_options_input_yaml_file, board_options_yaml_arg)
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
-    generate_libero_project(libero, yaml_input_file, fpga_design_sources_path, build_dir, board_selected, die_selected, package_selected, die_voltage, part_range, design_version )
+    generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
 
     sys.stdout.flush()
     sys.stdout = original_stdout
@@ -958,18 +967,18 @@ def main():
     # Bitstream building starts here - see individual functions for a description of their purpose
     init_workspace()
 
-    sources = clone_sources(yaml_input_file)
+    sources = clone_sources(build_options_input_yaml_file)
 
-    build_options_list = get_libero_script_args(yaml_input_file)
+    build_options_list = get_libero_script_args(build_options_input_yaml_file, board_options_input_yaml_file)
     generate_gateware_overlays(os.path.join(os.getcwd(), "bitstream", "LinuxProgramming"), build_options_list)
 
     mss_config_file_path = os.path.join(".", "sources", "MSS_Configuration", "MSS_Configuration.cfg")
     work_mss_dir = os.path.join("work", "MSS")
     make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
 
-    make_hss(sources["HSS"], yaml_input_file)
+    make_hss(sources["HSS"], build_options_input_yaml_file, board_options_input_yaml_file)
 
-    generate_libero_project(libero, yaml_input_file)
+    generate_libero_project(libero, build_options_input_yaml_file, board_options_input_yaml_file)
 
     print("Finished", flush=True)
 

@@ -10,44 +10,6 @@ import yaml
 
 def gather_dtso(gateware_dir, work_dir, build_options):
     context_dir = os.path.join(gateware_dir, "script_support", "components")
-    board_options_path = os.path.join(os.path.dirname(os.path.dirname(gateware_dir)), "board-options", "board-selection.yaml")
-    print(f"Board options path: {board_options_path}")
-
-    board_selected = None
-    die_selected = None
-    package_selected = None
-    
-    
-    if not os.path.exists(board_options_path):
-        print(f"Error: Board options file not found at {board_options_path}")
-        sys.exit(1)
-
-    with open(board_options_path, 'r') as f:
-        board_data = yaml.safe_load(f)
-
-    # First get the selected board from the YAML
-    board_selected = board_data.get('Board_Selected')
-    if not board_selected:
-        print("Error: 'Board_Selected' key missing in board-options YAML.")
-        sys.exit(1)
-
-    # Then get the boards configuration
-    boards = board_data.get('Boards')
-    if not boards:
-        print("Error: 'Boards' key missing in board-options YAML.")
-        sys.exit(1)
-
-    # Get the selected board's parameters
-    if board_selected not in boards:
-        print(f"Error: Board {board_selected} not found in board-options.")
-        sys.exit(1)
-
-    board_params = boards[board_selected]
-    print("The board selected is:", board_selected)
-    
-    die_selected = board_params.get('Die')
-    package_selected = board_params.get('Package')
-
 
     build_options_dict = {}
     if build_options != 'NONE':
