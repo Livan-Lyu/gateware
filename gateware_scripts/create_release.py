@@ -23,7 +23,6 @@ def get_build_option_file_list(build_options_dir_name):
 def build_bitstreams(build_option_files):
     tester_top_dir = os.getcwd()
     build_dir = "builds"
-    board_options_dir = os.path.join(tester_top_dir, "board-options")
     
     if not os.path.exists(build_dir):
         os.makedirs(build_dir)
@@ -39,7 +38,7 @@ def build_bitstreams(build_option_files):
 
         build_option_path = os.path.join(tester_top_dir, build_option)
 
-        build_gateware(build_option_path, dst_dir, tester_top_dir, board_options_dir)
+        build_gateware(build_option_path, None, dst_dir, tester_top_dir)
 
         os.chdir('../..')
 
