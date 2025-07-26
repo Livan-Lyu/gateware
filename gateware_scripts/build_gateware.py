@@ -693,15 +693,20 @@ def get_libero_script_args(build_options_yaml_path, board_options_yaml_path=None
         if build_options_data and build_options_data.get("gateware"):
             libero_script_args = build_options_data["gateware"].get("build-args", "")
 
-    if board_options_yaml_path:
+    if board_options_yaml_path and os.path.isfile(board_options_yaml_path):
         board_filename = os.path.basename(board_options_yaml_path)
         board = os.path.splitext(board_filename)[0]
         libero_script_args += f" BOARD:{board}"
-        with open(board_options_yaml_path) as f:
-            board_options_data = yaml.load(f, Loader=yaml.FullLoader)
-            if board_options_data:
-                for key, value in board_options_data.items():
-                    libero_script_args += f" {key}:{value}"
+        try:
+            with open(board_options_yaml_path, "r") as f:
+                board_options_data = yaml.load(f, Loader=yaml.FullLoader)
+                if isinstance(board_options_data, dict):
+                    for key, value in board_options_data.items():
+                        libero_script_args += f" {key}:{value}"
+                else:
+                    print(f"Warning: Board options YAML at {board_options_yaml_path} is empty or not a dictionary.")
+        except Exception as e:
+            print(f"Error reading or parsing board options YAML: {e}")
     else:
         libero_script_args += f" BOARD:mpfs-beaglev-fire"
 
@@ -903,12 +908,15 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
     die = None
     package = None
 
-    if board_options_yaml_arg:
+    if board_options_yaml_arg and os.path.isfile(board_options_yaml_arg):
         board_filename = os.path.basename(board_options_yaml_arg)
         board = os.path.splitext(board_filename)[0]
 
-        with open(board_options_yaml_arg, "r") as f:
-            board_options = yaml.safe_load(f)
+        try:
+            with open(board_options_yaml_arg, "r") as f:
+                board_options = yaml.safe_load(f) or {}
+        except Exception as e:
+            raise RuntimeError(f"Failed to load board options YAML: {e}")
 
         for key in board_options:
             if key == "DIE":
