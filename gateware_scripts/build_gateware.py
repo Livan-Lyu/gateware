@@ -149,19 +149,6 @@ def set_arguments(build_options_yaml_path, board_options_yaml_path=None):
     global build_options_input_yaml_file
     global board_options_input_yaml_file
 
-
-    # Initialize parser
-#    parser = argparse.ArgumentParser()
-
-#    parser.add_argument('Path',
-#                       metavar='path',
-#                       type=str,
-#                       help='Path to the YAML file describing the list of sources used to build the bitstream.')
-
-    # Read arguments from command line
-#    args = parser.parse_args()
-#    yaml_input_file_arg = args.Path
-
     if not os.path.isfile(build_options_yaml_path):
         print("\r\n!!! The path specified for the YAML input file does not exist !!!\r\n")
 #        parser.print_help()
