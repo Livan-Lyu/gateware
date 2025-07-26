@@ -508,9 +508,9 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
 
     if board_options_input_yaml_file and os.path.exists(board_options_input_yaml_file):
         board_filename = os.path.basename(board_options_input_yaml_file)
-        target_board = os.path.splitext(board_filename)[0]
+        board = os.path.splitext(board_filename)[0]
     else:
-        target_board = "mpfs-beaglev-fire" #default board
+        board = "mpfs-beaglev-fire" #default board
 
     hss_type = hss_info.get('type', 'git')  # Default to 'git' if 'type' is not provided
 
@@ -552,9 +552,9 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
         print("                      Build Hart Software Services (HSS)")
         print("================================================================================\r\n", flush=True)
 
-        print("Target board: " + target_board)
+        print("Board: " + board)
 
-        xml_directory = os.path.join(hss_source, "boards", target_board, "soc_fpga_design", "xml")
+        xml_directory = os.path.join(hss_source, "boards", board, "soc_fpga_design", "xml")
         
         
         # Get the first XML file found in the directory
@@ -605,13 +605,13 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
         def_config_file_select = hss_info.get("def_config_examples")  
 
         if def_config_file_select:
-            def_config_file = os.path.join(hss_source, "boards", target_board, "def_config_examples", def_config_file_select)
+            def_config_file = os.path.join(hss_source, "boards", board, "def_config_examples", def_config_file_select)
             print(f"!!                                                !!", flush=True)
             print(f"Using def_config file: ", def_config_file_select, flush=True)
             print(f"!!                                                !!", flush=True)
         else:
             # Proceed with building the HSS
-            def_config_file = os.path.join(hss_source, "boards", target_board, "def_config")
+            def_config_file = os.path.join(hss_source, "boards", board, "def_config")
         try:
             shutil.copyfile(def_config_file, os.path.join(hss_source, "./.config"))
         except IOError as e:
@@ -632,13 +632,13 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
 
             # Execute the make clean command if specified
             if make_clean:
-                clean_command = f"make clean BOARD={target_board}"
+                clean_command = f"make clean BOARD={board}"
                 if verbose:
                     clean_command += " V=1"
                 exe_sys_cmd(clean_command)
 
             # Build command
-            build_command = f"make BOARD={target_board}"
+            build_command = f"make BOARD={board}"
             if verbose:
                 build_command += " V=1"
             exe_sys_cmd(build_command)
@@ -650,7 +650,7 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
             os.chdir(initial_directory)
 
         # Check if the build was successful and copy the artifact
-        if target_board == 'bvf': # Openbeagle HSS - bvf HSS is outputted to a different folder
+        if board == 'bvf': # Openbeagle HSS - bvf HSS is outputted to a different folder
             generated_hex_dir = os.path.normpath(os.path.join(hss_source, "Default", "bootmode1"))
         else:
             generated_hex_dir = os.path.normpath(os.path.join(hss_source, "build", "bootmode1"))
