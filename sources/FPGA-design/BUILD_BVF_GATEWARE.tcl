@@ -182,6 +182,13 @@ if {[info exists PART_RANGE]} {
 }
 puts "PART_RANGE: $part_range"
 
+if {[info exists SPEED]} {
+    set speed "$SPEED"
+} else {
+    set speed "STD"
+}
+puts "SPEED: $speed"
+
 
 source ./script_support/additional_configurations/functions.tcl
 
@@ -203,7 +210,7 @@ new_project \
     -family {PolarFireSoC} \
     -die $die \
     -package $package \
-    -speed {STD} \
+    -speed $speed \
     -die_voltage $die_voltage \
     -part_range $part_range \
     -adv_options {IO_DEFT_STD:LVCMOS 1.8V} \
