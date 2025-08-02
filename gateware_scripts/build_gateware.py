@@ -51,22 +51,20 @@ def check_dtc_installed():
 
 def check_pyyaml_installed():
     try:
-        result = subprocess.run(["pip", "show", "pyyaml"], capture_output=True, text=True)
-        if result.returncode == 0 and "Name: PyYAML" in result.stdout:
-            print("PyYAML is installed.")
-        else:
+        result = subprocess.run([sys.executable, "-m", "pip", "show", "pyyaml"],
+                              capture_output=True, text=True)
+        if result.returncode != 0 or "Name: PyYAML" not in result.stdout:
             raise ImportError
     except ImportError:
         print("Error: PyYAML is not installed.")
         print("Please install it by running: pip install pyyaml")
-        sys.exit()
+        sys.exit(1)
 
 def check_gitpython_installed():
     try:
-        result = subprocess.run(["pip", "show", "gitpython"], capture_output=True, text=True)
-        if result.returncode == 0 and "Name: GitPython" in result.stdout:
-            print("GitPython is installed.")
-        else:
+        result = subprocess.run([sys.executable, "-m", "pip", "show", "gitpython"],
+                                capture_output=True, text=True)
+        if result.returncode != 0 or "Name: GitPython" not in result.stdout:
             raise ImportError
     except ImportError:
         print("Error: GitPython is not installed.")
