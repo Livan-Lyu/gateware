@@ -77,6 +77,13 @@ if {[info exists FPE_EXPORT_PATH]} {
 
 set directc_export_path $prog_export_path/DirectC
 
+if {[info exists SMARTHLS_ELF_EXPORT_PATH]} {
+    set smarthls_elf_export_path $SMARTHLS_ELF_EXPORT_PATH
+} else {
+    set smarthls_elf_export_path $prog_export_path/SmartHLS_Executables
+}
+file mkdir $smarthls_elf_export_path
+
 if {[info exists TOP_LEVEL_NAME]} {
     set top_level_name $TOP_LEVEL_NAME
 } else {
@@ -244,6 +251,7 @@ new_project \
 #
 set import_pdc_files "-io_pdc \"./constraints/base_design.pdc\""
 set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\""
+smartdesign -memory_map_drc_change_error_to_warning 1
 
 import_files \
     -convert_EDN_to_HDL 0 \

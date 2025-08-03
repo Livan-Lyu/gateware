@@ -1,0 +1,35 @@
+From c990c3b3dbdda133f617575c8ba947ed1b2f2922 Mon Sep 17 00:00:00 2001
+From: Brian Burke <Brian.Burke@microchip.com>
+Date: Mon, 20 Oct 2025 09:28:45 +0100
+Subject: [PATCH] Set sin_performance as function name
+
+Signed-off-by: Brian Burke <Brian.Burke@microchip.com>
+---
+ math/examples/riscv_tests/sin_performance/sources/test.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/math/examples/riscv_tests/sin_performance/sources/test.cpp b/math/examples/riscv_tests/sin_performance/sources/test.cpp
+index dc2c5cf..09d3bd4 100644
+--- a/math/examples/riscv_tests/sin_performance/sources/test.cpp
++++ b/math/examples/riscv_tests/sin_performance/sources/test.cpp
+@@ -10,7 +10,7 @@ using namespace hls::math;
+ 
+ #define THRESHOLD 0.1 // Error Threshold
+ 
+-void hls_test(float n[__N_ELEM], float vals[__N_ELEM]){
++void sin_performance(float n[__N_ELEM], float vals[__N_ELEM]){
+   #pragma HLS function top dataflow
+   #pragma HLS interface default type(axi_target)
+   #pragma HLS interface argument(vals) type(axi_initiator) num_elements(__N_ELEM)
+@@ -60,7 +60,7 @@ int main(){
+   double cmath1 = timestamp();
+ 
+   double hls_math0 = timestamp();
+-  hls_test(x, vals_fixpt);
++  sin_performance(x, vals_fixpt);
+   double hls_math1 = timestamp();
+ 
+   // Test accuracy of results:
+-- 
+2.25.1
+

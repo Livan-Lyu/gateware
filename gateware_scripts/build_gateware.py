@@ -98,7 +98,7 @@ def check_shls_tool_status():
         print("Error running 'shls -v':", e)
         sys.exit(1)
     except Exception as e:
-        print("An unexpected error occurred:", e)
+        print("SmartHLS has not been added to your path", e)
         sys.exit(1)
 
 # Perform package checks before any other imports
@@ -921,7 +921,7 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
             opt = option.split(':')
             if len(opt) == 2:
                 key, value = opt
-                if key.startswith('SMARTHLS'):
+                if key.startswith('SHLS'):
                     check_shls_tool_status()
 
     generate_gateware_overlays(os.path.join(gateware_top_dir, "sources", "FPGA-design"),

@@ -50,6 +50,7 @@ The YAML configuration files are located in the "build-options" directory:
 | minimal.yaml       | Minimal Linux system including Ethernet. No FPGA gateware.       |
 | picorv-apu.yaml    | Similar to default but adds an additional RV CPU core.           |
 | robotics.yaml      | Similar to default but supporting the Robotics cape.             |
+| sin-shls-apu.yaml  | Adds a SmartHLS core optimised for sin calculations. [More](sources/FPGA-design/script_support/components/APU/SMARTHLS/readme.md)|
 
 ## Supported Platforms
 The BeagleV Fire gateware builder has been tested on Ubuntu 20.04.
@@ -76,3 +77,8 @@ HSS:
 ```
 Patch files will be found by searching the `patches/<object>` directory (`hss` in this instance).  
 The `hss` fragment is the top-object name, "lower-cased".
+
+## SmartHLS Support
+[SmartHLS](https://www.microchip.com/en-us/products/fpgas-and-plds/fpga-and-soc-design-tools/smarthls-compiler) is a tool included with Libero that can automatically compile a C/C++ program into hardware described in Verilog HDL (Hardware Description Language). The generated hardware can then be integrated into the BeagleV Fire reference design.
+
+We have included an example design that uses SmartHLS in `build-options/sin-shls-apu.yaml`.

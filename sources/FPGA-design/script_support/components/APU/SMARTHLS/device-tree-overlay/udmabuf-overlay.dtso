@@ -1,0 +1,32 @@
+/dts-v1/;
+/plugin/;
+
+&{/chosen} {
+	overlays {
+		DEFAULT-SMARTHLS-GATEWARE = "2.0.2";
+	};
+};
+
+/ {
+
+    fragment@0 {
+        target-path="/";
+        __overlay__ {
+
+            mpfs_dma_proxy: mpfs-dma-proxy {
+                compatible = "microchip,mpfs-dma-proxy";
+                dmas = <&pdma 0>, <&pdma 1>, <&pdma 2>, <&pdma 3>;
+                dma-names = "dma-proxy0", "dma-proxy1", "dma-proxy2", "dma-proxy3";
+            };
+
+            udmabuf0 {
+                compatible = "ikwzm,u-dma-buf";
+                device-name = "udmabuf-ddr-nc-lb0";
+                minor-number = <0>;
+                size = <0x0 0x2000000>;
+                memory-region = <&dma_non_cached_low>;
+                sync-mode = <3>;
+            };
+        };
+    };
+};

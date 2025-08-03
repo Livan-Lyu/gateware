@@ -1,0 +1,39 @@
+---
+HSS:
+    type: git
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: next
+    commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
+    patches:
+        - 0001-Disable-annoying-debug-message.patch
+        - 0002-Bring-back-old-DESIGNVER-formatting.patch
+    make_clean: 0
+
+fpga-hls-libraries:
+    type: git
+    link: https://github.com/MicrochipTech/fpga-hls-libraries.git
+    branch: main
+    patches:
+         - 0001-beagle-sin-performance-base-address-0x6000_0000.patch
+         - 0002-beagle-fft-base-address-0x6050_0000.patch
+         - 0003-beagle-dsp-fix-test-utils-include-path.patch
+         - 0004-set-sin_performance-as-function-name.patch
+
+#fpga-hls-examples:
+#    type: git
+#    link: https://github.com/MicrochipTech/fpga-hls-examples.git
+#    branch: main
+
+gateware:
+    type: sources
+    build-args: "CAPE_OPTION:DEFAULT
+                   M2_OPTION:NONE
+             MIPI_CSI_OPTION:DEFAULT
+               SYZYGY_OPTION:DEFAULT
+                  APU_OPTION:SMARTHLS
+                      SHLS_0:../fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire"
+    unique-design-version: 7.0.0
+
+#SHLS_0:../fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire
+#SHLS_1:../fpga-hls-libraries/dsp/examples/riscv_tests/fft_demo/beaglev_fire
+#SHLS_2:../fpga-hls-examples/Canny_RISCV
