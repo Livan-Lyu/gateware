@@ -553,52 +553,40 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
         print("Board: " + board)
 
         xml_directory = os.path.join(hss_source, "boards", board, "soc_fpga_design", "xml")
-        
-        
-        # Get the first XML file found in the directory
-        xml_files = [f for f in os.listdir(xml_directory) if f.endswith(".xml")]
 
-        if xml_files:
-            target_xml_name = xml_files[0]  # Picks the first XML file found
-        else:
-            raise FileNotFoundError(f"No XML file found in {xml_directory}")
-
-        XML_file_abs_path = os.path.join(xml_directory, target_xml_name)
-        
-        # First, clean up any existing XML files in the target directory
         print(f"Cleaning up existing XML files in {xml_directory}")
         try:
             existing_xml_files = glob.glob(os.path.join(xml_directory, "*.xml"))
             for xml_file in existing_xml_files:
-                print(f"Removing {xml_file}")
-                os.remove(xml_file)
+                print(f"Emptying {xml_file}")
+                with open(xml_file, 'w') as f:
+                    f.truncate(0)
         except OSError as e:
             print(f"Error cleaning up XML files: {e}", flush=True)
             return None
 
-        # Copy the XML configuration file to the specified location
-        xml_selected = hss_info.get("xml")  # Extract XML info from hss_info
-        if xml_selected:  # If xml_selected is provided, use it
-            xml_files = glob.glob(os.path.join("sources", "FPGA-design", "script_support", "xml", xml_selected, "*.xml"))
+        generated_xml_files = glob.glob(os.path.join("work", "MSS", "*.xml"))
+        if not generated_xml_files:
+            print("Error: No generated XML files found.")
+            return None
         else:
-            xml_files = glob.glob(os.path.join("work", "MSS", "*.xml"))
+            # Get the single existing XML file that was emptied earlier
+            existing_xml_files = glob.glob(os.path.join(xml_directory, "*.xml"))
 
-        if xml_files:
-            generated_xml_file = os.path.normpath(xml_files[0])  # Normalize the path for safety
+            if len(existing_xml_files) != 1:
+                raise RuntimeError(f"Error: Expected exactly 1 XML file in directory, found {len(existing_xml_files)}")
+
+            target_xml_file = existing_xml_files[0]
+            generated_xml_file = generated_xml_files[0]  # Assuming first/only generated file
+
             try:
-                print(f"Copying new XML file from {generated_xml_file} to {os.path.normpath(XML_file_abs_path)}")
-                shutil.copyfile(generated_xml_file, os.path.normpath(XML_file_abs_path))
+                with open(generated_xml_file, 'r') as source:
+                    with open(target_xml_file, 'w') as target:
+                        target.write(source.read())
+                print(f"Copied contents from {generated_xml_file} to existing file {target_xml_file}")
             except IOError as e:
-                print(f"Error copying XML file: {e}", flush=True)
+                print(f"Error copying contents: {e}")
                 return None
-        else:
-            print("No MSS XML configuration file found in specified location")
-            return None
-
-        # Verify the XML file was copied successfully
-        if not os.path.exists(XML_file_abs_path):
-            print(f"XML file was not copied successfully to {XML_file_abs_path}", flush=True)
-            return None
 
         def_config_file_select = hss_info.get("def_config_examples")  
 
