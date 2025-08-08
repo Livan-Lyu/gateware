@@ -238,10 +238,10 @@ import_files \
     -fp_pdc "${constraint_path}/$board/NW_PLL.pdc" \
     -sdc "${constraint_path}/$board/fic_clocks.sdc" \
     -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$die/$package/$board/SYZYGY.pdc" \
-    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$die/$package/$board/cape.pdc" \
-    -io_pdc "./script_support/components/M2/$m2_option/constraints/$die/$package/$board/M2.pdc" \
-    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$die/$package/$board/SYZYGY.pdc" \
-    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/$die/$package/$board/MIPI_CSI_INTERFACE.pdc"
+    -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$board/cape.pdc" \
+    -io_pdc "./script_support/components/M2/$m2_option/constraints/$board/M2.pdc" \
+    -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$board/SYZYGY.pdc" \
+    -io_pdc "./script_support/components/MIPI_CSI/$mipi_csi_option/constraints/$board/MIPI_CSI_INTERFACE.pdc"
 
 #
 # // Generate base design
