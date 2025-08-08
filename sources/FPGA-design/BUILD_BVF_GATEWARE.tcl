@@ -237,7 +237,7 @@ import_files \
     -io_pdc "${constraint_path}/$board/base_design.pdc" \
     -fp_pdc "${constraint_path}/$board/NW_PLL.pdc" \
     -sdc "${constraint_path}/$board/fic_clocks.sdc" \
-    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$die/$package/$board/SYZYGY.pdc" \
+    -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$board/SYZYGY.pdc" \
     -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$board/cape.pdc" \
     -io_pdc "./script_support/components/M2/$m2_option/constraints/$board/M2.pdc" \
     -io_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/$board/SYZYGY.pdc" \
