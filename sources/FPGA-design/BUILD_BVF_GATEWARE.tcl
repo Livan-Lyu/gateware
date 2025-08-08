@@ -234,9 +234,9 @@ set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\
 
 import_files \
     -convert_EDN_to_HDL 0 \
-    -io_pdc "${constraint_path}/$die/$package/$board/base_design.pdc" \
-    -fp_pdc "${constraint_path}/$die/$package/$board/NW_PLL.pdc" \
-    -sdc "${constraint_path}/$die/$package/$board/fic_clocks.sdc" \
+    -io_pdc "${constraint_path}/$board/base_design.pdc" \
+    -fp_pdc "${constraint_path}/$board/NW_PLL.pdc" \
+    -sdc "${constraint_path}/$board/fic_clocks.sdc" \
     -fp_pdc "./script_support/components/SYZYGY/$syzygy_option/constraints/fp/$die/$package/$board/SYZYGY.pdc" \
     -io_pdc "./script_support/components/CAPE/$cape_option/constraints/$die/$package/$board/cape.pdc" \
     -io_pdc "./script_support/components/M2/$m2_option/constraints/$die/$package/$board/M2.pdc" \
