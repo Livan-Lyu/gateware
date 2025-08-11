@@ -11,5 +11,5 @@ HSS:
 gateware:
     type: sources
     build-args: "CAPE_OPTION:CLICK_BOARDS "
-    unique-design-version: 1.0.1
+    unique-design-version: 1.0.2
 

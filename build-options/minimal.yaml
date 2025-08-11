@@ -11,5 +11,5 @@ HSS:
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE CAPE_OPTION:NONE"
-    unique-design-version: 1.0.4
+    unique-design-version: 1.0.5
 

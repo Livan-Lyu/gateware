@@ -11,4 +11,5 @@ HSS:
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE CAPE_OPTION:COMMS_CAPE"
+    unique-design-version: 5.0.1
 

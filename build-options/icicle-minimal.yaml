@@ -8,7 +8,7 @@ HSS:
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE CAPE_OPTION:NONE"
-    unique-design-version: 0.0.1
+    unique-design-version: 0.0.2
 
 # In development
 # Won't be a separate yaml file in future for different boards - all HSS's will be in one repo

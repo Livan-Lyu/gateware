@@ -11,5 +11,5 @@ HSS:
 gateware:
     type: sources
     build-args: "M2_OPTION:PCIE_ONLY CAPE_OPTION:4_UARTS "
-    unique-design-version: 4.0.1
+    unique-design-version: 4.0.2
 
