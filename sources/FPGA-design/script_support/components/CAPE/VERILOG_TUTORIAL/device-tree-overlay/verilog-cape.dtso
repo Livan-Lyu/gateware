@@ -18,15 +18,10 @@
 		compatible = "microchip,core-gpio", "microchip,coregpio-rtl-v3";
 		reg = <0x0 0x41100000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
-		interrupt-parent = <&plic>;
 		gpio-controller;
 		#gpio-cells = <2>;
 		ngpios = <16>;
 		status = "okay";
-		interrupts = <129>, <130>, <131>, <132>,
-			     <133>, <134>, <135>, <136>,
-			     <137>, <138>, <139>, <140>,
-			     <141>, <142>, <143>, <144>;
 
 		gpio-line-names = "P8_31", "P8_32", "", "P8_34",
 				  "", "P8_36", "P8_37", "P8_38",
