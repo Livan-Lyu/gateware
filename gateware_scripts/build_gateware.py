@@ -491,11 +491,38 @@ def clone_sources(source_list):
 
 # Calls the MSS Configurator and generate an MSS configuration in a directory based on a cfg file
 def make_mss_config(mss_configurator, config_file, output_dir):
+    """Generate MSS configuration using the MSS Configurator tool.
+
+    Validates that expected output files are created and raises an exception if not.
+
+    Raises:
+        Exception: If MSS configuration generation fails or expected files aren't created
+    """
+
     print("================================================================================")
     print("                          Generating MSS configuration")
-    print("================================================================================\r\n", flush=True)
-    cmd = mss_configurator + ' -GENERATE -CONFIGURATION_FILE:' + config_file + ' -OUTPUT_DIR:' + output_dir
-    exe_sys_cmd(cmd)
+    print("================================================================================\n", flush=True)
+
+    cmd = f"{mss_configurator} -GENERATE -CONFIGURATION_FILE:{config_file} -OUTPUT_DIR:{output_dir}"
+
+    try:
+        exe_sys_cmd(cmd)
+
+        # Validate that expected output files were created
+        output_files = (
+            glob.glob(os.path.join(output_dir, "*.xml")) +
+            glob.glob(os.path.join(output_dir, "*.html")) +
+            glob.glob(os.path.join(output_dir, "*.cfg")) +
+            glob.glob(os.path.join(output_dir, "*.cxz"))
+        )
+
+        if not output_files:
+            raise Exception("No MSS configuration files were created")
+
+        print("MSS configuration completed successfully")
+
+    except Exception as e:
+        raise Exception(f"MSS configuration failed: {e}")
 
 
 # Builds the HSS using a pre-defined config file using SoftConsole in headless mode
@@ -919,7 +946,12 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
         sys.exit(1)
 
     work_mss_dir = os.path.join("work", "MSS")
-    make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
+
+    try:
+        make_mss_config(mss_configurator, mss_config_file_path, os.path.join(os.getcwd(), work_mss_dir))
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
 
     make_hss(sources["HSS"], build_options_input_yaml_file, board_options_yaml_arg)
 
