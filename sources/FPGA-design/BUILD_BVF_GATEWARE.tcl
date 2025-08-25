@@ -189,6 +189,19 @@ if {[info exists SPEED]} {
 }
 puts "SPEED: $speed"
 
+if {[info exists MSS_DDR]} {
+    set mss_ddr "$MSS_DDR"
+} else {
+    set mss_ddr "LPDDR4"
+}
+puts "MSS_DDR: $mss_ddr"
+
+if {[info exists MSS_DDR_WIDTH]} {
+    set mss_ddr_width "$MSS_DDR_WIDTH"
+} else {
+    set mss_ddr_width "32"
+}
+puts "MSS_DDR_WIDTH: $mss_ddr_width"
 
 source ./script_support/additional_configurations/functions.tcl
 

@@ -1,5 +1,10 @@
+ # Die and package configuration
 DIE: MPFS250T_ES
 PACKAGE: FCVG484
 DIE_VOLTAGE: 1.05
 PART_RANGE: EXT
 SPEED: STD
+
+# DDR configuration
+MSS_DDR: LPDDR4
+MSS_DDR_WIDTH: 32
