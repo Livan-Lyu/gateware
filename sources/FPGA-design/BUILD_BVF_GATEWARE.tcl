@@ -310,9 +310,11 @@ if !{[info exists ONLY_CREATE_DESIGN]} {
     run_tool -name {PLACEROUTE}
     run_tool -name {VERIFYTIMING}
     if {[info exists HSS_IMAGE_PATH]} {
-        create_eNVM_config "$local_dir/script_support/components/MSS/ENVM.cfg" "$HSS_IMAGE_PATH"
+        set envm_config_name [generate_temp_file 0]
+        puts "Temporary eNVM config: $envm_config_name"
+        create_eNVM_config "$envm_config_name" "$HSS_IMAGE_PATH"
         run_tool -name {GENERATEPROGRAMMINGDATA}
-        configure_envm -cfg_file {script_support/components/MSS/ENVM.cfg}
+        configure_envm -cfg_file $envm_config_name
         safe_source ./script_support/export_fns/export_spi_prog_file.tcl
        configure_spiflash -cfg_file {./script_support/spiflash.cfg} 
         run_tool -name {GENERATEPROGRAMMINGFILE} 
