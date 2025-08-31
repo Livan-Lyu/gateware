@@ -29,6 +29,17 @@ proc update_param {config param_to_update value_to_set} {
     close $config_file
 }
 
+proc generate_temp_file {keep} {
+    set chan [file tempfile filename]
+    if {!$keep} {
+        file delete $filename
+        close $chan
+        return $filename
+    } else {
+        return $chan
+    }
+}
+
 proc create_eNVM_config {config client} {
     set envm_config [open $config w]
     
