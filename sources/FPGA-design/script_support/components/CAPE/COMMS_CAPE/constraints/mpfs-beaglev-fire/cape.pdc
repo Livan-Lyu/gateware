@@ -133,77 +133,77 @@ set_io -port_name P9_PIN42	\
 
 #-------------------------------------------------------------------------------
 
-set_io -port_name P8_PIN3_USER_LED_0  \
+set_io -port_name {P8[3]}  \
     -pin_name V22       \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN4_USER_LED_1  \
+set_io -port_name {P8[4]}  \
     -pin_name W22        \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN5_USER_LED_2  \
+set_io -port_name {P8[5]}  \
     -pin_name V19       \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN6_USER_LED_3  \
+set_io -port_name {P8[6]}  \
     -pin_name V20        \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN7_USER_LED_4  \
+set_io -port_name {P8[7]}  \
     -pin_name V15        \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN8_USER_LED_5  \
+set_io -port_name {P8[8]}  \
     -pin_name V14       \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN9_USER_LED_6  \
+set_io -port_name {P8[9]}  \
     -pin_name V21       \
     -fixed true         \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN10_USER_LED_7  \
+set_io -port_name {P8[10]}  \
     -pin_name W21       \
     -fixed true          \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN11_USER_LED_8	\
+set_io -port_name {P8[11]}	\
     -pin_name Y21	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN12_USER_LED_9	\
+set_io -port_name {P8[12]}	\
     -pin_name Y20        \
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN13_USER_LED_10	\
+set_io -port_name {P8[13]}	\
     -pin_name B10	\
     -fixed true	\
     -io_std LVCMOS33  \
@@ -211,7 +211,7 @@ set_io -port_name P8_PIN13_USER_LED_10	\
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN14_USER_LED_11  \
+set_io -port_name {P8[14]}  \
     -pin_name B9	\
     -io_std LVCMOS33  \
     -fixed true          \
@@ -220,204 +220,204 @@ set_io -port_name P8_PIN14_USER_LED_11  \
     -DIRECTION INOUT
 
 
-set_io -port_name P8_PIN15  \
+set_io -port_name {P8[15]}  \
     -pin_name T12       \
     -fixed true          \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN16  \
+set_io -port_name {P8[16]}  \
     -pin_name U12        \
     -fixed true          \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN17  \
+set_io -port_name {P8[17]}  \
     -pin_name W13        \
     -fixed true          \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN18  \
+set_io -port_name {P8[18]}  \
     -pin_name T16       \
     -fixed true          \
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN19	\
+set_io -port_name {P8[19]}	\
     -pin_name W18	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN20	\
+set_io -port_name {P8[20]}	\
     -pin_name R16	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN21	\
+set_io -port_name {P8[21]}	\
     -pin_name AA21	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN22	\
+set_io -port_name {P8[22]}	\
     -pin_name AA22	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN23	\
+set_io -port_name {P8[23]}	\
     -pin_name AB18	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN24	\
+set_io -port_name {P8[24]}	\
     -pin_name AA18	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN25	\
+set_io -port_name {P8[25]}	\
     -pin_name V17	\
     -fixed true	\
     -OUT_DRIVE 12       \
     -RES_PULL None      \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN26  \
+set_io -port_name {P8[26]}  \
     -pin_name A12        \
     -fixed true          \
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN27	\
+set_io -port_name {P8[27]}	\
     -pin_name A13	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN28	\
+set_io -port_name {P8[28]}	\
     -pin_name B14	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN29	\
+set_io -port_name {P8[29]}	\
     -pin_name B13	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN30	\
+set_io -port_name {P8[30]}	\
     -pin_name D14	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN31	\
+set_io -port_name {P8[31]}	\
     -pin_name D13	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN32	\
+set_io -port_name {P8[32]}	\
     -pin_name B15	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN33	\
+set_io -port_name {P8[33]}	\
     -pin_name A15	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN34	\
+set_io -port_name {P8[34]}	\
     -pin_name C15	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN35	\
+set_io -port_name {P8[35]}	\
     -pin_name C14	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN36	\
+set_io -port_name {P8[36]}	\
     -pin_name B4	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN37	\
+set_io -port_name {P8[37]}	\
     -pin_name C4	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN38	\
+set_io -port_name {P8[38]}	\
     -pin_name C17	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN39	\
+set_io -port_name {P8[39]}	\
     -pin_name B17	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN40	\
+set_io -port_name {P8[40]}	\
     -pin_name B18	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN41	\
+set_io -port_name {P8[41]}	\
     -pin_name A18	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN42	\
+set_io -port_name {P8[42]}	\
     -pin_name D6	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN43	\
+set_io -port_name {P8[43]}	\
     -pin_name D7	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN44	\
+set_io -port_name {P8[44]}	\
     -pin_name D8	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN45	\
+set_io -port_name {P8[45]}	\
     -pin_name D9	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P8_PIN46	\
+set_io -port_name {P8[46]}	\
     -pin_name D18	\
     -fixed true	\
     -io_std LVCMOS33  \
