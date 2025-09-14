@@ -1,72 +1,84 @@
 
-set_io -port_name P9_11	\
+set_io -port_name {P9[11]}	\
     -pin_name B5	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN12	\
+set_io -port_name {P9[12]}	\
     -pin_name C5	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN13	\
+set_io -port_name {P9[13]}	\
     -pin_name D19	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN14	\
+set_io -port_name {P9[14]}	\
     -pin_name C6	\
     -fixed true	\
     -io_std LVCMOS33  \
-    -DIRECTION OUT
+    -DIRECTION INOUT
 
-set_io -port_name P9_PIN15	\
+set_io -port_name {P9[15]}	\
     -pin_name A5	    \
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN16	\
+set_io -port_name {P9[16]}	\
     -pin_name A6	\
     -fixed true	\
     -io_std LVCMOS33  \
-    -DIRECTION OUT
+    -DIRECTION INOUT
 
-set_io -port_name P9_PIN23	\
+set_io -port_name {P9[17]}	\
+    -pin_name C9	\
+    -fixed true	\
+    -io_std LVCMOS33  \
+    -DIRECTION INOUT
+
+set_io -port_name {P9[18]}	\
+    -pin_name C10	\
+    -fixed true	\
+    -io_std LVCMOS33  \
+    -DIRECTION INOUT
+
+set_io -port_name P9_23	\
     -pin_name C12	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN25	\
+set_io -port_name P9_25	\
     -pin_name B7	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN27	\
+set_io -port_name P9_27	\
     -pin_name D11	\
     -fixed true	\
     -io_std LVCMOS33  \
     -RES_PULL None      \
     -DIRECTION INPUT
 
-set_io -port_name P9_PIN30	\
+set_io -port_name P9_30	\
     -pin_name F16	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN41	\
+set_io -port_name P9_41	\
     -pin_name E15	\
     -fixed true	\
     -io_std LVCMOS33  \
     -DIRECTION INOUT
 
-set_io -port_name P9_PIN42	\
+set_io -port_name P9_42	\
     -pin_name E14	\
     -fixed true	\
     -io_std LVCMOS33  \

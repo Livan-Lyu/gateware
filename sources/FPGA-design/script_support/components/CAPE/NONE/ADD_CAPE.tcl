@@ -8,6 +8,10 @@ set sd_name ${top_level_name}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_11} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_13} -port_direction {OUT}
 
+sd_create_bus_port -sd_name ${sd_name} -port_name {P8} -port_direction {OUT} -port_range {[14:3]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {P9} -port_direction {INOUT} -port_range {[20:19]} -port_is_pad {1}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {P9} -pin_slices {[20] [19]}
+
 
 #-------------------------------------------------------------------------------
 # Instantiate.
@@ -16,6 +20,9 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_13} -port_direction {OU
 #-------------------------------------------------------------------------------
 # Connections.
 #-------------------------------------------------------------------------------
+
+sd_delete_ports -sd_name ${sd_name} -port_names {P9_19}
+sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 
 
 # Clocks and resets

@@ -16,8 +16,8 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {PRESETN} -port_direction {
 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PREADY} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PSLVERR} -port_direction {OUT}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN14} -port_direction {OUT}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN16} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_14} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_16} -port_direction {INOUT} -port_is_pad {1}
 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN12} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN13} -port_direction {INOUT} -port_is_pad {1}
@@ -154,10 +154,10 @@ sd_update_instance -sd_name {P9_GPIO} -instance_name {CoreGPIO_P9_0}
 sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_0} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_1} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_2} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_4} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_3} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_5} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_6} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD} -port_direction {INOUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name {P9_GPIO} -port_name {PAD_7} -port_direction {INOUT} -port_is_pad {1}
 
 sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_0}
 sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_1}
@@ -168,31 +168,31 @@ sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBU
 sd_instantiate_macro -sd_name {P9_GPIO} -macro_name {BIBUF} -instance_name {BIBUF_7}
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:D" "CoreGPIO_P9_0:GPIO_OUT[0:0]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:E" "CoreGPIO_P9_0:GPIO_OE[0:0]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:PAD" "PAD" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:PAD" "PAD_0" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_0:Y" "CoreGPIO_P9_0:GPIO_IN[0:0]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:D" "CoreGPIO_P9_0:GPIO_OUT[1:1]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:E" "CoreGPIO_P9_0:GPIO_OE[1:1]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:PAD" "PAD_0" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:PAD" "PAD_1" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_1:Y" "CoreGPIO_P9_0:GPIO_IN[1:1]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:D" "CoreGPIO_P9_0:GPIO_OUT[2:2]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:E" "CoreGPIO_P9_0:GPIO_OE[2:2]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:PAD" "PAD_1" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:PAD" "PAD_2" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_2:Y" "CoreGPIO_P9_0:GPIO_IN[2:2]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:D" "CoreGPIO_P9_0:GPIO_OUT[3:3]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:E" "CoreGPIO_P9_0:GPIO_OE[3:3]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:PAD" "PAD_2" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:PAD" "PAD_3" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_3:Y" "CoreGPIO_P9_0:GPIO_IN[3:3]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:D" "CoreGPIO_P9_0:GPIO_OUT[5:5]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:E" "CoreGPIO_P9_0:GPIO_OE[5:5]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:PAD" "PAD_4" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:PAD" "PAD_5" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_5:Y" "CoreGPIO_P9_0:GPIO_IN[5:5]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:D" "CoreGPIO_P9_0:GPIO_OUT[6:6]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:E" "CoreGPIO_P9_0:GPIO_OE[6:6]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:PAD" "PAD_5" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:PAD" "PAD_6" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_6:Y" "CoreGPIO_P9_0:GPIO_IN[6:6]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:D" "CoreGPIO_P9_0:GPIO_OUT[7:7]" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:E" "CoreGPIO_P9_0:GPIO_OE[7:7]" }
-sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:PAD" "PAD_6" }
+sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:PAD" "PAD_7" }
 sd_connect_pins -sd_name {P9_GPIO} -pin_names {"BIBUF_7:Y" "CoreGPIO_P9_0:GPIO_IN[7:7]" }
 
 sd_delete_instances -sd_name {P9_GPIO} -instance_names {GPIO_1_BIBUF}
@@ -270,27 +270,27 @@ sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[9:9]}
 # Add scalar net connections
 sd_create_scalar_net -sd_name ${sd_name} -net_name {P9_12}
 sd_create_scalar_net -sd_name ${sd_name} -net_name {P9_PIN15}
-sd_connect_net_to_pins -sd_name ${sd_name} -net_name {P9_12} -pin_names {"P9_GPIO_0:PAD" "P9_PIN12" }
-sd_connect_net_to_pins -sd_name ${sd_name} -net_name {P9_PIN15} -pin_names {"P9_GPIO_0:PAD_5" "P9_PIN41" }
+sd_connect_net_to_pins -sd_name ${sd_name} -net_name {P9_12} -pin_names {"P9_GPIO_0:PAD_0" "P9_PIN12" }
+sd_connect_net_to_pins -sd_name ${sd_name} -net_name {P9_PIN15} -pin_names {"P9_GPIO_0:PAD_6" "P9_PIN41" }
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_0_PAD" "P8[3]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_11_PAD" "P8[14]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_14_PAD" "P8[17]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_15_PAD" "P8[18]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_17_PAD" "P8[20]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_18_PAD" "P8[21]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_19_PAD" "P8[22]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_1_PAD" "P8[4]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_20_PAD" "P8[23]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_21_PAD" "P8[24]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_22_PAD" "P8[25]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_23_PAD" "P8[26]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_2_PAD" "P8[5]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_3_PAD" "P8[6]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_4_PAD" "P8[7]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_5_PAD" "P8[8]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_6_PAD" "P8[9]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_7_PAD" "P8[10]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_11_PAD" "P8[14]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_14_PAD" "P8[17]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_15_PAD" "P8[18]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_17_PAD" "P8[20]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_18_PAD" "P8[21]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_19_PAD" "P8[22]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_20_PAD" "P8[23]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_21_PAD" "P8[24]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_22_PAD" "P8[25]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_23_PAD" "P8[26]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_0_PAD" "P8[31]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_12_PAD" "P8[43]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_13_PAD" "P8[44]" }
@@ -303,13 +303,11 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_6_PAD" "P8
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_7_PAD" "P8[38]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PCLK" "P9_GPIO_0:PCLK" "PCLK" "PWM_0:PCLK" "PWM_1:PCLK" "apb_rotary_enc_0:pclk" "servos_0:pclk" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PRESETN" "P9_GPIO_0:PRESETN" "PRESETN" "PWM_0:PRESETN" "PWM_1:PRESETN" "apb_rotary_enc_0:presetn" "servos_0:presetn" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_0" "P9_PIN15" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_1" "P9_PIN23" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_2" "P9_PIN25" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_4" "P9_PIN30" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_6" "P9_PIN13" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_PIN14" "PWM_0:PWM_0" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_PIN16" "PWM_0:PWM_1" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_1" "P9_PIN15" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_2" "P9_PIN23" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_3" "P9_PIN25" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_5" "P9_PIN30" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:PAD_7" "P9_PIN13" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_PIN27" "apb_rotary_enc_0:enc0_b" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_PIN42" "apb_rotary_enc_0:enc0_a" }
 
@@ -414,6 +412,9 @@ sd_mark_pins_unused -sd_name ${sd_name} -pin_names {GPIO_42_BIBUF:Y}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"GPIO_42_BIBUF:D" "servos_0:servos_out[7]" }
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {GPIO_42_BIBUF:E} -value {VCC}
 
+sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {P9_14_BIBUF}
+sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {P9_16_BIBUF}
+
 # Add bus net connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_IN" "GPIO_IN" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_OE" "GPIO_OE" }
@@ -430,6 +431,16 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave2" "P9
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "apb_rotary_enc_0:APB_TARGET" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave4" "PWM_0:APBslave" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave5" "PWM_1:APBslave" }
+
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_14_BIBUF:PAD" "P9_14"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_14_BIBUF:D" "PWM_1:PWM_0"}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {P9_14_BIBUF:Y}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {P9_14_BIBUF:E} -value {VCC}
+
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_16_BIBUF:PAD" "P9_16"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_16_BIBUF:D" "PWM_1:PWM_1"}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {P9_16_BIBUF:Y}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {P9_16_BIBUF:E} -value {VCC}
 
 # Re-enable auto promotion of pins of type 'pad'
 auto_promote_pad_pins -promote_all 1

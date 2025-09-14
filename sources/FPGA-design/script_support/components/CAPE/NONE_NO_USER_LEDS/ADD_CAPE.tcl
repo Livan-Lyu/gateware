@@ -8,6 +8,8 @@ set sd_name ${top_level_name}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_11} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_13} -port_direction {OUT}
 
+sd_create_bus_port -sd_name ${sd_name} -port_name {P9} -port_direction {INOUT} -port_range {[20:19]} -port_is_pad {1}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {P9} -pin_slices {[20] [19]}
 
 #-------------------------------------------------------------------------------
 # Instantiate.
@@ -16,6 +18,9 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_13} -port_direction {OU
 #-------------------------------------------------------------------------------
 # Connections.
 #-------------------------------------------------------------------------------
+
+sd_delete_ports -sd_name ${sd_name} -port_names {P9_19}
+sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:MMUART_4_TXD" "P9_13"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:MMUART_4_RXD" "P9_11"}
@@ -31,3 +36,5 @@ sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:GPIO_2_O
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_1_AXI4_INITIATOR} 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_1_AXI4_TARGET} 
 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[19]" "BVF_RISCV_SUBSYSTEM:I2C0_SCL"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[20]" "BVF_RISCV_SUBSYSTEM:I2C0_SDA"}
