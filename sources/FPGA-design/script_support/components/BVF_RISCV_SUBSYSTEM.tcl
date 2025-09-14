@@ -100,17 +100,7 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {PHY_MDIO} -port_direction 
 #-------------------------------------------------------------------------------
 # Fabric interrupts
 #-------------------------------------------------------------------------------
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_3_7} -port_direction {IN} -port_range {[7:3]} 
-
-
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_A} -port_direction {IN} -port_range {[15:8]} 
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_B} -port_direction {IN} -port_range {[23:16]} 
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_C} -port_direction {IN} -port_range {[31:24]} 
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_D} -port_direction {IN} -port_range {[39:32]} 
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_E} -port_direction {IN} -port_range {[47:40]} 
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_F} -port_direction {IN} -port_range {[55:48]} 
-
-sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M_56_58} -port_direction {IN} -port_range {[58:56]} 
+sd_create_bus_port -sd_name ${sd_name} -port_name {MSS_INT_F2M} -port_direction {IN} -port_range {[58:3]} 
 
 #-------------------------------------------------------------------------------
 # User LEDs
@@ -151,28 +141,14 @@ sd_instantiate_component -sd_name ${sd_name} -component_name ${mss_component_nam
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[0]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[1]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[2]}
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[7:3]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[15:8]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[23:16]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[31:24]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[39:32]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[47:40]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[55:48]"} 
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[58:56]"} 
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {"[58:3]"} 
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[59]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[60]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[61]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[62]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {PF_SOC_MSS:MSS_INT_F2M} -pin_slices {[63]}
 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_3_7" "PF_SOC_MSS:MSS_INT_F2M[7:3]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_A" "PF_SOC_MSS:MSS_INT_F2M[15:8]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_B" "PF_SOC_MSS:MSS_INT_F2M[23:16]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_C" "PF_SOC_MSS:MSS_INT_F2M[31:24]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_D" "PF_SOC_MSS:MSS_INT_F2M[39:32]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_E" "PF_SOC_MSS:MSS_INT_F2M[47:40]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_F" "PF_SOC_MSS:MSS_INT_F2M[55:48]"} 
-sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M_56_58" "PF_SOC_MSS:MSS_INT_F2M[58:56]"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"MSS_INT_F2M" "PF_SOC_MSS:MSS_INT_F2M[58:3]"} 
 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {PF_SOC_MSS:MSS_INT_M2F}
 #sd_mark_pins_unused -sd_name ${sd_name} -pin_names {PF_SOC_MSS:FIC_2_AXI4_TARGET}
