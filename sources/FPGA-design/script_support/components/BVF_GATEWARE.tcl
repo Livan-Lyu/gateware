@@ -15,15 +15,13 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_CLK} -port_direction 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DIR} -port_direction {IN} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_NXT} -port_direction {IN} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_STP} -port_direction {OUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA0} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA1} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA2} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA3} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA4} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA5} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA6} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_DATA7} -port_direction {INOUT} -port_is_pad {1}
+sd_create_bus_port -sd_name ${sd_name} -port_name {USB0_DATA} -port_direction {INOUT} -port_range {[7:0]} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {USB0_OCn} -port_direction {IN} 
+
+sd_create_scalar_port -sd_name ${sd_name} -port_name {EMMC_CLK} -port_direction {OUT} -port_is_pad {1}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {EMMC_CMD} -port_direction {INOUT} -port_is_pad {1}
+sd_create_bus_port -sd_name ${sd_name} -port_name {EMMC_DATA} -port_direction {INOUT} -port_range {[7:0]} -port_is_pad {1}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {EMMC_RSTN} -port_direction {OUT} -port_is_pad {1}
 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {UART0_TXD} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {UART0_RXD} -port_direction {IN}
@@ -120,8 +118,11 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:SD_DET" "SD
 #-------------------------------------------------------------------------------
 # eMMC
 #-------------------------------------------------------------------------------
-sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {BVF_RISCV_SUBSYSTEM:EMMC} -port_name {} 
 sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {BVF_RISCV_SUBSYSTEM:EMMC_IN} -port_name {} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:EMMC_CLK" "EMMC_CLK" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:EMMC_CMD" "EMMC_CMD" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:EMMC_DATA" "EMMC_DATA" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:EMMC_RSTN" "EMMC_RSTN" }
 
 #-------------------------------------------------------------------------------
 # Connect ADC.
@@ -161,17 +162,12 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"SGMII_TX1_P" "BVF_RISCV_SUBSYST
 #-------------------------------------------------------------------------------
 sd_connect_pins -sd_name ${sd_name} -pin_names {"USB0_OCn" "BVF_RISCV_SUBSYSTEM:USB_OCn" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_CLK" "USB0_CLK" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA0" "USB0_DATA0" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA1" "USB0_DATA1" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA2" "USB0_DATA2" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA3" "USB0_DATA3" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA4" "USB0_DATA4" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA5" "USB0_DATA5" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA6" "USB0_DATA6" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA7" "USB0_DATA7" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DATA" "USB0_DATA" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_DIR" "USB0_DIR" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_NXT" "USB0_NXT" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:USB_STP" "USB0_STP" }
+sd_create_pin_group -sd_name ${sd_name} -instance_name {BVF_RISCV_SUBSYSTEM} \
+    -group_name {USB_IN} -pin_names {"USB_OCn" "USB_CLK" "USB_DIR" "USB_NXT"}
 
 
 #-------------------------------------------------------------------------------
