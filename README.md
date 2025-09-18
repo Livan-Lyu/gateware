@@ -39,16 +39,40 @@ python3 build-bitstream.py ./build-options/default.yaml
 
 
 ### YAML Configuration Files
-The YAML configuration files are located in the "build-options" directory.
+The YAML configuration files are located in the "build-options" directory:
 
-| Configuration File | Description                                                |
-| ------------------ | ---------------------------------------------------------- |
-| default.yaml       | Default gateware including default cape and M.2 interface. |
-| minimal.yaml       | Minimal Linux system including Ethernet. No FPGA gateware. |
-| robotics.yaml      | Similar to default but supporting the Robotics cape.       |
+| Configuration File | Description                                                      |
+| ------------------ | ---------------------------------------------------------------- |
+| cape-4-uarts.yaml  | Similar to default but with all 4 serial ports routed.           |
+| cape-comms.yaml    | Similar to default but supporting the Comms cape. No M.2.        |
+| click-boards.yaml  | Similar to default but supporting the Click cape.                |
+| default.yaml       | Default gateware including default cape and M.2 interface.       |
+| minimal.yaml       | Minimal Linux system including Ethernet. No FPGA gateware.       |
+| picorv-apu.yaml    | Similar to default but adds an additional RV CPU core.           |
+| robotics.yaml      | Similar to default but supporting the Robotics cape.             |
 
 ## Supported Platforms
 The BeagleV Fire gateware builder has been tested on Ubuntu 20.04.
 
 ## Microchip bitstream-builder
-The BeagleV-Fire gateware builder is derived from [Microchip's bitstream-builder ](https://github.com/polarfire-soc/icicle-kit-minimal-bring-up-design-bitstream-builder). We recommend that you use either of these scripts as a starting point for your own PolarFire SoC FPGA designs as opposed to using Libero in isolation.
+The BeagleV-Fire gateware builder is derived from [Microchip's bitstream-builder](https://github.com/polarfire-soc/icicle-kit-minimal-bring-up-design-bitstream-builder).  
+We recommend that you use either of these scripts as a starting point for your own PolarFire SoC FPGA designs as opposed to using Libero in isolation.
+
+### New options for YAML Configuration
+The configuration item of `type: git` now supports a `patches` array, which can be used to apply  
+git formatted patches as needed, in case you don't have access to the referenced repository.
+
+An example of the formatting can be seen below:
+```yaml
+HSS:
+    type: git
+    link: https://github.com/polarfire-soc/hart-software-services.git
+    branch: next
+    commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
+    patches:
+        - 0001-Disable-annoying-debug-message.patch
+        - 0002-Bring-back-old-DESIGNVER-formatting.patch
+    make_clean: 0
+```
+Patch files will be found by searching the `patches/<object>` directory (`hss` in this instance).  
+The `hss` fragment is the top-object name, "lower-cased".
