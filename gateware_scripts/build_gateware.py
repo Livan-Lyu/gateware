@@ -732,17 +732,24 @@ def get_design_version(source_list):
 
     # Read previous version from file if it exists
     previous_design_version = None
+    previous_source_file = None
+
+    # Parse the previous design version and source file, if available
     if os.path.exists(version_file):
         with open(version_file, "r") as vf:
             try:
-                previous_design_version = int(vf.read().strip())
-            except ValueError:
-                print("Warning: Invalid value in design_version.yaml")
+                data = yaml.safe_load(vf)
+                previous_design_version = data.get("design_version")
+                previous_source_file = data.get("source_file")
+            except Exception as e:
+                print(f"Warning: Could not read {version_file}: {e}")
 
     with open(source_list) as f:  # open the yaml file passed as an arg
         data = yaml.load(f, Loader=yaml.FullLoader)
         unique_design_version = data.get("gateware").get("unique-design-version")
         f.close()
+
+    source_changed = previous_source_file != source_list
 
     if unique_design_version is None:
         now = datetime.datetime.now()
@@ -751,6 +758,8 @@ def get_design_version(source_list):
     else:
         try:
             udv_sl = unique_design_version.split(".")
+            if len(udv_sl) != 3:
+                raise ValueError("Invalid format")
             design_version = (int(udv_sl[0]) * 1000) + (int(udv_sl[1]) * 10) + int(udv_sl[2])
         except (ValueError, AttributeError):
             print("Error: Invalid value for unique-design-version in ", source_list )
@@ -760,52 +769,56 @@ def get_design_version(source_list):
     # FPGA design version number stored in Polarfire SoC devices is 16 bits long.
     design_version = design_version % 65536
 
-    # Prevent version downgrade
-    if previous_design_version is not None and previous_design_version > design_version:
-        design_version = previous_design_version
+    # Handle version logic based on whether source changed
+    if not source_changed:
+        print("Same source file used as before, checking design version")
+        # Prevent version downgrade
+        if previous_design_version is not None and previous_design_version > design_version:
+            design_version = previous_design_version
 
-    print("Design version: ", design_version)
+        # Warn if unchanged and handle user input
+        if previous_design_version is not None and previous_design_version >= design_version:
+            print(f"WARNING: The design version {design_version} is the same as or less than the previously used one ({previous_design_version}).")
+            print("WARNING: The gateware will not be updated unless the design version is different.")
 
-    # Warn if unchanged
-    if previous_design_version is not None and previous_design_version >= design_version:
-        print(f"WARNING: The design version {design_version} is the same as the previously used one.")
-        print("Note: The gateware will not be updated unless the design version is different.")
-
-        # Use previous_design_version for auto-increment when it exists
-        if previous_design_version is not None:
+            # Use previous_design_version for auto-increment when it exists
             incremented_version = previous_design_version
-        else:
-            incremented_version = design_version
-        prompt = f"Enter new version number (X.Y.Z format), 'n' to keep current version, or <Enter> to auto-increment to ({incremented_version + 1}): "
-        response = input(prompt).strip().lower()
+            prompt = f"Enter new version number (X.Y.Z format), 'n' to keep current version, or <Enter> to auto-increment to ({incremented_version + 1}): "
+            response = input(prompt).strip().lower()
 
-        if response == "":
-            design_version = (incremented_version + 1) % 65536
-            print(f"Auto-incremented version: {design_version}")
-        elif response == "n":
-            print(f"Keeping existing design version: {design_version}")
-        else:
-            try:
-                # Check if input is in X.Y.Z format
-                if "." in response:
-                    parts = response.split(".")
-                    if len(parts) == 3:
-                        design_version = (int(parts[0]) * 1000) + (int(parts[1]) * 10) + int(parts[2])
-                        design_version = design_version % 65536
-                        print(f"Using user-specified version: {design_version}")
+            if response == "":
+                design_version = (incremented_version + 1) % 65536
+                print(f"Auto-incremented version: {design_version}")
+            elif response == "n":
+                print(f"Keeping existing design version: {design_version}")
+            else:
+                try:
+                    # Check if input is in X.Y.Z format
+                    if "." in response:
+                        parts = response.split(".")
+                        if len(parts) == 3:
+                            design_version = (int(parts[0]) * 1000) + (int(parts[1]) * 10) + int(parts[2])
+                            design_version = design_version % 65536
+                            print(f"Using user-specified version: {design_version}")
+                        else:
+                            raise ValueError("Invalid X.Y.Z format")
                     else:
-                        raise ValueError("Invalid X.Y.Z format")
-                else:
-                    design_version = int(response) % 65536
-                    print(f"Using user-specified version: {design_version}")
-            except ValueError:
-                print("Invalid input. Keeping the original design version.")
+                        design_version = int(response) % 65536
+                        print(f"Using user-specified version: {design_version}")
+                except ValueError:
+                    print("Invalid input. Keeping the original design version.")
+    else:
+        print("Different source file detected")
 
-
-
-    # Save current version to file
-    with open(version_file, "w") as vf:
-        vf.write(str(design_version))
+    # Save current version and source file info
+    try:
+        with open(version_file, "w") as vf:
+            yaml.safe_dump({
+                "design_version": design_version,
+                "source_file": source_list
+            }, vf)
+    except Exception as e:
+        print(f"Warning: Could not save version file: {e}")
 
     print("Design version:", design_version)
     return str(design_version)
