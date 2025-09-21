@@ -19,8 +19,7 @@
 			  "", "", "", "", "",
 			  "", "", "", "", "",
 			  "",
-			  "M2_W_DISABLE1", "M2_W_DISABLE2",
-			  "VIO_ENABLE", "SD_DET";
+			  "", "", "VIO_ENABLE", "SD_DET";
 };
 
 &mmuart4 {
