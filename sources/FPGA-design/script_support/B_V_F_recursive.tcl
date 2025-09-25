@@ -1,17 +1,8 @@
-if {[file isdirectory $local_dir/script_support/components/MSS]} {
-    file delete -force $local_dir/script_support/components/MSS
-}
-file mkdir $local_dir/script_support/components/MSS
-
-set cfg_file [glob -nocomplain $local_dir/../MSS_Configuration/$die/$package/$board/*.cfg]
-exec $mss_config_loc -GENERATE -CONFIGURATION_FILE:$cfg_file -OUTPUT_DIR:$local_dir/script_support/components/MSS
-
-set mss_component_file [glob -nocomplain $local_dir/script_support/components/MSS/*.cxz]
-set mss_component_name [file rootname [file tail $mss_component_file]]
-
+import_mss_component -file $MSS_COMPONENT_PATH
+set mss_component_name [file rootname [file tail $MSS_COMPONENT_PATH]]
 puts "MSS filename: $mss_component_name"
 
-import_mss_component -file $mss_component_file
+
 ::safe_source script_support/hdl_source.tcl
 ::safe_source script_support/components/CLOCKS_AND_RESETS/CORERESET_0.tcl
 ::safe_source script_support/components/CLOCKS_AND_RESETS/INIT_MONITOR.tcl 

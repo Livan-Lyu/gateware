@@ -834,8 +834,8 @@ def get_top_level_name():
 
 
 # Calls Libero and runs a script
-def call_libero(libero, script, script_args, project_location, hss_image_location, prog_export_path, top_level_name, design_version):
-    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " DESIGN_VERSION:" + design_version + "\""
+def call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, design_version):
+    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " MSS_COMPONENT_PATH:" + mss_component_file_location + " DESIGN_VERSION:" + design_version + "\""
     exe_sys_cmd(libero_cmd)
 
 
@@ -857,12 +857,22 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
         script_args += " "
 
     hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
+
+    mss_dir = os.path.abspath(os.path.join(project_location, "..", "MSS"))
+    cxz_files = glob.glob(os.path.join(mss_dir, "*.cxz"))
+    if not cxz_files:
+        raise FileNotFoundError(f"No .cxz files found in {mss_dir}")
+    if len(cxz_files) > 1:
+        raise RuntimeError(f"More than one .cxz file found in {mss_dir}: {cxz_files}")
+
+    mss_component_file_location = cxz_files[0]
+
     prog_export_path = os.path.join("..", "..", build_dir_path)
 
     top_level_name = get_top_level_name()
     print("top level name: ", top_level_name)
 
-    call_libero(libero, script, script_args, project_location, hss_image_location, prog_export_path, top_level_name, design_version)
+    call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, design_version)
     os.chdir(initial_directory)
 
 
