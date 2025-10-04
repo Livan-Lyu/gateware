@@ -75,7 +75,7 @@ set_io -port_name P9_24	\
     -io_std LVCMOS33  \
     -DIRECTION OUTPUT
 
-set_io -port_name P9_PIN25	\
+set_io -port_name P9_25	\
     -pin_name B7	\
     -fixed true	\
     -io_std LVCMOS33  \
