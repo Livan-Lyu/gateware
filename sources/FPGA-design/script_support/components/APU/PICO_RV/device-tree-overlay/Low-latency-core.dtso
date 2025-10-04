@@ -9,13 +9,17 @@
 		PICORV-CORE-GATEWARE = "GATEWARE_GIT_VERSION";
 	};
 };
-&{/} {
-	fabric-bus@40000000 {
-		fpgalsram: uio@60000000 {
-			compatible = "generic-uio";
-			linux,uio-name = "fpga_lsram"; //mandatory for program. If changed, please update program as well.
-			reg = <0x0 0x60000000 0x0 0x8000>;
-			status = "okay";
-		};
+
+&{/fabric-bus@40000000} {
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	fpgalsram: uio@60000000 {
+		compatible = "generic-uio";
+
+		linux,uio-name = "fpga_lsram"; //mandatory for program. If changed, please update program as well.
+		reg = <0x0 0x60000000 0x0 0x8000>;
+
+		status = "okay";
 	};
 };
