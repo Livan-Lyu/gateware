@@ -1,16 +1,5 @@
 puts "======== Add APU option: PICO_RV ========" 
 
-#-------------------------------------------------------------------------------
-# Import HDL source files
-#-------------------------------------------------------------------------------
-import_files -hdl_source {script_support/components/APU/PICO_RV/HDL/BVF_WRAPPER.v}
-import_files -hdl_source {script_support/components/APU/PICO_RV/HDL/IO_CONTROLLER.v}
-import_files -hdl_source {script_support/components/APU/PICO_RV/HDL/PICORV32.v}
-import_files -hdl_source {script_support/components/APU/PICO_RV/HDL/APB_CTRL.v}
-import_files -hdl_source {script_support/components/APU/PICO_RV/HDL/TOP_CONTROL.v}
-
-build_design_hierarchy
-
 create_hdl_core -file $project_dir/hdl/TOP_CONTROL.v -module {PICO_RV} -library {work} -package {}
 
 hdl_core_add_bif -hdl_core_name {PICO_RV} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {APB_TARGET} -signal_map {} 
@@ -26,9 +15,9 @@ hdl_core_assign_bif_signal -hdl_core_name {PICO_RV} -bif_name {APB_TARGET} -bif_
 #-------------------------------------------------------------------------------
 # Build APU submodules 
 #-------------------------------------------------------------------------------
-source script_support/components/APU/PICO_RV/COREAXI4INTERCONNECT_C0.tcl 
-source script_support/components/APU/PICO_RV/PF_SRAM_AHBL_AXI_C0.tcl 
-source script_support/components/APU/PICO_RV/APU.tcl
+::safe_source script_support/components/APU/PICO_RV/COREAXI4INTERCONNECT_C0.tcl 
+::safe_source script_support/components/APU/PICO_RV/PF_SRAM_AHBL_AXI_C0.tcl 
+::safe_source script_support/components/APU/PICO_RV/APU.tcl
 
 #-------------------------------------------------------------------------------
 # Build the APU module

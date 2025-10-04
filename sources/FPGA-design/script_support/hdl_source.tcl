@@ -7,6 +7,10 @@ import_files \
 
 set currentDir [pwd]
 
+foreach file [glob -nocomplain -type f "$currentDir/script_support/components/APU/$apu_option/HDL/*.v"] {
+    import_files -convert_EDN_to_HDL 0 -library {work} -hdl_source $file
+}
+
 foreach file [glob -nocomplain -type f "$currentDir/script_support/components/CAPE/$cape_option/HDL/*.v"] {
     import_files -convert_EDN_to_HDL 0 -library {work} -hdl_source $file
 }
