@@ -10,6 +10,6 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
-    build-args: "CAPE_OPTION:ROBOTICS "
+    build-args: "CAPE_OPTION:ROBOTICS"
     unique-design-version: 3.0.6
 

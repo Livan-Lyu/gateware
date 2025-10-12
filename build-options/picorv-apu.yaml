@@ -10,5 +10,7 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
+    build-args: "CAPE_OPTION:DEFAULT
+                   M2_OPTION:DEFAULT
+                  APU_OPTION:PICO_RV"
     unique-design-version: 6.0.1
-    build-args: "M2_OPTION:DEFAULT CAPE_OPTION:DEFAULT APU_OPTION:PICO_RV"

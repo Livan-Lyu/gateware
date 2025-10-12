@@ -10,6 +10,6 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
-    build-args: "CAPE_OPTION:CLICK_BOARDS "
+    build-args: "CAPE_OPTION:CLICK_BOARDS"
     unique-design-version: 1.0.2
 

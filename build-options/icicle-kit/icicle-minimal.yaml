@@ -7,7 +7,8 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
-    build-args: "M2_OPTION:NONE CAPE_OPTION:NONE"
+    build-args: "CAPE_OPTION:NONE
+                   M2_OPTION:NONE"
     unique-design-version: 0.0.2
 
 # In development

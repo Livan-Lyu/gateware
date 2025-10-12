@@ -10,5 +10,8 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
-    build-args: "CAPE_OPTION:GPIOS MIPI_CSI_OPTION:NONE M2_OPTION:BOARD_TESTS SYZYGY_OPTION:BOARD_TESTS_SEEED_STUDIO"
+    build-args: "CAPE_OPTION:GPIOS
+                   M2_OPTION:BOARD_TESTS
+             MIPI_CSI_OPTION:NONE
+               SYZYGY_OPTION:BOARD_TESTS_SEEED_STUDIO"
     unique-design-version: 0.0.4

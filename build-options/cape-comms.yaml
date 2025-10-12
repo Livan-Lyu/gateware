@@ -10,6 +10,7 @@ HSS:
     make_clean: 0
 gateware:
     type: sources
-    build-args: "M2_OPTION:NONE CAPE_OPTION:COMMS_CAPE"
+    build-args: "CAPE_OPTION:COMMS_CAPE
+                   M2_OPTION:NONE"
     unique-design-version: 5.0.1
 
