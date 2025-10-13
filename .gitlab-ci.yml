@@ -5,7 +5,7 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   tags:
-    - libero-soc-v2023.2
+    - libero-soc-v2024.2
   variables:
     BUILD_OPTIONS_DIRECTORY: "custom-fpga-design"
     REPO_UNDER_TEST: $CI_PROJECT_URL
