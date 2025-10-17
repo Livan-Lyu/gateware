@@ -37,9 +37,23 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_42} -port_direction {IN
 
 
 #-------------------------------------------------------------------------------
+# Transform the RISCV_SUBSYSTEM
+#-------------------------------------------------------------------------------
+set sd_name {BVF_RISCV_SUBSYSTEM}
+
+adapter::remove_pin "SPI_1_SS1"
+adapter::remove_pin "SPI_1_CLK"
+adapter::remove_pin "SPI_1_DI"
+adapter::remove_pin "SPI_1_DO"
+
+save_smartdesign -sd_name ${sd_name}
+sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
+generate_component -component_name ${sd_name}
+
+#-------------------------------------------------------------------------------
 # Instantiate.
 #-------------------------------------------------------------------------------
-
+set sd_name ${top_level_name}
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE} -instance_name {CAPE}
 
 #-------------------------------------------------------------------------------

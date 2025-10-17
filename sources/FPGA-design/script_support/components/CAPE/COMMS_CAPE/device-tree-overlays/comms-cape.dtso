@@ -86,20 +86,11 @@
 	symlink = "bone/uart/4";
 };
 
-&spi0 {
-	status = "okay";
-	symlink = "bone/spi/0";
-};
-
-&spi1 {
-	status = "okay";
-	symlink = "bone/spi/1";
-};
-
 &can1 {
 	status = "okay";
 };
 
-&qspi {
+&spi0 {
 	status = "okay";
+	symlink = "bone/spi/0";
 };

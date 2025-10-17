@@ -95,8 +95,3 @@
 	status = "okay";
 	symlink = "bone/spi/0";
 };
-
-&spi1 {
-	status = "okay";
-	symlink = "bone/spi/1";
-};

@@ -75,6 +75,11 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"MMUART_4_RXD_BIBUF:Y" "PF_SOC_M
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {MMUART_4_RXD_BIBUF:E} -value {GND}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {MMUART_4_RXD_BIBUF:D} -value {GND}
 
+adapter::remove_pin "SPI_1_SS1"
+adapter::remove_pin "SPI_1_CLK"
+adapter::remove_pin "SPI_1_DI"
+adapter::remove_pin "SPI_1_DO"
+
 save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}

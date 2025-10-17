@@ -90,7 +90,7 @@ HSS:
             - 0002-Bring-back-old-DESIGNVER-formatting.patch
         variants:
             default:
-                - 0003-Change-IOMUX-on-pad-30-32-and-33.patch
+                - 0003-IOMUX-SPI-1-drives-pins-30-32-and-33.patch
     make_clean: 0
 MSS:
     type: git

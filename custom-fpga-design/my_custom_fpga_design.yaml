@@ -2,17 +2,23 @@
 HSS:
     type: git
     link: https://github.com/polarfire-soc/hart-software-services.git
-    branch: master
-    commit: v2025.03
+    branch: next
+    commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
     depth: 1
     patches:
-        - 0001-Disable-annoying-debug-message.patch
-        - 0002-Bring-back-old-DESIGNVER-formatting.patch
+        common:
+            - 0001-Disable-annoying-debug-message.patch
+            - 0002-Bring-back-old-DESIGNVER-formatting.patch
+        variants:
+            default:
+                - 0003-IOMUX-SPI-1-drives-pins-30-32-and-33.patch
     make_clean: 1
 MSS:
     type: git
     local: sources/FPGA-design/mss.bundle
+    branch: default
 gateware:
     type: sources
-    build-args: "M2_OPTION:NONE CAPE_OPTION:VERILOG_TUTORIAL"
+    build-args: "M2_OPTION:NONE
+               CAPE_OPTION:VERILOG_TUTORIAL"
 

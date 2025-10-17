@@ -111,38 +111,6 @@ sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {SPI_0_DI_BIBUF:PAD} -port_
 
 
 
-# Add SPI_1_SS1_BIBUF instance
-sd_delete_ports -sd_name ${sd_name} -port_names {SPI_1_SS1}
-sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {SPI_1_SS1_BIBUF}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_SS1_OE_M2F SPI_1_SS1_BIBUF:E}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_SS_F2M SPI_1_SS1_BIBUF:Y}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_SS1_M2F SPI_1_SS1_BIBUF:D}
-sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {SPI_1_SS1_BIBUF:PAD} -port_name {SPI_1_SS1} 
-
-# Add SPI_1_CLK_BIBUF instance
-sd_delete_ports -sd_name ${sd_name} -port_names {SPI_1_CLK}
-sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {SPI_1_CLK_BIBUF}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_CLK_OE_M2F SPI_1_CLK_BIBUF:E}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_CLK_F2M SPI_1_CLK_BIBUF:Y}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_CLK_M2F SPI_1_CLK_BIBUF:D}
-sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {SPI_1_CLK_BIBUF:PAD} -port_name {SPI_1_CLK} 
-
-# Add SPI_1_DI_BIBUF instance
-sd_delete_ports -sd_name ${sd_name} -port_names {SPI_1_DI}
-sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {SPI_1_DI_BIBUF}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_DI_F2M SPI_1_DI_BIBUF:Y}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {SPI_1_DI_BIBUF:D} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {SPI_1_DI_BIBUF:E} -value {GND}
-sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {SPI_1_DI_BIBUF:PAD} -port_name {SPI_1_DI} 
-
-# Add SPI_1_DO_BIBUF instance
-sd_delete_ports -sd_name ${sd_name} -port_names {SPI_1_DO}
-sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {SPI_1_DO_BIBUF}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_DO_OE_M2F SPI_1_DO_BIBUF:E}
-sd_connect_pins -sd_name ${sd_name} -pin_names {PF_SOC_MSS:SPI_1_DO_M2F SPI_1_DO_BIBUF:D}
-sd_mark_pins_unused -sd_name ${sd_name} -pin_names {SPI_1_DO_BIBUF:Y}
-sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {SPI_1_DO_BIBUF:PAD} -port_name {SPI_1_DO} 
-
 save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}
