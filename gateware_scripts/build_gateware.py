@@ -326,11 +326,12 @@ def clone_sources(source_list):
 
             source_type = details.get("type")
             source_dir = os.path.join("./sources", source)
-            
+            print(f"{source.upper()}:")
+
             if source_type == "git":
                 new_link = details.get("link")
                 if not new_link:
-                    print(f"No repository link specified for {source}.")
+                    print(f"No repository link specified for {source}.\r\n")
                     continue
 
                 link_file = os.path.join(source_dir, "repo_link.txt")
@@ -369,9 +370,9 @@ def clone_sources(source_list):
                                 if "commit" in details:
                                     try:
                                         repo.git.checkout(details["commit"])
-                                        print(f"{source} checked out at commit {details['commit']}")
+                                        print(f"Checked out at commit '{details['commit']}'")
                                     except Exception as e:
-                                        print(f"Error checking out commit {details['commit']} for {source}: {e}")
+                                        print(f"Error checking out commit '{details['commit']}' for {source}: {e}\r\n")
                                         continue
                                 else:
                                     # No commit specified - ensure we're on the correct branch with latest changes
@@ -382,9 +383,9 @@ def clone_sources(source_list):
                                         repo.git.reset('--hard', f'origin/{target_branch}')
                                         # Pull latest changes
                                         repo.remotes.origin.pull()
-                                        print(f"{source} reset to latest commit on branch '{target_branch}'")
+                                        print(f"Reset to latest commit on branch '{target_branch}'")
                                     except git.exc.GitCommandError as e:
-                                        print(f"Error resetting to branch {target_branch} for {source}: {e}")
+                                        print(f"Error resetting to branch '{target_branch}' for {source}: {e}\r\n")
                                         continue
 
                                 if "patches" in details:
@@ -398,12 +399,13 @@ def clone_sources(source_list):
                                             exit(e.status)
 
                                 source_directories[source] = source_dir
+                                print()
                                 continue
                             except git.exc.GitCommandError as e:
-                                print(f"Error with Git operations for {source}: {e}")
+                                print(f"Error with Git operations for {source}: {e}\r\n")
                                 continue
                             except Exception as e:
-                                print(f"Unexpected error with repo {source}: {e}")
+                                print(f"Unexpected error with repo {source}: {e}\r\n")
                                 continue
                     else:
                         print(f"Link file missing for {source}. Replacing folder.")
@@ -424,9 +426,9 @@ def clone_sources(source_list):
                     if "commit" in details:
                         try:
                             repo.git.checkout(details["commit"])
-                            print(f"{source} checked out at commit {details['commit']}")
+                            print(f"Checked out at commit '{details['commit']}'")
                         except Exception as e:
-                            print(f"Error checking out commit {details['commit']} for {source}: {e}")
+                            print(f"Error checking out commit '{details['commit']}' for {source}: {e}\r\n")
                             continue
 
                     if "patches" in details:
@@ -441,7 +443,7 @@ def clone_sources(source_list):
 
                     source_directories[source] = source_dir
                 except Exception as e:
-                    print(f"Error cloning Git repo {source}: {e}")
+                    print(f"Error cloning Git repo {source}: {e}\r\n")
                     continue
 
             elif source_type == "zip":
@@ -454,15 +456,16 @@ def clone_sources(source_list):
                     with zipfile.ZipFile(io.BytesIO(response.content)) as z:
                         z.extractall(source_dir)
                     source_directories[source] = source_dir
+                    print()
                 except Exception as e:
-                    print(f"Error downloading or extracting ZIP for {source}: {e}")
+                    print(f"Error downloading or extracting ZIP for {source}: {e}\r\n")
                     continue
 
             elif source_type == "download":
                 if source == "HSS":
                     download_link = details.get("link")
                     if not download_link:
-                        print("No download link specified for HSS.")
+                        print("No download link specified for HSS.\r\n")
                         continue
                     
                     source_dir = os.path.join("./sources", source)
@@ -483,7 +486,7 @@ def clone_sources(source_list):
                         source_directories[source] = source_dir
                         print(f"Successfully downloaded HSS file to {file_path}")
                     except Exception as e:
-                        print(f"Error downloading HSS file: {e}")
+                        print(f"Error downloading HSS file: {e}\r\n")
                         continue
 
     return source_directories
