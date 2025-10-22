@@ -1,7 +1,7 @@
 From ba70264cc76112c4e51e00ece9d884e2700e6c16 Mon Sep 17 00:00:00 2001
 From: Brian Burke <Brian.Burke@microchip.com>
 Date: Mon, 4 Aug 2025 14:48:06 +0000
-Subject: [PATCH] beagle-sin-performance-base-address-0x60000000
+Subject: [PATCH] beagle-sin-performance-base-address-0x6000_0000
 
 ---
  .../riscv_tests/sin_performance/beaglev_fire/config.tcl   | 8 +-------

@@ -40,4 +40,10 @@ sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4mmaster0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4mslave0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
+#-------------------------------------------------------------------------------
+# Cleanup
+#-------------------------------------------------------------------------------
+if {[file isdirectory $local_dir/component]} {
+    file delete -force $local_dir/component
+}
 

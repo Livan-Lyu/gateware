@@ -209,7 +209,6 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI4mmaster0" "SHLS_AXI4Interco
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI4mslave0" "SHLS_AXI4Interconnect_0:AXI4mslave0" }
 
 
-build_design_hierarchy
 set_root ${top_level_name}
 
 set accel_num 1

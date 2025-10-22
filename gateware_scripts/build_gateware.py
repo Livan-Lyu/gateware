@@ -91,8 +91,6 @@ def check_shls_tool_status():
             print("Unexpected output from 'shls -v':", output)
             print("Check path to SmartHLS tool")
             sys.exit(1)
-        else:
-            print("SHLS tool in path")
 
     except subprocess.CalledProcessError as e:
         print("Error running 'shls -v':", e)

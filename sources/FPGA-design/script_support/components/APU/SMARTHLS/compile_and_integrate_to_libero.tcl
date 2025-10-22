@@ -93,9 +93,8 @@ sd_invert_pins -sd_name {APU} -pin_names "$accel_instance:reset"
 #------------------------------------------------------------------------------
 # Generate and save design
 #------------------------------------------------------------------------------
-puts "Generating component and updating design hierarchy..."
+puts "Generating component..."
 generate_component -component_name {APU} -recursive 0
-build_design_hierarchy
 sd_reset_layout -sd_name {APU}
 save_smartdesign -sd_name {APU}
 

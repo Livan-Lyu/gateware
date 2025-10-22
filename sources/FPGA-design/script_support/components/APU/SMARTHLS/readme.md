@@ -85,7 +85,7 @@ Smart High-Level Synthesis Tool Version 20XY.Z
 ### Overview
 
 In order for the version of Ubuntu the BeagleBoard supports to be compatible with SmartHLS, we must make changes to the device tree.
-The device tree overlay files associated with SmartHLS are inside the `DEFAULT/device-tree-overlay` directory.
+The device tree overlay files associated with SmartHLS are inside the `APU/SMARTHLS/device-tree-overlay` directory.
 One can add or edit `.dtso` files as needed by the target SmartHLS project.
 
 The `udmabuf-overlay.dtso` contains the device nodes needed to enable the necessary memory allocation and DMA support for SmartHLS on Ubuntu20.04 on the BeagleFire-V board:
@@ -95,7 +95,7 @@ The `udmabuf-overlay.dtso` contains the device nodes needed to enable the necess
 
 ### Using the Device Tree Overlay
 
-The [bitstream generation python flow](../../../../../build-bitstream.py) automatically generates the device tree overlay required by SmartHLS projects.
+The [bitstream generation python flow](../../../../../../build-bitstream.py) automatically generates the device tree overlay required by SmartHLS projects.
 Once you have run the flow, you will need to program the generated bitstream and associated .dtbo files to the Beagle Board using the [reprogramming](https://docs.beagleboard.org/latest/boards/beaglev/fire/demos-and-tutorials/gateware/upgrade-gateware.html#launch-reprogramming-of-beaglev-fire-s-fpga) script, `/usr/share/beagleboard/gateware/change-gateware.sh`.
 
 To confirm the device tree blob has been applied, you can run `dmesg | grep "udmabuf"`, and confirm the output looks like this:

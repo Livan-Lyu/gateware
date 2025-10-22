@@ -82,7 +82,6 @@ if {[info exists SMARTHLS_ELF_EXPORT_PATH]} {
 } else {
     set smarthls_elf_export_path $prog_export_path/SmartHLS_Executables
 }
-file mkdir $smarthls_elf_export_path
 
 if {[info exists TOP_LEVEL_NAME]} {
     set top_level_name $TOP_LEVEL_NAME
