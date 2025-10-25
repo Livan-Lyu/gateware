@@ -116,6 +116,7 @@ import requests
 import yaml
 import datetime
 import glob
+import re
 
 from gateware_scripts.generate_gateware_overlays import generate_gateware_overlays
 from gateware_scripts.Logger import Logger
@@ -307,8 +308,92 @@ def init_workspace():
     print("  directory: ./bitstream/FlashProExpress\r\n", flush=True)
 
 
-# clones the sources specified in the sources.yaml file
 def clone_sources(source_list):
+    
+    def get_default_branch(repo_url):
+        try:
+            result = subprocess.run(
+                ["git", "ls-remote", "--symref", repo_url, "HEAD"],
+                capture_output=True, text=True, check=True
+            )
+            for line in result.stdout.splitlines():
+                if line.startswith("ref:"):
+                    # Example line: ref: refs/heads/main HEAD
+                    return line.split("/")[-1].split()[0]
+        except subprocess.CalledProcessError:
+            pass
+        return "master"  # fallback
+
+    def get_first_valid_branch(repo_url):
+        """
+        Returns the first available branch name from the remote as a fallback.
+        """
+        try:
+            result = subprocess.run(
+                ["git", "ls-remote", "--heads", repo_url],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            branches = re.findall(r"refs/heads/([^\s]+)", result.stdout)
+            if branches:
+                return branches[0]
+        except subprocess.CalledProcessError:
+            pass
+        return "main"
+
+    def get_commit_branch(repo_url, sha, source):
+        temp_dir = os.path.join("./sources", f"__temp__{source}")
+        try:
+            temp_repo = git.Repo.clone_from(repo_url, temp_dir, depth=1)
+
+            branches_with_commit = []
+
+            for ref in temp_repo.branches:
+                try:
+                    # exploiting exception if ancestor isn't found
+                    temp_repo.git.merge_base('--is-ancestor', sha, ref.name)
+                    branches_with_commit.append(ref.name)
+                except git.exc.GitCommandError:
+                    pass
+
+            return branches_with_commit
+        except Exception as e:
+            print(f"Warning: Could not determine commit branch for {source}: {e}")
+            return []  # fallback
+        finally:
+            if os.path.exists(temp_dir):
+                shutil.rmtree(temp_dir)
+
+    def progressive_checkout(repo, commit_hash, max_depth=4096):
+        """
+        Tries to checkout a commit, progressively doubling the fetch depth until found.
+        """
+        current_depth = 1
+        while current_depth <= max_depth:
+            try:
+                repo.git.checkout(commit_hash)
+                print(f"Checked out commit '{commit_hash[:8]}'.")
+                return
+            except git.exc.GitCommandError:
+                print(f"Commit '{commit_hash[:8]}' not found — fetching depth={current_depth * 2}...")
+                try:
+                    repo.git.fetch("--depth", str(current_depth * 2), "--tags")
+                except Exception as e:
+                    print(f"Warning: fetch failed (depth={current_depth * 2}): {e}")
+                current_depth *= 2
+
+        # Last resort: try full fetch
+        print(f"Attempting full fetch as last resort...")
+        try:
+            repo.git.fetch("--unshallow")
+            repo.git.checkout(commit_hash)
+            print(f"Successfully checked out '{commit_hash}' after full fetch.")
+            return
+        except Exception as e:
+            print(f"Failed to find commit '{commit_hash}' after fetching up to depth={max_depth}: {e}")
+            sys.exit(1)
+
     print("================================================================================")
     print("                                 Clone sources")
     print("================================================================================\r\n", flush=True)
@@ -318,174 +403,186 @@ def clone_sources(source_list):
     with open(source_list) as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
 
-        for source, details in data.items():
-            if source == "gateware":
-                continue
+    for source, details in data.items():
+        if source == "gateware":
+            continue
 
-            source_type = details.get("type")
-            source_dir = os.path.join("./sources", source)
-            print(f"{source.upper()}:")
+        # --- Print a header for this repo section ---
+        print(f"{source.upper()}:")  # e.g. "HSS:"
 
-            if source_type == "git":
-                new_link = details.get("link")
-                if not new_link:
-                    print(f"No repository link specified for {source}.\r\n")
-                    continue
+        source_type = details.get("type")
+        source_dir = os.path.join("./sources", source)
+        repo_url = details.get("link")
+        branch = details.get("branch")
+        commit = details.get("commit")
+        depth = details.get("depth", 1)
 
-                link_file = os.path.join(source_dir, "repo_link.txt")
-                commit = details.get("commit")
-                target_branch = details.get("branch")
+        # --- Handle ZIP or DOWNLOAD sources ---
+        if source_type in ("zip", "download"):
+            if os.path.exists(source_dir):
+                shutil.rmtree(source_dir)
+            os.makedirs(source_dir, exist_ok=True)
 
-                # Helper: get default branch of a remote repo
-                def get_default_branch(repo_url):
-                    try:
-                        temp_dir = os.path.join("./sources", f"__temp__{source}")
-                        temp_repo = git.Repo.clone_from(repo_url, temp_dir, depth=1)
-                        default_branch = temp_repo.active_branch.name
-                        shutil.rmtree(temp_dir)
-                        return default_branch
-                    except Exception as e:
-                        print(f"Warning: Could not determine default branch for {source}: {e}")
-                        return "master"  # fallback
+            try:
+                response = requests.get(repo_url)
+                response.raise_for_status()
 
-                if not target_branch and not commit:
-                    target_branch = get_default_branch(new_link)
-
-                if os.path.exists(source_dir):
-                    # Check if the current link matches the new link
-                    if os.path.exists(link_file):
-                        with open(link_file, "r") as lf:
-                            old_link = lf.read().strip()
-
-                        if old_link != new_link:
-                            print(f"Updating {source}: New repository link detected. Replacing folder.")
-                            shutil.rmtree(source_dir)
-                        else:
-                            try:
-                                repo = git.Repo(source_dir)
-
-                                # If a specific commit is requested, check it out
-                                if "commit" in details:
-                                    try:
-                                        repo.git.checkout(details["commit"])
-                                        print(f"Checked out at commit '{details['commit']}'")
-                                    except Exception as e:
-                                        print(f"Error checking out commit '{details['commit']}' for {source}: {e}\r\n")
-                                        continue
-                                else:
-                                    # No commit specified - ensure we're on the correct branch with latest changes
-                                    try:
-                                        # Force checkout of the remote branch to handle detached HEAD
-                                        repo.git.checkout('--force', target_branch)
-                                        # Reset to match remote branch exactly
-                                        repo.git.reset('--hard', f'origin/{target_branch}')
-                                        # Pull latest changes
-                                        repo.remotes.origin.pull()
-                                        print(f"Reset to latest commit on branch '{target_branch}'")
-                                    except git.exc.GitCommandError as e:
-                                        print(f"Error resetting to branch '{target_branch}' for {source}: {e}\r\n")
-                                        continue
-
-                                if "patches" in details:
-                                    for patch in details["patches"]:
-                                        patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
-                                        try:
-                                            stat = repo.git.am(patch_file)
-                                            print(stat)
-                                        except git.exc.GitCommandError as e:
-                                            print(f"Error with Git operations for {source}: {e}")
-                                            exit(e.status)
-
-                                source_directories[source] = source_dir
-                                print()
-                                continue
-                            except git.exc.GitCommandError as e:
-                                print(f"Error with Git operations for {source}: {e}\r\n")
-                                continue
-                            except Exception as e:
-                                print(f"Unexpected error with repo {source}: {e}\r\n")
-                                continue
-                    else:
-                        print(f"Link file missing for {source}. Replacing folder.")
-                        shutil.rmtree(source_dir)
-
-                # Clone the new repository
-                try:
-                    repo = git.Repo.clone_from(
-                        new_link,
-                        source_dir,
-                    )
-                    # Save the repository link for future comparison
-                    os.makedirs(source_dir, exist_ok=True)
-                    with open(link_file, "w") as lf:
-                        lf.write(new_link)
-
-                    # Check out specific commit if specified
-                    if "commit" in details:
-                        try:
-                            repo.git.checkout(details["commit"])
-                            print(f"Checked out at commit '{details['commit']}'")
-                        except Exception as e:
-                            print(f"Error checking out commit '{details['commit']}' for {source}: {e}\r\n")
-                            continue
-
-                    if "patches" in details:
-                        for patch in details["patches"]:
-                            patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
-                            try:
-                                stat = repo.git.am(patch_file)
-                                print(stat)
-                            except git.exc.GitCommandError as e:
-                                print(f"Error with Git operations for {source}: {e}")
-                                exit(e.status)
-
-                    source_directories[source] = source_dir
-                except Exception as e:
-                    print(f"Error cloning Git repo {source}: {e}\r\n")
-                    continue
-
-            elif source_type == "zip":
-                source_dir = os.path.join("./sources", source)
-                if os.path.exists(source_dir):
-                    shutil.rmtree(source_dir)
-                try:
-                    response = requests.get(details.get("link"))
-                    response.raise_for_status()
+                if source_type == "zip":
                     with zipfile.ZipFile(io.BytesIO(response.content)) as z:
                         z.extractall(source_dir)
-                    source_directories[source] = source_dir
-                    print()
-                except Exception as e:
-                    print(f"Error downloading or extracting ZIP for {source}: {e}\r\n")
-                    continue
+                    print(f"Extracted ZIP archive for {source}.")
+                else:
+                    file_name = os.path.basename(repo_url)
+                    file_path = os.path.join(source_dir, file_name)
+                    with open(file_path, "wb") as f:
+                        f.write(response.content)
+                    print(f"Downloaded {source} to {file_path}")
 
-            elif source_type == "download":
-                if source == "HSS":
-                    download_link = details.get("link")
-                    if not download_link:
-                        print("No download link specified for HSS.\r\n")
-                        continue
-                    
-                    source_dir = os.path.join("./sources", source)
+                source_directories[source] = source_dir
+            except Exception as e:
+                print(f"Error downloading {source}: {e}")
+            print()  # blank line after this repo
+            continue
+
+        # --- Handle GIT sources ---
+        if source_type != "git":
+            print(f"Unknown source type '{source_type}' for {source}. Skipping.\n")
+            continue
+        if not repo_url:
+            print(f"No repository link for {source}. Skipping.\n")
+            continue
+
+        link_file = os.path.join(source_dir, "repo_link.txt")
+        repo = None
+
+        # --- If repo exists, check link and update ---
+        if os.path.exists(source_dir):
+            # Check if link has changed
+            old_link = None
+            if os.path.exists(link_file):
+                with open(link_file, 'r') as lf:
+                    old_link = lf.read().strip()
+
+            if old_link != repo_url:
+                print(f"Repository link changed. Replacing folder.")
+                if old_link:
+                    print(f"  Old: {old_link}")
+                    print(f"  New: {repo_url}")
+                shutil.rmtree(source_dir)
+                repo = None
+            else:
+                # Link matches, update existing repo
+                try:
+                    repo = git.Repo(source_dir)
+                    repo.git.reset("--hard")
+                    repo.git.clean("-fdx")
+
+                    if commit:
+                        # Check if already at the correct commit
+                        if repo.head.commit.hexsha.startswith(commit):
+                            print(f"Already at commit '{commit[:8]}'.")
+                        else:
+                            progressive_checkout(repo, commit)
+                    else:
+                        # Update to latest on branch
+                        if str(depth).lower() == "full":
+                            print("Performing full fetch (no depth limit)...")
+                            if repo.git.rev_parse('--is-shallow-repository') == 'true':
+                                repo.git.fetch("--unshallow")
+                            else:
+                                repo.git.fetch("--all", "--tags", "--prune")
+                        else:
+                            repo.git.fetch("origin", "--tags", "--depth", str(depth))
+
+                        if branch:
+                            repo.git.checkout(branch)
+                            repo.git.reset("--hard", f"origin/{branch}")
+                            print(f"Checked out and reset branch '{branch}'.")
+                        else:
+                            # --- SMART FALLBACK ---
+                            default_branch = get_default_branch(repo_url)
+                            print(f"No branch or commit specified — resetting to '{default_branch}'.")
+                            try:
+                                repo.git.fetch("origin", default_branch)
+                                repo.git.checkout(default_branch)
+                                repo.git.reset("--hard", f"origin/{default_branch}")
+                                repo.git.clean("-fdx")
+                            except Exception:
+                                # --- Try common or first valid branch ---
+                                fallback_branch = get_first_valid_branch(repo_url)
+                                print(f"Default branch '{default_branch}' not found — trying '{fallback_branch}'.")
+                                repo.git.fetch("origin", fallback_branch)
+                                repo.git.checkout(fallback_branch)
+                                repo.git.reset("--hard", f"origin/{fallback_branch}")
+                                repo.git.clean("-fdx")
+
+                except Exception as e:
+                    print(f"Error updating repo {source}: {e}")
                     if os.path.exists(source_dir):
                         shutil.rmtree(source_dir)
+                    repo = None
 
-                    os.makedirs(source_dir)
-                        
+        # --- Fresh clone if repo doesn't exist or was removed ---
+        if not repo:
+            try:
+                # If commit is specified but no branch, try to find branches containing the commit
+                if commit and not branch:
+                    branches_with_commit = get_commit_branch(repo_url, commit, source)
+                    if branches_with_commit:
+                        clone_branch = branches_with_commit[0]
+                        print(f"Found commit in branch '{clone_branch}'")
+                    else:
+                        clone_branch = get_default_branch(repo_url)
+                elif not branch:
+                    clone_branch = get_default_branch(repo_url)
+                else:
+                    clone_branch = branch
+
+                if str(depth).lower() == "full":
+                    print(f"Cloning {source} (full clone)...")
+                    repo = git.Repo.clone_from(repo_url, source_dir, branch=clone_branch)
+                    print(f"Cloned '{source}' on branch '{clone_branch}'.")
+                else:
+                    print(f"Cloning {source} (depth={depth})...")
                     try:
-                        response = requests.get(download_link)
-                        response.raise_for_status()
-                        file_name = download_link.split('/')[-1]
-                        file_path = os.path.join(source_dir, file_name)
-                        
-                        with open(file_path, 'wb') as f:
-                            f.write(response.content)
-                            
-                        source_directories[source] = source_dir
-                        print(f"Successfully downloaded HSS file to {file_path}")
-                    except Exception as e:
-                        print(f"Error downloading HSS file: {e}\r\n")
-                        continue
+                        repo = git.Repo.clone_from(repo_url, source_dir, branch=clone_branch, depth=int(depth))
+                        print(f"Cloned '{source}' on branch '{clone_branch}'.")
+                    except git.exc.GitCommandError:
+                        fallback_branch = get_first_valid_branch(repo_url)
+                        print(f"Branch '{clone_branch}' not found — retrying clone with '{fallback_branch}'.")
+                        repo = git.Repo.clone_from(repo_url, source_dir, branch=fallback_branch, depth=int(depth))
+                        print(f"Cloned '{source}' on branch '{fallback_branch}'.")
+
+                # Write the link file after successful clone
+                os.makedirs(source_dir, exist_ok=True)
+                with open(link_file, "w") as lf:
+                    lf.write(repo_url)
+
+                if commit:
+                    progressive_checkout(repo, commit)
+
+            except Exception as e:
+                print(f"Error cloning {source}: {e}")
+                continue
+
+        # --- Apply patches ---
+        if repo and "patches" in details:
+            for patch in details["patches"]:
+                patch_path = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
+                if not os.path.exists(patch_path):
+                    print(f"Patch file missing: {patch_path}")
+                    continue
+                try:
+                    repo.git.am(patch_path)
+                    # Print "Applying: <patch-name-without-extension>"
+                    print(f"Applying: {os.path.splitext(patch)[0]}")
+                except git.exc.GitCommandError as e:
+                    print(f"Patch failed for {source}: {e}")
+                    repo.git.am("--abort")
+                    sys.exit(1)
+
+        print()  # blank line between repos
+        source_directories[source] = source_dir
 
     return source_directories
 
@@ -678,8 +775,7 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
             print(f"HSS image copied from {source_hex_file} to {dest_hex_file}")
             return selected_hex_file
         else:
-            print("!!! Error: Hart Soft Service build failed !!!", flush=True)
-            return None
+            raise Exception("!!! Error: Hart Soft Service build failed !!!", flush=True)
 
     else:
         print("Error: Unknown HSS type specified.")

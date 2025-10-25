@@ -70,6 +70,7 @@ HSS:
     link: https://github.com/polarfire-soc/hart-software-services.git
     branch: next
     commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
+    depth: 1
     patches:
         - 0001-Disable-annoying-debug-message.patch
         - 0002-Bring-back-old-DESIGNVER-formatting.patch
@@ -77,6 +78,9 @@ HSS:
 ```
 Patch files will be found by searching the `patches/<object>` directory (`hss` in this instance).  
 The `hss` fragment is the top-object name, "lower-cased".
+
+The entire source repo can be cloned by setting `depth: full`. The depth can also be custom set as shown using `depth: 1`. A shallow clone is performed
+if no depth info is provided.
 
 ## SmartHLS Support
 [SmartHLS](https://www.microchip.com/en-us/products/fpgas-and-plds/fpga-and-soc-design-tools/smarthls-compiler) is a tool included with Libero that can automatically compile a C/C++ program into hardware described in Verilog HDL (Hardware Description Language). The generated hardware can then be integrated into the BeagleV Fire reference design.
