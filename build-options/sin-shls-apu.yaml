@@ -14,10 +14,8 @@ fpga-hls-libraries:
     link: https://github.com/MicrochipTech/fpga-hls-libraries.git
     branch: main
     patches:
-         - 0001-beagle-sin-performance-base-address-0x6000_0000.patch
-         - 0002-beagle-fft-base-address-0x6050_0000.patch
-         - 0003-beagle-dsp-fix-test-utils-include-path.patch
-         - 0004-set-sin_performance-as-function-name.patch
+         - 0001-beagle-dsp-fix-test-utils-include-path.patch
+         - 0002-set-sin_performance-as-function-name.patch
 
 #fpga-hls-examples:
 #    type: git
