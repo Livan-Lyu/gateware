@@ -683,6 +683,55 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
         print("                      Build Hart Software Services (HSS)")
         print("================================================================================\r\n", flush=True)
 
+        def normalize_dtb_timestamps(folder_path, threshold_ns=100_000_000):
+            """
+            Finds all .dts/.dtb pairs in the folder and normalizes .dtb timestamps
+            to match .dts if they differ by less than threshold_ns nanoseconds.
+            Displays time differences in ns or ms depending on magnitude.
+            Returns a list of normalized file pairs.
+            """
+            normalized = []
+
+            # Build a map of .dts files by stem
+            dts_files = {
+                os.path.splitext(f)[0]: os.path.join(folder_path, f)
+                for f in os.listdir(folder_path)
+                if f.endswith('.dts')
+            }
+
+            # Look for matching .dtb files
+            for f in os.listdir(folder_path):
+                if f.endswith('.dtb'):
+                    stem = os.path.splitext(f)[0]
+                    dtb_path = os.path.join(folder_path, f)
+                    dts_path = dts_files.get(stem)
+
+                    if dts_path and os.path.isfile(dts_path):
+                        try:
+                            mtime_dts_ns = os.stat(dts_path).st_mtime_ns
+                            mtime_dtb_ns = os.stat(dtb_path).st_mtime_ns
+                            diff_ns = abs(mtime_dts_ns - mtime_dtb_ns)
+
+                            # Format difference
+                            if diff_ns == 0:
+                                diff_str = "no difference"
+                            elif diff_ns <= 1000:
+                                diff_str = f"{diff_ns}ns"
+                            else:
+                                diff_str = f"{diff_ns / 1_000_000:.3f}ms"
+
+                            if 0 < diff_ns < threshold_ns:
+                                subprocess.run(['touch', '-r', dts_path, dtb_path], check=True)
+                                print(f"Normalized: '{dtb_path}' to match '{dts_path}' ({diff_str})")
+                                normalized.append((dts_path, dtb_path))
+                            else:
+                                print(f"Skipped: '{dtb_path}' ({diff_str})")
+
+                        except Exception as e:
+                            print(f"Error processing {dtb_path}: {e}")
+
+            return normalized
+
         print("Board: " + board)
 
         xml_directory = os.path.join(hss_source, "boards", board, "soc_fpga_design", "xml")
@@ -748,6 +797,8 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
                 raise ValueError(f"The source directory '{hss_source}' does not exist or is not a directory.")
 
             os.chdir(hss_source)
+
+            normalize_dtb_timestamps(os.path.join("boards", board))
 
             # Execute the make clean command if specified
             if make_clean:
