@@ -1089,9 +1089,46 @@ def get_top_level_name():
 
 
 # Calls Libero and runs a script
-def call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version):
-    libero_cmd = libero + " SCRIPT:" + script + " \"SCRIPT_ARGS: " + script_args + " PROJECT_LOCATION:" + project_location + " TOP_LEVEL_NAME:" + top_level_name + " HSS_IMAGE_PATH:" + hss_image_location + " PROG_EXPORT_PATH:" + prog_export_path + " MSS_COMPONENT_PATH:" + mss_component_file_location + " INITIAL_DIRECTORY:" + initial_directory + " DESIGN_VERSION:" + design_version + "\""
-    exe_sys_cmd(libero_cmd)
+def call_libero(libero, script, script_args, project_location, hss_image_location,
+                mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version):
+    """
+    Execute Libero in batch mode using the provided parameters.
+    Raises RuntimeError if the Libero process fails.
+    """
+
+    libero_cmd = (
+        f'{libero} SCRIPT:{script} '
+        f'"SCRIPT_ARGS:{script_args} '
+        f'PROJECT_LOCATION:{project_location} '
+        f'TOP_LEVEL_NAME:{top_level_name} '
+        f'HSS_IMAGE_PATH:{hss_image_location} '
+        f'PROG_EXPORT_PATH:{prog_export_path} '
+        f'MSS_COMPONENT_PATH:{mss_component_file_location} '
+        f'INITIAL_DIRECTORY:{initial_directory} '
+        f'DESIGN_VERSION:{design_version}"'
+    )
+
+    try:
+        result = subprocess.run(
+            libero_cmd, shell=True, capture_output=True, text=True
+        )
+    except Exception as e:
+        raise RuntimeError(f"Failed to run Libero command: {e}")
+
+    # Print stdout/stderr for debug visibility
+    if result.stdout:
+        print(result.stdout)
+    if result.stderr:
+        print(result.stderr)
+
+    # If Libero itself failed, raise a descriptive error
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"Libero failed with exit code {result.returncode}. "
+            f"Command: {libero_cmd}\n"
+            f"Stderr:\n{result.stderr.strip()}"
+        )
+
 
 
 def generate_libero_project(libero, build_options_input_yaml_file, board_options_input_yaml_file, fpga_design_sources_path, build_dir_path, design_version):
@@ -1222,7 +1259,12 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
     make_hss(sources["HSS"], build_options_input_yaml_file, board_options_yaml_arg)
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
-    generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
+
+    try:
+        generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
 
     sys.stdout.flush()
     sys.stdout = original_stdout
