@@ -463,6 +463,13 @@ def clone_sources(source_list):
                 with open(link_file, 'r') as lf:
                     old_link = lf.read().strip()
 
+            if old_link is None:
+                try:
+                    repo = git.Repo(source_dir)
+                    old_link = repo.remotes.origin.url
+                except Exception:
+                    pass
+
             if old_link != repo_url:
                 print(f"Repository link changed. Replacing folder.")
                 if old_link:
@@ -473,7 +480,8 @@ def clone_sources(source_list):
             else:
                 # Link matches, update existing repo
                 try:
-                    repo = git.Repo(source_dir)
+                    if repo is None:
+                        repo = git.Repo(source_dir)
                     repo.git.reset("--hard")
                     repo.git.clean("-fdx")
 
