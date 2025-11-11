@@ -1120,26 +1120,9 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
         f'DESIGN_VERSION:{design_version}"'
     )
 
-    try:
-        result = subprocess.run(
-            libero_cmd, shell=True, capture_output=True, text=True
-        )
-    except Exception as e:
-        raise RuntimeError(f"Failed to run Libero command: {e}")
-
-    # Print stdout/stderr for debug visibility
-    if result.stdout:
-        print(result.stdout)
-    if result.stderr:
-        print(result.stderr)
-
-    # If Libero itself failed, raise a descriptive error
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"Libero failed with exit code {result.returncode}. "
-            f"Command: {libero_cmd}\n"
-            f"Stderr:\n{result.stderr.strip()}"
-        )
+    returncode = exe_sys_cmd(libero_cmd)
+    if returncode is not None and returncode != 0:
+        raise RuntimeError(f"Libero command failed with exit code {returncode}")
 
 
 
@@ -1272,11 +1255,7 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
 
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
 
-    try:
-        generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+    generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
 
     sys.stdout.flush()
     sys.stdout = original_stdout
