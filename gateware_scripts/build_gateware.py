@@ -886,6 +886,18 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
 
             normalize_dtb_timestamps(os.path.join("boards", board))
 
+            # Detect number of CPU cores
+            num_cores = os.cpu_count()
+
+            # Print detected cores
+            print(f"Detected {num_cores} cores.")
+
+            if shutil.which("ccache"):
+                cross_compile = "\"ccache riscv64-unknown-elf-\""
+                print("Will use ccache.")
+            else:
+                cross_compile = "\"riscv64-unknown-elf-\""
+
             # Execute the make clean command if specified
             if make_clean:
                 clean_command = f"make clean BOARD={board}"
@@ -894,7 +906,7 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
                 exe_sys_cmd(clean_command)
 
             # Build command
-            build_command = f"make BOARD={board}"
+            build_command = f"make -j{num_cores} CROSS_COMPILE={cross_compile} BOARD={board}"
             if verbose:
                 build_command += " V=1"
             exe_sys_cmd(build_command)

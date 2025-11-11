@@ -7,6 +7,7 @@ HSS:
     depth: 1
     patches:
         common:
+            - 0000-Make-Guard-against-parallelism.patch
             - 0001-Disable-annoying-debug-message.patch
             - 0002-Bring-back-old-DESIGNVER-formatting.patch
         variants:

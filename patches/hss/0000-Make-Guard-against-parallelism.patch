@@ -1,0 +1,42 @@
+From 0849743367ddc5ab2385227ad1a03e57dc469e56 Mon Sep 17 00:00:00 2001
+From: Lars Randers <lranders@mail.dk>
+Date: Mon, 10 Nov 2025 13:14:42 +0100
+Subject: [PATCH] Make: Guard against parallelism
+
+Signed-off-by: Lars Randers <lranders@mail.dk>
+---
+ boards/mpfs-beaglev-fire/Makefile | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/boards/mpfs-beaglev-fire/Makefile b/boards/mpfs-beaglev-fire/Makefile
+index a85c39c7..7e135c8f 100644
+--- a/boards/mpfs-beaglev-fire/Makefile
++++ b/boards/mpfs-beaglev-fire/Makefile
+@@ -156,12 +156,22 @@ $(error "XML file $(CONFIG_SOC_FPGA_DESIGN_XML) specified by CONFIG_SOC_FPGA_DES
+ endif
+ endif
+ 
+-config.h: $(SOC_CONFIG_FILES)
+-$(SOC_CONFIG_FILES): $(SOC_FPGA_DESIGN_XML_FILE)
++# Prevent parallel execution of this rule
++.NOTPARALLEL: mpfscfggen
++
++# Generate config files from XML input
++mpfscfggen: $(SOC_FPGA_DESIGN_XML_FILE)
+ 	@mkdir -p $(BINDIR)/$(BOARD_DIR)
+ 	@$(ECHO) " MPFSCFGGEN    $<";
+ 	$(PYTHON) tools/polarfire-soc-configuration-generator/mpfs_configuration_generator.py $< $(BINDIR)/$(BOARD_DIR)
+ 
++# Make config files depend on the serialized generation step
++$(SOC_CONFIG_FILES): mpfscfggen
++
++# Final dependencies
++config.h: $(SOC_CONFIG_FILES)
+ $(RISCV_TARGET): $(SOC_CONFIG_FILES)
++
++# Board-specific variables
+ PACKAGE:=FCVG484
+ DIE:=MPFS025T
+-- 
+2.51.0
+
