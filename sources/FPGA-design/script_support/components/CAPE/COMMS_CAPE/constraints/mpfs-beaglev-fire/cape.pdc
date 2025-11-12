@@ -9,6 +9,8 @@ set_io -port_name {P9[12]}	\
     -pin_name C5	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[13]}	\
@@ -27,6 +29,8 @@ set_io -port_name {P9[15]}	\
     -pin_name A5	    \
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[16]}	\
@@ -67,6 +71,8 @@ set_io -port_name {P9[23]}	\
     -pin_name C12	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[24]}	\
@@ -79,6 +85,8 @@ set_io -port_name {P9[25]}	\
     -pin_name B7	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[26]}	\
@@ -91,6 +99,8 @@ set_io -port_name {P9[27]}	\
     -pin_name D11	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[28]}	\
@@ -110,6 +120,8 @@ set_io -port_name {P9[30]}	\
     -pin_name F16	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P9[31]}	\
@@ -123,6 +135,8 @@ set_io -port_name P9_41	\
     -pin_name E15	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name P9_42	\
@@ -331,95 +345,127 @@ set_io -port_name {P8[31]}	\
     -pin_name D13	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[32]}	\
     -pin_name B15	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[33]}	\
     -pin_name A15	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[34]}	\
     -pin_name C15	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[35]}	\
     -pin_name C14	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[36]}	\
     -pin_name B4	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[37]}	\
     -pin_name C4	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[38]}	\
     -pin_name C17	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[39]}	\
     -pin_name B17	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[40]}	\
     -pin_name B18	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[41]}	\
     -pin_name A18	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[42]}	\
     -pin_name D6	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[43]}	\
     -pin_name D7	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[44]}	\
     -pin_name D8	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[45]}	\
     -pin_name D9	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 
 set_io -port_name {P8[46]}	\
     -pin_name D18	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -RES_PULL Up      \
+    -SCHMITT_TRIGGER ON \
     -DIRECTION INOUT
 	
