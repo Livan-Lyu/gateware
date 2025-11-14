@@ -35,48 +35,11 @@ import sys
 import subprocess
 import platform
 
-
-def check_pip_installed():
-    if shutil.which("pip") is None:
-            print("Error: pip is not installed.")
-            print("Please install pip first.")
-            sys.exit()
-
-
 def check_dtc_installed():
     if shutil.which("dtc") is None:
             print("Error: dtc (device-tree-compiler) is not installed")
             print("Please install it by running: sudo apt install device-tree-compiler")
             exit()
-
-def check_pyyaml_installed():
-    try:
-        result = subprocess.run([sys.executable, "-m", "pip", "show", "pyyaml"],
-                              capture_output=True, text=True)
-        if result.returncode != 0 or "Name: PyYAML" not in result.stdout:
-            raise ImportError
-    except ImportError:
-        print("Error: PyYAML is not installed.")
-        print("Please install it by running: pip install pyyaml")
-        sys.exit(1)
-
-def check_gitpython_installed():
-    try:
-        result = subprocess.run([sys.executable, "-m", "pip", "show", "gitpython"],
-                                capture_output=True, text=True)
-        if result.returncode != 0 or "Name: GitPython" not in result.stdout:
-            raise ImportError
-    except ImportError:
-        print("Error: GitPython is not installed.")
-        print("Please install it by running: pip install gitpython")
-        sys.exit()
-
-# Allow libero to generate components (DMA_CONTROLLER) which require a display
-def check_xvfb_installed():
-    if shutil.which("xvfb-run") is None:
-        print("Error: xvfb-run is not installed.")
-        print("Please install it by running: sudo apt-get install xvfb")
-        sys.exit()
 
 # Check if SmartHLS tool is added to path, only to be run if SMARTHLS argument in yaml file
 def check_shls_tool_status():
@@ -101,11 +64,7 @@ def check_shls_tool_status():
 
 # Perform package checks before any other imports
 if platform.system() == "Linux" or platform.system() == "Linux2":
-    check_pip_installed()
     check_dtc_installed()
-    check_pyyaml_installed()
-    check_gitpython_installed()
-    check_xvfb_installed()
 
 import argparse
 import io

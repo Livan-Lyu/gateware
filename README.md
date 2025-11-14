@@ -5,14 +5,19 @@ The BeagleV Fire gateware builder is a Python script that builds both the PolarF
 
 
 ## Prerequisites
+
+### Install pip to install the Python libraries below
+```
+sudo apt-get install python3-pip
+```
 ### Python libraries
 The following Python libraries are used:
 - GitPython
 - PyYAML
+- Requests
 
 ```
-pip3 install gitpython
-pip3 install pyyaml
+pip3 install GitPython PyYAML requests
 ```
 
 ### Microchip Tools
