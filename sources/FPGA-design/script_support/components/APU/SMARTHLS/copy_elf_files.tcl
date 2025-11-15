@@ -9,11 +9,13 @@ foreach arg $argv {
         lassign [split $arg ":"] varname path
         set $varname $path  ;# Dynamically defines SHLS_0, SHLS_1, etc.
 
-        set hls_output_dir [file join $path hls_output]
-        if {[file isdirectory $hls_output_dir]} {
+        set abs_hls_output_dir [file join $INITIAL_DIRECTORY "sources" $path "hls_output"]
+
+        if {[file isdirectory $abs_hls_output_dir]} {
+            puts "DEBUG: Directory exists -> $abs_hls_output_dir"
             incr num_accelerators
 
-            set elf_files [glob -nocomplain [file join $hls_output_dir "*.accel.elf"]]
+            set elf_files [glob -nocomplain [file join $abs_hls_output_dir "*.accel.elf"]]
 
             if {[llength $elf_files] > 0} {
                 # Create a subdirectory named SHLS_0, SHLS_1, etc., under the export path

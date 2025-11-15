@@ -10,11 +10,13 @@ set num_accelerators 0
 
 foreach var [info vars SHLS*] {
     # Get the value of the variable (the folder path)
-    set smarthls_path [set $var]
+    set abs_smarthls_path [file join $INITIAL_DIRECTORY "sources" [set $var]]
 
     # Check if the directory exists before proceeding
-    if {[file isdirectory $smarthls_path]} {
+    if {[file isdirectory $abs_smarthls_path]} {
         incr num_accelerators
+    } else {
+        error "Error: The directory does not exist: $abs_smarthls_path"
     }
 }
 puts "Number of accelerators: $num_accelerators"

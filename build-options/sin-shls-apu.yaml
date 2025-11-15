@@ -38,9 +38,9 @@ gateware:
              MIPI_CSI_OPTION:DEFAULT
                SYZYGY_OPTION:DEFAULT
                   APU_OPTION:SMARTHLS
-                      SHLS_0:../fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire"
+                      SHLS_0:fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire"
     unique-design-version: 7.0.0
 
-#SHLS_0:../fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire
-#SHLS_1:../fpga-hls-libraries/dsp/examples/riscv_tests/fft_demo/beaglev_fire
-#SHLS_2:../fpga-hls-examples/Canny_RISCV
+#SHLS_0:fpga-hls-libraries/math/examples/riscv_tests/sin_performance/beaglev_fire
+#SHLS_1:fpga-hls-libraries/dsp/examples/riscv_tests/fft_demo/beaglev_fire
+#SHLS_2:fpga-hls-examples/Canny_RISCV

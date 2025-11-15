@@ -215,13 +215,13 @@ set accel_num 1
 # Get all Tcl variables that match SHLS*
 foreach var [info vars SHLS*] {
     # Get the value of the variable (the folder path)
-    set smarthls_path [set $var]
+    set abs_smarthls_path [file join $INITIAL_DIRECTORY "sources" [set $var]]
 
-    puts "Processing $var: $smarthls_path"
+    puts "Processing $var: $abs_smarthls_path"
 
-    if {[file isdirectory $smarthls_path]} {
+    if {[file isdirectory $abs_smarthls_path]} {
         # Set the global SMARTHLS variable for this iteration
-        set ::SMARTHLS $smarthls_path
+        set ::SMARTHLS $abs_smarthls_path
         global ::SMARTHLS
 
         # Compile and integrate the HLS module
@@ -230,7 +230,7 @@ foreach var [info vars SHLS*] {
         puts "SmartHLS Accelerator $accel_num: Processed"
         incr accel_num
     } else {
-        puts "Warning: Skipping $var because the directory does not exist: $smarthls_path"
+        error "Warning: Skipping $var because the directory does not exist: $abs_smarthls_path"
     }
 }
 
