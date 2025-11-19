@@ -4,7 +4,6 @@ HSS:
     link: https://github.com/polarfire-soc/hart-software-services.git
     branch: next
     commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
-    depth: 1
     patches:
         common:
             - 0000-Make-Guard-against-parallelism.patch

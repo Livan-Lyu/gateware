@@ -473,7 +473,7 @@ def clone_sources(source_list, gateware_top_dir):
         if 'mss' in source.lower():
             depth = "full"
         else:
-            depth = details.get("depth", 1)
+            depth = details.get("depth", 20)
 
         # --- Handle ZIP or DOWNLOAD sources ---
         if source_type in ("zip", "download"):
@@ -542,6 +542,27 @@ def clone_sources(source_list, gateware_top_dir):
                         repo = git.Repo(source_dir)
                     repo.git.reset("--hard")
                     repo.git.clean("-fdx")
+
+                    if str(depth).lower() == "full":
+                        if repo.git.rev_parse('--is-shallow-repository') == 'true':
+                            print("Converting to full clone (unshallow)...")
+                            repo.git.fetch('--unshallow')
+                        repo.git.fetch('--all', '--tags', '--prune')
+                    else:
+                        target_depth = int(depth)
+                        is_shallow = repo.git.rev_parse('--is-shallow-repository') == 'true'
+
+                        if not is_shallow:
+                            # Don't bother shallowing a full repo
+                            print("Repository is full — performing normal fetch")
+                            repo.git.fetch('origin', '--tags')
+                        else:
+                            # Can't reliably know current depth, so just deepen to target if >1
+                            if target_depth > 1:
+                                print(f"Ensuring shallow clone depth >= {target_depth}...")
+                                repo.git.fetch(f'--depth={target_depth}', '--tags')
+                            else:
+                                repo.git.fetch('--depth=1', '--tags')
 
                     if commit:
                         # Check if already at the correct commit

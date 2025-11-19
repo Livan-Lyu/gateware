@@ -75,7 +75,6 @@ HSS:
     link: https://github.com/polarfire-soc/hart-software-services.git
     branch: next
     commit: af4f81a657c92601b0de2f52b89a3f97bbf4a2b3
-    depth: 1
     patches:
         - 0001-Disable-annoying-debug-message.patch
         - 0002-Bring-back-old-DESIGNVER-formatting.patch
@@ -125,8 +124,9 @@ While you should only specify **one**, `local` will take precedence if both are 
 Patch files will be found by searching the `patches/<object>` directory (`hss` in this instance).  
 The `hss` fragment is the top-object name, "lower-cased".
 
-The entire source repo can be cloned by setting `depth: full`, or custom if set as shown using `depth: 1`.  
-A shallow clone is performed if no depth info is provided.
+The entire source repo can be cloned by setting `depth: full`, or custom if set using `depth: 50`.
+A clone of `depth: 20` is performed if no depth info is provided. As long as the depth of the cloned
+source is greater than specified, the depth won't be adjusted.
 
 ## MSS is now modularized
 MSS configuration files now live under `sources/MSS/` and specific overlays under `sources/MSS/device-tree-overlays/*`.
