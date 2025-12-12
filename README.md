@@ -135,6 +135,13 @@ The entire source repo can be cloned by setting `depth: full`, or custom if set 
 A clone of `depth: 20` is performed if no depth info is provided. As long as the depth of the cloned
 source is greater than specified, the depth won't be adjusted.
 
+A `bypass` option was added to allow for developing directly in the `sources/HSS` directory:
+You can set this option to `yes` or `1` and the builder will forego the **git reset** step.
+This is obviously an advanced setting, so if you don't understand why you'd want that,
+you probably don't need it. Please note that you'll need to run through the builder at least once
+to get the repo cloned. You should also pay attention to **never** commit this option to CI,
+as it will most definitely break the build. Local use only!
+
 ## MSS is now modularized
 MSS configuration files now live under `sources/MSS/` and specific overlays under `sources/MSS/device-tree-overlays/*`.
 

@@ -471,6 +471,11 @@ def clone_sources(source_list, gateware_top_dir):
         repo_url = details.get("link") if local is None else os.path.join(gateware_top_dir, local)
         branch = details.get("branch")
         commit = details.get("commit")
+        if details.get("bypass", "no") in ("yes", 1):
+            print("Note: Skipping due to active bypass option.\n")
+            source_directories[source] = source_dir
+            continue
+
         if 'mss' in source.lower():
             depth = "full"
         else:
