@@ -42,7 +42,11 @@ if { $::argc > 0 } {
     foreach arg $::argv {
         if {[string match "*:*" $arg]} {
             set temp [split $arg ":"]
-            puts "Setting parameter [lindex $temp 0] to [lindex $temp 1]"
+            set display_value [lindex $temp 1]
+            if {[string match "*PUBLIC_KEY*" [lindex $temp 0]]} {
+                set display_value "[string range $display_value 0 7]..."
+            }
+            puts "Setting parameter [lindex $temp 0] to $display_value"
             set [lindex $temp 0] "[lindex $temp 1]"
         } else {
             set $arg 1
@@ -211,6 +215,15 @@ if {[info exists MSS_DDR_WIDTH]} {
 }
 puts "MSS_DDR_WIDTH: $mss_ddr_width"
 
+################ Boot Mode Options ########################
+
+if {[info exists BOOTMODE]} {
+    set bootmode_option "$BOOTMODE"
+} else {
+    set bootmode_option "BM1"
+}
+puts "BOOTMODE: $bootmode_option"
+
 source ./script_support/additional_configurations/functions.tcl
 
 #
@@ -325,15 +338,11 @@ if !{[info exists ONLY_CREATE_DESIGN]} {
     run_tool -name {PLACEROUTE}
     run_tool -name {VERIFYTIMING}
     if {[info exists HSS_IMAGE_PATH]} {
-        set envm_config_name [generate_temp_file 0]
-        puts "Temporary eNVM config: $envm_config_name"
-        create_eNVM_config "$envm_config_name" "$HSS_IMAGE_PATH"
-        run_tool -name {GENERATEPROGRAMMINGDATA}
-        configure_envm -cfg_file $envm_config_name
+        safe_source script_support/design_init/ENVM/$bootmode_option/ADD_ENVM.tcl
         safe_source ./script_support/export_fns/export_spi_prog_file.tcl
-       configure_spiflash -cfg_file {./script_support/spiflash.cfg} 
-        run_tool -name {GENERATEPROGRAMMINGFILE} 
-#       run_tool -name {GENERATE_SPI_FLASH_IMAGE} 
+        configure_spiflash -cfg_file {./script_support/design_init/SPI_FLASH/AUTO_UPDATE/spiflash.cfg}
+        run_tool -name {GENERATEPROGRAMMINGFILE}
+#       run_tool -name {GENERATE_SPI_FLASH_IMAGE}
         safe_source ./script_support/export_fns/export_flashproexpress.tcl
         safe_source ./script_support/export_fns/export_directc.tcl
     } else {

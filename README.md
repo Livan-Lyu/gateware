@@ -57,6 +57,13 @@ The YAML configuration files are located in the "build-options" directory:
 | robotics.yaml      | Similar to default but supporting the Robotics cape.             |
 | sin-shls-apu.yaml  | Adds a SmartHLS core optimised for sin calculations. [More](sources/FPGA-design/script_support/components/APU/SMARTHLS/readme.md)|
 
+### Extra YAML Configuration Files
+YAML configuration files showcasing additional functionality are located in the [build-options/extras directory](build-options/extras/):
+
+| Configuration File | Description                                                      |
+| ------------------ | ---------------------------------------------------------------- |
+| default-bm3.yaml   | Default gateware with HSS set to boot in mode 3. [More](build-options/extras/docs/bm3-readme.md)|
+
 ## Supported Platforms
 The BeagleV Fire gateware builder has been tested on Ubuntu 20.04.
 

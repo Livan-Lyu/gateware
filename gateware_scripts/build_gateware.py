@@ -79,6 +79,7 @@ import re
 
 from gateware_scripts.generate_gateware_overlays import generate_gateware_overlays
 from gateware_scripts.Logger import Logger
+from gateware_scripts.key_management import KeyManager, integrate_with_build
 
 
 def exe_sys_cmd(cmd):
@@ -280,7 +281,7 @@ def clone_sources(source_list, gateware_top_dir):
                 if isinstance(number, int) and (number > 0):
                     print(f"Pass {number}:")
                 for patch in patches:
-                    patch_file = os.path.join(os.path.dirname(source_list), "..", "patches", source.lower(), patch)
+                    patch_file = os.path.abspath(os.path.join(gateware_top_dir, "patches", source.lower(), patch))
                     try:
                         stat = repo.git.am(patch_file)
                         print(f"- {stat}")
@@ -698,7 +699,7 @@ def make_mss_config(mss_configurator, config_file, output_dir):
 
 
 # Builds the HSS using a pre-defined config file using SoftConsole in headless mode
-def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml_file=None):
+def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml_file=None, design_version=None, top_level_name=None, key_manager=None):
     with open(build_options_input_yaml_file) as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         hss_info = data.get("HSS", {})
@@ -856,6 +857,8 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
 
         verbose = hss_info.get("verbose", False)
         make_clean = hss_info.get("make_clean", False)
+        bootmode = hss_info.get("bootmode", 1)
+        force_new_keys = hss_info.get("new-bm3-keys", False)
 
         try:
             # Ensure `hss_source` exists and is a directory
@@ -887,6 +890,8 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
 
             # Build command
             build_command = f"make -j{num_cores} CROSS_COMPILE={cross_compile} BOARD={board}"
+            if bootmode:
+                build_command += f" BOOTMODE={bootmode}"
             if verbose:
                 build_command += " V=1"
             exe_sys_cmd(build_command)
@@ -897,11 +902,7 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
         finally:
             os.chdir(initial_directory)
 
-        # Check if the build was successful and copy the artifact
-        if board == 'bvf': # Openbeagle HSS - bvf HSS is outputted to a different folder
-            generated_hex_dir = os.path.normpath(os.path.join(hss_source, "Default", "bootmode1"))
-        else:
-            generated_hex_dir = os.path.normpath(os.path.join(hss_source, "build", "bootmode1"))
+        generated_hex_dir = os.path.normpath(os.path.join(hss_source, "build", f"bootmode{bootmode}"))
 
         hex_files = glob.glob(os.path.join(generated_hex_dir, "*.hex"))
         if hex_files:
@@ -910,6 +911,44 @@ def make_hss(hss_source, build_options_input_yaml_file, board_options_input_yaml
             shutil.copyfile(source_hex_file, dest_hex_file)
             selected_hex_file = os.path.abspath(dest_hex_file)
             print(f"HSS image copied from {source_hex_file} to {dest_hex_file}")
+
+            # Integration block with key reuse logic:
+            if bootmode == 3 and key_manager is not None:
+                source_key_file = os.path.normpath(os.path.join(generated_hex_dir,
+                                                "hss-envm-wrapper-bm3-public-key-xy.txt"))
+
+                # Check if we should reuse existing keys
+                if key_manager.has_key() and not force_new_keys:
+                    print("\n" + "="*80)
+                    print("Boot Mode 3: Reusing existing keys".center(80))
+                    print("="*80)
+
+                    # Copy stored key to expected location instead of using HSS-generated one
+                    if key_manager.reuse_existing_key(source_key_file):
+                        ucskx, ucsky = key_manager.get_current_key()
+                        print(f"  Public Key X: {ucskx[:8]}...")
+                        print(f"  Public Key Y: {ucsky[:8]}...\n")
+                        return selected_hex_file
+                    else:
+                        print("Warning: Failed to reuse keys, will use newly generated keys")
+
+                # Either no existing keys, force_new_keys=True, or reuse failed
+                if not os.path.exists(source_key_file):
+                    print("Warning: Public key file not found. Skipping key management.")
+                    return selected_hex_file
+
+                # Store or update the key
+                try:
+                    ucskx, ucsky = integrate_with_build(
+                        manager=key_manager,
+                        hss_key_file_path=source_key_file,
+                        design_name=top_level_name,
+                        design_version=design_version,
+                        force_new_keys=force_new_keys
+                    )
+                except Exception as e:
+                    print(f"Error in key management: {e}")
+
             return selected_hex_file
         else:
             raise Exception("!!! Error: Hart Soft Service build failed !!!", flush=True)
@@ -1105,6 +1144,21 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
         raise RuntimeError(f"Libero command failed with exit code {returncode}")
 
 
+def parse_public_key(file_path):
+    """Parse public key file and return (x, y) values or (None, None) if missing."""
+    keys = {}
+    try:
+        with open(file_path) as f:
+            for line in f:
+                if "=" in line:
+                    k, v = line.strip().split("=", 1)
+                    keys[k.strip()] = v.strip()
+        return keys.get("ucskx"), keys.get("ucsky")
+    except FileNotFoundError:
+        print(f"Warning: Public key file not found at {file_path}")
+    except Exception as e:
+        print(f"Warning: Error reading public key file: {e}")
+    return None, None
 
 def generate_libero_project(libero, build_options_input_yaml_file, board_options_input_yaml_file, fpga_design_sources_path, build_dir_path, design_version):
     print("================================================================================")
@@ -1113,6 +1167,12 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
     # Execute the Libero TCL script used to create the Libero design
     initial_directory = os.getcwd()
     os.chdir(fpga_design_sources_path)
+
+     # --- Load YAML safely ---
+    with open(build_options_input_yaml_file) as f:
+        data = yaml.safe_load(f)
+        hss_info = data.get("HSS", {})
+
     project_location = os.path.join("..", "..", build_dir_path, "work", "libero")
     script = "BUILD_BVF_GATEWARE.tcl"
 
@@ -1123,7 +1183,20 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
     else:
         script_args += " "
 
-    hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
+    # --- Handle bootmode-specific setup ---
+    bootmode = hss_info.get("bootmode", 1)
+    if bootmode == 3:
+        hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm3-p0.hex")
+        public_key_file = os.path.join("..", "..", "key_store", "current_key.txt")
+        public_key_x, public_key_y = parse_public_key(public_key_file)
+
+        if public_key_x and public_key_y:
+            script_args += f"PUBLIC_KEY_X:{public_key_x} PUBLIC_KEY_Y:{public_key_y} BOOTMODE:BM3 "
+        else:
+            print("Warning: Missing or invalid public key values for Boot Mode 3.")
+    elif bootmode == 1:
+        hss_image_location = os.path.join("..", "..", "work", "HSS", "hss-envm-wrapper-bm1-p0.hex")
+        script_args += f" BOOTMODE:BM1 "
 
     mss_dir = os.path.abspath(os.path.join(project_location, "..", "MSS"))
     cxz_files = glob.glob(os.path.join(mss_dir, "*.cxz"))
@@ -1231,9 +1304,28 @@ def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, ga
         print(f"Error: {e}")
         sys.exit(1)
 
-    make_hss(sources["HSS"], build_options_input_yaml_file, board_options_yaml_arg)
-
+    # ============ Calculate top_level_name BEFORE calling make_hss ============
+    # Temporarily change to FPGA-design directory to calculate git hash
+    initial_dir = os.getcwd()
     fpga_design_sources_path = os.path.join(gateware_top_dir, "sources", "FPGA-design")
+
+    os.chdir(fpga_design_sources_path)
+    top_level_name = get_top_level_name()
+    os.chdir(initial_dir)
+
+    # Initialize KeyManager only for bootmode 3
+    key_manager = None
+    with open(build_options_input_yaml_file) as f:
+        data = yaml.safe_load(f)
+        hss_info = data.get("HSS", {})
+        bootmode = hss_info.get("bootmode", 1)
+        if bootmode == 3:
+            key_manager = KeyManager(key_store_path=os.path.join(gateware_top_dir, "key_store"))
+
+    make_hss(sources["HSS"], build_options_input_yaml_file, board_options_yaml_arg,
+         design_version=int(design_version),
+         top_level_name=top_level_name,
+         key_manager=key_manager)
 
     generate_libero_project(libero, build_options_input_yaml_file, board_options_yaml_arg, fpga_design_sources_path, build_dir, design_version )
 

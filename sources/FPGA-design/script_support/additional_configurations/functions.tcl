@@ -78,7 +78,7 @@ proc generate_temp_file {keep} {
     }
 }
 
-proc create_eNVM_config {config client} {
+proc create_eNVM_bm1_config {config client} {
     set envm_config [open $config w]
     
     puts $envm_config "set_plain_text_client \\"
@@ -92,6 +92,31 @@ proc create_eNVM_config {config client} {
     puts $envm_config "-use_for_simulation 0 \\"
     puts $envm_config "-reprogram 1 \\"
     puts $envm_config "-use_as_rom 0 \\"
+    puts $envm_config "-fabric_access_read 1 \\"
+    puts $envm_config "-fabric_access_write 0 \\"
+    puts $envm_config "-mss_access_read 1 \\"
+    puts $envm_config "-mss_access_write 0"
+
+    close $envm_config
+}
+
+proc create_eNVM_bm3_config {config client PUBLIC_KEY_X PUBLIC_KEY_Y} {
+    set envm_config [open $config w]
+
+    puts $envm_config "set_plain_text_client \\"
+    puts $envm_config "-client_name {BOOT_MODE_3_ENVM_CLIENT} \\"
+    puts $envm_config "-number_of_bytes 117248 \\"
+    puts $envm_config "-content_type {MEMORY_FILE} \\"
+    puts $envm_config "-content_file_format {Intel-Hex} \\"
+    puts $envm_config "-content_file {$client} \\"
+    puts $envm_config "-mem_file_base_address {0x20220000} \\"
+    puts $envm_config "-start_page 0 \\"
+    puts $envm_config "-use_for_simulation 0 \\"
+    puts $envm_config "-reprogram 1 \\"
+    puts $envm_config "-use_as_rom 0 \\"
+    puts $envm_config "-include_in_digest 0 \\"
+    puts $envm_config "-public_key_x {$PUBLIC_KEY_X} \\"
+    puts $envm_config "-public_key_y {$PUBLIC_KEY_Y} \\"
     puts $envm_config "-fabric_access_read 1 \\"
     puts $envm_config "-fabric_access_write 0 \\"
     puts $envm_config "-mss_access_read 1 \\"
