@@ -71,9 +71,15 @@ pages:
     - cd ./src/ ; debuild -b -us -uc ; cd ../
     - mkdir -p ./public/dists/stable/main/binary-riscv64/
     - mkdir -p ./public/pool
+    - mkdir -p /opt/gateware/${CI_PROJECT_PATH}/${CI_PIPELINE_ID}/pool/ || true
     - cp -v *.deb ./public/pool/ || true
+    - cp -v *.deb /opt/gateware/${CI_PROJECT_PATH}/${CI_PIPELINE_ID}/pool/ || true
     - cp -v *.build ./public/ || true
+    - cp -v *.build /opt/gateware/${CI_PROJECT_PATH}/${CI_PIPELINE_ID}/ || true
     - cp -v *.buildinfo ./public/ || true
+    - cp -v *.buildinfo /opt/gateware/${CI_PROJECT_PATH}/${CI_PIPELINE_ID}/ || true
+    - echo "$CI_PIPELINE_ID" > /opt/gateware/${CI_PROJECT_PATH}/latest
+    - touch /opt/gateware/${CI_PROJECT_PATH}/${CI_PIPELINE_ID}/.uploaded
     - cd ./public ; dpkg-scanpackages ./pool/ | gzip > ./dists/stable/main/binary-riscv64/Packages.gz || true ; cd ../
     - apindex public
   artifacts:
