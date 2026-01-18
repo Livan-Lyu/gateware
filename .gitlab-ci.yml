@@ -23,6 +23,7 @@ build-job:       # This job runs in the build stage, which runs first.
     - echo "Building the gateware..."
     - python3 create-release.py $BUILD_OPTIONS_DIRECTORY
     - echo "Compile complete."
+    - du -sh artifacts/bitstreams/*/LinuxProgramming/mpfs_bitstream.spi || exit 1
   artifacts:
     when: on_success
     paths:
