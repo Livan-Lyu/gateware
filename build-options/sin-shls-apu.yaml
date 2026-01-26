@@ -18,6 +18,7 @@ fpga-hls-libraries:
     type: git
     link: https://github.com/MicrochipTech/fpga-hls-libraries.git
     branch: main
+    commit: 3ef60bed85461f39cc5a8877ad4921a2a379ad2a
     depth: 1
 
 #fpga-hls-examples:
