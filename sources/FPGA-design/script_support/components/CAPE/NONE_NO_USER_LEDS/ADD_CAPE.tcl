@@ -1,4 +1,4 @@
-puts "======== Add cape option: NONE ========"
+puts "======== Add cape option: NONE_NO_USER_LEDS ========"
 
 set sd_name ${top_level_name}
 
