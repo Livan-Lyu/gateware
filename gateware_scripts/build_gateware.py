@@ -387,7 +387,7 @@ def clone_sources(source_list, gateware_top_dir):
                 print(f"Checked out commit '{commit_hash[:8]}'.")
                 return
             except git.exc.GitCommandError:
-                print(f"Commit '{commit_hash[:8]}' not found — fetching depth={current_depth * 2}...")
+                print(f"Commit '{commit_hash[:8]}' not found - fetching depth={current_depth * 2}...")
                 try:
                     repo.git.fetch("--depth", str(current_depth * 2), "--tags")
                 except Exception as e:
@@ -560,7 +560,7 @@ def clone_sources(source_list, gateware_top_dir):
 
                         if not is_shallow:
                             # Don't bother shallowing a full repo
-                            print("Repository is full — performing normal fetch")
+                            print("Repository is full - performing normal fetch")
                             repo.git.fetch('origin', '--tags')
                         else:
                             # Can't reliably know current depth, so just deepen to target if >1
@@ -594,7 +594,7 @@ def clone_sources(source_list, gateware_top_dir):
                         else:
                             # --- SMART FALLBACK ---
                             default_branch = get_default_branch(repo_url)
-                            print(f"No branch or commit specified — resetting to '{default_branch}'.")
+                            print(f"No branch or commit specified - resetting to '{default_branch}'.")
                             try:
                                 repo.git.fetch("origin", default_branch)
                                 repo.git.checkout(default_branch)
@@ -603,7 +603,7 @@ def clone_sources(source_list, gateware_top_dir):
                             except Exception:
                                 # --- Try common or first valid branch ---
                                 fallback_branch = get_first_valid_branch(repo_url)
-                                print(f"Default branch '{default_branch}' not found — trying '{fallback_branch}'.")
+                                print(f"Default branch '{default_branch}' not found - trying '{fallback_branch}'.")
                                 repo.git.fetch("origin", fallback_branch)
                                 repo.git.checkout(fallback_branch)
                                 repo.git.reset("--hard", f"origin/{fallback_branch}")
@@ -642,7 +642,7 @@ def clone_sources(source_list, gateware_top_dir):
                         print(f"Cloned '{source}' on branch '{clone_branch}'.")
                     except git.exc.GitCommandError:
                         fallback_branch = get_first_valid_branch(repo_url)
-                        print(f"Branch '{clone_branch}' not found — retrying clone with '{fallback_branch}'.")
+                        print(f"Branch '{clone_branch}' not found - retrying clone with '{fallback_branch}'.")
                         repo = git.Repo.clone_from(repo_url, source_dir, branch=fallback_branch, depth=int(depth))
                         print(f"Cloned '{source}' on branch '{fallback_branch}'.")
 
@@ -1124,6 +1124,16 @@ def get_top_level_name():
     return top_level_name
 
 
+def _tcl_path(path):
+    """Convert a filesystem path to forward slashes for safe use in Tcl KEY:value args.
+
+    On Windows, backslashes in paths cause Libero's Tcl argument parser to
+    misinterpret KEY:C:\\foo\\bar as key=KEY, value=C (stopping at the second
+    colon).  Tcl accepts forward slashes on all platforms, so normalise here.
+    """
+    return path.replace("\\", "/") if path else path
+
+
 # Calls Libero and runs a script
 def call_libero(libero, script, script_args, project_location, hss_image_location,
                 mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version):
@@ -1133,14 +1143,14 @@ def call_libero(libero, script, script_args, project_location, hss_image_locatio
     """
 
     libero_cmd = (
-        f'{libero} SCRIPT:{script} '
+        f'{libero} SCRIPT:{_tcl_path(script)} '
         f'"SCRIPT_ARGS:{script_args} '
-        f'PROJECT_LOCATION:{project_location} '
+        f'PROJECT_LOCATION:{_tcl_path(project_location)} '
         f'TOP_LEVEL_NAME:{top_level_name} '
-        f'HSS_IMAGE_PATH:{hss_image_location} '
-        f'PROG_EXPORT_PATH:{prog_export_path} '
-        f'MSS_COMPONENT_PATH:{mss_component_file_location} '
-        f'INITIAL_DIRECTORY:{initial_directory} '
+        f'HSS_IMAGE_PATH:{_tcl_path(hss_image_location)} '
+        f'PROG_EXPORT_PATH:{_tcl_path(prog_export_path)} '
+        f'MSS_COMPONENT_PATH:{_tcl_path(mss_component_file_location)} '
+        f'INITIAL_DIRECTORY:{_tcl_path(initial_directory)} '
         f'DESIGN_VERSION:{design_version}"'
     )
 

@@ -178,7 +178,7 @@ class KeyManager:
         self.tracking["current_key_id"] = key_id
         self._save_tracking()
 
-        print(f"✓ Stored key: {key_id}")
+        print(f"[OK] Stored key: {key_id}")
         print(f"  Design: {design_name} v{design_version}")
         print(f"  Location: {self.key_file}")
         print(f"  Archived: {archive_path}")
@@ -237,7 +237,7 @@ class KeyManager:
                 raise KeyError(f"Archive file not found: {archive_file}")
 
             shutil.copy2(archive_file, output_path)
-            print(f"✓ Exported key {key_id} to {output_path}")
+            print(f"[OK] Exported key {key_id} to {output_path}")
             return key_record["ucskx"], key_record["ucsky"]
         else:
             # Export current key
@@ -245,7 +245,7 @@ class KeyManager:
                 raise KeyError("No key currently stored")
 
             shutil.copy2(self.key_file, output_path)
-            print(f"✓ Exported current key to {output_path}")
+            print(f"[OK] Exported current key to {output_path}")
             return self.get_current_key()
 
     def has_key(self) -> bool:
@@ -299,7 +299,7 @@ class KeyManager:
         try:
             shutil.copy2(self.key_file, hss_key_destination)
             metadata = self.get_metadata()
-            print(f"✓ Reusing existing key: {metadata.get('key_id', 'unknown')}")
+            print(f"[OK] Reusing existing key: {metadata.get('key_id', 'unknown')}")
             print(f"  Original design: {metadata.get('design_name', 'unknown')}")
             print(f"  Created: {metadata.get('created_at', 'unknown')}")
             return True
@@ -345,7 +345,7 @@ class KeyManager:
         self.tracking["current_key_id"] = key_id
         self._save_tracking()
 
-        print(f"✓ Restored key: {key_id}")
+        print(f"[OK] Restored key: {key_id}")
         print(f"  Original design: {key_record['design_name']} v{key_record['design_version']}")
 
 
@@ -459,13 +459,13 @@ def main():
         print("-"*70)
 
         for key in all_keys:
-            marker = "→" if key["key_id"] == current_id else " "
+            marker = "->" if key["key_id"] == current_id else "  "
             status = key["status"]
             design = f"{key['design_name']} v{key['design_version']}"
             created = key['created_at'].split('T')[0] if 'T' in key['created_at'] else key['created_at'][:10]
             print(f"{marker} {key['key_id']:<23} {status:<10} {design:<20} {created:<15}")
 
-        print("\n→ = Currently active key")
+        print("\n-> = Currently active key")
         print(f"Archive location: {mgr.archive_dir}")
 
     elif cmd == 'info':
