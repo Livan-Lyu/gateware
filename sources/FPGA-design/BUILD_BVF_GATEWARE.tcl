@@ -42,12 +42,14 @@ if { $::argc > 0 } {
     foreach arg $::argv {
         if {[string match "*:*" $arg]} {
             set temp [split $arg ":"]
-            set display_value [lindex $temp 1]
-            if {[string match "*PUBLIC_KEY*" [lindex $temp 0]]} {
+            set param_name [lindex $temp 0]
+            set param_value [join [lrange $temp 1 end] ":"]
+            set display_value $param_value
+            if {[string match "*PUBLIC_KEY*" $param_name]} {
                 set display_value "[string range $display_value 0 7]..."
             }
-            puts "Setting parameter [lindex $temp 0] to $display_value"
-            set [lindex $temp 0] "[lindex $temp 1]"
+            puts "Setting parameter $param_name to $display_value"
+            set $param_name $param_value
         } else {
             set $arg 1
             puts "set $arg to 1"
