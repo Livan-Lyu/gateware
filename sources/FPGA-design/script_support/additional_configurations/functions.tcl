@@ -70,8 +70,8 @@ proc update_param {config param_to_update value_to_set} {
 proc generate_temp_file {keep} {
     set chan [file tempfile filename]
     if {!$keep} {
-        file delete $filename
         close $chan
+        file delete $filename
         return $filename
     } else {
         return $chan

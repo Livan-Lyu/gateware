@@ -65,7 +65,7 @@ YAML configuration files showcasing additional functionality are located in the 
 | default-bm3.yaml   | Default gateware with HSS set to boot in mode 3. [More](build-options/extras/docs/bm3-readme.md)|
 
 ## Supported Platforms
-The BeagleV Fire gateware builder has been tested on Ubuntu 20.04.
+The BeagleV Fire gateware builder has been tested on Ubuntu 20.04 and Windows 11.
 
 ## Microchip bitstream-builder
 The BeagleV-Fire gateware builder is derived from [Microchip's bitstream-builder](https://github.com/polarfire-soc/icicle-kit-minimal-bring-up-design-bitstream-builder).  
