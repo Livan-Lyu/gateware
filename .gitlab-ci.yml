@@ -35,9 +35,7 @@ build-job:       # This job runs in the build stage, which runs first.
       junit: artifacts/tests_report.xml
 
 pages:
-  image: robertcnelson/beagle-devscripts-ubuntu-24.04-riscv64:latest
-  # Ubuntu 23.04 packages archive has been shutdown, move to noble (lts) 24.04, for legacy, this image is still published..
-  # image: robertcnelson/beagle-devscripts-ubuntu-23.04-riscv64:latest
+  image: robertcnelson/beagle-devscripts-kernel-debian-13-riscv64:latest
   # https://openbeagle.org/beagleboard/ci-docker-images
   stage: deploy
   tags:
@@ -62,7 +60,7 @@ pages:
     - rsync -av ./artifacts/$DEBIAN_SRC/* ./src/debian/
     - mkdir -p ./src/gateware-builds-tester || true
     - rsync -av ./artifacts ./src/gateware-builds-tester/
-    - echo "$DEBIAN_CHANGELOG_PKG (1.$(LANG=C date +%Y%m%d).0-0~noble) noble; urgency=low" > ./src/debian/changelog
+    - echo "$DEBIAN_CHANGELOG_PKG (1.$(LANG=C date +%Y%m%d).0-0~trixie) trixie; urgency=low" > ./src/debian/changelog
     - echo "" >> ./src/debian/changelog
     - echo "  * ci build of $CI_PROJECT_URL" >> ./src/debian/changelog
     - echo "" >> ./src/debian/changelog
