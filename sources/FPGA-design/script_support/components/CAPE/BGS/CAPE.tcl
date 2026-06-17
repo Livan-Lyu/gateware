@@ -1,5 +1,5 @@
-# Creating SmartDesign "CAPE"
-set sd_name {CAPE}
+# Creating SmartDesign "CAPE_TOP" (different name from hdl_core "CAPE")
+set sd_name {CAPE_TOP}
 create_smartdesign -sd_name ${sd_name}
 auto_promote_pad_pins -promote_all 0
 

@@ -34,10 +34,10 @@ sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}
 
 #-------------------------------------------------------------------------------
-# Instantiate CAPE SmartDesign component
+# Instantiate CAPE_TOP SmartDesign component (wraps CAPE hdl_core)
 #-------------------------------------------------------------------------------
 set sd_name ${top_level_name}
-sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE} -instance_name {CAPE}
+sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_TOP} -instance_name {CAPE}
 
 #-------------------------------------------------------------------------------
 # Connections
