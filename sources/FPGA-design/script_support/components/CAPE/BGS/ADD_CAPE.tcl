@@ -13,6 +13,8 @@ hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {BIF_1} -new_bif_nam
 
 # ---- AXI4 master BIF for DDR read ----
 hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_MASTER} -signal_map {}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ACLK}    -core_signal_name {PCLK}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARESETN} -core_signal_name {PRESETN}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARREADY} -core_signal_name {M_AXI_ARREADY}
@@ -97,6 +99,7 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[20]" "BVF_RISCV_SUBSYSTEM:I2
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_TARGET" "BVF_RISCV_SUBSYSTEM:CAPE_APB_MTARGET"}
 
 # AXI4 master to FIC_0 (for DDR read)
+sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4_INITIATOR" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_TXD} 
