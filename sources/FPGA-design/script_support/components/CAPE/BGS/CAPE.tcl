@@ -20,7 +20,18 @@ foreach p {11 12 13 14 15 16 17 18 21 22 23 24 25 26 27 28 29 30 31 41 42} {
 }
 
 # ===============================================================================
-# AXI4 master BIF — signal names use "ax_" prefix to avoid name conflict
+# AXI signal ports — must exist before BIF can use them
+# ===============================================================================
+sd_create_bus_port -sd_name ${sd_name} -port_name {ax_araddr} -port_direction {OUT} -port_range {[31:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ax_arvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ax_arready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ax_rdata} -port_direction {IN} -port_range {[31:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ax_rvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ax_rready} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ax_rresp} -port_direction {IN}
+
+# ===============================================================================
+# AXI4 master BIF — maps to the ports just created above
 # ===============================================================================
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4_INITIATOR} -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredMaster} -port_bif_mapping {\
 "ACLK:AXI_ACLK" \
