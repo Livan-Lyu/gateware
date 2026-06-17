@@ -11,27 +11,6 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {BIF_1} -bif_signal_n
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {BIF_1} -bif_signal_name {PWDATA} -core_signal_name {APB_SLAVE_SLAVE_PWDATA}
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {BIF_1} -new_bif_name {APB_TARGET}
 
-# ---- AXI4 master BIF (64-bit data) ----
-hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARREADY} -core_signal_name {M_AXI_ARREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RDATA}   -core_signal_name {M_AXI_RDATA}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RVALID}  -core_signal_name {M_AXI_RVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RREADY}  -core_signal_name {M_AXI_RREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RRESP}   -core_signal_name {M_AXI_RRESP}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWADDR}  -core_signal_name {M_AXI_AWADDR}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWVALID} -core_signal_name {M_AXI_AWVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWREADY} -core_signal_name {M_AXI_AWREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WDATA}   -core_signal_name {M_AXI_WDATA}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WSTRB}   -core_signal_name {M_AXI_WSTRB}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WVALID}  -core_signal_name {M_AXI_WVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WREADY}  -core_signal_name {M_AXI_WREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BRESP}   -core_signal_name {M_AXI_BRESP}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BVALID}  -core_signal_name {M_AXI_BVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BREADY}  -core_signal_name {M_AXI_BREADY}
-hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
-
 #-------------------------------------------------------------------------------
 # Build the Cape module
 #-------------------------------------------------------------------------------
@@ -58,23 +37,21 @@ sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}
 
 #-------------------------------------------------------------------------------
-# Instantiate CAPE hdl_core directly
+# Instantiate.
 #-------------------------------------------------------------------------------
 set sd_name ${top_level_name}
 sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {CAPE} -instance_name {CAPE}
 
 #-------------------------------------------------------------------------------
-# Connections
+# Connections.
 #-------------------------------------------------------------------------------
+
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_19}
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 
 # Clocks and resets
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_PCLK" "CAPE:PCLK"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:PRESETN"}
-# AXI clock — same source as FIC_0 (required for BIF compatibility)
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_ACLK" "CAPE:ACLK"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_FABRIC_RESET_N" "CAPE:ARESETN"}
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_F2M" "CAPE:GPIO_IN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_M2F" "CAPE:GPIO_OUT"}
@@ -106,12 +83,7 @@ sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P9_42} -port_name {}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[19]" "BVF_RISCV_SUBSYSTEM:I2C0_SCL"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[20]" "BVF_RISCV_SUBSYSTEM:I2C0_SDA"}
 
-# APB
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_TARGET" "BVF_RISCV_SUBSYSTEM:CAPE_APB_MTARGET"}
-
-# AXI4 master → FIC_0 (FPGA reads DDR via 64-bit AXI)
-sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4_INITIATOR" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_TXD}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_RXD} -value {GND}

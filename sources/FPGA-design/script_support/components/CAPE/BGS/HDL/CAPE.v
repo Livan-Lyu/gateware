@@ -43,26 +43,7 @@ module CAPE(
     P9_30,
     P9_31,
     P9_41,
-    P9_42,
-    ACLK,
-    ARESETN,
-    M_AXI_ARADDR,
-    M_AXI_ARVALID,
-    M_AXI_ARREADY,
-    M_AXI_RDATA,
-    M_AXI_RVALID,
-    M_AXI_RREADY,
-    M_AXI_RRESP,
-    M_AXI_AWADDR,
-    M_AXI_AWVALID,
-    M_AXI_AWREADY,
-    M_AXI_WDATA,
-    M_AXI_WSTRB,
-    M_AXI_WVALID,
-    M_AXI_WREADY,
-    M_AXI_BRESP,
-    M_AXI_BVALID,
-    M_AXI_BREADY
+    P9_42
 );
 
 //--------------------------------------------------------------------
@@ -77,34 +58,12 @@ input  [27:0] GPIO_OE;
 input  [27:0] GPIO_OUT;
 input         PCLK;
 input         PRESETN;
-input         ACLK;
-input         ARESETN;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
 output [31:0] APB_SLAVE_SLAVE_PRDATA;
 output [27:0] GPIO_IN;
 output [23:0] INT;
-output [31:0] M_AXI_ARADDR;
-output        M_AXI_ARVALID;
-input         M_AXI_ARREADY;
-input  [63:0] M_AXI_RDATA;
-input         M_AXI_RVALID;
-output        M_AXI_RREADY;
-input  [1:0]  M_AXI_RRESP;
-// Write address channel (unused, tied off)
-output [31:0] M_AXI_AWADDR;
-output        M_AXI_AWVALID;
-input         M_AXI_AWREADY;
-// Write data channel (unused, tied off)
-output [63:0] M_AXI_WDATA;
-output [7:0]  M_AXI_WSTRB;
-output        M_AXI_WVALID;
-input         M_AXI_WREADY;
-// Write response channel (unused, ignored)
-input  [1:0]  M_AXI_BRESP;
-input         M_AXI_BVALID;
-output        M_AXI_BREADY;
 //--------------------------------------------------------------------
 // Inout
 //--------------------------------------------------------------------
@@ -207,13 +166,6 @@ assign GPIO_OUT_const_net_3 = 2'h0;
 //--------------------------------------------------------------------
 assign INT[23:1]                    = 23'h0;
 assign INT[0]                       = pixel_proc_0_irq;
-// AXI write channels — unused, tie to safe values
-assign M_AXI_AWADDR = 32'h00000000;
-assign M_AXI_AWVALID = 1'b0;
-assign M_AXI_WDATA  = 64'h0000000000000000;
-assign M_AXI_WSTRB  = 8'h00;
-assign M_AXI_WVALID = 1'b0;
-assign M_AXI_BREADY = 1'b0;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
@@ -262,8 +214,6 @@ apb_ctrl_status apb_ctrl_status_0(
 pixel_proc pixel_proc_0(
         .pclk           ( PCLK ),
         .presetn        ( PRESETN ),
-        .aclk           ( ACLK ),
-        .aresetn        ( ARESETN ),
         .psel           ( APB_SLAVE_SLAVE_PSEL ),
         .penable        ( APB_SLAVE_SLAVE_PENABLE ),
         .pwrite         ( APB_SLAVE_SLAVE_PWRITE ),
