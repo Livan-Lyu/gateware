@@ -4,5 +4,5 @@ design_version.yaml
 gateware_scripts/__pycache__/
 bitstream/
 key_store/
-sources/MSS
-sources/HSS
+sources/MSS/
+sources/HSS/
