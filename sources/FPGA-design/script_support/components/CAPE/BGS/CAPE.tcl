@@ -4,7 +4,7 @@ create_smartdesign -sd_name ${sd_name}
 auto_promote_pad_pins -promote_all 0
 
 # ===============================================================================
-# Top level Ports — scalar / bus
+# Top level scalar/bus Ports
 # ===============================================================================
 sd_create_scalar_port -sd_name ${sd_name} -port_name {PCLK} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {PRESETN} -port_direction {IN}
@@ -20,29 +20,18 @@ foreach p {11 12 13 14 15 16 17 18 21 22 23 24 25 26 27 28 29 30 31 41 42} {
 }
 
 # ===============================================================================
-# Bus Interface Ports (same format as ROBOTICS CAPE.tcl)
+# AXI4 master BIF — signal names use "ax_" prefix to avoid name conflict
 # ===============================================================================
-sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} -port_bif_vlnv {AMBA:AMBA2:APB:r0p0} -port_bif_role {slave} -port_bif_mapping {\
-"PADDR:APB_SLAVE_SLAVE_PADDR" \
-"PSELx:APB_SLAVE_SLAVE_PSEL" \
-"PENABLE:APB_SLAVE_SLAVE_PENABLE" \
-"PWRITE:APB_SLAVE_SLAVE_PWRITE" \
-"PRDATA:APB_SLAVE_SLAVE_PRDATA" \
-"PWDATA:APB_SLAVE_SLAVE_PWDATA" \
-"PREADY:APB_SLAVE_SLAVE_PREADY" \
-"PSLVERR:APB_SLAVE_SLAVE_PSLVERR" }
-
-# ---- AXI4 master BIF (mirroredMaster = fabric is initiator) ----
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4_INITIATOR} -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredMaster} -port_bif_mapping {\
 "ACLK:AXI_ACLK" \
 "ARESETN:AXI_ARESETN" \
-"ARADDR:AXI_ARADDR" \
-"ARVALID:AXI_ARVALID" \
-"ARREADY:AXI_ARREADY" \
-"RDATA:AXI_RDATA" \
-"RVALID:AXI_RVALID" \
-"RREADY:AXI_RREADY" \
-"RRESP:AXI_RRESP" }
+"ARADDR:ax_araddr" \
+"ARVALID:ax_arvalid" \
+"ARREADY:ax_arready" \
+"RDATA:ax_rdata" \
+"RVALID:ax_rvalid" \
+"RREADY:ax_rready" \
+"RRESP:ax_rresp" }
 
 # ===============================================================================
 # Instantiate Verilog CAPE core
@@ -50,7 +39,7 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4_INITIATOR} -port_bif_vln
 sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {CAPE} -instance_name {CAPE_INST}
 
 # ===============================================================================
-# Connect SmartDesign ports to CAPE_INST Verilog ports
+# Connect scalar/bus ports to CAPE_INST
 # ===============================================================================
 sd_connect_pins -sd_name ${sd_name} -pin_names {PCLK CAPE_INST:PCLK}
 sd_connect_pins -sd_name ${sd_name} -pin_names {PRESETN CAPE_INST:PRESETN}
@@ -65,17 +54,21 @@ foreach p {11 12 13 14 15 16 17 18 21 22 23 24 25 26 27 28 29 30 31 41 42} {
     sd_connect_pins -sd_name ${sd_name} -pin_names "P9_${p} CAPE_INST:P9_${p}"
 }
 
-# APB BIF: SmartDesign port → hdl_core BIF
-sd_connect_pins -sd_name ${sd_name} -pin_names {APB_SLAVE CAPE_INST:APB_TARGET}
+# ===============================================================================
+# APB: promote CAPE_INST's existing APB_TARGET BIF to SmartDesign port
+# ===============================================================================
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE_INST:APB_TARGET} -port_name {APB_TARGET}
 
-# AXI raw signals: SmartDesign BIF → CAPE_INST Verilog ports
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ARADDR  CAPE_INST:M_AXI_ARADDR}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ARVALID CAPE_INST:M_AXI_ARVALID}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ARREADY CAPE_INST:M_AXI_ARREADY}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_RDATA   CAPE_INST:M_AXI_RDATA}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_RVALID  CAPE_INST:M_AXI_RVALID}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_RREADY  CAPE_INST:M_AXI_RREADY}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_RRESP   CAPE_INST:M_AXI_RRESP}
+# ===============================================================================
+# AXI: connect SmartDesign AXI BIF signals → CAPE_INST raw AXI ports
+# ===============================================================================
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_araddr  CAPE_INST:M_AXI_ARADDR}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_arvalid CAPE_INST:M_AXI_ARVALID}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_arready CAPE_INST:M_AXI_ARREADY}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_rdata   CAPE_INST:M_AXI_RDATA}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_rvalid  CAPE_INST:M_AXI_RVALID}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_rready  CAPE_INST:M_AXI_RREADY}
+sd_connect_pins -sd_name ${sd_name} -pin_names {ax_rresp   CAPE_INST:M_AXI_RRESP}
 
 auto_promote_pad_pins -promote_all 1
 save_smartdesign -sd_name ${sd_name}
