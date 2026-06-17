@@ -12,15 +12,17 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {BIF_1} -bif_signal_n
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {BIF_1} -new_bif_name {APB_TARGET}
 
 # ---- AXI4 master BIF for DDR read ----
-hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_MASTER} -signal_map {}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARREADY} -core_signal_name {M_AXI_ARREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RDATA}   -core_signal_name {M_AXI_RDATA}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RVALID}  -core_signal_name {M_AXI_RVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RREADY}  -core_signal_name {M_AXI_RREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RRESP}   -core_signal_name {M_AXI_RRESP}
-hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_MASTER} -new_bif_name {AXI4_INITIATOR} 
+# DISABLED: hdl_core AXI4 BIF cannot connect to MSS FIC_0 BIF in this Libero flow.
+# Data path will use PDMA writing to PIXEL_DATA register (0x4110008C) instead.
+# hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_MASTER} -signal_map {}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {ARREADY} -core_signal_name {M_AXI_ARREADY}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RDATA}   -core_signal_name {M_AXI_RDATA}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RVALID}  -core_signal_name {M_AXI_RVALID}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RREADY}  -core_signal_name {M_AXI_RREADY}
+# hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_MASTER} -bif_signal_name {RRESP}   -core_signal_name {M_AXI_RRESP}
+# hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_MASTER} -new_bif_name {AXI4_INITIATOR}
 
 #-------------------------------------------------------------------------------
 # Build the Cape module
@@ -63,6 +65,9 @@ sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 # Clocks and resets
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_PCLK" "CAPE:PCLK"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:PRESETN" }
+# AXI clock: disabled (AXI BIF not used, see note above)
+# sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_PCLK" "CAPE:ACLK"}
+# sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:ARESETN"}
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_F2M" "CAPE:GPIO_IN"} 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_M2F" "CAPE:GPIO_OUT"} 
@@ -96,9 +101,9 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[20]" "BVF_RISCV_SUBSYSTEM:I2
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_TARGET" "BVF_RISCV_SUBSYSTEM:CAPE_APB_MTARGET"}
 
-# AXI4 master to FIC_0 (for DDR read)
-sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4_INITIATOR" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
+# AXI4 master to FIC_0 — disabled (see BIF note above)
+# sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
+# sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4_INITIATOR" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_TXD} 
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_RXD} -value {GND} 

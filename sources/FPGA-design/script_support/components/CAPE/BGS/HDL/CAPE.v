@@ -43,15 +43,7 @@ module CAPE(
     P9_30,
     P9_31,
     P9_41,
-    P9_42,
-    // AXI4 master read
-    M_AXI_ARADDR,
-    M_AXI_ARVALID,
-    M_AXI_ARREADY,
-    M_AXI_RDATA,
-    M_AXI_RVALID,
-    M_AXI_RREADY,
-    M_AXI_RRESP
+    P9_42
 );
 
 //--------------------------------------------------------------------
@@ -72,13 +64,6 @@ input         PRESETN;
 output [31:0] APB_SLAVE_SLAVE_PRDATA;
 output [27:0] GPIO_IN;
 output [23:0] INT;
-output [31:0] M_AXI_ARADDR;
-output        M_AXI_ARVALID;
-input         M_AXI_ARREADY;
-input  [31:0] M_AXI_RDATA;
-input         M_AXI_RVALID;
-output        M_AXI_RREADY;
-input  [1:0]  M_AXI_RRESP;
 //--------------------------------------------------------------------
 // Inout
 //--------------------------------------------------------------------
@@ -227,24 +212,15 @@ apb_ctrl_status apb_ctrl_status_0(
 
 //--------pixel_proc
 pixel_proc pixel_proc_0(
-        // APB
-        .presetn        ( PRESETN ),
         .pclk           ( PCLK ),
+        .presetn        ( PRESETN ),
         .psel           ( APB_SLAVE_SLAVE_PSEL ),
         .penable        ( APB_SLAVE_SLAVE_PENABLE ),
         .pwrite         ( APB_SLAVE_SLAVE_PWRITE ),
         .paddr          ( APB_SLAVE_SLAVE_PADDR_0 ),
         .pwdata         ( APB_SLAVE_SLAVE_PWDATA ),
         .prdata         ( pixel_proc_0_prdata ),
-        .irq            ( pixel_proc_0_irq ),
-        // AXI master read
-        .m_axi_araddr   ( M_AXI_ARADDR ),
-        .m_axi_arvalid  ( M_AXI_ARVALID ),
-        .m_axi_arready  ( M_AXI_ARREADY ),
-        .m_axi_rdata    ( M_AXI_RDATA ),
-        .m_axi_rvalid   ( M_AXI_RVALID ),
-        .m_axi_rready   ( M_AXI_RREADY ),
-        .m_axi_rresp    ( M_AXI_RRESP )
+        .irq            ( pixel_proc_0_irq )
         );
 
 //--------P8_IOPADS
