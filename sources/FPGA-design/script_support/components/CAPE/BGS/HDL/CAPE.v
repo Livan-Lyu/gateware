@@ -88,7 +88,7 @@ output [23:0] INT;
 output [31:0] M_AXI_ARADDR;
 output        M_AXI_ARVALID;
 input         M_AXI_ARREADY;
-input  [31:0] M_AXI_RDATA;
+input  [63:0] M_AXI_RDATA;
 input         M_AXI_RVALID;
 output        M_AXI_RREADY;
 input  [1:0]  M_AXI_RRESP;
@@ -97,8 +97,8 @@ output [31:0] M_AXI_AWADDR;
 output        M_AXI_AWVALID;
 input         M_AXI_AWREADY;
 // Write data channel (unused, tied off)
-output [31:0] M_AXI_WDATA;
-output [3:0]  M_AXI_WSTRB;
+output [63:0] M_AXI_WDATA;
+output [7:0]  M_AXI_WSTRB;
 output        M_AXI_WVALID;
 input         M_AXI_WREADY;
 // Write response channel (unused, ignored)
@@ -210,8 +210,8 @@ assign INT[0]                       = pixel_proc_0_irq;
 // AXI write channels — unused, tie to safe values
 assign M_AXI_AWADDR = 32'h00000000;
 assign M_AXI_AWVALID = 1'b0;
-assign M_AXI_WDATA  = 32'h00000000;
-assign M_AXI_WSTRB  = 4'h0;
+assign M_AXI_WDATA  = 64'h0000000000000000;
+assign M_AXI_WSTRB  = 8'h00;
 assign M_AXI_WVALID = 1'b0;
 assign M_AXI_BREADY = 1'b0;
 //--------------------------------------------------------------------
@@ -262,6 +262,8 @@ apb_ctrl_status apb_ctrl_status_0(
 pixel_proc pixel_proc_0(
         .pclk           ( PCLK ),
         .presetn        ( PRESETN ),
+        .aclk           ( ACLK ),
+        .aresetn        ( ARESETN ),
         .psel           ( APB_SLAVE_SLAVE_PSEL ),
         .penable        ( APB_SLAVE_SLAVE_PENABLE ),
         .pwrite         ( APB_SLAVE_SLAVE_PWRITE ),

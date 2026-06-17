@@ -11,7 +11,7 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {BIF_1} -bif_signal_n
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {BIF_1} -bif_signal_name {PWDATA} -core_signal_name {APB_SLAVE_SLAVE_PWDATA}
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {BIF_1} -new_bif_name {APB_TARGET}
 
-# ---- AXI4 master BIF —— ACLK/ARESETN auto-associate from CAPE.v port names ----
+# ---- AXI4 master BIF (64-bit data) ----
 hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
@@ -69,9 +69,12 @@ sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {CAPE} -instance_name
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_19}
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 
-# Clocks and resets — use FIC_0 clock for both APB and AXI
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_ACLK" "CAPE:PCLK" "CAPE:ACLK"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:PRESETN" "CAPE:ARESETN"}
+# Clocks and resets
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_PCLK" "CAPE:PCLK"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:PRESETN"}
+# AXI clock — same source as FIC_0 (required for BIF compatibility)
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_ACLK" "CAPE:ACLK"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_FABRIC_RESET_N" "CAPE:ARESETN"}
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_F2M" "CAPE:GPIO_IN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_M2F" "CAPE:GPIO_OUT"}
@@ -106,7 +109,7 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P9[20]" "BVF_RISCV_SUBSYSTEM:I2
 # APB
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_TARGET" "BVF_RISCV_SUBSYSTEM:CAPE_APB_MTARGET"}
 
-# AXI4 master → FIC_0 (FPGA reads DDR)
+# AXI4 master → FIC_0 (FPGA reads DDR via 64-bit AXI)
 sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4_INITIATOR" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
