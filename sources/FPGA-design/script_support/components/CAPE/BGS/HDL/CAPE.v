@@ -220,14 +220,7 @@ pixel_proc pixel_proc_0(
         .paddr          ( APB_SLAVE_SLAVE_PADDR_0 ),
         .pwdata         ( APB_SLAVE_SLAVE_PWDATA ),
         .prdata         ( pixel_proc_0_prdata ),
-        .irq            ( pixel_proc_0_irq ),
-        .m_axi_araddr   ( M_AXI_ARADDR ),
-        .m_axi_arvalid  ( M_AXI_ARVALID ),
-        .m_axi_arready  ( M_AXI_ARREADY ),
-        .m_axi_rdata    ( M_AXI_RDATA ),
-        .m_axi_rvalid   ( M_AXI_RVALID ),
-        .m_axi_rready   ( M_AXI_RREADY ),
-        .m_axi_rresp    ( M_AXI_RRESP )
+        .irq            ( pixel_proc_0_irq )
         );
 
 //--------P8_IOPADS
