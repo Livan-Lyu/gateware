@@ -20,6 +20,16 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RVALID}  -core_signal_name {M_AXI_RVALID}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RREADY}  -core_signal_name {M_AXI_RREADY}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RRESP}   -core_signal_name {M_AXI_RRESP}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWADDR}  -core_signal_name {M_AXI_AWADDR}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWVALID} -core_signal_name {M_AXI_AWVALID}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWREADY} -core_signal_name {M_AXI_AWREADY}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WDATA}   -core_signal_name {M_AXI_WDATA}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WSTRB}   -core_signal_name {M_AXI_WSTRB}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WVALID}  -core_signal_name {M_AXI_WVALID}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WREADY}  -core_signal_name {M_AXI_WREADY}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BRESP}   -core_signal_name {M_AXI_BRESP}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BVALID}  -core_signal_name {M_AXI_BVALID}
+hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BREADY}  -core_signal_name {M_AXI_BREADY}
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
 
 #-------------------------------------------------------------------------------
