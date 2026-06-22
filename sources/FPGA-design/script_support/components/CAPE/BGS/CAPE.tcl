@@ -38,9 +38,42 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} \
 "PWRITE:apb_pwrite" "PRDATA:apb_prdata" "PWDATA:apb_pwdata" \
 "PREADY:apb_pready" "PSLVERR:apb_pslverr" }
 
-# AXI4 mirroredSlave (to FIC_0_AXI4_TARGET — fabric reads DDR)
+# AXI raw signal ports (for BIF mapping)
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_araddr} -port_direction {OUT} -port_range {[31:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_arvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_arready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_rdata} -port_direction {IN} -port_range {[63:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rready} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rresp} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_awaddr} -port_direction {OUT} -port_range {[31:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_awvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_awready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_wdata} -port_direction {OUT} -port_range {[63:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_wstrb} -port_direction {OUT} -port_range {[7:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_wvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_wready} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bresp} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bready} -port_direction {OUT}
+
+# Tie-off unused write channel
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awaddr} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awvalid} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wdata} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wstrb} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wvalid} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_bready} -value {GND}
+
+# AXI4 mirroredSlave BIF (to FIC_0_AXI4_TARGET)
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
-    -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave}
+    -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {\
+"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
+"ARADDR:ms0_araddr" "ARVALID:ms0_arvalid" "ARREADY:ms0_arready" \
+"RDATA:ms0_rdata"   "RVALID:ms0_rvalid"   "RREADY:ms0_rready"   "RRESP:ms0_rresp" \
+"AWADDR:ms0_awaddr" "AWVALID:ms0_awvalid" "AWREADY:ms0_awready" \
+"WDATA:ms0_wdata"   "WSTRB:ms0_wstrb"     "WVALID:ms0_wvalid"   "WREADY:ms0_wready" \
+"BRESP:ms0_bresp"   "BVALID:ms0_bvalid"   "BREADY:ms0_bready" }
 
 # ===============================================================================
 # COREAXI4INTERCONNECT — 1 master (→FIC_0), 1 slave (←pixel_proc)
