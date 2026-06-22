@@ -45,7 +45,7 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_arready} -port_directi
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_rdata} -port_direction {IN} -port_range {[63:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rready} -port_direction {OUT}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_rresp} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_rresp} -port_direction {IN} -port_range {[1:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_awaddr} -port_direction {OUT} -port_range {[37:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_awvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_awready} -port_direction {IN}
@@ -53,7 +53,7 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_wdata} -port_direction {O
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_wstrb} -port_direction {OUT} -port_range {[7:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_wvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_wready} -port_direction {IN}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bresp} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_bresp} -port_direction {IN} -port_range {[1:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bready} -port_direction {OUT}
 
