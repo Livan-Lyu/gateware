@@ -90,7 +90,6 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_awid}  -port_direction {I
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_bid}   -port_direction {OUT} -port_range {[3:0]}
 
 # Tie off ID ports and unused write channel inputs
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_arid px_awid} -value {GND}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_awready px_wready} -value {GND}
 
 # ===== BIFs (with ID signals) =====
