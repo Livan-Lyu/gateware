@@ -58,13 +58,7 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {px_bresp} -port_direction {OU
 sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bready} -port_direction {IN}
 
-# Tie unused write inputs
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_awaddr} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_awvalid} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wdata} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wstrb} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wvalid} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_bready} -value {GND}
+# (write channel tie-offs removed — BIF prevents direct tie-off; CAPE.v already drives them to 0)
 
 # ===== AXI raw ports: XBAR → FIC_0 export (mirroredSlave direction) =====
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_araddr} -port_direction {OUT} -port_range {[37:0]}
@@ -85,13 +79,7 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_bresp} -port_direction {I
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bready} -port_direction {OUT}
 
-# Tie-off unused write outputs
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awaddr} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awvalid} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wdata} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wstrb} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wvalid} -value {GND}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_bready} -value {GND}
+# (write channel tie-offs removed — BIF-managed)
 
 # ===== BIFs =====
 # mirroredMaster: pixel_proc → XBAR (CAPE_INST is the initiator)
