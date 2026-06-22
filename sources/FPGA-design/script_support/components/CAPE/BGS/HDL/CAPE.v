@@ -73,11 +73,11 @@ input         ARESETN;
 output [31:0] APB_SLAVE_SLAVE_PRDATA;
 output [27:0] GPIO_IN;
 output [23:0] INT;
-// AXI4 master read channel
-output [31:0] M_AXI_ARADDR; output M_AXI_ARVALID; input M_AXI_ARREADY;
+// AXI4 master read channel (38-bit addr = match COREAXI4INTERCONNECT + FIC_0)
+output [37:0] M_AXI_ARADDR; output M_AXI_ARVALID; input M_AXI_ARREADY;
 input  [63:0] M_AXI_RDATA;  input  M_AXI_RVALID; output M_AXI_RREADY; input [1:0] M_AXI_RRESP;
 // AXI4 master write channel (unused)
-output [31:0] M_AXI_AWADDR; output M_AXI_AWVALID; input M_AXI_AWREADY;
+output [37:0] M_AXI_AWADDR; output M_AXI_AWVALID; input M_AXI_AWREADY;
 output [63:0] M_AXI_WDATA;  output [7:0] M_AXI_WSTRB; output M_AXI_WVALID; input M_AXI_WREADY;
 input  [1:0]  M_AXI_BRESP;  input  M_AXI_BVALID; output M_AXI_BREADY;
 //--------------------------------------------------------------------
@@ -182,7 +182,7 @@ assign GPIO_OUT_const_net_3 = 2'h0;
 //--------------------------------------------------------------------
 assign INT[23:1]                    = 23'h0;
 assign INT[0]                       = pixel_proc_0_irq;
-assign M_AXI_AWADDR = 0; assign M_AXI_AWVALID = 0;
+assign M_AXI_AWADDR = 38'h0000000000; assign M_AXI_AWVALID = 0;
 assign M_AXI_WDATA  = 0; assign M_AXI_WSTRB  = 0; assign M_AXI_WVALID = 0;
 assign M_AXI_BREADY = 0;
 //--------------------------------------------------------------------

@@ -13,26 +13,9 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal_name {PWDATA}  -core_signal_name {APB_SLAVE_SLAVE_PWDATA}
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {APB_BIF} -new_bif_name {APB_TARGET}
 
-# AXI4 master BIF (pixel_proc reads DDR via COREAXI4INTERCONNECT)
-hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARADDR}  -core_signal_name {M_AXI_ARADDR}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARVALID} -core_signal_name {M_AXI_ARVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {ARREADY} -core_signal_name {M_AXI_ARREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RDATA}   -core_signal_name {M_AXI_RDATA}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RVALID}  -core_signal_name {M_AXI_RVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RREADY}  -core_signal_name {M_AXI_RREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {RRESP}   -core_signal_name {M_AXI_RRESP}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWADDR}  -core_signal_name {M_AXI_AWADDR}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWVALID} -core_signal_name {M_AXI_AWVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {AWREADY} -core_signal_name {M_AXI_AWREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WDATA}   -core_signal_name {M_AXI_WDATA}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WSTRB}   -core_signal_name {M_AXI_WSTRB}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WVALID}  -core_signal_name {M_AXI_WVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {WREADY}  -core_signal_name {M_AXI_WREADY}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BRESP}   -core_signal_name {M_AXI_BRESP}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BVALID}  -core_signal_name {M_AXI_BVALID}
-hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {AXI_BIF} -bif_signal_name {BREADY}  -core_signal_name {M_AXI_BREADY}
-hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
+# AXI BIF NOT registered on hdl_core (incompatible with SmartDesign BIFs).
+# Instead, AXI BIF is created at SmartDesign level in CAPE.tcl,
+# mapped to CAPE_INST raw AXI ports (M_AXI_*).
 
 # ---- Build CAPE_TOP SmartDesign (COREAXI4INTERCONNECT + CAPE hdl_core) ----
 ::safe_source script_support/components/CAPE/$cape_option/CAPE.tcl

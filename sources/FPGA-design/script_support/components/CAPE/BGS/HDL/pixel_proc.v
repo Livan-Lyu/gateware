@@ -13,8 +13,8 @@ module pixel_proc(
     // AXI4 master — ACLK domain (read DDR)
     input               aclk,
     input               aresetn,
-    // Read address
-    output  reg [31:0]  m_axi_araddr,
+    // Read address (38-bit for COREAXI4INTERCONNECT)
+    output  reg [37:0]  m_axi_araddr,
     output  reg         m_axi_arvalid,
     input               m_axi_arready,
     // Read data (64-bit)
@@ -23,7 +23,7 @@ module pixel_proc(
     output  reg         m_axi_rready,
     input       [1:0]   m_axi_rresp,
     // Write channel (unused, tied off)
-    output      [31:0]  m_axi_awaddr,
+    output      [37:0]  m_axi_awaddr,
     output              m_axi_awvalid,
     input               m_axi_awready,
     output      [63:0]  m_axi_wdata,
@@ -142,7 +142,7 @@ module pixel_proc(
                     end
                 end
                 S_AR: begin
-                    m_axi_araddr <= src_addr[31:0]; m_axi_arvalid <= 1;
+                    m_axi_araddr <= src_addr[37:0]; m_axi_arvalid <= 1;
                     if (m_axi_arready) begin
                         m_axi_arvalid <= 0; m_axi_rready <= 1; state <= S_RD;
                     end
@@ -190,7 +190,7 @@ module pixel_proc(
     end
 
     // Tie off write channel
-    assign m_axi_awaddr  = 0;
+    assign m_axi_awaddr  = 38'd0;
     assign m_axi_awvalid = 0;
     assign m_axi_wdata   = 0;
     assign m_axi_wstrb   = 0;
