@@ -39,24 +39,24 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} \
 "PREADY:apb_pready" "PSLVERR:apb_pslverr" }
 
 # ===== AXI raw ports: pixel_proc → XBAR (mirroredMaster direction) =====
-# CAPE_INST drives AR*, RREADY; receives R*, ARREADY
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_araddr} -port_direction {IN} -port_range {[37:0]}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arvalid} -port_direction {IN}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arready} -port_direction {OUT}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_rdata} -port_direction {OUT} -port_range {[63:0]}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rvalid} -port_direction {OUT}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rready} -port_direction {IN}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_rresp} -port_direction {OUT} -port_range {[1:0]}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_awaddr} -port_direction {IN} -port_range {[37:0]}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awvalid} -port_direction {IN}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awready} -port_direction {OUT}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_wdata} -port_direction {IN} -port_range {[63:0]}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_wstrb} -port_direction {IN} -port_range {[7:0]}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wvalid} -port_direction {IN}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wready} -port_direction {OUT}
-sd_create_bus_port -sd_name ${sd_name} -port_name {px_bresp} -port_direction {OUT} -port_range {[1:0]}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bvalid} -port_direction {OUT}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bready} -port_direction {IN}
+# mirroredMaster BIF will set actual direction; declare all as OUT to avoid driver conflict
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_araddr} -port_direction {OUT} -port_range {[37:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_rdata} -port_direction {IN} -port_range {[63:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rready} -port_direction {OUT}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_rresp} -port_direction {IN} -port_range {[1:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_awaddr} -port_direction {OUT} -port_range {[37:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_wdata} -port_direction {OUT} -port_range {[63:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_wstrb} -port_direction {OUT} -port_range {[7:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_bresp} -port_direction {IN} -port_range {[1:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bready} -port_direction {OUT}
 
 # (write channel tie-offs removed — BIF prevents direct tie-off; CAPE.v already drives them to 0)
 
