@@ -43,7 +43,14 @@ module CAPE(
     P9_30,
     P9_31,
     P9_41,
-    P9_42
+    P9_42,
+    ACLK,
+    ARESETN,
+    M_AXI_ARADDR, M_AXI_ARVALID, M_AXI_ARREADY,
+    M_AXI_RDATA,  M_AXI_RVALID,  M_AXI_RREADY, M_AXI_RRESP,
+    M_AXI_AWADDR, M_AXI_AWVALID, M_AXI_AWREADY,
+    M_AXI_WDATA,  M_AXI_WSTRB,   M_AXI_WVALID, M_AXI_WREADY,
+    M_AXI_BRESP,  M_AXI_BVALID,  M_AXI_BREADY
 );
 
 //--------------------------------------------------------------------
@@ -58,12 +65,21 @@ input  [27:0] GPIO_OE;
 input  [27:0] GPIO_OUT;
 input         PCLK;
 input         PRESETN;
+input         ACLK;
+input         ARESETN;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
 output [31:0] APB_SLAVE_SLAVE_PRDATA;
 output [27:0] GPIO_IN;
 output [23:0] INT;
+// AXI4 master read channel
+output [31:0] M_AXI_ARADDR; output M_AXI_ARVALID; input M_AXI_ARREADY;
+input  [63:0] M_AXI_RDATA;  input  M_AXI_RVALID; output M_AXI_RREADY; input [1:0] M_AXI_RRESP;
+// AXI4 master write channel (unused)
+output [31:0] M_AXI_AWADDR; output M_AXI_AWVALID; input M_AXI_AWREADY;
+output [63:0] M_AXI_WDATA;  output [7:0] M_AXI_WSTRB; output M_AXI_WVALID; input M_AXI_WREADY;
+input  [1:0]  M_AXI_BRESP;  input  M_AXI_BVALID; output M_AXI_BREADY;
 //--------------------------------------------------------------------
 // Inout
 //--------------------------------------------------------------------
@@ -166,6 +182,9 @@ assign GPIO_OUT_const_net_3 = 2'h0;
 //--------------------------------------------------------------------
 assign INT[23:1]                    = 23'h0;
 assign INT[0]                       = pixel_proc_0_irq;
+assign M_AXI_AWADDR = 0; assign M_AXI_AWVALID = 0;
+assign M_AXI_WDATA  = 0; assign M_AXI_WSTRB  = 0; assign M_AXI_WVALID = 0;
+assign M_AXI_BREADY = 0;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
@@ -220,7 +239,14 @@ pixel_proc pixel_proc_0(
         .paddr          ( APB_SLAVE_SLAVE_PADDR_0 ),
         .pwdata         ( APB_SLAVE_SLAVE_PWDATA ),
         .prdata         ( pixel_proc_0_prdata ),
-        .irq            ( pixel_proc_0_irq )
+        .irq            ( pixel_proc_0_irq ),
+        .aclk           ( ACLK ),
+        .aresetn        ( ARESETN ),
+        .m_axi_araddr   ( M_AXI_ARADDR ), .m_axi_arvalid ( M_AXI_ARVALID ), .m_axi_arready ( M_AXI_ARREADY ),
+        .m_axi_rdata    ( M_AXI_RDATA  ), .m_axi_rvalid   ( M_AXI_RVALID  ), .m_axi_rready  ( M_AXI_RREADY  ), .m_axi_rresp ( M_AXI_RRESP ),
+        .m_axi_awaddr   ( M_AXI_AWADDR ), .m_axi_awvalid  ( M_AXI_AWVALID ), .m_axi_awready ( M_AXI_AWREADY ),
+        .m_axi_wdata    ( M_AXI_WDATA  ), .m_axi_wstrb    ( M_AXI_WSTRB   ), .m_axi_wvalid  ( M_AXI_WVALID  ), .m_axi_wready ( M_AXI_WREADY ),
+        .m_axi_bresp    ( M_AXI_BRESP  ), .m_axi_bvalid   ( M_AXI_BVALID  ), .m_axi_bready  ( M_AXI_BREADY  )
         );
 
 //--------P8_IOPADS
