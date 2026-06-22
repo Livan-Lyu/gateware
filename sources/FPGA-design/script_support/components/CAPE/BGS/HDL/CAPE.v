@@ -186,10 +186,7 @@ assign GPIO_OUT_const_net_3 = 2'h0;
 //--------------------------------------------------------------------
 assign INT[23:1]                    = 23'h0;
 assign INT[0]                       = pixel_proc_0_irq;
-assign M_AXI_ARID   = 0;
-assign M_AXI_AWADDR = 0; assign M_AXI_AWVALID = 0; assign M_AXI_AWID = 0;
-assign M_AXI_WDATA  = 0; assign M_AXI_WSTRB  = 0; assign M_AXI_WVALID = 0;
-assign M_AXI_BREADY = 0;
+// AXI write/id outputs driven by pixel_proc instance (not assigned here)
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
