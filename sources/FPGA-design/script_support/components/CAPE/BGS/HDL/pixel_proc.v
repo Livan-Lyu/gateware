@@ -22,6 +22,8 @@ module pixel_proc(
     input               m_axi_rvalid,
     output  reg         m_axi_rready,
     input       [1:0]   m_axi_rresp,
+    output      [3:0]   m_axi_arid,
+    input       [3:0]   m_axi_rid,
     // Write channel (unused, tied off)
     output      [37:0]  m_axi_awaddr,
     output              m_axi_awvalid,
@@ -30,6 +32,8 @@ module pixel_proc(
     output      [7:0]   m_axi_wstrb,
     output              m_axi_wvalid,
     input               m_axi_wready,
+    output      [3:0]   m_axi_awid,
+    input       [3:0]   m_axi_bid,
     input       [1:0]   m_axi_bresp,
     input               m_axi_bvalid,
     output              m_axi_bready
@@ -190,7 +194,9 @@ module pixel_proc(
     end
 
     // Tie off write channel
-    assign m_axi_awaddr  = 38'd0;
+    assign m_axi_arid   = 4'd0;
+    assign m_axi_awid   = 4'd0;
+    assign m_axi_awaddr = 38'd0;
     assign m_axi_awvalid = 0;
     assign m_axi_wdata   = 0;
     assign m_axi_wstrb   = 0;
