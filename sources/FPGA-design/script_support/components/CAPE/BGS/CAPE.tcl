@@ -38,7 +38,35 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} \
 "PWRITE:apb_pwrite" "PRDATA:apb_prdata" "PWDATA:apb_pwdata" \
 "PREADY:apb_pready" "PSLVERR:apb_pslverr" }
 
-# AXI raw signal ports (for BIF mapping)
+# ===== AXI raw ports: pixel_proc → XBAR (mirroredMaster direction) =====
+# CAPE_INST drives AR*, RREADY; receives R*, ARREADY
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_araddr} -port_direction {IN} -port_range {[37:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_arready} -port_direction {OUT}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_rdata} -port_direction {OUT} -port_range {[63:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_rready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_rresp} -port_direction {OUT} -port_range {[1:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_awaddr} -port_direction {IN} -port_range {[37:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_awready} -port_direction {OUT}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_wdata} -port_direction {IN} -port_range {[63:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_wstrb} -port_direction {IN} -port_range {[7:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wvalid} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_wready} -port_direction {OUT}
+sd_create_bus_port -sd_name ${sd_name} -port_name {px_bresp} -port_direction {OUT} -port_range {[1:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bvalid} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {px_bready} -port_direction {IN}
+
+# Tie unused write inputs
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_awaddr} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_awvalid} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wdata} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wstrb} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_wvalid} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {px_bready} -value {GND}
+
+# ===== AXI raw ports: XBAR → FIC_0 export (mirroredSlave direction) =====
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_araddr} -port_direction {OUT} -port_range {[37:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_arvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_arready} -port_direction {IN}
@@ -57,7 +85,7 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms0_bresp} -port_direction {I
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms0_bready} -port_direction {OUT}
 
-# Tie-off unused write channel
+# Tie-off unused write outputs
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awaddr} -value {GND}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_awvalid} -value {GND}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wdata} -value {GND}
@@ -65,7 +93,18 @@ sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wstrb} -value {G
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_wvalid} -value {GND}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {ms0_bready} -value {GND}
 
-# AXI4 mirroredSlave BIF (to FIC_0_AXI4_TARGET)
+# ===== BIFs =====
+# mirroredMaster: pixel_proc → XBAR (CAPE_INST is the initiator)
+sd_create_bif_port -sd_name ${sd_name} -port_name {axi_mm_bif} \
+    -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredMaster} -port_bif_mapping {\
+"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
+"ARADDR:px_araddr" "ARVALID:px_arvalid" "ARREADY:px_arready" \
+"RDATA:px_rdata"   "RVALID:px_rvalid"   "RREADY:px_rready"   "RRESP:px_rresp" \
+"AWADDR:px_awaddr" "AWVALID:px_awvalid" "AWREADY:px_awready" \
+"WDATA:px_wdata"   "WSTRB:px_wstrb"     "WVALID:px_wvalid"   "WREADY:px_wready" \
+"BRESP:px_bresp"   "BVALID:px_bvalid"   "BREADY:px_bready" }
+
+# mirroredSlave: XBAR → FIC_0 (export to DDR)
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {\
 "ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
@@ -103,30 +142,21 @@ sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {CAPE} -instance_name
 sd_connect_pins -sd_name ${sd_name} -pin_names {APB_SLAVE CAPE_INST:APB_TARGET}
 
 # ===============================================================================
-# AXI: CAPE_INST raw ports → SmartDesign BIF → XBAR → SmartDesign BIF → FIC_0
+# AXI connections
 # ===============================================================================
-# Connect CAPE_INST raw AXI read ports to SmartDesign raw AXI ports
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARADDR ms0_araddr}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARVALID ms0_arvalid}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARREADY ms0_arready}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RDATA ms0_rdata}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RVALID ms0_rvalid}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RREADY ms0_rready}
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RRESP ms0_rresp}
+# CAPE_INST raw AXI → px_* ports (mirroredMaster: CAPE is initiator)
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARADDR px_araddr}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARVALID px_arvalid}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_ARREADY px_arready}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RDATA px_rdata}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RVALID px_rvalid}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RREADY px_rready}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:M_AXI_RRESP px_rresp}
 
-# Create mirroredSlave BIF from raw ports (SmartDesign-level, matches XBAR convention)
-sd_create_bif_port -sd_name ${sd_name} -port_name {axi_mslave_bif} \
-    -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {\
-"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
-"ARADDR:ms0_araddr" "ARVALID:ms0_arvalid" "ARREADY:ms0_arready" \
-"RDATA:ms0_rdata"   "RVALID:ms0_rvalid"   "RREADY:ms0_rready"   "RRESP:ms0_rresp" \
-"AWADDR:ms0_awaddr" "AWVALID:ms0_awvalid" "AWREADY:ms0_awready" \
-"WDATA:ms0_wdata"   "WSTRB:ms0_wstrb"     "WVALID:ms0_wvalid"   "WREADY:ms0_wready" \
-"BRESP:ms0_bresp"   "BVALID:ms0_bvalid"   "BREADY:ms0_bready" }
-
-# BIF-to-BIF: SmartDesign master BIF → XBAR slave → XBAR master → SmartDesign export
-sd_connect_pins -sd_name ${sd_name} -pin_names {axi_mslave_bif XBAR_0:AXI4mslave0}
-sd_connect_pins -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mmaster0 AXI4mslave0}
+# mirroredMaster BIF → XBAR mmaster (receives from initiator/pixel_proc)
+sd_connect_pins -sd_name ${sd_name} -pin_names {axi_mm_bif XBAR_0:AXI4mmaster0}
+# XBAR mslave → mirroredSlave BIF (sends to DDR/FIC_0)
+sd_connect_pins -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mslave0 AXI4mslave0}
 
 # ===============================================================================
 # Clock / Reset / GPIO
