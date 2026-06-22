@@ -114,8 +114,7 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
 "BRESP:ms0_bresp"   "BVALID:ms0_bvalid"   "BREADY:ms0_bready" \
 "ARID:ms0_arid" "RID:ms0_rid" "AWID:ms0_awid" "BID:ms0_bid" }
 
-# Mark unused XBAR ports
-sd_mark_pins_unused -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mslave1 XBAR_0:AXI4mmaster1}
+# (XBAR with NUM_MASTERS=1,NUM_SLAVES=1 — no extra ports to mark)
 
 # ===============================================================================
 # COREAXI4INTERCONNECT — 1 master (→FIC_0), 1 slave (←pixel_proc)
