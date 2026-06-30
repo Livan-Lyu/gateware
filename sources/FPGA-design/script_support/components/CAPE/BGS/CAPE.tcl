@@ -67,7 +67,7 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
 "ARID:ms_arid" "RID:ms_rid" "AWID:ms_awid" "BID:ms_bid" }
 
 # ===== COREAXI4INTERCONNECT =====
-create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*} \
+create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*} \
     -component_name {CAPE_AXI_XBAR} -params {
     "NUM_MASTERS:1" "NUM_SLAVES:1"
     "ADDR_WIDTH:38" "DATA_WIDTH:64" "ID_WIDTH:4"

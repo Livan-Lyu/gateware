@@ -30,6 +30,7 @@ adapter::remove_pin "SPI_1_SS1"
 adapter::remove_pin "SPI_1_CLK"
 adapter::remove_pin "SPI_1_DI"
 adapter::remove_pin "SPI_1_DO"
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {FIC_0_AXI4_INITIATOR}
 save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}
