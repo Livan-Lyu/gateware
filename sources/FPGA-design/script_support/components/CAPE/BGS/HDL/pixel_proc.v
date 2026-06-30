@@ -6,20 +6,20 @@ module pixel_proc(
     input       [31:0]  pwdata,
     output  reg [31:0]  prdata,
     output  reg         irq,
-    // AXI4 master — ACLK domain
-    input               aclk, aresetn,
-    output  reg [37:0]  m_axi_araddr,
-    output  reg         m_axi_arvalid,
-    input               m_axi_arready,
-    input       [63:0]  m_axi_rdata,
-    input               m_axi_rvalid,
-    output  reg         m_axi_rready,
-    input       [1:0]   m_axi_rresp,
-    output      [3:0]   m_axi_arid,    input [3:0] m_axi_rid,
-    output      [37:0]  m_axi_awaddr,  output m_axi_awvalid, input m_axi_awready,
-    output      [63:0]  m_axi_wdata,   output [7:0] m_axi_wstrb, output m_axi_wvalid, input m_axi_wready,
-    output      [3:0]   m_axi_awid,    input [3:0] m_axi_bid,
-    input       [1:0]   m_axi_bresp,   input m_axi_bvalid, output m_axi_bready
+    // AXI4 master — AMBA standard naming
+    input               ACLK, ARESETn,
+    output  reg [37:0]  ARADDR,
+    output  reg         ARVALID,
+    input               ARREADY,
+    input       [63:0]  RDATA,
+    input               RVALID,
+    output  reg         RREADY,
+    input       [1:0]   RRESP,
+    output      [3:0]   ARID,       input [3:0] RID,
+    output      [37:0]  AWADDR,     output AWVALID,   input AWREADY,
+    output      [63:0]  WDATA,       output [7:0] WSTRB, output WVALID, input WREADY,
+    output      [3:0]   AWID,       input [3:0] BID,
+    input       [1:0]   BRESP,      input BVALID,     output BREADY
 );
 
     localparam [7:0] A_CTRL=8'h80, A_STAT=8'h84, A_SRC_LO=8'h88, A_SRC_HI=8'h8C, A_CNT=8'h90, A_RES=8'h94, A_DBG=8'h98;
@@ -30,9 +30,8 @@ module pixel_proc(
 
     // ======== PCLK domain ========
     reg [31:0] ctrl, src_lo, src_hi, pxl_cnt;
-    reg        start_pclk;
+    reg        start_pclk, ack_req;
     reg        irq_s1, irq_s2, irq_pclk;
-    reg        ack_req;           // PCLK→ACLK: ACK strobe request
     wire rd_en = (!pwrite && psel);
     wire wr_en = (penable && pwrite && psel);
 
@@ -51,14 +50,8 @@ module pixel_proc(
             endcase
 
             start_pclk <= ctrl[0];
+            ack_req <= (wr_en && paddr==A_CTRL && pwdata[7]);
 
-            // ACK request: pulse on CTRL[7] write
-            if (wr_en && paddr==A_CTRL && pwdata[7])
-                ack_req <= 1;
-            else
-                ack_req <= 0;
-
-            // 2-FF sync irq from ACLK
             irq_s1 <= irq_aclk_s;
             irq_s2 <= irq_s1;
             irq_pclk <= irq_s2;
@@ -89,40 +82,36 @@ module pixel_proc(
     reg [5:0]  rcnt;
     reg [31:0] result;
     reg        irq_aclk_s, busy_s, done_s;
-
-    // CDC sync from PCLK
     reg        start_s1, start_s2, start_stb;
     reg        ack_s1, ack_s2, ack_stb;
 
-    wire [7:0] ha_r=m_axi_rdata[7:0],   ha_g=m_axi_rdata[15:8],  ha_b=m_axi_rdata[23:16];
-    wire [7:0] hb_r=m_axi_rdata[39:32], hb_g=m_axi_rdata[47:40], hb_b=m_axi_rdata[55:48];
+    wire [7:0] ha_r=RDATA[7:0],   ha_g=RDATA[15:8],  ha_b=RDATA[23:16];
+    wire [7:0] hb_r=RDATA[39:32], hb_g=RDATA[47:40], hb_b=RDATA[55:48];
     wire [7:0] da_r=(cr>ha_r)?(cr-ha_r):(ha_r-cr), da_g=(cg>ha_g)?(cg-ha_g):(ha_g-cg), da_b=(cb>ha_b)?(cb-ha_b):(ha_b-cb);
     wire [7:0] db_r=(cr>hb_r)?(cr-hb_r):(hb_r-cr), db_g=(cg>hb_g)?(cg-hb_g):(hb_g-cg), db_b=(cb>hb_b)?(cb-hb_b):(hb_b-cb);
     wire [8:0] sa={1'b0,da_r}+{1'b0,da_g}+{1'b0,da_b}, sb={1'b0,db_r}+{1'b0,db_g}+{1'b0,db_b};
     wire ma=({sa,1'b0}<=THR), mb=({sb,1'b0}<=THR);
 
-    always @(posedge aclk or negedge aresetn) begin
-        if (~aresetn) begin
+    always @(posedge ACLK or negedge ARESETn) begin
+        if (~ARESETn) begin
             state<=S_IDLE; src_addr<=0; total<=0;
-            m_axi_araddr<=0; m_axi_arvalid<=0; m_axi_rready<=0;
+            ARADDR<=0; ARVALID<=0; RREADY<=0;
             beat<=0; pxl_done<=0; cr<=0;cg<=0;cb<=0; mc<=0;
             rbuf<=0; rcnt<=0; result<=0;
             irq_aclk_s<=0; busy_s<=0; done_s<=0;
             start_s1<=0; start_s2<=0; start_stb<=0;
             ack_s1<=0; ack_s2<=0; ack_stb<=0;
         end else begin
-            // CDC: START from PCLK
             start_s1 <= start_pclk;
             start_s2 <= start_s1;
             start_stb <= start_s1 && !start_s2;
-            // CDC: ACK from PCLK
             ack_s1 <= ack_req;
             ack_s2 <= ack_s1;
             ack_stb <= ack_s1 && !ack_s2;
 
             case (state)
                 S_IDLE: begin
-                    m_axi_arvalid<=0; m_axi_rready<=0; irq_aclk_s<=0; busy_s<=0; done_s<=0;
+                    ARVALID<=0; RREADY<=0; irq_aclk_s<=0; busy_s<=0; done_s<=0;
                     if (start_stb) begin
                         src_addr<={src_hi,src_lo}; total<=pxl_cnt;
                         beat<=0; pxl_done<=0; mc<=0; rbuf<=0; rcnt<=0; result<=0;
@@ -130,16 +119,16 @@ module pixel_proc(
                     end
                 end
                 S_AR: begin
-                    m_axi_araddr<=src_addr[37:0]; m_axi_arvalid<=1;
-                    if (m_axi_arready) begin m_axi_arvalid<=0; m_axi_rready<=1; state<=S_RD; end
+                    ARADDR<=src_addr[37:0]; ARVALID<=1;
+                    if (ARREADY) begin ARVALID<=0; RREADY<=1; state<=S_RD; end
                 end
                 S_RD: begin
-                    if (m_axi_rvalid && m_axi_rready) begin
+                    if (RVALID && RREADY) begin
                         if (beat==0) begin
                             cr<=ha_r; cg<=ha_g; cb<=ha_b;
                             if (mb) mc<=mc+1;
                             beat<=beat+1; src_addr<=src_addr+64'd8;
-                            m_axi_rready<=0; state<=S_AR;
+                            RREADY<=0; state<=S_AR;
                         end else if (beat==PPR-1) begin
                             if ((mc+{4'b0,ma}+{4'b0,mb})>MTH) rbuf[rcnt]<=1; else rbuf[rcnt]<=0;
                             if (rcnt==31) begin
@@ -149,26 +138,25 @@ module pixel_proc(
                                 result<={rbuf[30:0],((mc+{4'b0,ma}+{4'b0,mb})>MTH)};
                                 busy_s<=0; done_s<=1; state<=S_DONE;
                             end else begin
-                                src_addr<=src_addr+64'd8; m_axi_rready<=0; state<=S_AR;
+                                src_addr<=src_addr+64'd8; RREADY<=0; state<=S_AR;
                             end
                             beat<=0; pxl_done<=pxl_done+1; mc<=0;
                         end else begin
                             mc<=mc+{4'b0,ma}+{4'b0,mb};
                             beat<=beat+1; src_addr<=src_addr+64'd8;
-                            m_axi_rready<=0; state<=S_AR;
+                            RREADY<=0; state<=S_AR;
                         end
                     end
                 end
                 S_ACK: begin
-                    m_axi_arvalid<=0; m_axi_rready<=0;
+                    ARVALID<=0; RREADY<=0;
                     if (ack_stb) begin
                         irq_aclk_s<=0; rbuf<=0; rcnt<=0; mc<=0;
                         state<=(pxl_done>=total)?S_DONE:S_AR;
                     end
                 end
                 S_DONE: begin
-                    m_axi_arvalid<=0; m_axi_rready<=0; irq_aclk_s<=0;
-                    // ctrl[0] is PCLK domain — safe: CPU clears it after seeing DONE in STATUS
+                    ARVALID<=0; RREADY<=0; irq_aclk_s<=0;
                     if (ctrl[0]==0) state<=S_IDLE;
                 end
                 default: state<=S_IDLE;
@@ -176,9 +164,9 @@ module pixel_proc(
         end
     end
 
-    assign m_axi_arid=0; assign m_axi_awid=0;
-    assign m_axi_awaddr=0; assign m_axi_awvalid=0;
-    assign m_axi_wdata=0; assign m_axi_wstrb=0; assign m_axi_wvalid=0; assign m_axi_bready=0;
+    assign ARID=0; assign AWID=0;
+    assign AWADDR=0; assign AWVALID=0;
+    assign WDATA=0; assign WSTRB=0; assign WVALID=0; assign BREADY=0;
     wire [31:0] result_s = result;
 
 endmodule

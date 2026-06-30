@@ -1,9 +1,8 @@
 puts "======== Add cape option: BGS ========"
 
-# ---- Register CAPE.v as hdl_core ----
 create_hdl_core -file $project_dir/hdl/CAPE.v -module {CAPE} -library {work} -package {}
 
-# APB BIF
+# APB BIF (manual mapping — non-standard port names)
 hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {APB_BIF} -signal_map {}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal_name {PADDR}   -core_signal_name {APB_SLAVE_SLAVE_PADDR}
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal_name {PSELx}   -core_signal_name {APB_SLAVE_SLAVE_PSEL}
@@ -13,22 +12,19 @@ hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal
 hdl_core_assign_bif_signal -hdl_core_name {CAPE} -bif_name {APB_BIF} -bif_signal_name {PWDATA}  -core_signal_name {APB_SLAVE_SLAVE_PWDATA}
 hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {APB_BIF} -new_bif_name {APB_TARGET}
 
-# AXI BIF NOT registered on hdl_core (incompatible with SmartDesign BIFs).
-# Instead, AXI BIF is created at SmartDesign level in CAPE.tcl,
-# mapped to CAPE_INST raw AXI ports (M_AXI_*).
+# AXI4 BIF (auto-detect — standard AMBA port names on CAPE.v)
+hdl_core_add_bif -hdl_core_name {CAPE} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
+hdl_core_rename_bif -hdl_core_name {CAPE} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
 
-# ---- Build CAPE_TOP SmartDesign (COREAXI4INTERCONNECT + CAPE hdl_core) ----
+# ---- Build CAPE_TOP SmartDesign ----
 ::safe_source script_support/components/CAPE/$cape_option/CAPE.tcl
 
 auto_promote_pad_pins -promote_all 0
 
-#-------------------------------------------------------------------------------
 set sd_name ${top_level_name}
-
 sd_create_bus_port -sd_name ${sd_name} -port_name {P9} -port_direction {INOUT} -port_range {[20:19]} -port_is_pad {1}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {P9} -pin_slices {[20] [19]}
 
-#-------------------------------------------------------------------------------
 set sd_name {BVF_RISCV_SUBSYSTEM}
 adapter::remove_pin "SPI_1_SS1"
 adapter::remove_pin "SPI_1_CLK"
@@ -38,11 +34,9 @@ save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
 generate_component -component_name ${sd_name}
 
-#-------------------------------------------------------------------------------
 set sd_name ${top_level_name}
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_TOP} -instance_name {CAPE}
 
-#-------------------------------------------------------------------------------
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_19}
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 
@@ -50,13 +44,12 @@ sd_delete_ports -sd_name ${sd_name} -port_names {P9_20}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_PCLK" "CAPE:PCLK"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_3_FABRIC_RESET_N" "CAPE:PRESETN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_ACLK" "CAPE:AXI_ACLK"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_FABRIC_RESET_N" "CAPE:AXI_ARESETN"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CLOCKS_AND_RESETS:FIC_0_FABRIC_RESET_N" "CAPE:AXI_ARESETn"}
 
 # GPIO
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_F2M" "CAPE:GPIO_IN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_M2F" "CAPE:GPIO_OUT"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_OE_M2F" "CAPE:GPIO_OE"}
-
 sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8} -port_name {}
 foreach p {11 12 13 14 15 16 17 18 21 22 23 24 25 26 27 28 29 30 31 41 42} {
     sd_connect_pin_to_port -sd_name ${sd_name} -pin_name "CAPE:P9_${p}" -port_name {}
