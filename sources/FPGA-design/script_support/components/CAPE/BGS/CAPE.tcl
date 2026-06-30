@@ -7,7 +7,7 @@ auto_promote_pad_pins -promote_all 0
 sd_create_scalar_port -sd_name ${sd_name} -port_name {PCLK} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {PRESETN} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ACLK} -port_direction {IN}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ARESETn} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ARESETN} -port_direction {IN}
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_OE} -port_direction {IN} -port_range {[27:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_OUT} -port_direction {IN} -port_range {[27:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_IN} -port_direction {OUT} -port_range {[27:0]}
@@ -58,7 +58,7 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} \
 
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {\
-"ACLK:AXI_ACLK" "ARESETn:AXI_ARESETn" \
+"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
 "ARADDR:ms_araddr" "ARVALID:ms_arvalid" "ARREADY:ms_arready" \
 "RDATA:ms_rdata"   "RVALID:ms_rvalid"   "RREADY:ms_rready"   "RRESP:ms_rresp" \
 "AWADDR:ms_awaddr" "AWVALID:ms_awvalid" "AWREADY:ms_awready" \
@@ -96,7 +96,7 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mslave0 AXI4mslave0}
 sd_connect_pins -sd_name ${sd_name} -pin_names {PCLK CAPE_INST:PCLK}
 sd_connect_pins -sd_name ${sd_name} -pin_names {PRESETN CAPE_INST:PRESETN}
 sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ACLK CAPE_INST:ACLK XBAR_0:ACLK}
-sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ARESETn CAPE_INST:ARESETn XBAR_0:ARESETN}
+sd_connect_pins -sd_name ${sd_name} -pin_names {AXI_ARESETN CAPE_INST:ARESETN XBAR_0:ARESETN}
 
 # GPIO
 sd_connect_pins -sd_name ${sd_name} -pin_names {GPIO_OE CAPE_INST:GPIO_OE}

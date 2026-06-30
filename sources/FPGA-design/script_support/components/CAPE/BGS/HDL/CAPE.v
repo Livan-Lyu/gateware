@@ -44,7 +44,7 @@ module CAPE(
     P9_31,
     P9_41,
     P9_42,
-    ACLK, ARESETn,
+    ACLK, ARESETN,
     ARADDR, ARVALID, ARREADY,
     RDATA,  RVALID,  RREADY, RRESP,
     ARID, RID,
@@ -67,7 +67,7 @@ input  [27:0] GPIO_OUT;
 input         PCLK;
 input         PRESETN;
 input         ACLK;
-input         ARESETn;
+input         ARESETN;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
@@ -242,7 +242,7 @@ pixel_proc pixel_proc_0(
         .prdata         ( pixel_proc_0_prdata ),
         .irq            ( pixel_proc_0_irq ),
         .ACLK           ( ACLK ),
-        .ARESETn        ( ARESETn ),
+        .ARESETN        ( ARESETN ),
         .ARADDR         ( ARADDR ), .ARVALID ( ARVALID ), .ARREADY ( ARREADY ),
         .RDATA          ( RDATA  ), .RVALID  ( RVALID  ), .RREADY  ( RREADY  ), .RRESP ( RRESP ),
         .ARID           ( ARID   ), .RID     ( RID     ),

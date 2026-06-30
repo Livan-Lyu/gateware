@@ -7,7 +7,7 @@ module pixel_proc(
     output  reg [31:0]  prdata,
     output  reg         irq,
     // AXI4 master — AMBA standard naming
-    input               ACLK, ARESETn,
+    input               ACLK, ARESETN,
     output  reg [37:0]  ARADDR,
     output  reg         ARVALID,
     input               ARREADY,
@@ -92,8 +92,8 @@ module pixel_proc(
     wire [8:0] sa={1'b0,da_r}+{1'b0,da_g}+{1'b0,da_b}, sb={1'b0,db_r}+{1'b0,db_g}+{1'b0,db_b};
     wire ma=({sa,1'b0}<=THR), mb=({sb,1'b0}<=THR);
 
-    always @(posedge ACLK or negedge ARESETn) begin
-        if (~ARESETn) begin
+    always @(posedge ACLK or negedge ARESETN) begin
+        if (~ARESETN) begin
             state<=S_IDLE; src_addr<=0; total<=0;
             ARADDR<=0; ARVALID<=0; RREADY<=0;
             beat<=0; pxl_done<=0; cr<=0;cg<=0;cb<=0; mc<=0;
