@@ -279,12 +279,12 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"PCIE:PCIE_0_TL_CLK_125MHz" "PCI
 
 # Add bus interface net connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_TARGET" "PCIE:PCIE_APB_SLAVE" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI4_INITIATOR" "PCIE_INITIATOR:AXI4mslave0" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ADDRESS_SHIM_0:AXI4_INITIATOR" "PCIE_INITIATOR:AXI4mmaster0" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI4_INITIATOR" "PCIE_INITIATOR:AXI4mtarget0" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ADDRESS_SHIM_0:AXI4_INITIATOR" "PCIE_INITIATOR:AXI4minitiator0" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ADDRESS_SHIM_0:AXI4_TARGET" "PCIE:AXI_0_MASTER" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_TARGET" "FIC1_INITIATOR:AXI4mmaster0" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_TARGET" "FIC1_INITIATOR:AXI4minitiator0" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CLKS_FROM_TXPLL_TO_PCIE_0" "PCIE:CLKS_FROM_TXPLL_TO_PCIE_0" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"FIC1_INITIATOR:AXI4mslave0" "PCIE:AXI_0_SLAVE" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"FIC1_INITIATOR:AXI4mtarget0" "PCIE:AXI_0_SLAVE" }
 
 # Re-enable auto promotion of pins of type 'pad'
 auto_promote_pad_pins -promote_all 1
