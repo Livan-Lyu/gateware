@@ -37,8 +37,8 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:ARESETN" "CLOCKS_AND_RESETS
 # BVF RISCV SUBSYSTEM
 sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
 sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4mmaster0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4mslave0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4minitiator0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:AXI4mtarget0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
 #-------------------------------------------------------------------------------
 # Cleanup

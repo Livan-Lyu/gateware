@@ -64,5 +64,5 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_OE_M
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:BVF_GPIO_IN" "BVF_RISCV_SUBSYSTEM:GPIO_2_F2M"}
 
 # Add bus interface net connections
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR" "APU:AXI4mmaster0"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR" "APU:AXI4minitiator0"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:APU_APB_MTARGET" "APU:APB_SLAVE"}
