@@ -32,7 +32,7 @@ adapter::remove_pin "SPI_1_DI"
 adapter::remove_pin "SPI_1_DO"
 save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
-# generate_component skipped — COREAXI4INTERCONNECT IP cache conflict with FIC0_INITIATOR
+generate_component -component_name ${sd_name}
 
 set sd_name ${top_level_name}
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_TOP} -instance_name {CAPE}
