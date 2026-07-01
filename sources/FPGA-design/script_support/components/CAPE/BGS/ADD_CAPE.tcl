@@ -30,10 +30,9 @@ adapter::remove_pin "SPI_1_SS1"
 adapter::remove_pin "SPI_1_CLK"
 adapter::remove_pin "SPI_1_DI"
 adapter::remove_pin "SPI_1_DO"
-sd_mark_pins_unused -sd_name ${sd_name} -pin_names {FIC_0_AXI4_INITIATOR}
 save_smartdesign -sd_name ${sd_name}
 sd_update_instance -sd_name ${top_level_name} -instance_name ${sd_name}
-generate_component -component_name ${sd_name}
+# generate_component skipped — COREAXI4INTERCONNECT IP cache conflict with FIC0_INITIATOR
 
 set sd_name ${top_level_name}
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_TOP} -instance_name {CAPE}
@@ -63,7 +62,7 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_SLAVE" "BVF_RISCV_SUBS
 
 # AXI → FIC_0
 sd_clear_pin_attributes -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4mslave0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:AXI4mtarget0" "BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET"}
 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_TXD}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_RXD} -value {GND}
