@@ -1,7 +1,7 @@
-Design name: MY_CUSTOM_FPGA_DESIGN_6A739123
-Checksum: A672
-Design version: 57188
-Fabric component bitstream digest: d7180ff5cbd126c8f33ea52420eb173cb1609b2716630f4c8276d1f4df8f82c7
-eNVM component bitstream digest: 36e9bd8cd5935b33f936bd249398baf371cbb58ed9fe8492163bfe58eb01324a
+Design name: MY_CUSTOM_FPGA_DESIGN_68A7B8BE
+Checksum: B1D9
+Design version: 3094
+Fabric component bitstream digest: 1d59f3aac05a4004779be284212b3299e28e5736661b9ab832cea00879c6c093
+eNVM component bitstream digest: 043ba576a36be6a16829e97b5df5b2a679880ae72bf7efdd111efc9e64024c83
 sNVM component bitstream digest: b0a9e2be29f47fa951a6a131a8dd9a9016e5ba87de5833c742b7f654428ea6e7
-Entire bitstream digest: 177e510d9eb136b82ad4579a342c8d1dd01f99f1959a27ef6d72ccd16be52ca1
+Entire bitstream digest: 7977d31af5cda0c99a0a71e7db31d2dbc02300067e8e6af38f914945e9194833

@@ -34,6 +34,7 @@ import shutil
 import sys
 import subprocess
 import platform
+import re
 
 def check_dtc_installed():
     if shutil.which("dtc") is None:
@@ -1134,6 +1135,172 @@ def _tcl_path(path):
     return path.replace("\\", "/") if path else path
 
 
+def _patch_coreaxi4_tcl_files(sources_dir):
+    """Update COREAXI4INTERCONNECT TCL files for Libero v2025.1 (core v3.0.130).
+
+    Core v3.0.130 renamed every parameter:
+      MASTER -> INITIATOR, SLAVE -> TARGET, NUM_MASTERS -> NUM_INITIATORS,
+      NUM_SLAVES -> NUM_TARGETS, SLV_AXI4PRT -> TRGT_AXI4PRT.
+
+    READ_INTERLEAVE and DWC_ADDR_FIFO_DEPTH_CEILING parameters became
+    resolve=\"dependent\" and must be removed entirely.
+    """
+    # Parameters to remove (dependent in v3.0.130)
+    remove_params = {
+        "DWC_ADDR_FIFO_DEPTH_CEILING",
+        "ADDR_FIFO_DEPTH_CEILING",
+        "READ_INTERLEAVE",
+        "DWC_ADDR_FIFO_DEPTH",
+        "AXI4PRT_ADDRDEPTH",
+        "AXI4PRT_DATADEPTH",
+        "NUM_THREADS",
+        "OPEN_TRANS_MAX",
+        "CROSSBAR_MODE",
+        "RD_ARB_EN",
+    }
+    # Parameter renames for v3.0.130 (old_substring -> new_substring)
+    param_renames = [
+        ("SLV_AXI4PRT", "TRGT_AXI4PRT"),
+        ("NUM_MASTERS_WIDTH", "NUM_INITIATORS_WIDTH"),
+        ("NUM_MASTERS", "NUM_INITIATORS"),
+        ("NUM_SLAVES", "NUM_TARGETS"),
+    ]
+    # BIF pin renames (Libero auto-generated pin names from core BIF roles)
+    bif_renames = [
+        ("mmaster", "minitiator"),
+        ("mslave", "mtarget"),
+        ("AXI4mmaster", "AXI4minitiator"),
+        ("AXI4mslave", "AXI4mtarget"),
+    ]
+    # Additional renames for READ_SLAVE/WRITE_SLAVE (no trailing underscore)
+    access_renames = [
+        ("_READ_SLAVE", "_READ_TARGET"),
+        ("_WRITE_SLAVE", "_WRITE_TARGET"),
+    ]
+    # Per-param renames: only match within COREAXI4INTERCONNECT -params {...} context
+    per_param_renames = [
+        # (pattern_in_key, replacement_in_key) — applied only inside param keys
+        ("MASTER0_", "INITIATOR0_"), ("MASTER1_", "INITIATOR1_"),
+        ("MASTER2_", "INITIATOR2_"), ("MASTER3_", "INITIATOR3_"),
+        ("MASTER4_", "INITIATOR4_"), ("MASTER5_", "INITIATOR5_"),
+        ("MASTER6_", "INITIATOR6_"), ("MASTER7_", "INITIATOR7_"),
+        ("MASTER8_", "INITIATOR8_"), ("MASTER9_", "INITIATOR9_"),
+        ("MASTER10_", "INITIATOR10_"), ("MASTER11_", "INITIATOR11_"),
+        ("MASTER12_", "INITIATOR12_"), ("MASTER13_", "INITIATOR13_"),
+        ("MASTER14_", "INITIATOR14_"), ("MASTER15_", "INITIATOR15_"),
+        ("SLAVE0_", "TARGET0_"), ("SLAVE1_", "TARGET1_"),
+        ("SLAVE2_", "TARGET2_"), ("SLAVE3_", "TARGET3_"),
+        ("SLAVE4_", "TARGET4_"), ("SLAVE5_", "TARGET5_"),
+        ("SLAVE6_", "TARGET6_"), ("SLAVE7_", "TARGET7_"),
+        ("SLAVE8_", "TARGET8_"), ("SLAVE9_", "TARGET9_"),
+        ("SLAVE10_", "TARGET10_"), ("SLAVE11_", "TARGET11_"),
+        ("SLAVE12_", "TARGET12_"), ("SLAVE13_", "TARGET13_"),
+        ("SLAVE14_", "TARGET14_"), ("SLAVE15_", "TARGET15_"),
+        ("SLAVE16_", "TARGET16_"), ("SLAVE17_", "TARGET17_"),
+        ("SLAVE18_", "TARGET18_"), ("SLAVE19_", "TARGET19_"),
+        ("SLAVE20_", "TARGET20_"), ("SLAVE21_", "TARGET21_"),
+        ("SLAVE22_", "TARGET22_"), ("SLAVE23_", "TARGET23_"),
+        ("SLAVE24_", "TARGET24_"), ("SLAVE25_", "TARGET25_"),
+        ("SLAVE26_", "TARGET26_"), ("SLAVE27_", "TARGET27_"),
+        ("SLAVE28_", "TARGET28_"), ("SLAVE29_", "TARGET29_"),
+        ("SLAVE30_", "TARGET30_"), ("SLAVE31_", "TARGET31_"),
+    ]
+
+    tcl_files = []
+    for root, _dirs, files in os.walk(sources_dir):
+        for f in files:
+            if f.endswith(".tcl"):
+                tcl_files.append(os.path.join(root, f))
+
+    patched = 0
+    for path in tcl_files:
+        try:
+            with open(path, "r") as fh:
+                content = fh.read()
+        except Exception:
+            continue
+
+        # Only patch files that reference COREAXI4INTERCONNECT cores
+        if "COREAXI4INTERCONNECT" not in content:
+            continue
+
+        lines = content.splitlines(keepends=True)
+        new_lines = []
+        changed = False
+        for ln in lines:
+            # Skip lines that are comments
+            stripped = ln.strip()
+            if stripped.startswith('#'):
+                new_lines.append(ln)
+                continue
+
+            # 1. Remove dependent parameters
+            should_remove = False
+            for bad in remove_params:
+                if bad in ln:
+                    should_remove = True
+                    break
+            if should_remove:
+                changed = True
+                continue
+
+            # 2. Global renames (safe for all lines in COREAXI4INTERCONNECT files)
+            for old, new in param_renames:
+                if old in ln:
+                    ln = ln.replace(old, new)
+                    changed = True
+
+            # 3. Access renames (READ_SLAVE->READ_TARGET, WRITE_SLAVE->WRITE_TARGET)
+            for old, new in access_renames:
+                if old in ln:
+                    ln = ln.replace(old, new)
+                    changed = True
+
+            # 3b. BIF pin renames (mmaster->minitiator, mslave->mtarget)
+            for old, new in bif_renames:
+                if old in ln:
+                    ln = ln.replace(old, new)
+                    changed = True
+
+            # 4. Per-master/slave renames (safe for all lines)
+            for old, new in per_param_renames:
+                if old in ln:
+                    ln = ln.replace(old, new)
+                    changed = True
+
+            new_lines.append(ln)
+
+        if changed:
+            with open(path, "w") as fh:
+                fh.writelines(new_lines)
+            patched += 1
+
+    if patched:
+        print(f"Patched COREAXI4INTERCONNECT params in {patched} TCL file(s).", flush=True)
+
+    # Second pass: BIF pin renames on ALL TCL files (not just COREAXI4INTERCONNECT)
+    # because BIF names propagate to wrapper SmartDesigns like CAPE_TOP / ADD_CAPE.
+    bif_map = {"AXI4mmaster": "AXI4minitiator", "AXI4mslave": "AXI4mtarget"}
+    bif_patched = 0
+    for path in tcl_files:
+        try:
+            with open(path, "r") as fh:
+                content = fh.read()
+        except Exception:
+            continue
+        changed = False
+        for old, new in bif_map.items():
+            if old in content:
+                content = content.replace(old, new)
+                changed = True
+        if changed:
+            with open(path, "w") as fh:
+                fh.write(content)
+            bif_patched += 1
+    if bif_patched:
+        print(f"Patched BIF pin names in {bif_patched} TCL file(s).", flush=True)
+
+
 # Calls Libero and runs a script
 def call_libero(libero, script, script_args, project_location, hss_image_location,
                 mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version):
@@ -1226,6 +1393,11 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
 
     top_level_name = get_top_level_name()
     print("top level name: ", top_level_name)
+
+    # Patch COREAXI4INTERCONNECT TCL files for Libero v2025.1 core v3.0.130
+    # (MASTER->INITIATOR, SLAVE->TARGET rename; remove dependent params).
+    # Must run AFTER clone_sources because MSS is re-cloned from bundle.
+    _patch_coreaxi4_tcl_files(os.path.join(initial_directory, "sources"))
 
     call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version)
     os.chdir(initial_directory)

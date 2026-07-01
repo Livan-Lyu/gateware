@@ -31,22 +31,19 @@ set num_slaves [expr {$num_accelerators + 1}]
 set num_masters_width [expr {int(ceil(log($num_masters) / log(2)))}]
 
 # Initialize parameters
-set params "NUM_SLAVES:$num_slaves \
-            NUM_MASTERS:$num_masters \
-            NUM_MASTERS_WIDTH:$num_masters_width \
+set params "NUM_TARGETS:$num_slaves \
+            NUM_INITIATORS:$num_masters \
+            NUM_INITIATORS_WIDTH:$num_masters_width \
             ADDR_WIDTH:38 \
             ID_WIDTH:8 \
             USER_WIDTH:4 \
-            CROSSBAR_MODE:1 \
-            NUM_THREADS:4 \
-            OPEN_TRANS_MAX:8 \
             OPTIMIZATION:1 \
             DATA_WIDTH:128 \
-            MASTER0_DATA_WIDTH:64 \
-            SLAVE0_START_ADDR:0x80000000 \
-            SLAVE0_END_ADDR:0xdfffffff \
-            SLAVE0_DATA_WIDTH:64 \
-            SLAVE0_TYPE:0"
+            INITIATOR0_DATA_WIDTH:64 \
+            TARGET0_START_ADDR:0x80000000 \
+            TARGET0_END_ADDR:0xdfffffff \
+            TARGET0_DATA_WIDTH:64 \
+            TARGET0_TYPE:0"
 
 # Configure slaves and masters
 for {set i 1} {$i <= $num_accelerators} {incr i} {
@@ -62,28 +59,28 @@ for {set m 0} {$m < $num_masters} {incr m} {
     for {set s 0} {$s < $num_slaves} {incr s} {
         if {$m == 0 && $s == 0} {
             # Master0 (CPU) cannot access Slave0 (prevents loop-back)
-            append params " MASTER${m}_READ_SLAVE${s}:false"
-            append params " MASTER${m}_WRITE_SLAVE${s}:false"
+            append params " MASTER${m}_READ_TARGET${s}:false"
+            append params " MASTER${m}_WRITE_TARGET${s}:false"
         } elseif {$m > 0 && $s == 0} {
             # Accelerator masters can access memory (Slave0)
-            append params " MASTER${m}_READ_SLAVE${s}:true"
-            append params " MASTER${m}_WRITE_SLAVE${s}:true"
+            append params " MASTER${m}_READ_TARGET${s}:true"
+            append params " MASTER${m}_WRITE_TARGET${s}:true"
         } elseif {$m == 0 && $s > 0} {
             # CPU (Master0) can access all accelerators
-            append params " MASTER${m}_READ_SLAVE${s}:true"
-            append params " MASTER${m}_WRITE_SLAVE${s}:true"
+            append params " MASTER${m}_READ_TARGET${s}:true"
+            append params " MASTER${m}_WRITE_TARGET${s}:true"
         } elseif {$m > 0 && $s > 0 && $m != $s} {
             # Accelerators cannot access other accelerators (optional - can be changed if needed)
-            append params " MASTER${m}_READ_SLAVE${s}:false"
-            append params " MASTER${m}_WRITE_SLAVE${s}:false"
+            append params " MASTER${m}_READ_TARGET${s}:false"
+            append params " MASTER${m}_WRITE_TARGET${s}:false"
         } elseif {$m > 0 && $s > 0 && $m == $s} {
             # Accelerators cannot access themselves (prevents loop-back)
-            append params " MASTER${m}_READ_SLAVE${s}:false"
-            append params " MASTER${m}_WRITE_SLAVE${s}:false"
+            append params " MASTER${m}_READ_TARGET${s}:false"
+            append params " MASTER${m}_WRITE_TARGET${s}:false"
         } else {
             # Default case (should not happen)
-            append params " MASTER${m}_READ_SLAVE${s}:false"
-            append params " MASTER${m}_WRITE_SLAVE${s}:false"
+            append params " MASTER${m}_READ_TARGET${s}:false"
+            append params " MASTER${m}_WRITE_TARGET${s}:false"
         }
     }
 }
@@ -93,21 +90,15 @@ for {set i 0} {$i < $num_masters} {incr i} {
     append params " MASTER${i}_CHAN_RS:true"
     append params " MASTER${i}_CLOCK_DOMAIN_CROSSING:false"
     append params " MASTER${i}_DWC_DATA_FIFO_DEPTH:32"
-    append params " MASTER${i}_READ_INTERLEAVE:false"
 }
 
 for {set i 0} {$i < $num_slaves} {incr i} {
     append params " SLAVE${i}_CHAN_RS:true"
     append params " SLAVE${i}_CLOCK_DOMAIN_CROSSING:false"
     append params " SLAVE${i}_DWC_DATA_FIFO_DEPTH:32"
-    append params " SLAVE${i}_READ_INTERLEAVE:false"
 }
 
 # Add additional required parameters
-append params " RD_ARB_EN:false"
-append params " DWC_ADDR_FIFO_DEPTH_CEILING:64"
-append params " SLV_AXI4PRT_ADDRDEPTH:8"
-append params " SLV_AXI4PRT_DATADEPTH:9"
 
 # Create and configure the core
 create_and_configure_core -component_name {SHLS_AXI4Interconnect} -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*} -download_core -params $params

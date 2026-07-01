@@ -26,7 +26,7 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {apb_prdata} -port_direction {
 sd_create_scalar_port -sd_name ${sd_name} -port_name {apb_pready} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {apb_pslverr} -port_direction {OUT}
 
-# AXI export raw ports (for AXI4mslave0 BIF mapping only — no manual connections)
+# AXI export raw ports (for AXI4mtarget0 BIF mapping only — no manual connections)
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_araddr} -port_direction {OUT} -port_range {[37:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_arvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_arready} -port_direction {IN}
@@ -56,7 +56,7 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {APB_SLAVE} \
 "PWRITE:apb_pwrite" "PRDATA:apb_prdata" "PWDATA:apb_pwdata" \
 "PREADY:apb_pready" "PSLVERR:apb_pslverr" }
 
-sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
+sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mtarget0} \
     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {\
 "ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" \
 "ARADDR:ms_araddr" "ARVALID:ms_arvalid" "ARREADY:ms_arready" \
@@ -69,15 +69,15 @@ sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mslave0} \
 # ===== COREAXI4INTERCONNECT =====
 create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*} \
     -component_name {CAPE_AXI_XBAR} -params {
-    "NUM_MASTERS:1" "NUM_SLAVES:1"
+    "NUM_INITIATORS:1" "NUM_TARGETS:1"
     "ADDR_WIDTH:38" "DATA_WIDTH:64" "ID_WIDTH:4"
-    "MASTER0_DATA_WIDTH:64" "SLAVE0_DATA_WIDTH:64"
-    "MASTER0_ADDR_WIDTH:38" "SLAVE0_ADDR_WIDTH:38"
-    "MASTER0_ID_WIDTH:4" "SLAVE0_ID_WIDTH:4"
-    "MASTER0_READ_ACCEPTANCE:8" "SLAVE0_READ_ACCEPTANCE:8"
-    "MASTER0_WRITE_ACCEPTANCE:8" "SLAVE0_WRITE_ACCEPTANCE:8"
+    "INITIATOR0_DATA_WIDTH:64" "TARGET0_DATA_WIDTH:64"
+    "INITIATOR0_ADDR_WIDTH:38" "TARGET0_ADDR_WIDTH:38"
+    "INITIATOR0_ID_WIDTH:4" "TARGET0_ID_WIDTH:4"
+    "INITIATOR0_READ_ACCEPTANCE:8" "TARGET0_READ_ACCEPTANCE:8"
+    "INITIATOR0_WRITE_ACCEPTANCE:8" "TARGET0_WRITE_ACCEPTANCE:8"
     "ADVANCED:0" "AREG:1" "RREG:1"
-    "SLAVE0_ADDR_RANGE_START:0x80000000" "SLAVE0_ADDR_RANGE_END:0xDFFFFFFF"
+    "TARGET0_ADDR_RANGE_START:0x80000000" "TARGET0_ADDR_RANGE_END:0xDFFFFFFF"
 }
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_AXI_XBAR} -instance_name {XBAR_0}
 
@@ -89,8 +89,8 @@ sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {CAPE} -instance_name
 sd_connect_pins -sd_name ${sd_name} -pin_names {APB_SLAVE CAPE_INST:APB_TARGET}
 
 # AXI: CAPE_INST BIF → XBAR → export BIF (all BIF-to-BIF)
-sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:AXI4_INITIATOR XBAR_0:AXI4mmaster0}
-sd_connect_pins -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mslave0 AXI4mslave0}
+sd_connect_pins -sd_name ${sd_name} -pin_names {CAPE_INST:AXI4_INITIATOR XBAR_0:AXI4minitiator0}
+sd_connect_pins -sd_name ${sd_name} -pin_names {XBAR_0:AXI4mtarget0 AXI4mtarget0}
 
 # Clock / Reset
 sd_connect_pins -sd_name ${sd_name} -pin_names {PCLK CAPE_INST:PCLK}

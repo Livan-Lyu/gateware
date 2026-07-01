@@ -84,8 +84,8 @@ sd_instantiate_hdl_core -sd_name {APU} -hdl_core_name ${accel_name} -instance_na
 
 # Connect the accelerator to the system
 puts "Connecting accelerator to system bus and clock..."
-sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:axi4target SHLS_AXI4Interconnect_0:AXI4mslave$accel_num"
-sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:axi4initiator SHLS_AXI4Interconnect_0:AXI4mmaster$accel_num"
+sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:axi4target SHLS_AXI4Interconnect_0:AXI4mtarget$accel_num"
+sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:axi4initiator SHLS_AXI4Interconnect_0:AXI4minitiator$accel_num"
 sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:reset ARESETN"
 sd_connect_pins -sd_name {APU} -pin_names "$accel_instance:clk ACLK"
 sd_invert_pins -sd_name {APU} -pin_names "$accel_instance:reset"

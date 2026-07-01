@@ -29,8 +29,8 @@ set sd_name ${top_level_name}
 #-------------------------------------------------------------------------------
 configure_core -component_name {FIC3_INITIATOR} -params {"APBSLOT12ENABLE:true"}
 sd_update_instance -sd_name {BVF_RISCV_SUBSYSTEM} -instance_name {FIC3_INITIATOR}
-sd_connect_pin_to_port -sd_name {BVF_RISCV_SUBSYSTEM} -pin_name {FIC3_INITIATOR:APBmslave12} -port_name {} 
-sd_rename_port -sd_name {BVF_RISCV_SUBSYSTEM} -current_port_name {APBmslave12} -new_port_name {APU_APB_MTARGET}
+sd_connect_pin_to_port -sd_name {BVF_RISCV_SUBSYSTEM} -pin_name {FIC3_INITIATOR:APBmtarget12} -port_name {} 
+sd_rename_port -sd_name {BVF_RISCV_SUBSYSTEM} -current_port_name {APBmtarget12} -new_port_name {APU_APB_MTARGET}
 generate_component -component_name {BVF_RISCV_SUBSYSTEM}
 sd_update_instance -sd_name ${sd_name} -instance_name {BVF_RISCV_SUBSYSTEM} 
 
@@ -64,5 +64,5 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:GPIO_2_OE_M
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APU:BVF_GPIO_IN" "BVF_RISCV_SUBSYSTEM:GPIO_2_F2M"}
 
 # Add bus interface net connections
-sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR" "APU:AXI4mmaster0"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_INITIATOR" "APU:AXI4minitiator0"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"BVF_RISCV_SUBSYSTEM:APU_APB_MTARGET" "APU:APB_SLAVE"}
