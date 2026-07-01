@@ -16,7 +16,6 @@ MSS:
     type: git
     local: sources/FPGA-design/mss.bundle
     branch: qspi
-    bypass: 1
 gateware:
     type: sources
     build-args: "CAPE_OPTION:GPIOS
