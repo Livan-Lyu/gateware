@@ -29,6 +29,7 @@ MSS:
     type: git
     local: sources/FPGA-design/mss.bundle
     branch: default
+    bypass: yes
 
 gateware:
     type: sources
