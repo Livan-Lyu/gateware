@@ -16,7 +16,7 @@ MSS:
     type: git
     local: sources/FPGA-design/mss.bundle
     branch: default
-    bypass: yes
+    bypass: 1
 gateware:
     type: sources
     build-args: "CAPE_OPTION:COMMS_CAPE
