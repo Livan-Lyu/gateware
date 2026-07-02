@@ -1,5 +1,7 @@
 # BeagleV Fire Gateware Builder
 
+## This repository contains a custom BGS module for CAPE, based on the official gateware template.
+
 ## Introduction
 The BeagleV Fire gateware builder is a Python script that builds both the PolarFire SoC HSS bootloader and Libero FPGA project into a single programming bitstream. It uses a list of repositories/branches specifying the configuration of the BeagleV Fire to build.
 
