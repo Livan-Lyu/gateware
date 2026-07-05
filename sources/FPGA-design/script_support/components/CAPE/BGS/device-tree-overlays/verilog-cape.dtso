@@ -10,12 +10,24 @@
 	};
 };
 
-/*
- * BGS variant does NOT instantiate CoreAPB3 + COREGPIO at 0x41100000/0x41200000.
- * P8/P9 pins are driven by MSS GPIO_2 directly.
- * pixel_proc is mapped through CAPE_APB_MTARGET on FIC_3 (internal APB),
- * not as a standalone peripheral at a fixed fabric address.
- *
- * If userspace UIO access to pixel_proc is needed, add a node here
- * pointing to the CAPE_APB_MTARGET base address as assigned by the MSS.
- */
+&{/fabric-bus@40000000} {
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	/*
+	 * CAPE's APB target is on FIC3 CoreAPB3 slot 1 → base 0x41100000.
+	 * Internal address decode (paddr[7]):
+	 *   0x00-0x7F  → apb_ctrl_status  (control/status registers)
+	 *   0x80-0xFF  → pixel_proc       (pixel processing engine)
+	 *
+	 * NOTE: There is NO COREGPIO at 0x41100000.
+	 * P8/P9 pins are driven by MSS GPIO_2 directly, not fabric GPIO.
+	 */
+
+	pixel_proc: pixel-proc@41100080 {
+		compatible = "generic-uio";
+		reg = <0x0 0x41100080 0x0 0x20>;
+		status = "okay";
+		linux,uio-name = "pixel-proc";
+	};
+};
