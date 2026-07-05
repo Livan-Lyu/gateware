@@ -1,4 +1,0 @@
-[submodule "sources/MSS"]
-	path = sources/MSS
-	url = git@github.com:Livan-Lyu/gateware_mss.git
-	branch = qspi
