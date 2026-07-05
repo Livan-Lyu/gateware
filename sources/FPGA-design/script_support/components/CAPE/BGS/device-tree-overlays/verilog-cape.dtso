@@ -10,29 +10,12 @@
 	};
 };
 
-&{/fabric-bus@40000000} {
-	#address-cells = <2>;
-	#size-cells = <2>;
-
-	cape_gpios_p8: gpio@41100000 {
-		compatible = "microchip,core-gpio", "microchip,coregpio-rtl-v3";
-		reg = <0x0 0x41100000 0x0 0x1000>;
-		clocks = <&fabric_clk3>;
-		gpio-controller;
-		#gpio-cells = <2>;
-		ngpios = <16>;
-		status = "okay";
-
-		gpio-line-names = "P8_31", "P8_32",      "", "P8_34",
-				       "", "P8_36", "P8_37", "P8_38",
-				      "P8_39", "P8_40", "P8_41", "P8_42",
-				      "P8_43", "P8_44", "P8_45", "P8_46";
-	};
-
-	pixel_proc: pixel-proc@41100080 {
-		compatible = "generic-uio";
-		reg = <0x0 0x41100080 0x0 0x20>;
-		status = "okay";
-		linux,uio-name = "pixel-proc";
-	};
-};
+/*
+ * BGS variant does NOT instantiate CoreAPB3 + COREGPIO at 0x41100000/0x41200000.
+ * P8/P9 pins are driven by MSS GPIO_2 directly.
+ * pixel_proc is mapped through CAPE_APB_MTARGET on FIC_3 (internal APB),
+ * not as a standalone peripheral at a fixed fabric address.
+ *
+ * If userspace UIO access to pixel_proc is needed, add a node here
+ * pointing to the CAPE_APB_MTARGET base address as assigned by the MSS.
+ */
