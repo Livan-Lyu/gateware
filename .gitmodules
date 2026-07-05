@@ -1,4 +1,4 @@
 [submodule "sources/MSS"]
 	path = sources/MSS
-	url = /home/livan/research/gateware/sources/FPGA-design/mss.git
+	url = ../FPGA-design/mss.git
 	branch = qspi
