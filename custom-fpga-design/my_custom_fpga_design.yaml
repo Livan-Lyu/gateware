@@ -14,9 +14,8 @@ HSS:
     make_clean: 1
 MSS:
     type: git
-    local: sources/FPGA-design/mss.bundle
-    branch: default
-    bypass: yes
+    link: https://github.com/Livan-Lyu/gateware_mss.git
+    branch: qspi
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE
