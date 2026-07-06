@@ -19,7 +19,5 @@ MSS:
 gateware:
     type: sources
     build-args: "M2_OPTION:NONE
-               CAPE_OPTION:BGS
-               MIPI_CSI_OPTION:NONE
-               SYZYGY_OPTION:NONE"
+               CAPE_OPTION:BGS"
 
