@@ -5,7 +5,8 @@
 puts "======== Add M.2 option: NONE ========"
 set sd_name ${top_level_name}
 
-sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET} 
+# FIC_0_AXI4_TARGET may be used by CAPE variant (e.g. BGS uses AXI to read DDR)
+#sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:FIC_0_AXI4_TARGET}
 # Disabled: FIC3 slot 16 not enabled — port doesn't exist
 #sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:M2_APB_MTARGET}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:PCIE_INT} -value {GND} 
