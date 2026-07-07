@@ -18,6 +18,8 @@ MSS:
     branch: qspi
 gateware:
     type: sources
-    build-args: "M2_OPTION:DEFAULT
-               CAPE_OPTION:BGS"
+    build-args: "M2_OPTION:NONE
+               CAPE_OPTION:BGS
+               SYZYGY_OPTION:NONE
+               MIPI_CSI_OPTION:NONE"
 
