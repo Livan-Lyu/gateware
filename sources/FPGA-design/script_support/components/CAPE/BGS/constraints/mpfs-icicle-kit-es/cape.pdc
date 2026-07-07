@@ -1,0 +1,62 @@
+# ------------------------- MMUART2 ---------------------------- #
+
+set_iobank -bank_name Bank9  \
+    -vcci 3.30               \
+    -fixed true             \
+    -update_iostd true
+    
+# Renamed MMUART_2_TXD to P9_24
+set_io -port_name P9_24 \
+    -pin_name B22 \
+    -fixed true \
+    -DIRECTION OUTPUT \
+    -io_std LVCMOS33 
+
+# Renamed MMUART_2_RXD to P9_26
+set_io -port_name P9_26 \
+    -pin_name C22 \
+    -fixed true \
+    -DIRECTION INPUT \
+    -io_std LVCMOS33 
+
+# ------------------------- MMUART3 ---------------------------- #
+
+set_iobank -bank_name Bank9  \
+    -vcci 3.30               \
+    -fixed false             \
+    -update_iostd true
+    
+# Renamed MMUART_3_TXD to P9_21
+set_io -port_name P9_21 \
+    -pin_name D21 \
+    -fixed true \
+    -DIRECTION OUTPUT \
+    -io_std LVCMOS33 
+    
+# Renamed MMUART_3_RXD to P9_22
+set_io -port_name P9_22 \
+    -pin_name B21 \
+    -fixed true \
+    -DIRECTION INPUT \
+    -io_std LVCMOS33 
+
+# ------------------------- MMUART4 ---------------------------- #
+
+set_iobank -bank_name Bank9  \
+    -vcci 3.30               \
+    -fixed false             \
+    -update_iostd true
+    
+# Renamed MMUART_3_TXD to P9_21
+set_io -port_name P9_21 \
+    -pin_name D21 \
+    -fixed true \
+    -DIRECTION OUTPUT \
+    -io_std LVCMOS33 
+    
+# Renamed MMUART_3_RXD to P9_22
+set_io -port_name P9_22 \
+    -pin_name B21 \
+    -fixed true \
+    -DIRECTION INPUT \
+    -io_std LVCMOS33 
