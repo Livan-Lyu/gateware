@@ -137,19 +137,23 @@ sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_PWM} -instanc
 # Add PWM_2 instance
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_PWM} -instance_name {PWM_2}
 
-# BGS: apb_ctrl_status custom register module (slot 3)
-create_hdl_core -file $project_dir/hdl/apb_ctrl_status.v -module {apb_ctrl_status} -library {work} -package {}
-hdl_core_add_bif -hdl_core_name {apb_ctrl_status} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {APB_BIF} -signal_map {}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PADDR}   -core_signal_name {paddr}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PSELx}   -core_signal_name {psel}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PENABLE} -core_signal_name {penable}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PWRITE}  -core_signal_name {pwrite}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PRDATA}  -core_signal_name {prdata}
-hdl_core_assign_bif_signal -hdl_core_name {apb_ctrl_status} -bif_name {APB_BIF} -bif_signal_name {PWDATA}  -core_signal_name {pwdata}
-hdl_core_rename_bif -hdl_core_name {apb_ctrl_status} -current_bif_name {APB_BIF} -new_bif_name {APBslave}
-sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {apb_ctrl_status} -instance_name {apb_ctrl_status_0}
+# BGS: cape_regs wrapper (apb_ctrl_status + pixel_proc, CoreAPB3 slot 3)
+create_hdl_core -file $project_dir/hdl/cape_regs.v -module {cape_regs} -library {work} -package {}
+# APB slave BIF
+hdl_core_add_bif -hdl_core_name {cape_regs} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {APB_BIF} -signal_map {}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PADDR}   -core_signal_name {paddr}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PSELx}   -core_signal_name {psel}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PENABLE} -core_signal_name {penable}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PWRITE}  -core_signal_name {pwrite}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PRDATA}  -core_signal_name {prdata}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PWDATA}  -core_signal_name {pwdata}
+hdl_core_rename_bif -hdl_core_name {cape_regs} -current_bif_name {APB_BIF} -new_bif_name {APBslave}
+# AXI4 master BIF (pixel_proc DMA)
+hdl_core_add_bif -hdl_core_name {cape_regs} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
+hdl_core_rename_bif -hdl_core_name {cape_regs} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
+sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {cape_regs} -instance_name {cape_regs_0}
 
-# BGS: AXI4 crossbar for future pixel_proc DMA
+# BGS: AXI4 crossbar for pixel_proc DMA
 sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ACLK} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ARESETN} -port_direction {IN}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_araddr} -port_direction {OUT} -port_range {[37:0]}
@@ -231,8 +235,8 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_6_PAD" "P8
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_7_PAD" "P8[38]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_8_PAD" "P8[39]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_9_PAD" "P8[40]" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PCLK" "P9_GPIO_0:PCLK" "PCLK" "PWM_0:PCLK" "PWM_1:PCLK" "PWM_2:PCLK" "apb_ctrl_status_0:pclk" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PRESETN" "P9_GPIO_0:PRESETN" "PRESETN" "PWM_0:PRESETN" "PWM_1:PRESETN" "PWM_2:PRESETN" "apb_ctrl_status_0:presetn" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PCLK" "P9_GPIO_0:PCLK" "PCLK" "PWM_0:PCLK" "PWM_1:PCLK" "PWM_2:PCLK" "cape_regs_0:pclk" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PRESETN" "P9_GPIO_0:PRESETN" "PRESETN" "PWM_0:PRESETN" "PWM_1:PRESETN" "PWM_2:PRESETN" "cape_regs_0:presetn" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:GPIO_10_PAD" "P9_PIN23" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:GPIO_12_PAD" "P9_PIN25" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_GPIO_0:GPIO_14_PAD" "P9_PIN27" }
@@ -257,11 +261,14 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave1" "P8
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave2" "P9_GPIO_0:APB_bif" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave4" "PWM_1:APBslave" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave5" "PWM_2:APBslave" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "apb_ctrl_status_0:APBslave" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "cape_regs_0:APBslave" }
 
 # BGS: AXI clock/reset connections
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN" "cape_regs_0:ARESETN"}
+
+# BGS: AXI4 initiator -> crossbar
+sd_connect_pins -sd_name ${sd_name} -pin_names {"cape_regs_0:AXI4_INITIATOR" "XBAR_0:AXI4minitiator0"}
 
 # Add GPIO BIBUFs
 sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {GPIO_13_BIBUF}
