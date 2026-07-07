@@ -11,12 +11,9 @@
 };
 
 &{/fabric-bus@40000000} {
-	#address-cells = <2>;
-	#size-cells = <2>;
-
-	pixel_proc: pixel-proc@41100080 {
+	pixel_proc: pixel-proc@41280000 {
 		compatible = "generic-uio";
-		reg = <0x0 0x41100080 0x0 0x20>;
+		reg = <0x0 0x41280000 0x0 0x1000>;
 		status = "okay";
 		linux,uio-name = "pixel-proc";
 	};

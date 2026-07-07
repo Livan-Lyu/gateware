@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: (GPL-2.0 OR MIT)
-/* Copyright (c) 2023 Microchip Technology Inc */
+/* Copyright (c) 2020-2021 Microchip Technology Inc */
 
 /dts-v1/;
 /plugin/;
@@ -66,12 +66,6 @@
 		led_P8_12 {
 			status = "okay";
 			gpios = <&gpio2 9 0>;
-			default-state = "off";
-		};
-
-		led_P8_13 {
-			status = "okay";
-			gpios = <&gpio2 10 0>;
 			default-state = "off";
 		};
 
