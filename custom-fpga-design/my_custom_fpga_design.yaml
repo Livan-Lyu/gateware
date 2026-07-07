@@ -15,7 +15,7 @@ HSS:
 MSS:
     type: git
     link: https://github.com/Livan-Lyu/gateware_mss.git
-    branch: default
+    branch: qspi
 gateware:
     type: sources
     build-args: "M2_OPTION:DEFAULT
