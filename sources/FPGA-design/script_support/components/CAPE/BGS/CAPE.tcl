@@ -56,8 +56,9 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {P8} -pin_slices {\
 [35:35] [36:36] [37:37] [38:38] [39:39] [40:40] [41:41] [42:42] [43:43] [44:44] [45:45] [46:46]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[15:0]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[36:16]}
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[39:37]}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {INT[39:37]} -value {GND}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[37:37]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[39:38]}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {INT[39:38]} -value {GND}
 
 # BGS: reconfigure CoreAPB3_CAPE with slot 3 enabled (created by shared/CoreAPB3_CAPE.tcl)
 configure_core -component_name {CoreAPB3_CAPE} -params {\
@@ -295,6 +296,11 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_16_BIBUF:PAD" "P9_16"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P9_16_BIBUF:D" "PWM_1:PWM_1"}
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {P9_16_BIBUF:Y}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {P9_16_BIBUF:E} -value {VCC}
+
+# BGS: connect cape_regs irq and tie off unused ports
+sd_connect_pins -sd_name ${sd_name} -pin_names {"INT[37]" "cape_regs_0:irq"}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {cape_regs_0:control}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {cape_regs_0:status} -value {GND}
 
 # Re-enable auto promotion of pins of type 'pad'
 auto_promote_pad_pins -promote_all 1
