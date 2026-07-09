@@ -59,8 +59,8 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[36:16]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[39:37]}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {INT[39:37]} -value {GND}
 
-# BGS: redefine CoreAPB3_CAPE with slot 3 enabled for custom registers
-create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreAPB3:*} -component_name {CoreAPB3_CAPE} -params {\
+# BGS: reconfigure CoreAPB3_CAPE with slot 3 enabled (created by shared/CoreAPB3_CAPE.tcl)
+configure_core -component_name {CoreAPB3_CAPE} -params {\
 "APB_DWIDTH:32"  \
 "APBSLOT0ENABLE:true"  \
 "APBSLOT1ENABLE:true"  \
