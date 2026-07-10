@@ -148,6 +148,8 @@ hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_s
 hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PWRITE}  -core_signal_name {pwrite}
 hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PRDATA}  -core_signal_name {prdata}
 hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PWDATA}  -core_signal_name {pwdata}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PREADY}  -core_signal_name {pready}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_signal_name {PSLVERR} -core_signal_name {pslverr}
 hdl_core_rename_bif -hdl_core_name {cape_regs} -current_bif_name {APB_BIF} -new_bif_name {APBslave}
 # AXI4 master BIF (pixel_proc DMA)
 hdl_core_add_bif -hdl_core_name {cape_regs} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}

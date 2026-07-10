@@ -6,9 +6,11 @@ module cape_regs(
     input  wire        pclk, presetn,
     // APB slave (shared)
     input  wire        psel, penable, pwrite,
-    input  wire [7:0]  paddr,
+    input  wire [31:0] paddr,
     input  wire [31:0] pwdata,
     output wire [31:0] prdata,
+    output wire        pready,
+    output wire        pslverr,
     // Status/control external I/O
     output wire [31:0] control,
     input  wire [31:0] status,
@@ -72,5 +74,7 @@ module cape_regs(
     );
 
     assign prdata = paddr[7] ? pix_prdata : ctrl_prdata;
+    assign pready = 1'b1;
+    assign pslverr = 1'b0;
 
 endmodule
