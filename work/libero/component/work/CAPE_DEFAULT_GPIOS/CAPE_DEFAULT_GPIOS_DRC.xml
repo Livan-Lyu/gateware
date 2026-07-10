@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>CAPE_DEFAULT_GPIOS</header>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Floating Driver</message>
+    <detail>Floating output bus pin CAPE_DEFAULT_GPIOS:GPIO_OUT[27:0]</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE_DEFAULT_GPIOS/pins/CAPE_DEFAULT_GPIOS:GPIO_OUT</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Floating Driver</message>
+    <detail>Floating output bus pin CAPE_DEFAULT_GPIOS:GPIO_OE[27:0]</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE_DEFAULT_GPIOS/pins/CAPE_DEFAULT_GPIOS:GPIO_OE</crossprobe>
+  </drc>
+</drcreport>

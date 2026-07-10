@@ -1,0 +1,139 @@
+
+. Module name, SLE, CFG, ARI1, BUFFER, MACC_PA, RAM1K20, RAM64X12, GLOBAL, IO
+. MY_CUSTOM_FPGA_DESIGN_709E0BD6, 3283, 3059, 1386, 0, 0, 2, 0, 7, 169
+.	. BVF_RISCV_SUBSYSTEM, 307, 907, 5, 0, 0, 2, 0, 0, 107
+.	.	. APB_ARBITER_28s, 0, 34, 0, 0, 0, 0, 0, 0, 0
+.	.	. FIC3_INITIATOR, 0, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. CoreAPB3_Z1, 0, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	. MIV_IHC_C0, 307, 871, 5, 0, 0, 2, 0, 0, 0
+.	.	.	. MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15, 307, 871, 5, 0, 0, 2, 0, 0, 0
+.	.	.	.	. miv_ihc_core_Z4, 307, 867, 5, 0, 0, 2, 0, 0, 0
+.	.	.	.	.	. miv_ihc_address_controller_Z2, 0, 457, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_apb_target_0s_32s_32s, 37, 6, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z10, 11, 22, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z11, 11, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z12, 11, 23, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z13, 11, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z14, 11, 22, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z5, 11, 25, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z6, 11, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z7, 11, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z8, 11, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_channel_Z9, 11, 22, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_interrupt_module_0s_8s_32s_0_8_0, 32, 29, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_interrupt_module_0s_8s_32s_0_8_1, 32, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_interrupt_module_0s_8s_32s_0_8_2, 32, 26, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_interrupt_module_0s_8s_32s_0_8_3, 32, 26, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_interrupt_module_0s_8s_32s_0_8_4, 32, 26, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_mailbox_address_decoder_Z3, 0, 39, 5, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. miv_ihc_ram_singleport_addreg_128s_7s_32s, 0, 0, 0, 0, 0, 2, 0, 0, 0
+.	.	. PF_SOC_MSS, 0, 0, 0, 0, 0, 0, 0, 0, 94
+.	. CAPE, 2943, 2151, 1381, 0, 0, 0, 0, 0, 53
+.	.	. CAPE_AXI_XBAR, 659, 584, 20, 0, 0, 0, 0, 0, 0
+.	.	.	. COREAXI4INTERCONNECT_Z21, 659, 584, 20, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_Axi4CrossBar_Z40, 251, 352, 20, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_AddressController_Z23, 131, 118, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_InitiatorControl_Z27_1, 1, 4, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_DependenceChecker_Z24_0, 0, 3, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_InitiatorAddressDecoder_2s_2s_0s_32s_32s_0s_0_1610612736_2147483647_Z25_0_0, 0, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_InitiatorAddressDecoder_2s_2s_1s_32s_32s_0s_0_18446744071562067968_18446744071830503423_Z26_0_0, 0, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_TransactionController_2s_2s_1_1_0_1s_1s_0, 1, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z28, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2_caxi4interconnect_Axi4CrossBar_Z40, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z28_0, 70, 38, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1, 70, 38, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RoundRobinArb_2s_1s_1s_0_caxi4interconnect_Axi4CrossBar_Z40, 8, 9, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_TargetMuxController_Z22_0, 48, 59, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_AddressController_Z33, 22, 24, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z28_1, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_67s_1s_0_1_3_caxi4interconnect_Axi4CrossBar_Z40_0, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z28_2, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RoundRobinArb_2s_1s_1s_0_caxi4interconnect_Axi4CrossBar_Z40_0, 8, 9, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_TargetMuxController_Z22_1, 8, 5, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_DERR_Target_Z39, 10, 6, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RDataController_Z29, 63, 154, 20, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_ReadDataController_Z31, 32, 143, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0, 31, 34, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s, 18, 8, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_ReadDataMux_Z30_0, 1, 106, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RequestQual_3s_1s_1s_1s_2s_0, 0, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_ReadDataController_Z32, 31, 11, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1, 31, 10, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s_0, 18, 8, 10, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RespController_Z38, 5, 15, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RoundRobinArb_3s_2s_0s_0, 5, 8, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_TargetDataMuxController_Z37, 0, 7, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_WDataController_Z36, 20, 35, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_FifoDualPort_0_2_3s_3s_1, 10, 10, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_DualPort_FF_SyncWr_SyncRd_0_3s_3s_8s, 1, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0, 10, 18, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_DualPort_FF_SyncWr_SyncRd_0_3s_3s_8s_0, 1, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_InitiatorConvertor_Z41, 166, 90, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z45_1, 166, 90, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0, 66, 36, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1, 98, 52, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_InitiatorConvertor_Z46, 4, 4, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z45_0, 4, 4, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_ResetSync_0s_27s_3s, 3, 0, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_TargetConvertor_Z49, 233, 136, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z48_1, 224, 122, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0, 68, 37, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_70s_1s_0_1_3_1, 136, 71, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1, 18, 12, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_TrgtProtocolConverter_Z53, 9, 14, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_TrgtAxi4ProtConvAXI4ID_1_2s_4s_0_0s_3s_0s_0_3, 9, 14, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	. caxi4interconnect_FIFO_4s_2s_2s_3s_0s_4s_2s_0s_3s_2, 9, 10, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_FIFO_CTRL_4s_3s_0s_2s_4s_0s_2, 8, 9, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	.	.	. caxi4interconnect_RAM_BLOCK_4s_2s_2s_0s_2, 1, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. caxi4interconnect_TargetConvertor_Z54, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. caxi4interconnect_RegisterSlice_Z48_0, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	.	. caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2, 2, 2, 0, 0, 0, 0, 0, 0, 0
+.	.	. CAPE_DEFAULT_GPIOS, 0, 0, 0, 0, 0, 0, 0, 0, 26
+.	.	. CAPE_PWM, 455, 129, 338, 0, 0, 0, 0, 0, 0
+.	.	.	. corepwm_C1, 455, 129, 338, 0, 0, 0, 0, 0, 0
+.	.	.	.	. corepwm_Z19_CAPE, 455, 129, 338, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_pwm_gen_2s_32s_0_0s_2, 2, 10, 96, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_reg_if_Z20_2, 389, 118, 96, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_timebase_32s_0s_1_1_0, 64, 1, 146, 0, 0, 0, 0, 0, 0
+.	.	. CAPE_PWM_0, 455, 115, 338, 0, 0, 0, 0, 0, 0
+.	.	.	. corepwm_C1_1, 455, 115, 338, 0, 0, 0, 0, 0, 0
+.	.	.	.	. corepwm_Z19_CAPE_0, 455, 115, 338, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_pwm_gen_2s_32s_0_0s_2_0, 2, 10, 96, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_reg_if_Z20_2_0, 389, 104, 96, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_timebase_32s_0s_1_1_1, 64, 1, 146, 0, 0, 0, 0, 0, 0
+.	.	. CAPE_PWM_2, 454, 165, 254, 0, 0, 0, 0, 0, 0
+.	.	.	. corepwm_C1_0, 454, 165, 254, 0, 0, 0, 0, 0, 0
+.	.	.	.	. corepwm_Z19_0, 454, 165, 254, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_pwm_gen_2s_32s_0_0s_0, 1, 5, 48, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_reg_if_Z20_0, 389, 73, 60, 0, 0, 0, 0, 0, 0
+.	.	.	.	.	. corepwm_timebase_32s_0s_1_1, 64, 87, 146, 0, 0, 0, 0, 0, 0
+.	.	. CoreAPB3_CAPE, 0, 192, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. CoreAPB3_Z16, 0, 192, 0, 0, 0, 0, 0, 0, 0
+.	.	.	.	. COREAPB3_MUXPTOB3_1, 0, 190, 0, 0, 0, 0, 0, 0, 0
+.	.	. P8_GPIO_UPPER, 256, 335, 80, 0, 0, 0, 0, 0, 16
+.	.	.	. CoreGPIO_P8_UPPER, 256, 335, 80, 0, 0, 0, 0, 0, 0
+.	.	.	.	. CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17, 256, 335, 80, 0, 0, 0, 0, 0, 0
+.	.	. P9_GPIO, 266, 348, 80, 0, 0, 0, 0, 0, 7
+.	.	.	. CoreGPIO_P9, 266, 348, 80, 0, 0, 0, 0, 0, 0
+.	.	.	.	. CoreGPIO_P9_CoreGPIO_P9_0_CoreGPIO_Z18, 266, 348, 80, 0, 0, 0, 0, 0, 0
+.	.	. cape_regs, 398, 283, 271, 0, 0, 0, 0, 0, 0
+.	.	.	. apb_ctrl_status, 64, 36, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. pixel_proc, 334, 232, 271, 0, 0, 0, 0, 0, 0
+.	. CLOCKS_AND_RESETS, 33, 1, 0, 0, 0, 0, 0, 7, 0
+.	.	. CORERESET_0, 17, 0, 0, 0, 0, 0, 0, 1, 0
+.	.	.	. CORERESET_CORERESET_0_CORERESET_PF_3, 17, 0, 0, 0, 0, 0, 0, 1, 0
+.	.	. CORERESET_3, 16, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. CORERESET_CORERESET_0_CORERESET_PF_0, 16, 1, 0, 0, 0, 0, 0, 0, 0
+.	.	. FPGA_CCC_C0, 0, 0, 0, 0, 0, 0, 0, 4, 0
+.	.	.	. FPGA_CCC_C0_FPGA_CCC_C0_0_PF_CCC, 0, 0, 0, 0, 0, 0, 0, 4, 0
+.	.	. INIT_MONITOR, 0, 0, 0, 0, 0, 0, 0, 0, 0
+.	.	.	. INIT_MONITOR_INIT_MONITOR_0_PFSOC_INIT_MONITOR, 0, 0, 0, 0, 0, 0, 0, 0, 0
+.	.	. OSCILLATOR_160MHz, 0, 0, 0, 0, 0, 0, 0, 1, 0
+.	.	.	. OSCILLATOR_160MHz_OSCILLATOR_160MHz_0_PF_OSC, 0, 0, 0, 0, 0, 0, 0, 1, 0
+.	.	. PF_CCC_ADC, 0, 0, 0, 0, 0, 0, 0, 1, 0
+.	.	.	. PF_CCC_ADC_PF_CCC_ADC_0_PF_CCC, 0, 0, 0, 0, 0, 0, 0, 1, 0

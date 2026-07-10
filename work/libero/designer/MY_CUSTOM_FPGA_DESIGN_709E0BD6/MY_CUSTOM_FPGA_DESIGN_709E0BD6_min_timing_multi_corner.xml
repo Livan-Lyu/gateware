@@ -1,0 +1,4969 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Timing Multi Corner Report Min Delay Analysis
+</title>
+<text>SmartTime Version 2025.1.0.14</text>
+<text>Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)</text>
+<text>Date: Sat Jul 11 00:52:50 2026
+</text>
+<table>
+<header>
+</header>
+<row>
+ <cell>Design</cell>
+ <cell>MY_CUSTOM_FPGA_DESIGN_709E0BD6</cell>
+</row>
+<row>
+ <cell>Family</cell>
+ <cell>PolarFireSoC</cell>
+</row>
+<row>
+ <cell>Die</cell>
+ <cell>MPFS025T</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>FCVG484</cell>
+</row>
+<row>
+ <cell>Temperature Range</cell>
+ <cell>0 - 100 C</cell>
+</row>
+<row>
+ <cell>Voltage Range</cell>
+ <cell>0.97 - 1.03 V</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>STD</cell>
+</row>
+<row>
+ <cell>Design State</cell>
+ <cell>Post-Layout</cell>
+</row>
+<row>
+ <cell>Data source</cell>
+ <cell>Production</cell>
+</row>
+<row>
+ <cell>Multi Corner Report Operating Conditions</cell>
+ <cell>slow_lv_lt,fast_hv_lt,slow_lv_ht</cell>
+</row>
+</table>
+<text></text>
+<section>
+<name>Summary</name>
+<table>
+<header>
+ <cell>Clock Domain</cell>
+ <cell>Required Period (ns)</cell>
+ <cell>Required Frequency (MHz)</cell>
+ <cell>Worst Slack (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_M2F</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_M2F</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_M2F</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_M2F</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</cell>
+ <cell>7.512</cell>
+ <cell>133.120</cell>
+ <cell>0.055</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell>18.781</cell>
+ <cell>53.245</cell>
+ <cell>0.035</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>osc_rc160mhz</cell>
+ <cell>5.869</cell>
+ <cell>170.387</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[31]</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1</cell>
+ <cell>7.512</cell>
+ <cell>133.120</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2</cell>
+ <cell>7.512</cell>
+ <cell>133.120</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0</cell>
+ <cell>191.056</cell>
+ <cell>5.234</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+</table>
+<text></text>
+<table>
+<header>
+ <cell></cell>
+ <cell>Worst Slack (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Input to Output</cell>
+ <cell></cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock Domain BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_M2F</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_M2F</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_M2F</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_M2F</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Hold (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9[0]:CLK</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_10[0]:D</cell>
+ <cell>0.343</cell>
+ <cell>0.055</cell>
+ <cell>5.220</cell>
+ <cell>5.165</cell>
+ <cell>0.166</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_14[0]:CLK</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:D</cell>
+ <cell>0.147</cell>
+ <cell>0.074</cell>
+ <cell>3.029</cell>
+ <cell>2.955</cell>
+ <cell>0.068</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_8[0]:CLK</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9[0]:D</cell>
+ <cell>0.146</cell>
+ <cell>0.078</cell>
+ <cell>3.016</cell>
+ <cell>2.938</cell>
+ <cell>0.062</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_6[0]:CLK</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_7[0]:D</cell>
+ <cell>0.152</cell>
+ <cell>0.079</cell>
+ <cell>3.023</cell>
+ <cell>2.944</cell>
+ <cell>0.068</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_0[0]:CLK</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_1[0]:D</cell>
+ <cell>0.154</cell>
+ <cell>0.080</cell>
+ <cell>3.024</cell>
+ <cell>2.944</cell>
+ <cell>0.068</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9[0]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_10[0]:D</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.220</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>5.165</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.055</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.908</cell>
+ <cell>2.908</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_0</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.436</cell>
+ <cell>3.344</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.133</cell>
+ <cell>3.477</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.349</cell>
+ <cell>3.826</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.239</cell>
+ <cell>4.065</cell>
+ <cell>3</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.264</cell>
+ <cell>4.329</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.052</cell>
+ <cell>4.381</cell>
+ <cell>10</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9[0]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB1_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.496</cell>
+ <cell>4.877</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9[0]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.152</cell>
+ <cell>5.029</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_10[0]:D</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_9_Z[0]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.191</cell>
+ <cell>5.220</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.220</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</cell>
+ <cell>Clock Constraint</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>3.211</cell>
+ <cell>3.211</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_0</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.479</cell>
+ <cell>3.690</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.153</cell>
+ <cell>3.843</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.384</cell>
+ <cell>4.227</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.262</cell>
+ <cell>4.489</cell>
+ <cell>3</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.295</cell>
+ <cell>4.784</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>4.850</cell>
+ <cell>6</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_10[0]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.573</cell>
+ <cell>5.423</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>clock reconvergence pessimism</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>-0.424</cell>
+ <cell>4.999</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_10[0]:D</cell>
+ <cell>Library hold time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.166</cell>
+ <cell>5.165</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.165</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Clock to Out (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:CLK</cell>
+ <cell>PHY_RSTn</cell>
+ <cell>2.478</cell>
+ <cell></cell>
+ <cell>5.360</cell>
+ <cell></cell>
+ <cell>5.360</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:CLK</cell>
+ <cell>USB0_RESETB</cell>
+ <cell>2.735</cell>
+ <cell></cell>
+ <cell>5.617</cell>
+ <cell></cell>
+ <cell>5.617</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: PHY_RSTn</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.360</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.631</cell>
+ <cell>1.631</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_0</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.268</cell>
+ <cell>1.899</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.087</cell>
+ <cell>1.986</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.242</cell>
+ <cell>2.228</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.151</cell>
+ <cell>2.379</cell>
+ <cell>3</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.172</cell>
+ <cell>2.551</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.036</cell>
+ <cell>2.587</cell>
+ <cell>6</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1_RGB0_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.295</cell>
+ <cell>2.882</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_0_RESET/CORERESET_0/dff_15[0]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.072</cell>
+ <cell>2.954</cell>
+ <cell>2</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>PHY_RSTn_obuf/U_IOTRI:D</cell>
+ <cell>net</cell>
+ <cell>USB0_RESETB_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.735</cell>
+ <cell>3.689</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>PHY_RSTn_obuf/U_IOTRI:DOUT</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOTRI_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.261</cell>
+ <cell>3.950</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>PHY_RSTn_obuf/U_IOPAD:D</cell>
+ <cell>net</cell>
+ <cell>PHY_RSTn_obuf/DOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>3.950</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>PHY_RSTn_obuf/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_TRI</cell>
+ <cell>+</cell>
+ <cell>1.410</cell>
+ <cell>5.360</cell>
+ <cell>0</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>PHY_RSTn</cell>
+ <cell>net</cell>
+ <cell>PHY_RSTn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>5.360</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.360</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>PHY_RSTn</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Hold (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_negedge_reg[4]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_negedge_reg[4]:D</cell>
+ <cell>0.341</cell>
+ <cell>0.035</cell>
+ <cell>5.712</cell>
+ <cell>5.677</cell>
+ <cell>0.166</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_posedge_reg[30]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg[30]:D</cell>
+ <cell>0.341</cell>
+ <cell>0.046</cell>
+ <cell>5.720</cell>
+ <cell>5.674</cell>
+ <cell>0.166</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_posedge_reg[2]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg[2]:D</cell>
+ <cell>0.139</cell>
+ <cell>0.062</cell>
+ <cell>3.299</cell>
+ <cell>3.237</cell>
+ <cell>0.071</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_posedge_reg[26]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg[26]:D</cell>
+ <cell>0.138</cell>
+ <cell>0.062</cell>
+ <cell>3.303</cell>
+ <cell>3.241</cell>
+ <cell>0.071</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_posedge_reg[28]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg[28]:D</cell>
+ <cell>0.140</cell>
+ <cell>0.063</cell>
+ <cell>3.302</cell>
+ <cell>3.239</cell>
+ <cell>0.071</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_negedge_reg[4]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_negedge_reg[4]:D</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.712</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>5.677</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.035</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.919</cell>
+ <cell>2.919</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.920</cell>
+ <cell>3.839</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.133</cell>
+ <cell>3.972</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.352</cell>
+ <cell>4.324</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.239</cell>
+ <cell>4.563</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.263</cell>
+ <cell>4.826</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.052</cell>
+ <cell>4.878</cell>
+ <cell>780</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_negedge_reg[4]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.493</cell>
+ <cell>5.371</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_shregs[1].psh_negedge_reg[4]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.152</cell>
+ <cell>5.523</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_negedge_reg[4]:D</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/psh_negedge_reg[4]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.189</cell>
+ <cell>5.712</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.712</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell>Clock Constraint</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>3.222</cell>
+ <cell>3.222</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.011</cell>
+ <cell>4.233</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.153</cell>
+ <cell>4.386</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.387</cell>
+ <cell>4.773</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.263</cell>
+ <cell>5.036</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.294</cell>
+ <cell>5.330</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>5.396</cell>
+ <cell>993</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_negedge_reg[4]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.588</cell>
+ <cell>5.984</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>clock reconvergence pessimism</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>-0.473</cell>
+ <cell>5.511</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_negedge_reg[4]:D</cell>
+ <cell>Library hold time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.166</cell>
+ <cell>5.677</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.677</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET External Hold</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Hold (ns)</cell>
+ <cell>External Hold (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[30]</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[17].gpin1[17]:D</cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell>0.138</cell>
+ <cell>3.611</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>P8[39]</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].gpin1[8]:D</cell>
+ <cell>2.516</cell>
+ <cell></cell>
+ <cell>2.516</cell>
+ <cell></cell>
+ <cell>0.138</cell>
+ <cell>3.571</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>P9_41</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[19].gpin1[19]:D</cell>
+ <cell>2.550</cell>
+ <cell></cell>
+ <cell>2.550</cell>
+ <cell></cell>
+ <cell>0.138</cell>
+ <cell>3.566</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>P8[38]</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[7].gpin1[7]:D</cell>
+ <cell>2.596</cell>
+ <cell></cell>
+ <cell>2.596</cell>
+ <cell></cell>
+ <cell>0.138</cell>
+ <cell>3.498</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>P8[40]</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[9].gpin1[9]:D</cell>
+ <cell>2.601</cell>
+ <cell></cell>
+ <cell>2.601</cell>
+ <cell></cell>
+ <cell>0.138</cell>
+ <cell>3.486</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[30]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[17].gpin1[17]:D</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[30]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/GPIO_17_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>0.947</cell>
+ <cell>0.947</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/GPIO_17_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/GPIO_17_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.947</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/GPIO_17_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.339</cell>
+ <cell>1.286</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[17].gpin1[17]:D</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/GPIO_17_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.193</cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>3.222</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.011</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.153</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.387</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.263</cell>
+ <cell>N/C</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB3:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.290</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB3:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>N/C</cell>
+ <cell>186</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[17].gpin1[17]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB3_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.560</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[17].gpin1[17]:D</cell>
+ <cell>Library hold time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.138</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Clock to Out (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8][0]:CLK</cell>
+ <cell>P8[39]</cell>
+ <cell>2.436</cell>
+ <cell></cell>
+ <cell>5.605</cell>
+ <cell></cell>
+ <cell>5.605</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[7].REG_GEN.CONFIG_reg[7][0]:CLK</cell>
+ <cell>P8[38]</cell>
+ <cell>2.471</cell>
+ <cell></cell>
+ <cell>5.615</cell>
+ <cell></cell>
+ <cell>5.615</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8][2]:CLK</cell>
+ <cell>P8[39]</cell>
+ <cell>2.455</cell>
+ <cell></cell>
+ <cell>5.624</cell>
+ <cell></cell>
+ <cell>5.624</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[9].REG_GEN.CONFIG_reg[9][2]:CLK</cell>
+ <cell>P8[40]</cell>
+ <cell>2.479</cell>
+ <cell></cell>
+ <cell>5.627</cell>
+ <cell></cell>
+ <cell>5.627</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[7].REG_GEN.CONFIG_reg[7][2]:CLK</cell>
+ <cell>P8[38]</cell>
+ <cell>2.493</cell>
+ <cell></cell>
+ <cell>5.636</cell>
+ <cell></cell>
+ <cell>5.636</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8][0]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: P8[39]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.605</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.623</cell>
+ <cell>1.623</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.558</cell>
+ <cell>2.181</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.087</cell>
+ <cell>2.268</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.242</cell>
+ <cell>2.510</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.151</cell>
+ <cell>2.661</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.167</cell>
+ <cell>2.828</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.036</cell>
+ <cell>2.864</cell>
+ <cell>780</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8][0]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB2_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.305</cell>
+ <cell>3.169</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8][0]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.076</cell>
+ <cell>3.245</cell>
+ <cell>3</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8]_RNIALE56[2]:A</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/CONFIG_reg_8_[0]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.076</cell>
+ <cell>3.321</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/CoreGPIO_P8_UPPER_0/CoreGPIO_P8_UPPER_0/xhdl1.GEN_BITS[8].REG_GEN.CONFIG_reg[8]_RNIALE56[2]:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG2</cell>
+ <cell>+</cell>
+ <cell>0.037</cell>
+ <cell>3.358</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_8_BIBUF/U_IOBI:E</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_OE_net_0_i_i[8]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.830</cell>
+ <cell>4.188</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_8_BIBUF/U_IOBI:EOUT</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.077</cell>
+ <cell>4.265</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_8_BIBUF/U_IOPAD:E</cell>
+ <cell>net</cell>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_8_BIBUF/EOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>4.265</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P8_GPIO_UPPER_0/GPIO_8_BIBUF/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.340</cell>
+ <cell>5.605</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.605</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P8[39]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Removal (ns)</cell>
+ <cell>Skew (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[5].APB_32.GPOUT_reg[5]:ALn</cell>
+ <cell>1.762</cell>
+ <cell>1.722</cell>
+ <cell>4.922</cell>
+ <cell>3.200</cell>
+ <cell>-0.032</cell>
+ <cell>-0.072</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg[15]:ALn</cell>
+ <cell>1.764</cell>
+ <cell>1.723</cell>
+ <cell>4.924</cell>
+ <cell>3.201</cell>
+ <cell>-0.032</cell>
+ <cell>-0.073</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[3].APB_32.GPOUT_reg[3]:ALn</cell>
+ <cell>1.762</cell>
+ <cell>1.723</cell>
+ <cell>4.922</cell>
+ <cell>3.199</cell>
+ <cell>-0.032</cell>
+ <cell>-0.071</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[16].APB_32.GPOUT_reg[16]:ALn</cell>
+ <cell>1.771</cell>
+ <cell>1.723</cell>
+ <cell>4.931</cell>
+ <cell>3.208</cell>
+ <cell>-0.032</cell>
+ <cell>-0.080</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/MIV_IHC_C0_0/MIV_IHC_C0_0/miv_ihc_core_0/apb_target_0/PRDATA[23]:ALn</cell>
+ <cell>1.771</cell>
+ <cell>1.723</cell>
+ <cell>4.931</cell>
+ <cell>3.208</cell>
+ <cell>-0.032</cell>
+ <cell>-0.080</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[5].APB_32.GPOUT_reg[5]:ALn</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4.922</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>3.200</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>1.722</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.623</cell>
+ <cell>1.623</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.558</cell>
+ <cell>2.181</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.087</cell>
+ <cell>2.268</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.242</cell>
+ <cell>2.510</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.151</cell>
+ <cell>2.661</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.171</cell>
+ <cell>2.832</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.036</cell>
+ <cell>2.868</cell>
+ <cell>470</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB0_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.292</cell>
+ <cell>3.160</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep[0]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.073</cell>
+ <cell>3.233</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_Z[0]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.058</cell>
+ <cell>4.291</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.130</cell>
+ <cell>4.421</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]/U0_RGB1_RGB1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.168</cell>
+ <cell>4.589</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]/U0_RGB1_RGB1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.036</cell>
+ <cell>4.625</cell>
+ <cell>992</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[5].APB_32.GPOUT_reg[5]:ALn</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]/U0_RGB1_RGB1_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.297</cell>
+ <cell>4.922</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4.922</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</cell>
+ <cell>Clock Constraint</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0:OUT3</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.791</cell>
+ <cell>1.791</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0_clkint_12</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.613</cell>
+ <cell>2.404</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.100</cell>
+ <cell>2.504</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.266</cell>
+ <cell>2.770</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.166</cell>
+ <cell>2.936</cell>
+ <cell>5</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.187</cell>
+ <cell>3.123</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.042</cell>
+ <cell>3.165</cell>
+ <cell>993</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[5].APB_32.GPOUT_reg[5]:CLK</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1_RGB1_rgb_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.342</cell>
+ <cell>3.507</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>clock reconvergence pessimism</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>-0.275</cell>
+ <cell>3.232</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CAPE_inst_0/P9_GPIO_0/CoreGPIO_P9_0/CoreGPIO_P9_0/xhdl1.GEN_BITS[5].APB_32.GPOUT_reg[5]:ALn</cell>
+ <cell>Library removal time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>-0.032</cell>
+ <cell>3.200</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.200</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain osc_rc160mhz</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain P9[22]</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Hold (ns)</cell>
+ <cell>External Hold (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[21]</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DI_F2M</cell>
+ <cell>3.739</cell>
+ <cell></cell>
+ <cell>3.739</cell>
+ <cell></cell>
+ <cell>0.038</cell>
+ <cell>1.372</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[21]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DI_F2M</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.739</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[21]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DI_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>0.917</cell>
+ <cell>0.917</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DI_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DI_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.917</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DI_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.302</cell>
+ <cell>1.219</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DI_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DI_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.520</cell>
+ <cell>3.739</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.739</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.051</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.336</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>3.686</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DI_F2M</cell>
+ <cell>Library hold time</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>0.038</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Clock to Out (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_F2M</cell>
+ <cell>P9[18]</cell>
+ <cell>4.284</cell>
+ <cell></cell>
+ <cell>6.956</cell>
+ <cell></cell>
+ <cell>6.956</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_F2M</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: P9[18]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.956</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>0.935</cell>
+ <cell>0.935</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.935</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.117</cell>
+ <cell>1.052</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.620</cell>
+ <cell>2.672</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DO_OE_M2F</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>1.138</cell>
+ <cell>3.810</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOBI:E</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_SPI_0_DO_OE_M2F</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.729</cell>
+ <cell>5.539</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOBI:EOUT</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.077</cell>
+ <cell>5.616</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOPAD:E</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/EOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>5.616</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.340</cell>
+ <cell>6.956</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.956</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[18]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Removal (ns)</cell>
+ <cell>External Removal (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[17]</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_SS_F2M</cell>
+ <cell>3.723</cell>
+ <cell></cell>
+ <cell>3.723</cell>
+ <cell></cell>
+ <cell>-0.377</cell>
+ <cell>1.140</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[17]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_SS_F2M</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.723</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[17]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.098</cell>
+ <cell>1.098</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>1.098</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.305</cell>
+ <cell>1.403</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_SS_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.320</cell>
+ <cell>3.723</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.723</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[22]</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.274</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.338</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_CLK_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_CLK_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>3.628</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_SS_F2M</cell>
+ <cell>Library removal time</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>-0.377</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain P9[31]</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Hold (ns)</cell>
+ <cell>External Hold (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[29]</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_DI_F2M</cell>
+ <cell>2.942</cell>
+ <cell></cell>
+ <cell>2.942</cell>
+ <cell></cell>
+ <cell>-0.050</cell>
+ <cell>1.252</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[29]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_DI_F2M</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.942</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[29]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_DI_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>0.911</cell>
+ <cell>0.911</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_DI_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_DI_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.911</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_DI_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.302</cell>
+ <cell>1.213</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_DI_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_DI_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.729</cell>
+ <cell>2.942</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.942</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[31]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[31]</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.058</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.336</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.850</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_DI_F2M</cell>
+ <cell>Library hold time</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>-0.050</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Removal (ns)</cell>
+ <cell>External Removal (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[28]</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_SS_F2M</cell>
+ <cell>3.749</cell>
+ <cell></cell>
+ <cell>3.749</cell>
+ <cell></cell>
+ <cell>-0.184</cell>
+ <cell>0.450</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[28]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_SS_F2M</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.749</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[28]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_SS1_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.104</cell>
+ <cell>1.104</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_SS1_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_SS1_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>1.104</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_SS1_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.305</cell>
+ <cell>1.409</cell>
+ <cell>0</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_SS_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_SS1_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.340</cell>
+ <cell>3.749</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3.749</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[31]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[31]</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.267</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.338</cell>
+ <cell>N/C</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_CLK_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_1_CLK_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>2.778</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_1_SS_F2M</cell>
+ <cell>Library removal time</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>-0.184</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>slow_lv_ht</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Hold</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Clock to Out (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0:OUT0</cell>
+ <cell>ADC_MCLK</cell>
+ <cell>3.095</cell>
+ <cell></cell>
+ <cell>5.051</cell>
+ <cell></cell>
+ <cell>5.051</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0:OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: ADC_MCLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.051</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0:OUT0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.956</cell>
+ <cell>1.956</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0_1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0_clkint_0</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.244</cell>
+ <cell>2.200</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0_1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ICB_CLKINT</cell>
+ <cell>+</cell>
+ <cell>0.094</cell>
+ <cell>2.294</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0_NET</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.101</cell>
+ <cell>2.395</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GB</cell>
+ <cell>+</cell>
+ <cell>0.144</cell>
+ <cell>2.539</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0/U0_RGB1:A</cell>
+ <cell>net</cell>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0/U0_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.154</cell>
+ <cell>2.693</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0/U0_RGB1:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.037</cell>
+ <cell>2.730</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>ADC_MCLK_obuf/U_IOTRI:D</cell>
+ <cell>net</cell>
+ <cell>ADC_MCLK_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.353</cell>
+ <cell>3.083</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>ADC_MCLK_obuf/U_IOTRI:DOUT</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOTRI_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.295</cell>
+ <cell>3.378</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>ADC_MCLK_obuf/U_IOPAD:D</cell>
+ <cell>net</cell>
+ <cell>ADC_MCLK_obuf/DOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>3.378</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>ADC_MCLK_obuf/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_TRI</cell>
+ <cell>+</cell>
+ <cell>1.673</cell>
+ <cell>5.051</cell>
+ <cell>0</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>ADC_MCLK</cell>
+ <cell>net</cell>
+ <cell>ADC_MCLK</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>5.051</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5.051</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>ADC_MCLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Removal</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Path Set Pin to Pin</name>
+<section>
+<name>SET Input to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Operating Conditions</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>P9[17]</cell>
+ <cell>P9[18]</cell>
+ <cell>6.269</cell>
+ <cell></cell>
+ <cell>6.269</cell>
+ <cell></cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: P9[17]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: P9[18]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.269</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[17]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>0.557</cell>
+ <cell>0.557</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOBI:YIN</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/YIN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.557</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF/U_IOBI:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.120</cell>
+ <cell>0.677</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_SS_F2M</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_SS1_BIBUF_Y</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.411</cell>
+ <cell>2.088</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS:SPI_0_DO_OE_M2F</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:MSS</cell>
+ <cell>+</cell>
+ <cell>1.035</cell>
+ <cell>3.123</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOBI:E</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_SPI_0_DO_OE_M2F</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.729</cell>
+ <cell>4.852</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOBI:EOUT</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOBI_IB_OB_EB</cell>
+ <cell>+</cell>
+ <cell>0.077</cell>
+ <cell>4.929</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOPAD:E</cell>
+ <cell>net</cell>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/EOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>4.929</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>BVF_RISCV_SUBSYSTEM_inst_0/SPI_0_DO_BIBUF/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_BI</cell>
+ <cell>+</cell>
+ <cell>1.340</cell>
+ <cell>6.269</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.269</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>P9[17]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>P9[18]</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>fast_hv_lt</cell>
+</row>
+</table>
+</section>
+</section>
+<section>
+<name>Path Set User Sets</name>
+</section>
+</doc>

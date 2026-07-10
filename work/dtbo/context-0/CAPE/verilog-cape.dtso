@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+/* Copyright (c) 2023 Microchip Technology Inc */
+
+/dts-v1/;
+/plugin/;
+
+&{/chosen} {
+	overlays {
+		VERILOG-CAPE-GATEWARE = "";
+	};
+};
+
+&{/fabric-bus@40000000} {
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	pixel_proc: pixel-proc@41280000 {
+		compatible = "generic-uio";
+		reg = <0x0 0x41280000 0x0 0x1000>;
+		clocks = <&fabric_clk3>;
+		status = "okay";
+		linux,uio-name = "pixel-proc";
+	};
+};

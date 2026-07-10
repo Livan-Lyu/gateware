@@ -1,0 +1,42 @@
+@P:  Worst Slack : 5.981
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 - Estimated Frequency : 2521.4 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 - Requested Frequency : 133.1 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 - Estimated Period : 0.397
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 - Requested Period : 7.512
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 - Slack : 7.115
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 - Estimated Frequency : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 - Requested Frequency : 133.1 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 - Estimated Period : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 - Requested Period : 7.512
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 - Slack : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 - Estimated Frequency : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 - Requested Frequency : 133.1 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 - Estimated Period : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 - Requested Period : 7.512
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 - Slack : NA
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 - Estimated Frequency : 94.5 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 - Requested Frequency : 53.3 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 - Estimated Period : 10.587
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 - Requested Period : 18.779
+@P:  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 - Slack : 8.193
+@P:  CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 - Estimated Frequency : NA
+@P:  CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 - Requested Frequency : 5.2 MHz
+@P:  CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 - Estimated Period : NA
+@P:  CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 - Requested Period : 191.041
+@P:  CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 - Slack : NA
+@P:  osc_rc160mhz - Estimated Frequency : NA
+@P:  osc_rc160mhz - Requested Frequency : 170.4 MHz
+@P:  osc_rc160mhz - Estimated Period : NA
+@P:  osc_rc160mhz - Requested Period : 5.869
+@P:  osc_rc160mhz - Slack : NA
+@P:  System - Estimated Frequency : 248.8 MHz
+@P:  System - Requested Frequency : 100.0 MHz
+@P:  System - Estimated Period : 4.019
+@P:  System - Requested Period : 10.000
+@P:  System - Slack : 5.981
+@P: MY_CUSTOM_FPGA_DESIGN_709E0BD6 Part : mpfs025tfcvg484std
+@P: MY_CUSTOM_FPGA_DESIGN_709E0BD6 Register bits  : 3283 
+@P: MY_CUSTOM_FPGA_DESIGN_709E0BD6 DSP Blocks  : 0
+@P: MY_CUSTOM_FPGA_DESIGN_709E0BD6 I/O primitives : 169
+@P: MY_CUSTOM_FPGA_DESIGN_709E0BD6 RAM1K20 :  2
+@P:  CPU Time : 0h:01m:07s

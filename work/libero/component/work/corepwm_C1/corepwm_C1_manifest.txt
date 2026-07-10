@@ -1,0 +1,22 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:36 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  corepwm_C1
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/reg_if.v
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/tach_if.v
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/corepwm.v
+    /home/livan/gateware/gateware/work/libero/component/work/corepwm_C1/corepwm_C1.v
+
+Stimulus files for all Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/mti/scripts/wave_usertb_vlog.do
+
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/coreparameters.v
+    /home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/test/user/tb_user_corepwm.v
+

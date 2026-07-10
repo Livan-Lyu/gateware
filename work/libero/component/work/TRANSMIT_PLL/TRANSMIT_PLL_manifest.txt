@@ -1,0 +1,14 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:29 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  TRANSMIT_PLL
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/TRANSMIT_PLL/TRANSMIT_PLL_0/TRANSMIT_PLL_TRANSMIT_PLL_0_PF_TX_PLL.v
+    /home/livan/gateware/gateware/work/libero/component/work/TRANSMIT_PLL/TRANSMIT_PLL.v
+
+Constraint files:
+    /home/livan/gateware/gateware/work/libero/component/work/TRANSMIT_PLL/TRANSMIT_PLL_0/TRANSMIT_PLL_TRANSMIT_PLL_0_PF_TX_PLL.sdc

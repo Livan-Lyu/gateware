@@ -1,0 +1,518 @@
+# Sat Jul 11 00:49:03 2026
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09M-5
+Install: /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro
+OS: Ubuntu 24.04.4 LTS
+Hostname: libero-VMware-Virtual-Platform
+max virtual memory: unlimited (bytes)
+max user processes: 31242
+max stack size: 8388608 (bytes)
+
+
+Implementation : synthesis
+Synopsys Microchip Technology Pre-mapping, Version map202309act, Build 395R, Built Apr 29 2025 06:16:31, @6004904
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 501MB peak: 501MB)
+
+
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 548MB peak: 548MB)
+
+Reading constraint file: /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc
+@L: /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6_scck.rpt 
+See clock summary report "/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6_scck.rpt"
+@N: MF472 |Synthesis running in Automatic Compile Point mode
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 611MB peak: 612MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 611MB peak: 612MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 612MB peak: 612MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 615MB peak: 615MB)
+
+
+Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic. 
+NConnInternalConnection caching is on
+@W: FX1172 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|User-specified initial value defined for instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1.sync_ff[2:0] is being ignored due to limitations in architecture. 
+@W: FX1183 :"/home/livan/gateware/gateware/work/libero/component/work/CORERESET/CORERESET_0/core/corereset_pf.v":58:0:58:5|User-specified initial value set for instance CLOCKS_AND_RESETS_inst_0.FIC_3_RESET_0.CORERESET_0.dff cannot be supported due to limitations in architecture. Please remove the initial value set on the instance to avoid the warning. 
+
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 677MB peak: 677MB)
+
+
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 677MB peak: 677MB)
+
+
+Start optimization across hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 677MB peak: 677MB)
+
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":162:14:162:38|Tristate driver CAPE_AXI4mtarget0_ARESETN (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) on net CAPE_AXI4mtarget0_ARESETN (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":160:14:160:35|Tristate driver CAPE_AXI4mtarget0_ACLK (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) on net CAPE_AXI4mtarget0_ACLK (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) has its enable tied to GND.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/work/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.v":139:10:139:20|Removing instance FIC_1_RESET (in view: work.CLOCKS_AND_RESETS(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/work/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.v":156:10:156:22|Removing instance FIC_2_RESET_0 (in view: work.CLOCKS_AND_RESETS(verilog)) because it does not drive other instances.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_4 (in view: work.CAPE(verilog)) on net ms_rid_4 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_3 (in view: work.CAPE(verilog)) on net ms_rid_3 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_2 (in view: work.CAPE(verilog)) on net ms_rid_2 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_1 (in view: work.CAPE(verilog)) on net ms_rid_1 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_4 (in view: work.CAPE(verilog)) on net ms_bid_4 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_3 (in view: work.CAPE(verilog)) on net ms_bid_3 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_2 (in view: work.CAPE(verilog)) on net ms_bid_2 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_1 (in view: work.CAPE(verilog)) on net ms_bid_1 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":59:2:59:7|Removing sequential instance PWM_output_generation\[2\]\.genblk1\.PWM_int[2] (in view: work.corepwm_pwm_gen_2s_32s_0_0s_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].gpin1[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].gpin1[2] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].gpin1[3] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].gpin1[5] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].gpin1[6] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].gpin1[7] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].gpin1[8] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].gpin1[9] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].gpin1[11] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].gpin1[13] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].gpin1[15] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].gpin1[16] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].gpin1[18] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":304:12:304:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].gpin1[20] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].gpin3[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].gpin3[2] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].gpin3[3] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].gpin3[5] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].gpin3[6] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].gpin3[7] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].gpin3[8] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].gpin3[9] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].gpin3[11] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].gpin3[13] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].gpin3[15] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].gpin3[16] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].gpin3[18] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":317:12:317:17|Sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].gpin3[20] is reduced to a combinational gate by constant propagation.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":689:4:689:16|Removing instance genblk2\.intrrProtConv (in view: work.caxi4interconnect_InitiatorConvertor_Z41(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":1068:6:1068:13|Removing instance genblk3\.intrrDWC (in view: work.caxi4interconnect_InitiatorConvertor_Z41(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":936:6:936:18|Removing instance genblk3\.intr_dwc_rgsl (in view: work.caxi4interconnect_InitiatorConvertor_Z41(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":819:6:819:13|Removing instance genblk3\.intrrCDC (in view: work.caxi4interconnect_InitiatorConvertor_Z41(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":689:4:689:16|Removing instance genblk2\.intrrProtConv (in view: work.caxi4interconnect_InitiatorConvertor_Z46(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":1068:6:1068:13|Removing instance genblk3\.intrrDWC (in view: work.caxi4interconnect_InitiatorConvertor_Z46(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":936:6:936:18|Removing instance genblk3\.intr_dwc_rgsl (in view: work.caxi4interconnect_InitiatorConvertor_Z46(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":819:6:819:13|Removing instance genblk3\.intrrCDC (in view: work.caxi4interconnect_InitiatorConvertor_Z46(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[68:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[68:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[9:2] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[0] is reduced to a combinational gate by constant propagation.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance fifo_nearly_empty (in view: work.caxi4interconnect_FIFO_CTRL_4s_3s_0s_2s_4s_0s_2(verilog)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance fifo_one_from_full (in view: work.caxi4interconnect_FIFO_CTRL_4s_3s_0s_2s_4s_0s_2(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance fifo_nearly_empty (in view: work.caxi4interconnect_FIFO_CTRL_4s_3s_0s_2s_4s_0s_3(verilog)) of type view:PrimLib.dffse(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance fifo_one_from_full (in view: work.caxi4interconnect_FIFO_CTRL_4s_3s_0s_2s_4s_0s_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":702:4:702:10|Removing instance genblk2\.trgtdwc (in view: work.caxi4interconnect_TargetConvertor_Z49(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":818:4:818:16|Removing instance genblk2\.trgt_dwc_rgsl (in view: work.caxi4interconnect_TargetConvertor_Z49(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":949:4:949:10|Removing instance genblk2\.trgtCDC (in view: work.caxi4interconnect_TargetConvertor_Z49(verilog)) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_nearly_empty is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_nearly_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_one_from_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.wrptr[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_empty is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4ReadID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.entries_in_fifo[0] is reduced to a combinational gate by constant propagation.
+@W: MO156 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|RAM mem[1:0] removed due to constant propagation. 
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO.v":124:2:124:15|Removing instance fifo_ctrl_inst (in view: work.caxi4interconnect_FIFO_4s_2s_2s_3s_0s_4s_2s_0s_3s_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO.v":99:6:99:8|Removing instance genblk1\[0\]\.ram (in view: work.caxi4interconnect_FIFO_4s_2s_2s_3s_0s_4s_2s_0s_3s_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TrgtAxi4ProtConvAXI4ID.v":143:14:143:34|Removing instance genblk1\.genblk1\.rdata_interleave_fifo (in view: work.caxi4interconnect_TrgtAxi4ProtConvAXI4ID_1_2s_4s_0_0s_3s_0s_0_1(verilog)) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_nearly_empty is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_nearly_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_one_from_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.wrptr[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_empty is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.fifo_full is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.genblk2.trgtProtConv.genblk1.u_TrgtAxi4WriteID.genblk1.genblk1.rdata_interleave_fifo.fifo_ctrl_inst.entries_in_fifo[0] is reduced to a combinational gate by constant propagation.
+@W: MO156 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|RAM mem[1:0] removed due to constant propagation. 
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO.v":124:2:124:15|Removing instance fifo_ctrl_inst (in view: work.caxi4interconnect_FIFO_4s_2s_2s_3s_0s_4s_2s_0s_3s_1(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO.v":99:6:99:8|Removing instance genblk1\[0\]\.ram (in view: work.caxi4interconnect_FIFO_4s_2s_2s_3s_0s_4s_2s_0s_3s_1(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TrgtAxi4ProtConvAXI4ID.v":143:14:143:34|Removing instance genblk1\.genblk1\.rdata_interleave_fifo (in view: work.caxi4interconnect_TrgtAxi4ProtConvAXI4ID_1_2s_4s_0_0s_3s_0s_0_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TrgtProtocolConverter.v":224:30:224:45|Removing instance genblk1\.u_TrgtAxi4ReadID (in view: work.caxi4interconnect_TrgtProtocolConverter_Z56(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TrgtProtocolConverter.v":272:9:272:25|Removing instance genblk1\.u_TrgtAxi4WriteID (in view: work.caxi4interconnect_TrgtProtocolConverter_Z56(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[64:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[64:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[64:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[64:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[75:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[75:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":1076:8:1076:19|Removing instance genblk2\.trgtProtConv (in view: work.caxi4interconnect_TargetConvertor_Z54(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":702:4:702:10|Removing instance genblk2\.trgtdwc (in view: work.caxi4interconnect_TargetConvertor_Z54(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":818:4:818:16|Removing instance genblk2\.trgt_dwc_rgsl (in view: work.caxi4interconnect_TargetConvertor_Z54(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":949:4:949:10|Removing instance genblk2\.trgtCDC (in view: work.caxi4interconnect_TargetConvertor_Z54(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":490:2:490:7|Removing sequential instance mem_async_rd\.fifoOneAvail (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":420:2:420:7|Removing sequential instance mem_async_rd\.fifoRdValid (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoFull (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoNearFull (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoOverRunErr (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoUnderRunErr (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":490:2:490:7|Removing sequential instance mem_async_rd\.fifoOneAvail (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":420:2:420:7|Removing sequential instance mem_async_rd\.fifoRdValid (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoFull (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoNearFull (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoOverRunErr (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":311:2:311:7|Removing sequential instance mem_async_rd\.fifoUnderRunErr (in view: work.caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[0\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z34_1(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[1\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z34_1(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance target_busy_cnt\[2\][2:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[66] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[66] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorControl.v":108:5:108:9|Removing instance depck (in view: work.caxi4interconnect_InitiatorControl_Z35_0(verilog)) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":110:4:110:9|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.trgmx.genblk1.targetAUSER[0] is reduced to a combinational gate by constant propagation.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":265:5:265:12|Removing instance intrctrlBlk\[1\]\.intrctrl (in view: work.caxi4interconnect_AddressController_Z33(verilog)) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[1].genblk1.wrFif.fifoUnderRunErr is reduced to a combinational gate by constant propagation.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":319:0:319:5|Removing sequential instance fifoOneAvail (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":268:0:268:5|Removing sequential instance fifoRdValid (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoFull (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoNearFull (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoOverRunErr (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[0].genblk1.wrFif.fifoUnderRunErr is reduced to a combinational gate by constant propagation.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":319:0:319:5|Removing sequential instance fifoOneAvail (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":268:0:268:5|Removing sequential instance fifoRdValid (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoFull (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoNearFull (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance fifoOverRunErr (in view: work.caxi4interconnect_FifoDualPort_0_2_3s_3s_1_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":103:27:103:29|Removing instance rev (in view: work.caxi4interconnect_DERR_Target_Z39(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[0\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z24_1(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[1\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z24_1(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance target_busy_cnt\[2\][2:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance target_busy_cnt\[1\][2:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance target_busy_cnt\[0\][2:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[66] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[66] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorControl.v":108:5:108:9|Removing instance depck (in view: work.caxi4interconnect_InitiatorControl_Z27_0(verilog)) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":110:4:110:9|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.arcon.trgmx.genblk1.targetAUSER[0] is reduced to a combinational gate by constant propagation.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":265:5:265:12|Removing instance intrctrlBlk\[1\]\.intrctrl (in view: work.caxi4interconnect_AddressController_Z23(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataMux.v":136:0:136:5|Removing sequential instance currDataTransID[1:0] (in view: work.caxi4interconnect_ReadDataMux_Z30_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataMux.v":136:0:136:5|Removing sequential instance currdatatrgt[1:0] (in view: work.caxi4interconnect_ReadDataMux_Z30_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataMux.v":136:0:136:5|Removing sequential instance currDataTransID[1:0] (in view: work.caxi4interconnect_ReadDataMux_Z30_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataMux.v":136:0:136:5|Removing sequential instance currdatatrgt[1:0] (in view: work.caxi4interconnect_ReadDataMux_Z30_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataMux.v":136:0:136:5|Removing sequential instance openTransDec (in view: work.caxi4interconnect_ReadDataMux_Z30_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetDataMuxController.v":137:4:137:9|Removing sequential instance dataTransID[1:0] (in view: work.caxi4interconnect_TargetDataMuxController_Z37(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetDataMuxController.v":137:4:137:9|Removing sequential instance datatrgt[1:0] (in view: work.caxi4interconnect_TargetDataMuxController_Z37(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance rxCount[7:0] (in view: work.caxi4interconnect_DERR_Target_Z39(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[75] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[75] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":110:4:110:9|Removing sequential instance genblk1\.targetABURST[1:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":110:4:110:9|Removing sequential instance genblk1\.targetABURST[1:0] (in view: work.caxi4interconnect_TargetMuxController_Z22_0(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[19:18] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_3(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":38:4:38:9|Sequential instance CAPE_inst_0.cape_regs_0.u_pix.irq_s1[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":38:4:38:9|Sequential instance CAPE_inst_0.cape_regs_0.u_pix.irq_pclk[0] is reduced to a combinational gate by constant propagation.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/apb_ctrl_status.v":28:3:28:8|Removing sequential instance control[31:0] (in view: work.apb_ctrl_status(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":485:18:485:36|Removing instance APB_BUS_CONVERTER_0 (in view: work.CAPE(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[3:1] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.sValid (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[3:1] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[0\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z34_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":145:4:145:16|Removing instance genblk1\[1\]\.u_InitrAdrDec (in view: work.caxi4interconnect_DependenceChecker_Z34_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorControl.v":108:5:108:9|Removing instance depck (in view: work.caxi4interconnect_InitiatorControl_Z35_1(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":265:5:265:12|Removing instance intrctrlBlk\[0\]\.intrctrl (in view: work.caxi4interconnect_AddressController_Z33(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetDataMuxController.v":137:4:137:9|Removing sequential instance openTransDec[1:0] (in view: work.caxi4interconnect_TargetDataMuxController_Z37(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrch_rs_en.awrs.gen_ready_reg_en.holdDat[64] is reduced to a combinational gate by constant propagation.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance gen_ready_reg_en\.mReady (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[2:1] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[2:1] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":194:4:194:7|Removing instance wrch_rs_en\.awrs (in view: work.caxi4interconnect_RegisterSlice_Z48_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":374:4:374:6|Removing instance wrdata_rs_en\.wrs (in view: work.caxi4interconnect_RegisterSlice_Z48_0(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":593:1:593:17|Removing instance apb_arbiter_top_0 (in view: work.MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15(verilog)) because it does not drive other instances.
+@N: BN115 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":647:3:647:14|Removing instance apb_tgt0\.apb_target_0 (in view: work.MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15(verilog)) because it does not drive other instances.
+
+Finished optimization across hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 678MB peak: 678MB)
+
+
+Started DisTri Cleanup (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 678MB peak: 678MB)
+
+
+Finished DisTri Cleanup (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 678MB peak: 678MB)
+
+@N: FP130 |Promoting Net CLOCKS_AND_RESETS_inst_0.FIC_3_RESET_0.CORERESET_0.dff_arst on CLKINT  I_2 
+@N: FX1185 |Applying syn_allowed_resources blockrams=2 on compile point miv_ihc_core_Z4 
+@N: FX1185 |Applying syn_allowed_resources blockrams=2 on compile point COREAXI4INTERCONNECT_Z21 
+@N: FX1184 |Applying syn_allowed_resources blockrams=84 on top level netlist MY_CUSTOM_FPGA_DESIGN_709E0BD6 
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:05s; Memory used current: 679MB peak: 679MB)
+
+@W: MT655 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":8:0:8:0|Clock CLOCKS_AND_RESETS_inst_0/OSCILLATOR_160MHz_inst_0/OSCILLATOR_160MHz_0/I_OSC_160/CLK is overridden on source cell instance pin CLOCKS_AND_RESETS_inst_0.OSCILLATOR_160MHz_inst_0.OSCILLATOR_160MHz_0.I_OSC_160.CLK by clock osc_rc160mhz.
+@W: MT661 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":8:0:8:0|Clock CLOCKS_AND_RESETS_inst_0/OSCILLATOR_160MHz_inst_0/OSCILLATOR_160MHz_0/I_OSC_160/CLK is overridden on all sources and thus undefined.
+
+
+Clock Summary
+******************
+
+          Start                                                                      Requested     Requested     Clock                             Clock                Clock
+Level     Clock                                                                      Frequency     Period        Type                              Group                Load 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0 -       osc_rc160mhz                                                               170.4 MHz     5.869         declared                          default_clkgroup     2    
+1 .         CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      18.779        generated (from osc_rc160mhz)     FIC3_clks            2505 
+1 .         CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     7.512         generated (from osc_rc160mhz)     FIC0_clks            17   
+1 .         CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     133.1 MHz     7.512         generated (from osc_rc160mhz)     FIC1_clks            1    
+1 .         CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 MHz     7.512         generated (from osc_rc160mhz)     FIC2_clks            1    
+1 .         CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       191.041       generated (from osc_rc160mhz)     default_clkgroup     0    
+=============================================================================================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                                                                         Clock     Source                                                                                                Clock Pin                                                                   Non-clock Pin     Non-clock Pin                                                                              
+Clock                                                                    Load      Pin                                                                                                   Seq Example                                                                 Seq Example       Comb Example                                                                               
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+osc_rc160mhz                                                             2         CLOCKS_AND_RESETS_inst_0.OSCILLATOR_160MHz_inst_0.OSCILLATOR_160MHz_0.I_OSC_160.CLK(OSC_RC160MHZ)     CLOCKS_AND_RESETS_inst_0.PF_CCC_ADC_0.PF_CCC_ADC_0.pll_inst_0.REF_CLK_0     -                 CLOCKS_AND_RESETS_inst_0.OSCILLATOR_160MHz_inst_0.OSCILLATOR_160MHz_0.I_OSC_160_INT.I(BUFG)
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     2505      CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.pll_inst_0.OUT3(PLL)                             CLOCKS_AND_RESETS_inst_0.FIC_3_RESET_0.CORERESET_0.dff_0[0].C               -                 CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.clkint_12.I(BUFG)                     
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     17        CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.pll_inst_0.OUT0(PLL)                             CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0].C                 -                 CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.clkint_0.I(BUFG)                      
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     1         CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.pll_inst_0.OUT1(PLL)                             BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS.FIC_1_ACLK               -                 CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.clkint_4.I(BUFG)                      
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     1         CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.pll_inst_0.OUT2(PLL)                             BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS.FIC_2_ACLK               -                 CLOCKS_AND_RESETS_inst_0.FPGA_CCC_C0_0.FPGA_CCC_C0_0.clkint_8.I(BUFG)                      
+CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       0         CLOCKS_AND_RESETS_inst_0.PF_CCC_ADC_0.PF_CCC_ADC_0.pll_inst_0.OUT0(PLL)                               -                                                                           -                 CLOCKS_AND_RESETS_inst_0.PF_CCC_ADC_0.PF_CCC_ADC_0.clkint_0.I(BUFG)                        
+==================================================================================================================================================================================================================================================================================================================================================================================
+
+@N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:07s; Memory used current: 676MB peak: 679MB)
+
+Encoding state machine fsm[3:0] (in view: work.miv_ihc_apb_target_0s_32s_32s(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3403:0:3403:5|There are no possible illegal states for state machine fsm[3:0] (in view: work.miv_ihc_apb_target_0s_32s_32s(verilog)); safe FSM implementation is not required.
+Encoding state machine state[3:0] (in view: work.pixel_proc(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   100 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|There are no possible illegal states for state machine state[3:0] (in view: work.pixel_proc(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ack_stb (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ack_s2 (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+
+Only the first 100 messages of id 'BN362' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_premap.srr -id BN362' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {BN362} -count unlimited' in the Tcl shell.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_3(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+Encoding state machine currState[7:0] (in view: work.caxi4interconnect_DERR_Target_Z39(verilog))
+original code -> new code
+   000 -> 00000001
+   001 -> 00000010
+   010 -> 00000100
+   011 -> 00001000
+   100 -> 00010000
+   101 -> 00100000
+   110 -> 01000000
+   111 -> 10000000
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_3(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_3(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 676MB peak: 679MB)
+
+@W: MF511 |Found issues with constraints. Please check constraint checker report "/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6_cck.rpt" .
+
+Finished constraint checker (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 676MB peak: 679MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 588MB peak: 679MB)
+
+Process took 0h:00m:07s realtime, 0h:00m:07s cputime
+# Sat Jul 11 00:49:10 2026
+
+###########################################################]

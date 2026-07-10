@@ -1,0 +1,11 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:33 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  CLOCKS_AND_RESETS
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.v
+

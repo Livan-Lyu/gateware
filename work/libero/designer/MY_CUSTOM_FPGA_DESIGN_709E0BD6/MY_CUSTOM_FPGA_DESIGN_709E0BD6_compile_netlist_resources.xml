@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Compile Report</title>
+<text>Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)</text>
+<text>Date: Sat Jul 11 00:50:29 2026
+</text>
+<section><name>Device Selection</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Family</cell>
+ <cell>PolarFireSoC</cell>
+</row>
+<row>
+ <cell>Device</cell>
+ <cell>MPFS025T</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>FCVG484</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>STD</cell>
+</row>
+<row>
+ <cell>Core Voltage</cell>
+ <cell>1.0V</cell>
+</row>
+<row>
+ <cell>Part Range</cell>
+ <cell>EXT</cell>
+</row>
+<row>
+ <cell>Default I/O technology</cell>
+ <cell>LVCMOS 1.8V</cell>
+</row>
+</table>
+<section><name>Source Files</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Topcell</cell>
+ <cell>MY_CUSTOM_FPGA_DESIGN_709E0BD6</cell>
+</row>
+<row>
+ <cell>Format</cell>
+ <cell>Verilog</cell>
+</row>
+<row>
+ <cell>Source</cell>
+ <cell>/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6.vm</cell>
+</row>
+</table>
+<section><name>Options</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Limit the number of high fanout nets to display to</cell>
+ <cell>10</cell>
+</row>
+</table>
+<section><name>Resource Usage</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>Used</cell>
+ <cell>Total</cell>
+ <cell>Percentage</cell>
+</header>
+<row>
+ <cell>4LUT</cell>
+ <cell>4489</cell>
+ <cell>22956</cell>
+ <cell>19.55</cell>
+</row>
+<row>
+ <cell>DFF</cell>
+ <cell>3305</cell>
+ <cell>22956</cell>
+ <cell>14.40</cell>
+</row>
+<row>
+ <cell>User I/O</cell>
+ <cell>75</cell>
+ <cell>108</cell>
+ <cell>69.44</cell>
+</row>
+<row>
+ <cell>-- Single-ended I/O</cell>
+ <cell>75</cell>
+ <cell>108</cell>
+ <cell>69.44</cell>
+</row>
+<row>
+ <cell>-- Differential I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>54</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>-- I/Os using I/O Registers</cell>
+ <cell>0</cell>
+ <cell>108</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>I/O Register Flip-Flops </cell>
+ <cell>0</cell>
+ <cell>324</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>-- Input  I/O Flip-Flops </cell>
+ <cell>0</cell>
+ <cell>108</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>-- Output I/O Flip-Flops </cell>
+ <cell>0</cell>
+ <cell>108</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>-- Enable I/O Flip-Flops </cell>
+ <cell>0</cell>
+ <cell>108</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>uSRAM</cell>
+ <cell>0</cell>
+ <cell>204</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>LSRAM</cell>
+ <cell>2</cell>
+ <cell>84</cell>
+ <cell>2.38</cell>
+</row>
+<row>
+ <cell>Math</cell>
+ <cell>0</cell>
+ <cell>68</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>H-Chip Global</cell>
+ <cell>7</cell>
+ <cell>24</cell>
+ <cell>29.17</cell>
+</row>
+<row>
+ <cell>PLL</cell>
+ <cell>2</cell>
+ <cell>8</cell>
+ <cell>25.00</cell>
+</row>
+<row>
+ <cell>DLL</cell>
+ <cell>0</cell>
+ <cell>8</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>CRN_INT</cell>
+ <cell>2</cell>
+ <cell>24</cell>
+ <cell>8.33</cell>
+</row>
+<row>
+ <cell>INIT</cell>
+ <cell>1</cell>
+ <cell>1</cell>
+ <cell>100.00</cell>
+</row>
+<row>
+ <cell>OSC_RC160MHZ</cell>
+ <cell>1</cell>
+ <cell>1</cell>
+ <cell>100.00</cell>
+</row>
+<row>
+ <cell>Transceiver Lanes</cell>
+ <cell>0</cell>
+ <cell>4</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>Transceiver PCIe</cell>
+ <cell>0</cell>
+ <cell>2</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>ICB_CLKINT</cell>
+ <cell>6</cell>
+ <cell>44</cell>
+ <cell>13.64</cell>
+</row>
+<row>
+ <cell>MSS</cell>
+ <cell>1</cell>
+ <cell>1</cell>
+ <cell>100.00</cell>
+</row>
+<row>
+ <cell>MSS I/O</cell>
+ <cell>104</cell>
+ <cell>136</cell>
+ <cell>76.47</cell>
+</row>
+</table>
+<section><name>Detailed Logic Resource Usage</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>4LUT</cell>
+ <cell>DFF</cell>
+</header>
+<row>
+ <cell>Fabric Logic</cell>
+ <cell>4417</cell>
+ <cell>3233</cell>
+</row>
+<row>
+ <cell>uSRAM Interface Logic</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>LSRAM Interface Logic</cell>
+ <cell>72</cell>
+ <cell>72</cell>
+</row>
+<row>
+ <cell>Math Interface Logic</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Total Used</cell>
+ <cell>4489</cell>
+ <cell>3305</cell>
+</row>
+</table>
+<section><name>Detailed Carry Chains Resource Usage</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Length</cell>
+ <cell>Used</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>8</cell>
+ <cell>12</cell>
+</row>
+<row>
+ <cell>9</cell>
+ <cell>6</cell>
+</row>
+<row>
+ <cell>17</cell>
+ <cell>20</cell>
+</row>
+<row>
+ <cell>29</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>32</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>33</cell>
+ <cell>16</cell>
+</row>
+<row>
+ <cell>Total</cell>
+ <cell>57</cell>
+</row>
+</table>
+<section><name>Detailed 4LUT Groups Resource Usage</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Length</cell>
+ <cell>Used</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>78</cell>
+</row>
+<row>
+ <cell>5</cell>
+ <cell>20</cell>
+</row>
+<row>
+ <cell>10</cell>
+ <cell>8</cell>
+</row>
+<row>
+ <cell>Total</cell>
+ <cell>106</cell>
+</row>
+</table>
+<section><name>I/O Function</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>w/o register</cell>
+ <cell>w/ register</cell>
+ <cell>w/ DDR register</cell>
+</header>
+<row>
+ <cell>Input I/O</cell>
+ <cell>2</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Output I/O</cell>
+ <cell>7</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Bidirectional I/O</cell>
+ <cell>66</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Differential Input I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Differential Output I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+</table>
+<section><name>Nets assigned to chip global resources</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>2437</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CLOCKS_AND_RESETS_FIC_3_PCLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_12/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>2418</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : dff_arst</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/FIC_3_RESET_0/CORERESET_0/dff_15_rep_RNIFR0K5[0]/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>17</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CLOCKS_AND_RESETS_FIC_0_ACLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_0/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CLOCKS_AND_RESETS_inst_0/RCOSC_160MHZ_GL</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/OSCILLATOR_160MHz_inst_0/OSCILLATOR_160MHz_0/I_OSC_160_INT/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>1</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : ADC_MCLK_c</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/clkint_0/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>1</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CLOCKS_AND_RESETS_FIC_2_ACLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_8/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>1</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CLOCKS_AND_RESETS_FIC_1_ACLK</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/clkint_4/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+</table>
+<section><name>Nets assigned to row global resources</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+</table>
+<section><name>High fanout nets</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>964</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CFG0_GND_INST_NET</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CFG0_GND_INST</cell>
+</row>
+<row>
+ <cell>569</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/XBAR_0/CAPE_AXI_XBAR_0/arst_aclk_sync_genblk1_sync_ff[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/XBAR_0/CAPE_AXI_XBAR_0/arst_aclk_sync/genblk1.sync_ff[2]</cell>
+</row>
+<row>
+ <cell>433</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>312</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[4]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>283</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[3]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/N_46_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].un1_period_cnt_cry_31_RNIGMQ19</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/N_46_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].un1_period_cnt_cry_31_RNIJVEB6</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/pwm_posedge_reg8</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg8_0_a3</cell>
+</row>
+<row>
+ <cell>127</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[5]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>100</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PWDATA[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+</table>
+<section><name>High fanout nets (through buffer trees)</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>964</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CFG0_GND_INST_NET</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CFG0_GND_INST</cell>
+</row>
+<row>
+ <cell>569</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/XBAR_0/CAPE_AXI_XBAR_0/arst_aclk_sync_genblk1_sync_ff[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/XBAR_0/CAPE_AXI_XBAR_0/arst_aclk_sync/genblk1.sync_ff[2]</cell>
+</row>
+<row>
+ <cell>433</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[2]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>312</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[4]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>283</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[3]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/N_46_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_1/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].un1_period_cnt_cry_31_RNIGMQ19</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/N_46_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_2/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].un1_period_cnt_cry_31_RNIJVEB6</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/pwm_posedge_reg8</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: CAPE_inst_0/PWM_0/corepwm_C1_0/corepwm_C1_0/genblk3.corepwm_reg_if/gen_pos_neg_regs[1].pwm_posedge_reg8_0_a3</cell>
+</row>
+<row>
+ <cell>127</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PADDR[5]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+<row>
+ <cell>100</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : BVF_RISCV_SUBSYSTEM_CAPE_APB_MTARGET_PWDATA[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: BVF_RISCV_SUBSYSTEM_inst_0/PF_SOC_MSS_inst_0/I_MSS</cell>
+</row>
+</table>
+</doc>

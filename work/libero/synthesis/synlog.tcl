@@ -1,0 +1,1 @@
+run_tcl -fg MY_CUSTOM_FPGA_DESIGN_709E0BD6_syn.tcl

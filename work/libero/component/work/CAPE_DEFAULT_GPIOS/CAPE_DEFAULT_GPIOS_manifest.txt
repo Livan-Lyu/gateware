@@ -1,0 +1,11 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:36 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  CAPE_DEFAULT_GPIOS
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/CAPE_DEFAULT_GPIOS/CAPE_DEFAULT_GPIOS.v
+

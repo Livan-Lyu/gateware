@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>CAPE</header>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message> bus interface ID width mismatch</message>
+    <detail> There is an ID width mismatch between CAPE:AXI4mtarget0:ms_rid[0-3] and XBAR_0:AXI4mtarget0:TARGET0_RID[0-1] which may result in a loss of data.</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE/pins/CAPE:AXI4mtarget0</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message> bus interface ID width mismatch</message>
+    <detail> There is an ID width mismatch between cape_regs_0:AXI4_INITIATOR:AWID[0-3] and XBAR_0:AXI4minitiator0:INITIATOR0_AWID[0-0] which may result in a loss of data.</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE/pins/cape_regs_0:AXI4_INITIATOR</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin XBAR_0:AXI4mtarget1</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE/pins/XBAR_0:AXI4mtarget1</crossprobe>
+  </drc>
+  <drc>
+    <status>/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Designer/data/drcreport/warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Unconnected Bus Interface</message>
+    <detail>Unconnected bus interface pin XBAR_0:AXI4minitiator1</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/CAPE/pins/XBAR_0:AXI4minitiator1</crossprobe>
+  </drc>
+</drcreport>

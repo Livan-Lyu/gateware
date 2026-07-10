@@ -1,0 +1,1365 @@
+# Sat Jul 11 00:49:11 2026
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09M-5
+Install: /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro
+OS: Ubuntu 24.04.4 LTS
+Hostname: libero-VMware-Virtual-Platform
+max virtual memory: unlimited (bytes)
+max user processes: 31242
+max stack size: 8388608 (bytes)
+
+
+Implementation : synthesis
+Synopsys Microchip Technology Mapper, Version map202309act, Build 395R, Built Apr 29 2025 06:16:31, @6004904
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 501MB peak: 501MB)
+
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
+
+
+Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic. 
+
+@N: MF104 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3540:7:3540:18|Found compile point of type hard on View view:work.miv_ihc_core_Z4(verilog) 
+@N: MF104 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/Axi4CrossBar.v":18:7:18:36|Found compile point of type hard on View view:work.caxi4interconnect_Axi4CrossBar_Z40(verilog) 
+@N: MF104 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":20:7:20:26|Found compile point of type hard on View view:work.COREAXI4INTERCONNECT_Z21(verilog) 
+@N: MF104 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":9:7:9:10|Found compile point of type hard on View view:work.CAPE(verilog) 
+
+Synthesis running in Multiprocessing mode
+Maximum number of parallel jobs set to 4
+Multiprocessing started at : Sat Jul 11 00:49:12 2026
+Mapping COREAXI4INTERCONNECT_Z21 as a separate process
+Mapping CAPE as a separate process
+Mapping miv_ihc_core_Z4 as a separate process
+@W: BN114 :|Removing instance CP_fanout_cell_MY_CUSTOM_FPGA_DESIGN_709E0BD6_verilog_inst (in view: work.caxi4interconnect_Axi4CrossBar_Z40_acp(verilog)) because it does not drive other instances.
+Mapping caxi4interconnect_Axi4CrossBar_Z40 as a separate process
+MCP Status: 4 jobs running
+
+@N: MF106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/Axi4CrossBar.v":18:7:18:36|Mapping Compile point view:work.caxi4interconnect_Axi4CrossBar_Z40(verilog) because 
+		 no database from previous run found.
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 566MB peak: 566MB)
+
+@W: BN114 :|Removing instance CP_fanout_cell_work_caxi4interconnect_Axi4CrossBar_Z40_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[1].genblk1.wrFif.fifoRdAddr[2:0] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[0].genblk1.wrFif.fifoRdAddr[2:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 566MB peak: 566MB)
+
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[1] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.fifoRdAddr[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.fifoRdAddr[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.fifoRdAddr[2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram1_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram2_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram3_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram4_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram5_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram6_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram7_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram1_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram2_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram3_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram4_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram5_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram6_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem_ram7_[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2_caxi4interconnect_Axi4CrossBar_Z40(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2_caxi4interconnect_Axi4CrossBar_Z40(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[1].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[1].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[1].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[1].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.arcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.arcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.arcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.arcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.mem[1:0] is 8 words by 2 bits.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.mem[1:0] is 8 words by 2 bits.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":261:4:261:9|Removing sequential instance trgmx.target_owner[1] (in view: work.caxi4interconnect_AddressController_Z33(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":261:4:261:9|Removing sequential instance trgmx.target_owner[0] (in view: work.caxi4interconnect_AddressController_Z33(verilog)) because it does not drive other instances.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_67s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.awcon.intrctrlBlk[0].addr_ctrl_rs.wrch_rs_en.awrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":161:0:161:5|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.rcon.rrArb.grantEnc[0] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.rcon.rrArb.grant[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine currState[7:0] (in view: work.caxi4interconnect_DERR_Target_Z39(verilog))
+original code -> new code
+   000 -> 00000001
+   001 -> 00000010
+   010 -> 00000100
+   011 -> 00001000
+   100 -> 00010000
+   101 -> 00100000
+   110 -> 01000000
+   111 -> 10000000
+@W: MO129 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_BVALID is reduced to a combinational gate by constant propagation.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_AWREADY because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.currState[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_RVALID because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_RLAST. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_ARREADY because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.currState[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 566MB peak: 566MB)
+
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":185:0:185:5|Removing sequential instance rcon.rrArb.priorityMask[2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":161:0:161:5|Removing sequential instance rcon.rrArb.grant[2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":161:0:161:5|Removing sequential instance rcon.rrArb.grantEnc[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+NConnInternalConnection caching is on
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":292:0:292:5|Removing sequential instance derr.writeID[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[1\][2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[1\][1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[1\][0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[0\][2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[0\][1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[0\][0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
+
+Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 569MB peak: 569MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:03s		     4.65ns		 376 /       252
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:04s; Memory used current: 569MB peak: 569MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:04s; Memory used current: 569MB peak: 569MB)
+
+
+Finished mapping caxi4interconnect_Axi4CrossBar_Z40
+Mapping MY_CUSTOM_FPGA_DESIGN_709E0BD6 as a separate process
+MCP Status: 4 jobs running
+
+@N: MF106 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3540:7:3540:18|Mapping Compile point view:work.miv_ihc_core_Z4(verilog) because 
+		 no database from previous run found.
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 576MB peak: 576MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 576MB peak: 576MB)
+
+@N: FX106 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1319:4:1319:9|Using block RAM for single-port RAM
+@W: FX107 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1319:4:1319:9|RAM common_mailbox_ram.mem[31:0] (in view: work.miv_ihc_core_Z4(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
+Encoding state machine fsm[3:0] (in view: work.miv_ihc_apb_target_0s_32s_32s(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3403:0:3403:5|There are no possible illegal states for state machine fsm[3:0] (in view: work.miv_ihc_apb_target_0s_32s_32s(verilog)); safe FSM implementation is not required.
+
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 578MB peak: 578MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
+
+NConnInternalConnection caching is on
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 650MB peak: 650MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:07s		     4.94ns		 943 /       355
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:08s; Memory used current: 650MB peak: 650MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:08s; Memory used current: 650MB peak: 650MB)
+
+
+Finished mapping miv_ihc_core_Z4
+MCP Status: 3 jobs running
+
+@N: MF106 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":9:7:9:36|Mapping Top level view:work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog) because 
+		 no database from previous run found.
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 619MB peak: 620MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) with 6 words by 6 bits.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) with 9 words by 3 bits.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 619MB peak: 620MB)
+
+Encoding state machine cape_regs_0.u_pix.state[3:0] (in view: work.CAPE(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   100 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|There are no possible illegal states for state machine cape_regs_0.u_pix.state[3:0] (in view: work.CAPE(verilog)); safe FSM implementation is not required.
+
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 619MB peak: 620MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 619MB peak: 620MB)
+
+NConnInternalConnection caching is on
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 619MB peak: 620MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 619MB peak: 620MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 619MB peak: 620MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:05s; Memory used current: 619MB peak: 620MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 619MB peak: 620MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 619MB peak: 620MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:05s		     7.06ns		1448 /      1960
+@N: FP130 |Promoting Net CAPE_inst_0.cape_regs_0.u_pix.dff_arst_i on CLKINT  I_3751 
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 619MB peak: 620MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 619MB peak: 620MB)
+
+
+Finished mapping MY_CUSTOM_FPGA_DESIGN_709E0BD6
+MCP Status: 2 jobs running
+
+@N: MF106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":20:7:20:26|Mapping Compile point view:work.COREAXI4INTERCONNECT_Z21(verilog) because 
+		 no database from previous run found.
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 615MB peak: 615MB)
+
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2849:26:2849:40|Tristate driver TARGET31_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET31_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2849:9:2849:23|Tristate driver TARGET30_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET30_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:121:2848:135|Tristate driver TARGET29_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET29_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:104:2848:118|Tristate driver TARGET28_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET28_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:87:2848:101|Tristate driver TARGET27_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET27_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:70:2848:84|Tristate driver TARGET26_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET26_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:53:2848:67|Tristate driver TARGET25_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET25_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:36:2848:50|Tristate driver TARGET24_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET24_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2847:94:2847:108|Tristate driver TARGET23_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET23_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2847:77:2847:91|Tristate driver TARGET22_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET22_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 616MB peak: 616MB)
+
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2_COREAXI4INTERCONNECT_Z21(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2_COREAXI4INTERCONNECT_Z21(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[6] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[8] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[9] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[7] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[5] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[4] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[3] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sDat[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[1].initrconv.genblk3.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrch_rs_en.awrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrch_rs_en.awrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[1] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[2] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[3] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[28] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[29] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[30] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[31] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[32] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[33] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[34] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[35] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[60] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[61] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[62] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[63] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[64] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[65] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[66] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance gen_ready_reg_en\.sDat[67] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[1] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[2] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[3] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[28] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[29] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[30] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[31] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[32] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[33] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[34] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[35] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[60] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[61] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[62] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[63] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[64] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[65] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[66] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance gen_ready_reg_en\.holdDat[67] (in view: work.caxi4interconnect_RegSliceFull_69s_1s_0_1_3_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_75s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_4s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop[0].initrconv.genblk3.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[1].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_4(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrch_rs_en.awrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrch_rs_en.awrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_65s_1s_0_1_3_0(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.raddrch_rs_en.arrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_70s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.rdatach_rs_en.rrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_76s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrdata_rs_en.wrs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_5s_1s_0_1_3_1(verilog)); safe FSM implementation is not required.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.mReady because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.currState[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.sValid because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop[0].trgtcnv.rgsl.wrrsp_rs_en.brs.gen_ready_reg_en.currState[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4ReadID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem[0] is 4 words by 1 bits.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance genblk1\.u_TrgtAxi4ReadID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_ram1_[0] (in view: work.SYNRAM4X1(decomp)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance genblk1\.u_TrgtAxi4ReadID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_ram2_[0] (in view: work.SYNRAM4X1(decomp)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance genblk1\.u_TrgtAxi4ReadID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_ram3_[0] (in view: work.SYNRAM4X1(decomp)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem[0] is 4 words by 1 bits.
+
+Starting factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 616MB peak: 616MB)
+
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.sDat[2] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.sDat[64] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+
+Finished factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 616MB peak: 616MB)
+
+NConnInternalConnection caching is on
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.raddrch_rs_en\.arrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_genblk1\[0\]\.ram.mem_ram0_[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_genblk1\[0\]\.ram.mem_ram1_[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_genblk1\[0\]\.ram.mem_ram2_[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RAM_BLOCK.v":64:7:64:12|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem_genblk1\[0\]\.ram.mem_ram3_[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.sDat[4] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":66:1:66:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.holdDat[4] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.wrptr[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.wrptr[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.raddrch_rs_en\.arrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.fifo_full (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.fifo_nearly_full (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.entries_in_fifo[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.entries_in_fifo[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.entries_in_fifo[2] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.fifo_empty (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 616MB peak: 616MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:17s		     3.65ns		 260 /       434
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+
+
+Finished mapping COREAXI4INTERCONNECT_Z21
+MCP Status: 1 jobs running
+
+@N: MF106 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":9:7:9:10|Mapping Compile point view:work.CAPE(verilog) because 
+		 no database from previous run found.
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 621MB peak: 621MB)
+
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/corepwm.v":182:7:182:13|Tristate driver TACHINT (in view: work.corepwm_Z19_0(verilog)) on net TACHINT (in view: work.corepwm_Z19_0(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/corepwm.v":182:7:182:13|Tristate driver TACHINT (in view: work.corepwm_Z19(verilog)) on net TACHINT (in view: work.corepwm_Z19(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_1 (in view: work.CAPE(verilog)) on net ms_rid_1 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_2 (in view: work.CAPE(verilog)) on net ms_rid_2 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_3 (in view: work.CAPE(verilog)) on net ms_rid_3 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":102:14:102:19|Tristate driver ms_rid_4 (in view: work.CAPE(verilog)) on net ms_rid_4 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_1 (in view: work.CAPE(verilog)) on net ms_bid_1 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_2 (in view: work.CAPE(verilog)) on net ms_bid_2 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_3 (in view: work.CAPE(verilog)) on net ms_bid_3 (in view: work.CAPE(verilog)) has its enable tied to GND.
+@N: MO111 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:19|Tristate driver ms_bid_4 (in view: work.CAPE(verilog)) on net ms_bid_4 (in view: work.CAPE(verilog)) has its enable tied to GND.
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) with 6 words by 6 bits.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) with 9 words by 3 bits.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both_147[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_neg_147[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_both_43[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_neg_43[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_both_238[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_neg_238[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_both_264[20] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_neg_264[20]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_both_199[15] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_neg_199[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_both_212[16] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_neg_212[16]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_neg_126[9] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_pos_126[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_both_69[5] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_neg_69[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_neg_204[15] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_pos_204[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_both_108[8] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_neg_108[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_neg_243[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_pos_243[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_both_121[9] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_pos_121[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_both_173[13] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_neg_173[13]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":464:0:464:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_both[0] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_neg[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_both_30[2] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_neg_30[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_both_95[7] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_neg_95[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_neg_152[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_pos_152[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_neg_74[5] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_pos_74[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_neg_9[0] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_pos_9[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_neg_178[13] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_pos_178[13]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_neg_48[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_pos_48[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_neg_100[7] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_pos_100[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_neg_269[20] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_pos_269[20]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_neg_217[16] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_pos_217[16]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_both_82[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_neg_82[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_both_4[0] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_neg_4[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_neg_87[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_pos_87[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_neg_35[2] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_pos_35[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":451:0:451:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_neg_113[8] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_pos_113[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_neg[13] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_pos[13]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_neg[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_pos[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_neg[16] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_pos[16]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_neg[8] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_pos[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_neg[20] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_pos[20]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_neg[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_pos[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_neg[2] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_pos[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":471:0:471:1|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_both_126[9] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_pos_126[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_neg[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_pos[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_neg[5] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_pos[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_neg[15] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_pos[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_neg[7] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_pos[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_neg[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_pos[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_pos[0] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[0].APB_32.edge_neg[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_pos[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_both[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_pos[16] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[16].APB_32.edge_both[16]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":444:0:444:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_neg[9] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_both[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_pos[9] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[9].APB_32.edge_both[9]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_pos[7] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[7].APB_32.edge_both[7]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_pos[5] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[5].APB_32.edge_both[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_pos[2] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[2].APB_32.edge_both[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_pos[20] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[20].APB_32.edge_both[20]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_pos[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_both[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_pos[15] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[15].APB_32.edge_both[15]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_pos[8] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[8].APB_32.edge_both[8]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_pos[13] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[13].APB_32.edge_both[13]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_pos[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_both[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_pos[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 620MB peak: 621MB)
+
+Encoding state machine state[3:0] (in view: work.pixel_proc(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   100 -> 11
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|There are no possible illegal states for state machine state[3:0] (in view: work.pixel_proc(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ack_stb (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ack_s2 (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ack_s1 (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":38:4:38:9|Removing sequential instance ack_req (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: MO231 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Found counter in view:work.pixel_proc(verilog) instance mc[4:0] 
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[32] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[33] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[34] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[35] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[36] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance ARADDR[37] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: MO231 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":73:0:73:5|Found counter in view:work.corepwm_timebase_32s_0s_CAPE(verilog) instance period_cnt[31:0] 
+@N: MO231 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":51:0:51:5|Found counter in view:work.corepwm_timebase_32s_0s_CAPE(verilog) instance prescale_cnt[31:0] 
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":85:16:85:44|Found 32 by 32 bit equality operator ('==') un1_prescale_reg (in view: work.corepwm_timebase_32s_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":73:12:73:116|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_pwm_posedge_reg (in view: work.corepwm_pwm_gen_2s_32s_0_0s_0(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":79:17:79:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt (in view: work.corepwm_pwm_gen_2s_32s_0_0s_0(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_0(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":73:12:73:116|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_pwm_posedge_reg (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":73:12:73:116|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[2\]\.genblk1\.un1_pwm_posedge_reg (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":79:17:79:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":79:17:79:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[2\]\.genblk1\.un1_period_cnt (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+@N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[2\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
+
+Starting factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 620MB peak: 621MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 625MB peak: 625MB)
+
+NConnInternalConnection caching is on
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 642MB peak: 642MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 642MB peak: 642MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 642MB peak: 642MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 642MB peak: 642MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 642MB peak: 642MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 642MB peak: 642MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:19s		     1.29ns		3071 /      2361
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[33] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[32] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[37] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[36] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[35] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing sequential instance cape_regs_0.u_pix.src_addr[34] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 642MB peak: 642MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 642MB peak: 642MB)
+
+
+Finished mapping CAPE
+Multiprocessing finished at : Sat Jul 11 00:49:35 2026
+Multiprocessing took 0h:00m:22s realtime, 0h:01m:01s cputime
+
+Summary of Compile Points :
+*************************** 
+Name                                   Status     Reason          Start Time                   End Time                     Realtime       CPU Time       Fast Synthesis
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+caxi4interconnect_Axi4CrossBar_Z40     Mapped     No database     Sat Jul 11 00:49:15 2026     Sat Jul 11 00:49:18 2026     0h:00m:02s     0h:00m:04s     No            
+miv_ihc_core_Z4                        Mapped     No database     Sat Jul 11 00:49:15 2026     Sat Jul 11 00:49:22 2026     0h:00m:07s     0h:00m:08s     No            
+CAPE                                   Mapped     No database     Sat Jul 11 00:49:15 2026     Sat Jul 11 00:49:35 2026     0h:00m:20s     0h:00m:21s     No            
+COREAXI4INTERCONNECT_Z21               Mapped     No database     Sat Jul 11 00:49:13 2026     Sat Jul 11 00:49:31 2026     0h:00m:18s     0h:00m:18s     No            
+MY_CUSTOM_FPGA_DESIGN_709E0BD6         Mapped     No database     Sat Jul 11 00:49:20 2026     Sat Jul 11 00:49:26 2026     0h:00m:06s     0h:00m:06s     No            
+========================================================================================================================================================================
+Total number of compile points: 5
+===================================
+
+Links to Compile point Reports:
+******************************
+@L: "/home/livan/gateware/gateware/work/libero/synthesis/CAPE/CAPE.srr"
+@L: "/home/livan/gateware/gateware/work/libero/synthesis/COREAXI4INTERCONNECT_Z21/COREAXI4INTERCONNECT_Z21.srr"
+@L: "/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.srr"
+@L: "/home/livan/gateware/gateware/work/libero/synthesis/miv_ihc_core_Z4/miv_ihc_core_Z4.srr"
+@L: "/home/livan/gateware/gateware/work/libero/synthesis/caxi4interconnect_Axi4CrossBar_Z40/caxi4interconnect_Axi4CrossBar_Z40.srr"
+
+==============================
+
+
+Start loading CP mapped netlist (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:01m:02s; Memory used current: 663MB peak: 663MB)
+
+
+Finished loading CP mapped netlist (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:01m:03s; Memory used current: 671MB peak: 671MB)
+
+
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:01m:03s; Memory used current: 673MB peak: 673MB)
+
+
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:01m:03s; Memory used current: 673MB peak: 673MB)
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:25s; CPU Time elapsed 0h:01m:04s; Memory used current: 672MB peak: 673MB)
+
+Writing Analyst data base /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_709E0BD6_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:01m:05s; Memory used current: 672MB peak: 673MB)
+
+Writing Verilog Simulation files
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@W: BW156 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":15:0:15:0|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+@W: BW156 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":16:0:16:0|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+@W: BW156 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":17:0:17:0|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+@W: BW156 :"/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc":18:0:18:0|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:28s; CPU Time elapsed 0h:01m:07s; Memory used current: 672MB peak: 673MB)
+
+
+Finished Writing Netlists (Real Time elapsed 0h:00m:28s; CPU Time elapsed 0h:01m:07s; Memory used current: 672MB peak: 673MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:29s; CPU Time elapsed 0h:01m:07s; Memory used current: 672MB peak: 673MB)
+
+@W: MT246 :"/home/livan/gateware/gateware/work/libero/component/work/OSCILLATOR_160MHz/OSCILLATOR_160MHz_0/OSCILLATOR_160MHz_OSCILLATOR_160MHz_0_PF_OSC.v":15:17:15:25|Blackbox OSC_RC160MHZ is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT246 :"/home/livan/gateware/gateware/work/libero/component/work/INIT_MONITOR/INIT_MONITOR_0/INIT_MONITOR_INIT_MONITOR_0_PFSOC_INIT_MONITOR.v":38:53:38:58|Blackbox INIT is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@N: MT615 |Found clock osc_rc160mhz with period 5.87ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 with period 18.78ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0 with period 191.04ns 
+
+
+##### START OF TIMING REPORT #####[
+# Timing report written on Sat Jul 11 00:49:41 2026
+#
+
+
+Top view:               MY_CUSTOM_FPGA_DESIGN_709E0BD6
+Requested Frequency:    5.2 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc
+                       
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: 5.981
+
+                                                                         Requested     Estimated      Requested     Estimated               Clock                             Clock           
+Starting Clock                                                           Frequency     Frequency      Period        Period        Slack     Type                              Group           
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     2521.4 MHz     7.512         0.397         7.115     generated (from osc_rc160mhz)     FIC0_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     133.1 MHz     NA             7.512         NA            NA        generated (from osc_rc160mhz)     FIC1_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 MHz     NA             7.512         NA            NA        generated (from osc_rc160mhz)     FIC2_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      94.5 MHz       18.779        10.587        8.193     generated (from osc_rc160mhz)     FIC3_clks       
+CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       NA             191.041       NA            NA        generated (from osc_rc160mhz)     default_clkgroup
+osc_rc160mhz                                                             170.4 MHz     NA             5.869         NA            NA        declared                          default_clkgroup
+System                                                                   100.0 MHz     248.8 MHz      10.000        4.019         5.981     system                            system_clkgroup 
+==============================================================================================================================================================================================
+Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                                                                                                                      |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                                              Ending                                                                |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  |  7.512       5.981   |  No paths    -      |  No paths    -      |  No paths    -    
+System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      17.249  |  No paths    -      |  No paths    -      |  No paths    -    
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  |  7.512       7.115   |  No paths    -      |  No paths    -      |  No paths    -    
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      8.193   |  No paths    -      |  No paths    -      |  No paths    -    
+===================================================================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                                              Starting                                                                                               Arrival          
+Instance                                                      Reference                                                                Type     Pin     Net          Time        Slack
+                                                              Clock                                                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_0[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_1[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_1[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_2[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_2[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_3[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_3[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_4[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_4[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_5[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_5[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_6[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_6[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_7[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_7[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_8[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_8[0]     0.257       7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_9[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       dff_9[0]     0.257       7.115
+======================================================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                                               Starting                                                                                               Required          
+Instance                                                       Reference                                                                Type     Pin     Net          Time         Slack
+                                                               Clock                                                                                                                    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_1[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_0[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_2[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_1[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_3[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_2[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_4[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_3[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_5[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_4[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_6[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_5[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_7[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_6[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_8[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_7[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_9[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_8[0]     7.512        7.115
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_10[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       dff_9[0]     7.512        7.115
+========================================================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      7.512
+    - Setup time:                            0.000
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         7.512
+
+    - Propagation time:                      0.397
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 7.115
+
+    Number of logic level(s):                0
+    Starting point:                          CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0] / Q
+    Ending point:                            CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_1[0] / D
+    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
+    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
+
+Instance / Net                                                         Pin      Pin               Arrival     No. of    
+Name                                                          Type     Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0]     SLE      Q        Out     0.257     0.257 r     -         
+dff_0[0]                                                      Net      -        -       0.139     -           1         
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_1[0]     SLE      D        In      -         0.397 r     -         
+========================================================================================================================
+Total path delay (propagation time + setup) of 0.397 is 0.257(64.9%) logic and 0.139(35.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                                       Starting                                                                                                                                                Arrival          
+Instance                                               Reference                                                                Type     Pin                       Net                                         Time        Slack
+                                                       Clock                                                                                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[13]     APB_ARBITER_0_APB_MASTER_high_PADDR[13]     1.825       8.193
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[12]     APB_ARBITER_0_APB_MASTER_high_PADDR[12]     1.758       8.205
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[11]     APB_ARBITER_0_APB_MASTER_high_PADDR[11]     1.768       8.293
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[15]     APB_ARBITER_0_APB_MASTER_high_PADDR[15]     1.752       8.367
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[16]     APB_ARBITER_0_APB_MASTER_high_PADDR[16]     1.743       8.589
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[18]     APB_ARBITER_0_APB_MASTER_high_PADDR[18]     1.753       8.834
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[17]     APB_ARBITER_0_APB_MASTER_high_PADDR[17]     1.775       8.921
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[19]     APB_ARBITER_0_APB_MASTER_high_PADDR[19]     1.722       8.984
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[14]     APB_ARBITER_0_APB_MASTER_high_PADDR[14]     1.806       9.016
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[10]     APB_ARBITER_0_APB_MASTER_high_PADDR[10]     1.772       9.021
+================================================================================================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                                                                                       Starting                                                                                                                      Required          
+Instance                                                                                               Reference                                                                Type        Pin            Net                       Time         Slack
+                                                                                                       Clock                                                                                                                                           
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[10]     COMMON_MB_ADDR_OUT[6]     18.053       8.193
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_1     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[10]     COMMON_MB_ADDR_OUT[6]     18.053       8.193
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[9]      COMMON_MB_ADDR_OUT[5]     18.053       8.202
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_1     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[9]      COMMON_MB_ADDR_OUT[5]     18.053       8.202
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[8]      COMMON_MB_ADDR_OUT[4]     18.053       8.315
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_1     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[8]      COMMON_MB_ADDR_OUT[4]     18.053       8.315
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[7]      COMMON_MB_ADDR_OUT[3]     18.053       8.385
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_1     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_ADDR[7]      COMMON_MB_ADDR_OUT[3]     18.053       8.385
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_WEN[0]       N_248_i                   17.706       8.551
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     RAM1K20     A_WEN[1]       N_248_i                   17.706       8.551
+=======================================================================================================================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      18.779
+    - Setup time:                            0.726
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         18.053
+
+    - Propagation time:                      9.860
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 8.193
+
+    Number of logic level(s):                11
+    Starting point:                          BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS / FIC_3_APB_M_PADDR[13]
+    Ending point:                            BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0 / A_ADDR[10]
+    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin FIC_3_PCLK
+    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin A_CLK
+
+Instance / Net                                                                                                                        Pin                       Pin               Arrival     No. of    
+Name                                                                                                                      Type        Name                      Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                                                                        MSS         FIC_3_APB_M_PADDR[13]     Out     1.825     1.825 f     -         
+APB_ARBITER_0_APB_MASTER_high_PADDR[13]                                                                                   Net         -                         -       0.146     -           2         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.RDATA_i_o2_0_o2_10_a2_32_1[28]             CFG3        B                         In      -         1.971 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.RDATA_i_o2_0_o2_10_a2_32_1[28]             CFG3        Y                         Out     0.099     2.070 r     -         
+RDATA_i_o2_0_o2_10_a2_32_1[28]                                                                                            Net         -                         -       0.645     -           3         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.RDATA_i_o2_0_o2_10_a2_32[28]               CFG4        B                         In      -         2.716 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.RDATA_i_o2_0_o2_10_a2_32[28]               CFG4        Y                         Out     0.098     2.814 r     -         
+N_2164                                                                                                                    Net         -                         -       0.847     -           16        
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.H0_TO_H1_WR_EN14_0_a2_0_a2_1_a2_0          CFG4        B                         In      -         3.661 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.H0_TO_H1_WR_EN14_0_a2_0_a2_1_a2_0          CFG4        Y                         Out     0.098     3.759 r     -         
+N_2178                                                                                                                    Net         -                         -       0.645     -           3         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.H0_TO_H1_WR_EN14_0_a2_0_a2_1_a2            CFG3        C                         In      -         4.404 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.addr_mux_0.H0_TO_H1_WR_EN14_0_a2_0_a2_1_a2            CFG3        Y                         Out     0.175     4.579 r     -         
+H0_TO_H1_WR_EN14                                                                                                          Net         -                         -       0.835     -           15        
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.gen_h1_h4\.CH_H1_H4.un1_ctrl_b_wr_en_0_i_0_a2         CFG2        A                         In      -         5.414 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.gen_h1_h4\.CH_H1_H4.un1_ctrl_b_wr_en_0_i_0_a2         CFG2        Y                         Out     0.054     5.468 f     -         
+N_2284                                                                                                                    Net         -                         -       0.645     -           3         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_ss6_0_i_0_0_a2_1            CFG4        D                         In      -         6.114 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_ss6_0_i_0_0_a2_1            CFG4        Y                         Out     0.226     6.340 f     -         
+N_2412                                                                                                                    Net         -                         -       0.701     -           6         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un2_MB_A_WR_EN_1_i_0_i_0_a2           CFG3        C                         In      -         7.041 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un2_MB_A_WR_EN_1_i_0_i_0_a2           CFG3        Y                         Out     0.172     7.213 f     -         
+N_2440                                                                                                                    Net         -                         -       0.665     -           4         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un1_ADDR_IN_1[4]                      CFG4        C                         In      -         7.878 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un1_ADDR_IN_1[4]                      CFG4        Y                         Out     0.172     8.049 f     -         
+un1_ADDR_IN_1[4]                                                                                                          Net         -                         -       0.139     -           1         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un1_ADDR_IN_1_RNI6FC8K3[4]            ARI1        A                         In      -         8.188 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.un1_ADDR_IN_1_RNI6FC8K3[4]            ARI1        FCO                       Out     0.336     8.525 f     -         
+COMMON_MB_ADDR_OUT_cry_4                                                                                                  Net         -                         -       0.000     -           1         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_0_0_a2_0_0_RNIUUOBQ4[5]     ARI1        FCI                       In      -         8.525 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_0_0_a2_0_0_RNIUUOBQ4[5]     ARI1        FCO                       Out     0.009     8.534 f     -         
+COMMON_MB_ADDR_OUT_cry_5                                                                                                  Net         -                         -       0.000     -           1         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_0_0_a2_RNI3OECC5[6]         ARI1        FCI                       In      -         8.534 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.mb_addr_decoder.A_BUF_PTR_0_0_a2_RNI3OECC5[6]         ARI1        S                         Out     0.354     8.888 r     -         
+COMMON_MB_ADDR_OUT[6]                                                                                                     Net         -                         -       0.972     -           2         
+BVF_RISCV_SUBSYSTEM_inst_0.MIV_IHC_C0_0.MIV_IHC_C0_0.miv_ihc_core_0.common_mailbox_ram.mem_mem_0_0                        RAM1K20     A_ADDR[10]                In      -         9.860 r     -         
+========================================================================================================================================================================================================
+Total path delay (propagation time + setup) of 10.587 is 4.344(41.0%) logic and 6.242(59.0%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                                                  Starting                                                      Arrival          
+Instance                                                          Reference     Type     Pin               Net                  Time        Slack
+                                                                  Clock                                                                          
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     UIC_INIT_DONE     DEVICE_INIT_DONE     0.000       5.981
+=================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                                              Starting                                                   Required          
+Instance                                                      Reference     Type     Pin     Net                         Time         Slack
+                                                              Clock                                                                        
+-------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_1[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_2[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_3[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_4[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_5[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_6[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_7[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_8[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_9[0]     System        SLE      ALn     un1_INTERNAL_RST_arst_i     7.488        5.981
+===========================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      7.512
+    - Setup time:                            0.023
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         7.488
+
+    - Propagation time:                      1.507
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (critical) :                     5.981
+
+    Number of logic level(s):                1
+    Starting point:                          CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT / UIC_INIT_DONE
+    Ending point:                            CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0] / ALn
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
+
+Instance / Net                                                             Pin               Pin               Arrival     No. of    
+Name                                                              Type     Name              Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     INIT     UIC_INIT_DONE     Out     0.000     0.000 f     -         
+DEVICE_INIT_DONE                                                  Net      -                 -       0.139     -           1         
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.un1_D            CFG3     B                 In      -         0.139 f     -         
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.un1_D            CFG3     Y                 Out     0.091     0.231 f     -         
+un1_INTERNAL_RST_arst_i                                           Net      -                 -       1.277     -           33        
+CLOCKS_AND_RESETS_inst_0.FIC_0_RESET.CORERESET_0.dff_0[0]         SLE      ALn               In      -         1.507 f     -         
+=====================================================================================================================================
+Total path delay (propagation time + setup) of 1.531 is 0.115(7.5%) logic and 1.416(92.5%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:29s; CPU Time elapsed 0h:01m:07s; Memory used current: 672MB peak: 673MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:29s; CPU Time elapsed 0h:01m:07s; Memory used current: 672MB peak: 673MB)
+
+---------------------------------------
+Resource Usage Report for MY_CUSTOM_FPGA_DESIGN_709E0BD6 
+
+Mapping to part: mpfs025tfcvg484std
+Cell usage:
+AND2            1 use
+AND4            1 use
+CLKINT          7 uses
+INIT            1 use
+INV             2 uses
+MSS             1 use
+OSC_RC160MHZ    1 use
+PLL             2 uses
+CFG1           8 uses
+CFG2           623 uses
+CFG3           1107 uses
+CFG4           1321 uses
+
+Carry cells:
+ARI1            1050 uses - used for arithmetic functions
+ARI1            336 uses - used for Wide-Mux implementation
+Total ARI1      1386 uses
+
+
+Sequential Cells: 
+SLE            3283 uses
+
+DSP Blocks:    0 of 68 (0%)
+
+I/O ports: 179
+I/O primitives: 169
+BIBUF          120 uses
+BIBUF_DIFF     4 uses
+INBUF          10 uses
+INBUF_DIFF     3 uses
+OUTBUF         29 uses
+OUTBUF_DIFF    3 uses
+
+
+Global Clock Buffers: 7
+
+RAM/ROM usage summary
+Total Block RAMs (RAM1K20) : 2 of 84 (2%)
+
+Total LUTs:    4445
+
+Extra resources required for RAM and MACC_PA interface logic during P&R:
+
+RAM64X12 Interface Logic : SLEs = 0; LUTs = 0;
+RAM1K20  Interface Logic : SLEs = 72; LUTs = 72;
+MACC_PA     Interface Logic : SLEs = 0; LUTs = 0;
+MACC_PA_BC_ROM     Interface Logic : SLEs = 0; LUTs = 0;
+
+Total number of SLEs after P&R:  3283 + 0 + 72 + 0 = 3355;
+Total number of LUTs after P&R:  4445 + 0 + 72 + 0 = 4517;
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:29s; CPU Time elapsed 0h:01m:08s; Memory used current: 583MB peak: 673MB)
+
+Process took 0h:00m:29s realtime, 0h:01m:08s cputime
+# Sat Jul 11 00:49:41 2026
+
+###########################################################]

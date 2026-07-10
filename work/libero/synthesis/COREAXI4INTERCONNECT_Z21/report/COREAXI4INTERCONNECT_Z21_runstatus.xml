@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+The file contains the job information from mapper to be displayed as part of the summary report.
+*******************************************************************************************-->
+<job_run_status name="Mapper">
+<report_link name="Detailed report">
+<data>/home/livan/gateware/gateware/work/libero/synthesis/COREAXI4INTERCONNECT_Z21/COREAXI4INTERCONNECT_Z21.srr</data>
+<title></title>
+</report_link>
+<job_status>
+<data>Completed</data>
+</job_status>
+<job_info>
+<info name="Notes">
+<data>118</data>
+<report_link name="more">
+<data>/home/livan/gateware/gateware/work/libero/synthesis/COREAXI4INTERCONNECT_Z21/report/COREAXI4INTERCONNECT_Z21_notes.txt</data>
+</report_link>
+</info>
+<info name="Warnings">
+<data>48</data>
+<report_link name="more">
+<data>/home/livan/gateware/gateware/work/libero/synthesis/COREAXI4INTERCONNECT_Z21/report/COREAXI4INTERCONNECT_Z21_warnings.txt</data>
+</report_link>
+</info>
+<info name="Errors">
+<data>0</data>
+<report_link name="more">
+<data>/home/livan/gateware/gateware/work/libero/synthesis/COREAXI4INTERCONNECT_Z21/report/COREAXI4INTERCONNECT_Z21_errors.txt</data>
+</report_link>
+</info>
+<info name="CPU Time">
+<data>0h:00m:18s</data>
+</info>
+<info name="Real Time">
+<data>0h:00m:18s</data>
+</info>
+<info name="Peak Memory">
+<data>616MB</data>
+</info>
+<info name="Date &amp; Time">
+<data type="timestamp">1783702171</data>
+</info>
+</job_info>
+</job_run_status>

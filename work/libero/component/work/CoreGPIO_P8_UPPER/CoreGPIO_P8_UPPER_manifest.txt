@@ -1,0 +1,31 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:35 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  CoreGPIO_P8_UPPER
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/core/coregpio.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER.v
+
+Stimulus files for all Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/bfmtovec_compile.do
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/coregpio_usertb_apb_master.bfm
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/coregpio_usertb_include.bfm
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/wave_vlog.do
+
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_ahbl.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_ahblapb.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_ahbslave.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_ahbslaveext.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_ahbtoapb.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_apb.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_apbslave.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_apbslaveext.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_apbtoapb.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/amba_bfm/bfm_main.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/coreparameters.v
+    /home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/test/user/testbench.v
+

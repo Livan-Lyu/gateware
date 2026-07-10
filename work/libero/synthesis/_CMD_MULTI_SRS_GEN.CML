@@ -1,0 +1,1 @@
+ -link  -top  MY_CUSTOM_FPGA_DESIGN_709E0BD6  -multisrs  /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_709E0BD6_comp.srs  -osyn  /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_709E0BD6_mult.srs  -log  /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_multi_srs_gen.srr 

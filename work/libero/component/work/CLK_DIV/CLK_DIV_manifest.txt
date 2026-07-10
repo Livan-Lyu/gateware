@@ -1,0 +1,14 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:27 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  CLK_DIV
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/CLK_DIV/CLK_DIV_0/CLK_DIV_CLK_DIV_0_PF_CLK_DIV.v
+    /home/livan/gateware/gateware/work/libero/component/work/CLK_DIV/CLK_DIV.v
+
+Constraint files:
+    /home/livan/gateware/gateware/work/libero/component/work/CLK_DIV/CLK_DIV_0/CLK_DIV_CLK_DIV_0_PF_CLK_DIV.sdc

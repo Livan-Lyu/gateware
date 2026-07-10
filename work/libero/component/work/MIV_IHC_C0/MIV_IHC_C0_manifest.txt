@@ -1,0 +1,16 @@
+Microchip Technology Inc. - Microchip Libero Software Release 2025.1 (Version 2025.1.0.14)
+
+Date      :  Sat Jul 11 00:48:33 2026
+Project   :  /home/livan/gateware/gateware/work/libero
+Component :  MIV_IHC_C0
+Family    :  PolarFireSoC
+
+
+HDL source files for all Synthesis and Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v
+    /home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0.v
+
+Stimulus files for all Simulation tools:
+    /home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/test/user/testbench.v
+    /home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/coreparameters.v
+
