@@ -14,9 +14,9 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
-	pixel_proc: pixel-proc@41280000 {
+	pixel_proc: pixel-proc@41300000 {
 		compatible = "generic-uio";
-		reg = <0x0 0x41280000 0x0 0x1000>;
+		reg = <0x0 0x41300000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
 		status = "okay";
 		linux,uio-name = "pixel-proc";
