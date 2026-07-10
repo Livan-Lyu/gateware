@@ -60,8 +60,8 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[37:37]}
 sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[39:38]}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {INT[39:38]} -value {GND}
 
-# BGS: reconfigure CoreAPB3_CAPE with slot 3 enabled (created by shared/CoreAPB3_CAPE.tcl)
-configure_core -component_name {CoreAPB3_CAPE} -params {\
+# BGS: create dedicated CoreAPB3_CAPE_BGS with slot 3 enabled
+create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreAPB3:*} -component_name {CoreAPB3_CAPE_BGS} -params {\
 "APB_DWIDTH:32"  \
 "APBSLOT0ENABLE:true"  \
 "APBSLOT1ENABLE:true"  \
@@ -109,8 +109,8 @@ sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_DEFAULT_GPIOS
 
 
 
-# Add CoreAPB3_CAPE_0 instance
-sd_instantiate_component -sd_name ${sd_name} -component_name {CoreAPB3_CAPE} -instance_name {CoreAPB3_CAPE_0}
+# Add CoreAPB3_CAPE_BGS_0 instance
+sd_instantiate_component -sd_name ${sd_name} -component_name {CoreAPB3_CAPE_BGS} -instance_name {CoreAPB3_CAPE_BGS_0}
 
 
 
@@ -255,14 +255,14 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"INT[15:0]" "P8_GPIO_UPPER_0:INT
 sd_connect_pins -sd_name ${sd_name} -pin_names {"INT[36:16]" "P9_GPIO_0:INT" }
 
 # Add bus interface net connections
-sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_BUS_CONVERTER_0:APB_MASTER" "CoreAPB3_CAPE_0:APB3mmaster" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_BUS_CONVERTER_0:APB_MASTER" "CoreAPB3_CAPE_BGS_0:APB3mmaster" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_BUS_CONVERTER_0:APB_SLAVE" "APB_SLAVE" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave0" "PWM_0:APBslave" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave1" "P8_GPIO_UPPER_0:APB_bif" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave2" "P9_GPIO_0:APB_bif" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave4" "PWM_1:APBslave" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave5" "PWM_2:APBslave" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "cape_regs_0:APBslave" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave0" "PWM_0:APBslave" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave1" "P8_GPIO_UPPER_0:APB_bif" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave2" "P9_GPIO_0:APB_bif" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave4" "PWM_1:APBslave" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave5" "PWM_2:APBslave" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_BGS_0:APBmslave3" "cape_regs_0:APBslave" }
 
 # BGS: AXI clock/reset connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
