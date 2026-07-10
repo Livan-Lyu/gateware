@@ -4,7 +4,7 @@ puts "======== Add cape option: BGS ========"
 # Build cape's submodules
 #-------------------------------------------------------------------------------
 ::safe_source script_support/components/CAPE/shared/APB_BUS_CONVERTER.tcl
-# BGS uses dedicated CoreAPB3_CAPE_BGS (created in CAPE.tcl, not shared)
+::safe_source script_support/components/CAPE/shared/CoreAPB3_CAPE.tcl
 ::safe_source script_support/components/CAPE/shared/CoreGPIO_P8_UPPER.tcl
 ::safe_source script_support/components/CAPE/shared/P8_GPIO_UPPER.tcl
 ::safe_source script_support/components/CAPE/shared/CoreGPIO_P9.tcl

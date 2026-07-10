@@ -61,7 +61,7 @@ sd_create_pin_slices -sd_name ${sd_name} -pin_name {INT} -pin_slices {[39:38]}
 sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {INT[39:38]} -value {GND}
 
 # BGS: create dedicated CoreAPB3_CAPE_BGS with slot 3 enabled
-create_and_configure_core -download_core -core_vlnv {Actel:DirectCore:CoreAPB3:*} -component_name {CoreAPB3_CAPE_BGS} -params {\
+create_and_configure_core -core_vlnv {Actel:DirectCore:CoreAPB3:*} -component_name {CoreAPB3_CAPE_BGS} -params {\
 "APB_DWIDTH:32"  \
 "APBSLOT0ENABLE:true"  \
 "APBSLOT1ENABLE:true"  \
