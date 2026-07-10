@@ -271,6 +271,9 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN" "
 # BGS: AXI4 initiator -> crossbar
 sd_connect_pins -sd_name ${sd_name} -pin_names {"cape_regs_0:AXI4_INITIATOR" "XBAR_0:AXI4minitiator0"}
 
+# BGS: XBAR target -> AXI4mtarget0 BIF export
+sd_connect_pins -sd_name ${sd_name} -pin_names {"XBAR_0:AXI4mtarget0" "AXI4mtarget0"}
+
 # Add GPIO BIBUFs
 sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {GPIO_13_BIBUF}
 sd_instantiate_macro -sd_name ${sd_name} -macro_name {BIBUF} -instance_name {GPIO_19_BIBUF}
