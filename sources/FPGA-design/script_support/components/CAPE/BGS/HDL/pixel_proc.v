@@ -130,15 +130,23 @@ module pixel_proc(
                             beat<=beat+1; src_addr<=src_addr+64'd8;
                             RREADY<=0; state<=S_AR;
                         end else if (beat==PPR-1) begin
-                            if ((mc+{4'b0,ma}+{4'b0,mb})>MTH) rbuf[rcnt]<=1; else rbuf[rcnt]<=0;
+                            rbuf[rcnt] <= ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH);
                             if (rcnt==31) begin
-                                result<={rbuf[30:0],((mc+{4'b0,ma}+{4'b0,mb})>MTH)};
-                                irq_aclk_s<=1; state<=S_ACK;
+                                result <= rbuf | ({31'b0, ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH)} << rcnt);
+                                irq_aclk_s<=1;
+                                rcnt<=0;
+                                state<=S_ACK;
                             end else if (pxl_done+1>=total) begin
-                                result<={rbuf[30:0],((mc+{4'b0,ma}+{4'b0,mb})>MTH)};
-                                busy_s<=0; done_s<=1; state<=S_DONE;
+                                result <= rbuf | ({31'b0, ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH)} << rcnt);
+                                busy_s<=0;
+                                done_s<=1;
+                                rcnt<=0;
+                                state<=S_DONE;
                             end else begin
-                                src_addr<=src_addr+64'd8; RREADY<=0; state<=S_AR;
+                                rcnt<=rcnt+1;
+                                src_addr<=src_addr+64'd8;
+                                RREADY<=0;
+                                state<=S_AR;
                             end
                             beat<=0; pxl_done<=pxl_done+1; mc<=0;
                         end else begin

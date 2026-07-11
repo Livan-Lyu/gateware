@@ -25,18 +25,20 @@ Slot  Offset      Bus Address   Peripheral
   0    0x000000    0x41100000     PWM_0
   1    0x080000    0x41180000     P8_GPIO_UPPER   (P8 pins 31–46, 16 GPIOs)
   2    0x100000    0x41200000     P9_GPIO         (P9 pins 11–42, 20 GPIOs)
-  3    0x180000    0x41280000     cape_regs ★     (custom ctrl/status + pixel_proc)
-  4    0x200000    0x41300000     PWM_1
+  3    0x180000    0x41280000     cape_regs ★     (custom ctrl/status)
+  4    0x200000    0x41300000     pixel_proc ★
   5    0x280000    0x41380000     PWM_2
 ```
 
-## cape_regs Internal Decoding (slot 3, paddr[7] selects sub-module)
+## CAPE Internal Decoding
+
+`cape_regs` and `pixel_proc` are separate APB peripherals in this design revision.
 
 ```
-paddr[7]  Offset      Bus Address   Module
+Bus Address   Module
 ────────────────────────────────────────────────
-  0       0x00–0x7F   0x412800xx    apb_ctrl_status
-  1       0x80–0xFF   0x4128008x    pixel_proc
+0x41280000    apb_ctrl_status
+0x41300000    pixel_proc
 ```
 
 ---
@@ -62,17 +64,17 @@ paddr[7]  Offset      Bus Address   Module
 
 ## pixel_proc Registers
 
-**Base: 0x41280080**
+**Base: 0x41300000**
 
 | Offset | Name    | Access | Reset      | Description                                           |
 |--------|---------|--------|------------|-------------------------------------------------------|
 | 0x80   | A_CTRL  | RW     | 0x00000000 | bit[0]=start engine, bit[7]=ack IRQ (write 1 to clear) |
-| 0x84   | A_STAT  | RO     | 0x00000000 | bit[0]=busy, bit[1]=irq, bit[2]=done                 |
-| 0x88   | A_SRC_LO| RW     | 0x00000000 | Source address lower 32 bits                          |
-| 0x8C   | A_SRC_HI| RW     | 0x00000000 | Source address upper 32 bits                          |
-| 0x90   | A_CNT   | RW     | 0x00000000 | Total pixel-pair count to process                     |
-| 0x94   | A_RES   | RO     | 0x00000000 | Result bitmask (32 pixels per interrupt batch)        |
-| 0x98   | A_DBG   | RO     | 0xDEADBEEF | Debug / alive check                                   |
+| 0x84   | A_STAT  | RO     | 0x00000000 | bit[0]=busy, bit[1]=irq, bit[2]=done                   |
+| 0x88   | A_SRC_LO| RW     | 0x00000000 | Source address lower 32 bits                            |
+| 0x8C   | A_SRC_HI| RW     | 0x00000000 | Source address upper 32 bits                            |
+| 0x90   | A_CNT   | RW     | 0x00000000 | Total pixel count to process                            |
+| 0x94   | A_RES   | RO     | 0x00000000 | 32-bit foreground mask, `1=foreground`, `0=background` |
+| 0x98   | A_DBG   | RO     | 0xDEADBEEF | Debug / alive check                                     |
 
 ### pixel_proc Interrupt
 
@@ -87,7 +89,7 @@ paddr[7]  Offset      Bus Address   Module
 2. Write A_CNT → set number of pixel pairs to process
 3. Write A_CTRL[0]=1 → start DMA read engine
 4. Poll A_STAT[0] or wait for IRQ
-5. Read A_RES → 32-bit mask (1=foreground pixel)
+5. Read A_RES → 32-bit mask (1=foreground pixel, 0=background pixel)
 6. Write A_CTRL[7]=1 → acknowledge, continue next batch
 7. Repeat until A_STAT[2]=1 (done) or A_CTRL[0]=0 (stop)
 ```
@@ -97,7 +99,7 @@ paddr[7]  Offset      Bus Address   Module
 - Reads 12 pixel pairs (PPR=12) per AXI burst from DDR
 - Color distance threshold: THR=90 (9-bit sum-of-differences)
 - Majority threshold: MTH=2 (≥2 neighbor pixels must be foreground)
-- Output: 32-bit bitmask, 1 bit per pixel-pair processed
+- Output: 32-bit bitmask, `1=foreground`, `0=background`
 
 ---
 
@@ -128,12 +130,12 @@ fabric-bus@40000000 {
 ### verilog-cape.dtso
 ```
 fabric-bus@40000000 {
-    pixel-proc@41280000 {
+    pixel-proc@41300000 {
         compatible = "generic-uio";
-        reg = <0x0 0x41280000 0x0 0x1000>;
+        reg = <0x0 0x41300000 0x0 0x1000>;
         linux,uio-name = "pixel-proc";
     };
 };
 ```
 
-Userspace access via `/dev/uio*` — mmap the 4KB region at 0x41280000 to access all cape_regs.
+Userspace access via `/dev/uio*` — mmap the 4KB region at `0x41300000` to access `pixel_proc`.
