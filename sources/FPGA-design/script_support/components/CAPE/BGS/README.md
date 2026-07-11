@@ -51,7 +51,7 @@ Bus Address   Module
 |--------|------------|--------|------------|--------------------------------|
 | 0x00   | CONTROL_0  | RO     | 0xDEADBEEF | Magic number / alive check     |
 | 0x10   | CONTROL_1  | RW     | 0x00000000 | General-purpose control output |
-| 0x20   | STATUS     | RO     | —          | External status input          |
+| 0x20   | STATUS     | RO     | —          | Board-level debug status input |
 
 ### Control Signals (Verilog ports)
 
@@ -59,6 +59,17 @@ Bus Address   Module
 |----------|-------|-----------|---------------------------------|
 | control  | 32    | output    | Drives CONTROL_1 value to fabric |
 | status   | 32    | input     | Read back via STATUS register   |
+
+### STATUS Bit Assignments
+
+| Bit | Meaning |
+|-----|---------|
+| 0   | `FIC_0_FABRIC_RESET_N` |
+| 1   | `FIC_3_FABRIC_RESET_N` |
+| 2   | `DEVICE_INIT_DONE` |
+| 3   | `XCVR_INIT_DONE` |
+| 4   | `MSS_DLL_LOCKS` |
+| 31:5| Reserved, read as `0` |
 
 ---
 
