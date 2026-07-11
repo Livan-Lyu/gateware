@@ -15,12 +15,12 @@ INSTANTIATED     RTL_INSTANCE     PRIMITIVE_TYPE     USER_ATTRIBUTE     MAPPED_I
 
 #####  REG/LOGIC REPORT  #####
 
-RTL_INSTANCE                                                                                                                                                                                PRIMITIVE_TYPE     USER_ATTRIBUTE             COMMENTS                                                                    
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4ReadID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem[1:0]      RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
-                                                                                                                                                                                                                                                                                                                      
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.genblk1\[0\]\.ram.mem[1:0]     RAM                DEFAULT                    RAM instance meets the required threshold for mapping using registers.      
-======================================================================================================================================================================================================================================================================================================================
+RTL_INSTANCE                                                                                                                          PRIMITIVE_TYPE     USER_ATTRIBUTE             COMMENTS                                                                    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[1:0]             RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
+                                                                                                                                                                                                                                                                
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.mem[0]     RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
+================================================================================================================================================================================================================================================================
 
 #####  END OF RAM REPORT FOR COMPILE POINT: COREAXI4INTERCONNECT_Z21  #####
 

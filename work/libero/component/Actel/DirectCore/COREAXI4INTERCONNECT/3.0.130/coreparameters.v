@@ -1,10 +1,10 @@
 //--------------------------------------------------------------------
-// Created by Microsemi SmartDesign Sun Jul 12 05:41:23 2026
+// Created by Microsemi SmartDesign Sun Jul 12 07:17:48 2026
 // Parameters for COREAXI4INTERCONNECT
 //--------------------------------------------------------------------
 
 
-parameter ADDR_WIDTH = 32;
+parameter ADDR_WIDTH = 38;
 parameter ADDR_WIDTH_INT = 32;
 parameter BYPASS_CROSSBAR = 0;
 parameter CDC_RAM_TYPE = 3;
@@ -31,7 +31,7 @@ parameter I12_LOCK_WIDTH = 1;
 parameter I13_LOCK_WIDTH = 1;
 parameter I14_LOCK_WIDTH = 1;
 parameter I15_LOCK_WIDTH = 1;
-parameter ID_WIDTH = 1;
+parameter ID_WIDTH = 4;
 parameter INITIATOR0_CDC_ADDR_RESP_FIFO_DEPTH = 1;
 parameter INITIATOR0_CDC_FIFO_DEPTH = 16;
 parameter INITIATOR0_CDC_PLACEMENT = 0;
@@ -1265,7 +1265,7 @@ parameter INITIATOR15_WRITE_TARGET29 = 1;
 parameter INITIATOR15_WRITE_TARGET30 = 1;
 parameter INITIATOR15_WRITE_TARGET31 = 1;
 parameter MAX_OUTSTNDG_TRANS = 1;
-parameter NUM_INITIATORS = 2;
+parameter NUM_INITIATORS = 1;
 parameter NUM_INITIATORS_WIDTH = 1;
 parameter NUM_RS_STAGES_INITR0 = 0;
 parameter NUM_RS_STAGES_INITR1 = 0;
@@ -1315,8 +1315,8 @@ parameter NUM_RS_STAGES_TRGT28 = 0;
 parameter NUM_RS_STAGES_TRGT29 = 0;
 parameter NUM_RS_STAGES_TRGT30 = 0;
 parameter NUM_RS_STAGES_TRGT31 = 0;
-parameter NUM_TARGETS = 2;
-parameter OPTIMIZATION = 3;
+parameter NUM_TARGETS = 1;
+parameter OPTIMIZATION = 1;
 parameter PIPE = 0;
 parameter PROTOCONV_RAM_TYPE = 3;
 parameter RD_ARB_EN = 0;
@@ -1356,15 +1356,15 @@ parameter T31_LOCK_WIDTH = 1;
 parameter TARGET0_CDC_ADDR_RESP_FIFO_DEPTH = 1;
 parameter TARGET0_CDC_FIFO_DEPTH = 16;
 parameter TARGET0_CDC_PLACEMENT = 1;
-parameter TARGET0_CHAN_RS = 
+parameter TARGET0_CHAN_RS = 1;
 parameter TARGET0_CLOCK_DOMAIN_CROSSING = 0;
 parameter TARGET0_DATA_WIDTH = 64;
 parameter TARGET0_DWC_CHAN_RS = 0;
 parameter TARGET0_DWC_DATA_FIFO_DEPTH = 16;
-parameter TARGET0_END_ADDR = 'h7fffffff;
+parameter TARGET0_END_ADDR = 'hdfffffff;
 parameter TARGET0_END_ADDR_UPPER = 'h0;
 parameter TARGET0_READ_INTERLEAVE = 0;
-parameter TARGET0_START_ADDR = 'h60000000;
+parameter TARGET0_START_ADDR = 'h80000000;
 parameter TARGET0_START_ADDR_UPPER = 'h0;
 parameter TARGET0_TYPE = 0;
 parameter TARGET1_CDC_ADDR_RESP_FIFO_DEPTH = 1;

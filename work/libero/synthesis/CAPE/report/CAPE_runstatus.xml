@@ -13,7 +13,7 @@ The file contains the job information from mapper to be displayed as part of the
 </job_status>
 <job_info>
 <info name="Notes">
-<data>72</data>
+<data>60</data>
 <report_link name="more">
 <data>/home/livan/gateware/gateware/work/libero/synthesis/CAPE/report/CAPE_notes.txt</data>
 </report_link>
@@ -31,16 +31,16 @@ The file contains the job information from mapper to be displayed as part of the
 </report_link>
 </info>
 <info name="CPU Time">
-<data>0h:00m:31s</data>
+<data>0h:00m:27s</data>
 </info>
 <info name="Real Time">
-<data>0h:00m:31s</data>
+<data>0h:00m:27s</data>
 </info>
 <info name="Peak Memory">
-<data>653MB</data>
+<data>656MB</data>
 </info>
 <info name="Date &amp; Time">
-<data type="timestamp">1783806154</data>
+<data type="timestamp">1783811932</data>
 </info>
 </job_info>
 </job_run_status>

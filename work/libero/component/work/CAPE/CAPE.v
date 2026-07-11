@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 05:41:24 2026
+// Created by SmartDesign Sun Jul 12 07:17:49 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -149,7 +149,7 @@ wire           APB_SLAVE_PSLVERR;
 wire   [31:0]  APB_SLAVE_SLAVE_PWDATA;
 wire           APB_SLAVE_SLAVE_PWRITE;
 wire           AXI_ACLK;
-wire   [31:0]  AXI4mtarget0_ARADDR;
+wire   [37:0]  AXI4mtarget0_ARADDR;
 wire   [1:0]   AXI4mtarget0_ARBURST;
 wire   [3:0]   AXI4mtarget0_ARCACHE;
 wire           AXI_ARESETN;
@@ -162,7 +162,7 @@ wire   [3:0]   AXI4mtarget0_ARREGION;
 wire   [2:0]   AXI4mtarget0_ARSIZE;
 wire   [0:0]   AXI4mtarget0_ARUSER;
 wire           AXI4mtarget0_ARVALID;
-wire   [31:0]  AXI4mtarget0_AWADDR;
+wire   [37:0]  AXI4mtarget0_AWADDR;
 wire   [1:0]   AXI4mtarget0_AWBURST;
 wire   [3:0]   AXI4mtarget0_AWCACHE;
 wire   [7:0]   AXI4mtarget0_AWLEN;
@@ -189,15 +189,21 @@ wire           ms_wready;
 wire   [7:0]   AXI4mtarget0_WSTRB;
 wire   [0:0]   AXI4mtarget0_WUSER;
 wire           AXI4mtarget0_WVALID;
+wire   [37:0]  cape_regs_0_AXI4_INITIATOR_ARADDR;
+wire   [3:0]   cape_regs_0_AXI4_INITIATOR_ARID;
 wire           cape_regs_0_AXI4_INITIATOR_ARREADY;
 wire           cape_regs_0_AXI4_INITIATOR_ARVALID;
+wire   [37:0]  cape_regs_0_AXI4_INITIATOR_AWADDR;
+wire   [3:0]   cape_regs_0_AXI4_INITIATOR_AWID;
 wire           cape_regs_0_AXI4_INITIATOR_AWREADY;
 wire           cape_regs_0_AXI4_INITIATOR_AWVALID;
+wire   [3:0]   cape_regs_0_AXI4_INITIATOR_BID;
 wire           cape_regs_0_AXI4_INITIATOR_BREADY;
 wire   [1:0]   cape_regs_0_AXI4_INITIATOR_BRESP;
 wire   [0:0]   cape_regs_0_AXI4_INITIATOR_BUSER;
 wire           cape_regs_0_AXI4_INITIATOR_BVALID;
 wire   [63:0]  cape_regs_0_AXI4_INITIATOR_RDATA;
+wire   [3:0]   cape_regs_0_AXI4_INITIATOR_RID;
 wire           cape_regs_0_AXI4_INITIATOR_RLAST;
 wire           cape_regs_0_AXI4_INITIATOR_RREADY;
 wire   [1:0]   cape_regs_0_AXI4_INITIATOR_RRESP;
@@ -285,14 +291,9 @@ wire           AXI4mtarget0_BREADY_net_0;
 wire   [39:38] INT_const_net_0;
 wire   [31:0]  status_const_net_0;
 wire           VCC_net;
-wire   [1:0]   TARGET0_BID_const_net_0;
-wire   [1:0]   TARGET0_RID_const_net_0;
+wire   [4:0]   TARGET0_BID_const_net_0;
+wire   [4:0]   TARGET0_RID_const_net_0;
 wire           GND_net;
-wire   [1:0]   TARGET1_BID_const_net_0;
-wire   [1:0]   TARGET1_BRESP_const_net_0;
-wire   [1:0]   TARGET1_RID_const_net_0;
-wire   [63:0]  TARGET1_RDATA_const_net_0;
-wire   [1:0]   TARGET1_RRESP_const_net_0;
 wire   [7:0]   INITIATOR0_AWLEN_const_net_0;
 wire   [2:0]   INITIATOR0_AWSIZE_const_net_0;
 wire   [1:0]   INITIATOR0_AWBURST_const_net_0;
@@ -307,55 +308,15 @@ wire   [3:0]   INITIATOR0_ARCACHE_const_net_0;
 wire   [2:0]   INITIATOR0_ARPROT_const_net_0;
 wire   [3:0]   INITIATOR0_ARQOS_const_net_0;
 wire   [3:0]   INITIATOR0_ARREGION_const_net_0;
-wire   [31:0]  INITIATOR1_AWADDR_const_net_0;
-wire   [7:0]   INITIATOR1_AWLEN_const_net_0;
-wire   [2:0]   INITIATOR1_AWSIZE_const_net_0;
-wire   [1:0]   INITIATOR1_AWBURST_const_net_0;
-wire   [3:0]   INITIATOR1_AWCACHE_const_net_0;
-wire   [2:0]   INITIATOR1_AWPROT_const_net_0;
-wire   [3:0]   INITIATOR1_AWQOS_const_net_0;
-wire   [3:0]   INITIATOR1_AWREGION_const_net_0;
-wire   [63:0]  INITIATOR1_WDATA_const_net_0;
-wire   [7:0]   INITIATOR1_WSTRB_const_net_0;
-wire   [31:0]  INITIATOR1_ARADDR_const_net_0;
-wire   [7:0]   INITIATOR1_ARLEN_const_net_0;
-wire   [2:0]   INITIATOR1_ARSIZE_const_net_0;
-wire   [1:0]   INITIATOR1_ARBURST_const_net_0;
-wire   [3:0]   INITIATOR1_ARCACHE_const_net_0;
-wire   [2:0]   INITIATOR1_ARPROT_const_net_0;
-wire   [3:0]   INITIATOR1_ARQOS_const_net_0;
-wire   [3:0]   INITIATOR1_ARREGION_const_net_0;
 //--------------------------------------------------------------------
 // Bus Interface Nets Declarations - Unequal Pin Widths
 //--------------------------------------------------------------------
-wire   [1:0]   ms_arid;
+wire   [4:0]   ms_arid;
 wire   [3:0]   ms_arid_0;
-wire   [1:0]   ms_arid_0_1to0;
-wire   [3:2]   ms_arid_0_3to2;
-wire   [1:0]   ms_awid;
+wire   [3:0]   ms_arid_0_3to0;
+wire   [4:0]   ms_awid;
 wire   [3:0]   ms_awid_0;
-wire   [1:0]   ms_awid_0_1to0;
-wire   [3:2]   ms_awid_0_3to2;
-wire   [37:0]  cape_regs_0_AXI4_INITIATOR_ARADDR;
-wire   [31:0]  cape_regs_0_AXI4_INITIATOR_ARADDR_0;
-wire   [31:0]  cape_regs_0_AXI4_INITIATOR_ARADDR_0_31to0;
-wire   [3:0]   cape_regs_0_AXI4_INITIATOR_ARID;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_ARID_0;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_ARID_0_0to0;
-wire   [37:0]  cape_regs_0_AXI4_INITIATOR_AWADDR;
-wire   [31:0]  cape_regs_0_AXI4_INITIATOR_AWADDR_0;
-wire   [31:0]  cape_regs_0_AXI4_INITIATOR_AWADDR_0_31to0;
-wire   [3:0]   cape_regs_0_AXI4_INITIATOR_AWID;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_AWID_0;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_AWID_0_0to0;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_BID;
-wire   [3:0]   cape_regs_0_AXI4_INITIATOR_BID_0;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_BID_0_0to0;
-wire   [3:1]   cape_regs_0_AXI4_INITIATOR_BID_0_3to1;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_RID;
-wire   [3:0]   cape_regs_0_AXI4_INITIATOR_RID_0;
-wire   [0:0]   cape_regs_0_AXI4_INITIATOR_RID_0_0to0;
-wire   [3:1]   cape_regs_0_AXI4_INITIATOR_RID_0_3to1;
+wire   [3:0]   ms_awid_0_3to0;
 wire   [31:0]  CoreAPB3_CAPE_0_APBmslave0_PADDR;
 wire   [7:0]   CoreAPB3_CAPE_0_APBmslave0_PADDR_0;
 wire   [7:0]   CoreAPB3_CAPE_0_APBmslave0_PADDR_0_7to0;
@@ -373,14 +334,9 @@ wire   [7:0]   CoreAPB3_CAPE_0_APBmslave0_PADDR_4_7to0;
 assign INT_const_net_0                 = 2'h0;
 assign status_const_net_0              = 32'h00000000;
 assign VCC_net                         = 1'b1;
-assign TARGET0_BID_const_net_0         = 2'h0;
-assign TARGET0_RID_const_net_0         = 2'h0;
+assign TARGET0_BID_const_net_0         = 5'h00;
+assign TARGET0_RID_const_net_0         = 5'h00;
 assign GND_net                         = 1'b0;
-assign TARGET1_BID_const_net_0         = 2'h0;
-assign TARGET1_BRESP_const_net_0       = 2'h0;
-assign TARGET1_RID_const_net_0         = 2'h0;
-assign TARGET1_RDATA_const_net_0       = 64'h0000000000000000;
-assign TARGET1_RRESP_const_net_0       = 2'h0;
 assign INITIATOR0_AWLEN_const_net_0    = 8'h00;
 assign INITIATOR0_AWSIZE_const_net_0   = 3'h0;
 assign INITIATOR0_AWBURST_const_net_0  = 2'h3;
@@ -395,24 +351,6 @@ assign INITIATOR0_ARCACHE_const_net_0  = 4'h0;
 assign INITIATOR0_ARPROT_const_net_0   = 3'h0;
 assign INITIATOR0_ARQOS_const_net_0    = 4'h0;
 assign INITIATOR0_ARREGION_const_net_0 = 4'h0;
-assign INITIATOR1_AWADDR_const_net_0   = 32'h00000000;
-assign INITIATOR1_AWLEN_const_net_0    = 8'h00;
-assign INITIATOR1_AWSIZE_const_net_0   = 3'h0;
-assign INITIATOR1_AWBURST_const_net_0  = 2'h3;
-assign INITIATOR1_AWCACHE_const_net_0  = 4'h0;
-assign INITIATOR1_AWPROT_const_net_0   = 3'h0;
-assign INITIATOR1_AWQOS_const_net_0    = 4'h0;
-assign INITIATOR1_AWREGION_const_net_0 = 4'h0;
-assign INITIATOR1_WDATA_const_net_0    = 64'h0000000000000000;
-assign INITIATOR1_WSTRB_const_net_0    = 8'hFF;
-assign INITIATOR1_ARADDR_const_net_0   = 32'h00000000;
-assign INITIATOR1_ARLEN_const_net_0    = 8'h00;
-assign INITIATOR1_ARSIZE_const_net_0   = 3'h0;
-assign INITIATOR1_ARBURST_const_net_0  = 2'h3;
-assign INITIATOR1_ARCACHE_const_net_0  = 4'h0;
-assign INITIATOR1_ARPROT_const_net_0   = 3'h0;
-assign INITIATOR1_ARQOS_const_net_0    = 4'h0;
-assign INITIATOR1_ARREGION_const_net_0 = 4'h0;
 //--------------------------------------------------------------------
 // TieOff assignments
 //--------------------------------------------------------------------
@@ -457,33 +395,11 @@ assign ms_bready                    = AXI4mtarget0_BREADY_net_0;
 //--------------------------------------------------------------------
 // Bus Interface Nets Assignments - Unequal Pin Widths
 //--------------------------------------------------------------------
-assign ms_arid_0 = { ms_arid_0_3to2, ms_arid_0_1to0 };
-assign ms_arid_0_1to0 = ms_arid[1:0];
-assign ms_arid_0_3to2 = 2'h0;
+assign ms_arid_0 = { ms_arid_0_3to0 };
+assign ms_arid_0_3to0 = ms_arid[3:0];
 
-assign ms_awid_0 = { ms_awid_0_3to2, ms_awid_0_1to0 };
-assign ms_awid_0_1to0 = ms_awid[1:0];
-assign ms_awid_0_3to2 = 2'h0;
-
-assign cape_regs_0_AXI4_INITIATOR_ARADDR_0 = { cape_regs_0_AXI4_INITIATOR_ARADDR_0_31to0 };
-assign cape_regs_0_AXI4_INITIATOR_ARADDR_0_31to0 = cape_regs_0_AXI4_INITIATOR_ARADDR[31:0];
-
-assign cape_regs_0_AXI4_INITIATOR_ARID_0 = { cape_regs_0_AXI4_INITIATOR_ARID_0_0to0 };
-assign cape_regs_0_AXI4_INITIATOR_ARID_0_0to0 = cape_regs_0_AXI4_INITIATOR_ARID[0:0];
-
-assign cape_regs_0_AXI4_INITIATOR_AWADDR_0 = { cape_regs_0_AXI4_INITIATOR_AWADDR_0_31to0 };
-assign cape_regs_0_AXI4_INITIATOR_AWADDR_0_31to0 = cape_regs_0_AXI4_INITIATOR_AWADDR[31:0];
-
-assign cape_regs_0_AXI4_INITIATOR_AWID_0 = { cape_regs_0_AXI4_INITIATOR_AWID_0_0to0 };
-assign cape_regs_0_AXI4_INITIATOR_AWID_0_0to0 = cape_regs_0_AXI4_INITIATOR_AWID[0:0];
-
-assign cape_regs_0_AXI4_INITIATOR_BID_0 = { cape_regs_0_AXI4_INITIATOR_BID_0_3to1, cape_regs_0_AXI4_INITIATOR_BID_0_0to0 };
-assign cape_regs_0_AXI4_INITIATOR_BID_0_0to0 = cape_regs_0_AXI4_INITIATOR_BID[0:0];
-assign cape_regs_0_AXI4_INITIATOR_BID_0_3to1 = 3'h0;
-
-assign cape_regs_0_AXI4_INITIATOR_RID_0 = { cape_regs_0_AXI4_INITIATOR_RID_0_3to1, cape_regs_0_AXI4_INITIATOR_RID_0_0to0 };
-assign cape_regs_0_AXI4_INITIATOR_RID_0_0to0 = cape_regs_0_AXI4_INITIATOR_RID[0:0];
-assign cape_regs_0_AXI4_INITIATOR_RID_0_3to1 = 3'h0;
+assign ms_awid_0 = { ms_awid_0_3to0 };
+assign ms_awid_0_3to0 = ms_awid[3:0];
 
 assign CoreAPB3_CAPE_0_APBmslave0_PADDR_0 = { CoreAPB3_CAPE_0_APBmslave0_PADDR_0_7to0 };
 assign CoreAPB3_CAPE_0_APBmslave0_PADDR_0_7to0 = CoreAPB3_CAPE_0_APBmslave0_PADDR[7:0];
@@ -574,10 +490,10 @@ cape_regs cape_regs_0(
         .RDATA                ( cape_regs_0_AXI4_INITIATOR_RDATA ),
         .RVALID               ( cape_regs_0_AXI4_INITIATOR_RVALID ),
         .RRESP                ( cape_regs_0_AXI4_INITIATOR_RRESP ),
-        .RID                  ( cape_regs_0_AXI4_INITIATOR_RID_0 ),
+        .RID                  ( cape_regs_0_AXI4_INITIATOR_RID ),
         .AWREADY              ( cape_regs_0_AXI4_INITIATOR_AWREADY ),
         .WREADY               ( cape_regs_0_AXI4_INITIATOR_WREADY ),
-        .BID                  ( cape_regs_0_AXI4_INITIATOR_BID_0 ),
+        .BID                  ( cape_regs_0_AXI4_INITIATOR_BID ),
         .BRESP                ( cape_regs_0_AXI4_INITIATOR_BRESP ),
         .BVALID               ( cape_regs_0_AXI4_INITIATOR_BVALID ),
         .DBG_FIC0_RESET_N     ( DBG_FIC0_RESET_N ),
@@ -810,32 +726,19 @@ CAPE_AXI_XBAR XBAR_0(
         .ARESETN             ( AXI_ARESETN ),
         .TARGET0_AWREADY     ( ms_awready ),
         .TARGET0_WREADY      ( ms_wready ),
-        .TARGET0_BID         ( TARGET0_BID_const_net_0 ), // tied to 2'h0 from definition
+        .TARGET0_BID         ( TARGET0_BID_const_net_0 ), // tied to 5'h00 from definition
         .TARGET0_BRESP       ( ms_bresp ),
         .TARGET0_BVALID      ( ms_bvalid ),
         .TARGET0_ARREADY     ( ms_arready ),
-        .TARGET0_RID         ( TARGET0_RID_const_net_0 ), // tied to 2'h0 from definition
+        .TARGET0_RID         ( TARGET0_RID_const_net_0 ), // tied to 5'h00 from definition
         .TARGET0_RDATA       ( ms_rdata ),
         .TARGET0_RRESP       ( ms_rresp ),
         .TARGET0_RLAST       ( GND_net ), // tied to 1'b0 from definition
         .TARGET0_RVALID      ( ms_rvalid ),
         .TARGET0_BUSER       ( GND_net ), // tied to 1'b0 from definition
         .TARGET0_RUSER       ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_AWREADY     ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_WREADY      ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_BID         ( TARGET1_BID_const_net_0 ), // tied to 2'h0 from definition
-        .TARGET1_BRESP       ( TARGET1_BRESP_const_net_0 ), // tied to 2'h0 from definition
-        .TARGET1_BVALID      ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_ARREADY     ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_RID         ( TARGET1_RID_const_net_0 ), // tied to 2'h0 from definition
-        .TARGET1_RDATA       ( TARGET1_RDATA_const_net_0 ), // tied to 64'h0000000000000000 from definition
-        .TARGET1_RRESP       ( TARGET1_RRESP_const_net_0 ), // tied to 2'h0 from definition
-        .TARGET1_RLAST       ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_RVALID      ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_BUSER       ( GND_net ), // tied to 1'b0 from definition
-        .TARGET1_RUSER       ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR0_AWID     ( cape_regs_0_AXI4_INITIATOR_AWID_0 ),
-        .INITIATOR0_AWADDR   ( cape_regs_0_AXI4_INITIATOR_AWADDR_0 ),
+        .INITIATOR0_AWID     ( cape_regs_0_AXI4_INITIATOR_AWID ),
+        .INITIATOR0_AWADDR   ( cape_regs_0_AXI4_INITIATOR_AWADDR ),
         .INITIATOR0_AWLEN    ( INITIATOR0_AWLEN_const_net_0 ), // tied to 8'h00 from definition
         .INITIATOR0_AWSIZE   ( INITIATOR0_AWSIZE_const_net_0 ), // tied to 3'h0 from definition
         .INITIATOR0_AWBURST  ( INITIATOR0_AWBURST_const_net_0 ), // tied to 2'h3 from definition
@@ -850,8 +753,8 @@ CAPE_AXI_XBAR XBAR_0(
         .INITIATOR0_WLAST    ( GND_net ), // tied to 1'b0 from definition
         .INITIATOR0_WVALID   ( cape_regs_0_AXI4_INITIATOR_WVALID ),
         .INITIATOR0_BREADY   ( cape_regs_0_AXI4_INITIATOR_BREADY ),
-        .INITIATOR0_ARID     ( cape_regs_0_AXI4_INITIATOR_ARID_0 ),
-        .INITIATOR0_ARADDR   ( cape_regs_0_AXI4_INITIATOR_ARADDR_0 ),
+        .INITIATOR0_ARID     ( cape_regs_0_AXI4_INITIATOR_ARID ),
+        .INITIATOR0_ARADDR   ( cape_regs_0_AXI4_INITIATOR_ARADDR ),
         .INITIATOR0_ARLEN    ( INITIATOR0_ARLEN_const_net_0 ), // tied to 8'h00 from definition
         .INITIATOR0_ARSIZE   ( INITIATOR0_ARSIZE_const_net_0 ), // tied to 3'h0 from definition
         .INITIATOR0_ARBURST  ( INITIATOR0_ARBURST_const_net_0 ), // tied to 2'h3 from definition
@@ -865,37 +768,6 @@ CAPE_AXI_XBAR XBAR_0(
         .INITIATOR0_AWUSER   ( GND_net ), // tied to 1'b0 from definition
         .INITIATOR0_WUSER    ( GND_net ), // tied to 1'b0 from definition
         .INITIATOR0_ARUSER   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_AWID     ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_AWADDR   ( INITIATOR1_AWADDR_const_net_0 ), // tied to 32'h00000000 from definition
-        .INITIATOR1_AWLEN    ( INITIATOR1_AWLEN_const_net_0 ), // tied to 8'h00 from definition
-        .INITIATOR1_AWSIZE   ( INITIATOR1_AWSIZE_const_net_0 ), // tied to 3'h0 from definition
-        .INITIATOR1_AWBURST  ( INITIATOR1_AWBURST_const_net_0 ), // tied to 2'h3 from definition
-        .INITIATOR1_AWLOCK   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_AWCACHE  ( INITIATOR1_AWCACHE_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_AWPROT   ( INITIATOR1_AWPROT_const_net_0 ), // tied to 3'h0 from definition
-        .INITIATOR1_AWQOS    ( INITIATOR1_AWQOS_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_AWREGION ( INITIATOR1_AWREGION_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_AWVALID  ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_WDATA    ( INITIATOR1_WDATA_const_net_0 ), // tied to 64'h0000000000000000 from definition
-        .INITIATOR1_WSTRB    ( INITIATOR1_WSTRB_const_net_0 ), // tied to 8'hFF from definition
-        .INITIATOR1_WLAST    ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_WVALID   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_BREADY   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_ARID     ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_ARADDR   ( INITIATOR1_ARADDR_const_net_0 ), // tied to 32'h00000000 from definition
-        .INITIATOR1_ARLEN    ( INITIATOR1_ARLEN_const_net_0 ), // tied to 8'h00 from definition
-        .INITIATOR1_ARSIZE   ( INITIATOR1_ARSIZE_const_net_0 ), // tied to 3'h0 from definition
-        .INITIATOR1_ARBURST  ( INITIATOR1_ARBURST_const_net_0 ), // tied to 2'h3 from definition
-        .INITIATOR1_ARLOCK   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_ARCACHE  ( INITIATOR1_ARCACHE_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_ARPROT   ( INITIATOR1_ARPROT_const_net_0 ), // tied to 3'h0 from definition
-        .INITIATOR1_ARQOS    ( INITIATOR1_ARQOS_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_ARREGION ( INITIATOR1_ARREGION_const_net_0 ), // tied to 4'h0 from definition
-        .INITIATOR1_ARVALID  ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_RREADY   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_AWUSER   ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_WUSER    ( GND_net ), // tied to 1'b0 from definition
-        .INITIATOR1_ARUSER   ( GND_net ), // tied to 1'b0 from definition
         // Outputs
         .TARGET0_AWID        ( ms_awid ),
         .TARGET0_AWADDR      ( AXI4mtarget0_AWADDR ),
@@ -928,37 +800,6 @@ CAPE_AXI_XBAR XBAR_0(
         .TARGET0_AWUSER      ( AXI4mtarget0_AWUSER ),
         .TARGET0_WUSER       ( AXI4mtarget0_WUSER ),
         .TARGET0_ARUSER      ( AXI4mtarget0_ARUSER ),
-        .TARGET1_AWID        (  ),
-        .TARGET1_AWADDR      (  ),
-        .TARGET1_AWLEN       (  ),
-        .TARGET1_AWSIZE      (  ),
-        .TARGET1_AWBURST     (  ),
-        .TARGET1_AWLOCK      (  ),
-        .TARGET1_AWCACHE     (  ),
-        .TARGET1_AWPROT      (  ),
-        .TARGET1_AWQOS       (  ),
-        .TARGET1_AWREGION    (  ),
-        .TARGET1_AWVALID     (  ),
-        .TARGET1_WDATA       (  ),
-        .TARGET1_WSTRB       (  ),
-        .TARGET1_WLAST       (  ),
-        .TARGET1_WVALID      (  ),
-        .TARGET1_BREADY      (  ),
-        .TARGET1_ARID        (  ),
-        .TARGET1_ARADDR      (  ),
-        .TARGET1_ARLEN       (  ),
-        .TARGET1_ARSIZE      (  ),
-        .TARGET1_ARBURST     (  ),
-        .TARGET1_ARLOCK      (  ),
-        .TARGET1_ARCACHE     (  ),
-        .TARGET1_ARPROT      (  ),
-        .TARGET1_ARQOS       (  ),
-        .TARGET1_ARREGION    (  ),
-        .TARGET1_ARVALID     (  ),
-        .TARGET1_RREADY      (  ),
-        .TARGET1_AWUSER      (  ),
-        .TARGET1_WUSER       (  ),
-        .TARGET1_ARUSER      (  ),
         .INITIATOR0_AWREADY  ( cape_regs_0_AXI4_INITIATOR_AWREADY ),
         .INITIATOR0_WREADY   ( cape_regs_0_AXI4_INITIATOR_WREADY ),
         .INITIATOR0_BID      ( cape_regs_0_AXI4_INITIATOR_BID ),
@@ -971,20 +812,7 @@ CAPE_AXI_XBAR XBAR_0(
         .INITIATOR0_RLAST    ( cape_regs_0_AXI4_INITIATOR_RLAST ),
         .INITIATOR0_RVALID   ( cape_regs_0_AXI4_INITIATOR_RVALID ),
         .INITIATOR0_BUSER    ( cape_regs_0_AXI4_INITIATOR_BUSER ),
-        .INITIATOR0_RUSER    ( cape_regs_0_AXI4_INITIATOR_RUSER ),
-        .INITIATOR1_AWREADY  (  ),
-        .INITIATOR1_WREADY   (  ),
-        .INITIATOR1_BID      (  ),
-        .INITIATOR1_BRESP    (  ),
-        .INITIATOR1_BVALID   (  ),
-        .INITIATOR1_ARREADY  (  ),
-        .INITIATOR1_RID      (  ),
-        .INITIATOR1_RDATA    (  ),
-        .INITIATOR1_RRESP    (  ),
-        .INITIATOR1_RLAST    (  ),
-        .INITIATOR1_RVALID   (  ),
-        .INITIATOR1_BUSER    (  ),
-        .INITIATOR1_RUSER    (  ) 
+        .INITIATOR0_RUSER    ( cape_regs_0_AXI4_INITIATOR_RUSER ) 
         );
 
 

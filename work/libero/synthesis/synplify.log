@@ -22,10 +22,10 @@
 Starting:    /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro/linux_a_64/mbin/synbatch
 Install:     /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro
 Hostname:    libero-VMware-Virtual-Platform
-Date:        Sun Jul 12 05:41:41 2026
+Date:        Sun Jul 12 07:18:05 2026
 Version:     V-2023.09M-5
 
-Arguments:   -product synplify_base -licensetype synplifypro_actel -batch -log synplify.log MY_CUSTOM_FPGA_DESIGN_614BB23D_syn.tcl
+Arguments:   -product synplify_base -licensetype synplifypro_actel -batch -log synplify.log MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn.tcl
 ProductType: synplify_pro
 
 License checkout: synplifypro_actel
@@ -37,69 +37,69 @@ Running in Vendor Mode
 
 
 Implementation not found: synthesis
-log file: "/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_614BB23D.srr"
+log file: "/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srr"
 Running: synthesis in foreground
 
-Running MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
+Running MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
 
-Running Flow: compile (Compile) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:41 2026
+Running Flow: compile (Compile) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:06 2026
 
-Running Flow: compile_flow (Compile Process) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:41 2026
+Running Flow: compile_flow (Compile Process) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:06 2026
 
-Running: compiler (Compile Input) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:41 2026
-Process ID: 58337
-Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_614BB23D_comp.srs to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_614BB23D.srs
+Running: compiler (Compile Input) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:06 2026
+Process ID: 66641
+Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_8BB3E556_comp.srs to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srs
 
 compiler completed
-# Sun Jul 12 05:41:49 2026
+# Sun Jul 12 07:18:12 2026
 
 Return Code: 0
-Run Time:00h:00m:07s
+Run Time:00h:00m:05s
 
-Running: multi_srs_gen (Multi-srs Generator) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:49 2026
-Process ID: 58430
+Running: multi_srs_gen (Multi-srs Generator) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:12 2026
+Process ID: 66734
 
 multi_srs_gen completed
-# Sun Jul 12 05:41:50 2026
+# Sun Jul 12 07:18:13 2026
 
 Return Code: 0
 Run Time:00h:00m:01s
-Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_614BB23D_mult.srs to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_614BB23D.srs
-Complete: Compile Process on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
+Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_8BB3E556_mult.srs to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srs
+Complete: Compile Process on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
 
-Running: premap (Premap) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:50 2026
-Process ID: 58446
+Running: premap (Premap) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:13 2026
+Process ID: 66750
 
 premap completed with warnings
-# Sun Jul 12 05:41:59 2026
+# Sun Jul 12 07:18:22 2026
 
 Return Code: 1
 Run Time:00h:00m:09s
-Complete: Compile on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
+Complete: Compile on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
 
-Running Flow: map (Map) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:59 2026
+Running Flow: map (Map) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:22 2026
 License granted for 4 parallel jobs
 
-Running: fpga_mapper (Map & Optimize) on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-# Sun Jul 12 05:41:59 2026
-Process ID: 58461
-Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_614BB23D_m.srm to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_614BB23D.srm
+Running: fpga_mapper (Map & Optimize) on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+# Sun Jul 12 07:18:22 2026
+Process ID: 66765
+Copied /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_8BB3E556_m.srm to /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srm
 
 fpga_mapper completed with warnings
-# Sun Jul 12 05:42:41 2026
+# Sun Jul 12 07:18:58 2026
 
 Return Code: 1
-Run Time:00h:00m:42s
-Complete: Map on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-Complete: Logic Synthesis on MY_CUSTOM_FPGA_DESIGN_614BB23D_syn|synthesis
-Copied /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_614BB23D.srr to /home/livan/gateware/gateware/work/libero/synthesis/backup/MY_CUSTOM_FPGA_DESIGN_614BB23D.srr
-TCL script complete: "MY_CUSTOM_FPGA_DESIGN_614BB23D_syn.tcl"
+Run Time:00h:00m:36s
+Complete: Map on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+Complete: Logic Synthesis on MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn|synthesis
+Copied /home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srr to /home/livan/gateware/gateware/work/libero/synthesis/backup/MY_CUSTOM_FPGA_DESIGN_8BB3E556.srr
+TCL script complete: "MY_CUSTOM_FPGA_DESIGN_8BB3E556_syn.tcl"
 exit status=0
 exit status=0
 License checkin: synplifypro_actel

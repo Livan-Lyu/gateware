@@ -1,204 +1,188 @@
 
-fsm_encoding {4418311838} sequential
+fsm_encoding {4518311839} sequential
 
-fsm_state_encoding {4418311838} IDLE {00}
+fsm_state_encoding {4518311839} IDLE {00}
 
-fsm_state_encoding {4418311838} NO_DAT {01}
+fsm_state_encoding {4518311839} NO_DAT {01}
 
-fsm_state_encoding {4418311838} TWO_DAT {10}
+fsm_state_encoding {4518311839} TWO_DAT {10}
 
-fsm_state_encoding {4418311838} ONE_DAT {11}
+fsm_state_encoding {4518311839} ONE_DAT {11}
 
-fsm_registers {4418311838} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_registers {4518311839} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_encoding {4418311837} sequential
+fsm_encoding {47261426110} sequential
 
-fsm_state_encoding {4418311837} IDLE {00}
+fsm_state_encoding {47261426110} 00 {00}
 
-fsm_state_encoding {4418311837} NO_DAT {01}
+fsm_state_encoding {47261426110} 01 {01}
 
-fsm_state_encoding {4418311837} TWO_DAT {10}
+fsm_state_encoding {47261426110} 10 {10}
 
-fsm_state_encoding {4418311837} ONE_DAT {11}
+fsm_state_encoding {47261426110} 11 {11}
 
-fsm_registers {4418311837} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_registers {47261426110} {target_busy[1]}  {target_busy[0]} 
 
-fsm_encoding {4418311836} sequential
+fsm_encoding {4518311839} sequential
 
-fsm_state_encoding {4418311836} IDLE {00}
+fsm_state_encoding {4518311839} IDLE {00}
 
-fsm_state_encoding {4418311836} NO_DAT {01}
+fsm_state_encoding {4518311839} NO_DAT {01}
 
-fsm_state_encoding {4418311836} TWO_DAT {10}
+fsm_state_encoding {4518311839} TWO_DAT {10}
 
-fsm_state_encoding {4418311836} ONE_DAT {11}
+fsm_state_encoding {4518311839} ONE_DAT {11}
 
-fsm_registers {4418311836} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_registers {4518311839} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_encoding {4418311835} sequential
+fsm_encoding {47261426110} sequential
 
-fsm_state_encoding {4418311835} IDLE {00}
+fsm_state_encoding {47261426110} 00 {00}
 
-fsm_state_encoding {4418311835} NO_DAT {01}
+fsm_state_encoding {47261426110} 01 {01}
 
-fsm_state_encoding {4418311835} TWO_DAT {10}
+fsm_state_encoding {47261426110} 10 {10}
 
-fsm_state_encoding {4418311835} ONE_DAT {11}
+fsm_state_encoding {47261426110} 11 {11}
 
-fsm_registers {4418311835} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_registers {47261426110} {target_busy[1]}  {target_busy[0]} 
 
-fsm_encoding {4418311838} sequential
+fsm_encoding {5023102318} onehot
 
-fsm_state_encoding {4418311838} IDLE {00}
+fsm_state_encoding {5023102318} aIDLE {00000001}
 
-fsm_state_encoding {4418311838} NO_DAT {01}
+fsm_state_encoding {5023102318} aREAD_LAT {00000010}
 
-fsm_state_encoding {4418311838} TWO_DAT {10}
+fsm_state_encoding {5023102318} aARREADY_CYC {00000100}
 
-fsm_state_encoding {4418311838} ONE_DAT {11}
+fsm_state_encoding {5023102318} aWRITE_LAT {00001000}
 
-fsm_registers {4418311838} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {5023102318} aAWREADY_CYC {00010000}
 
-fsm_encoding {4418311838} sequential
+fsm_state_encoding {5023102318} wWRITE_DAT {00100000}
 
-fsm_state_encoding {4418311838} IDLE {00}
+fsm_state_encoding {5023102318} wRESP_ST {01000000}
 
-fsm_state_encoding {4418311838} NO_DAT {01}
+fsm_state_encoding {5023102318} rREAD_DAT {10000000}
 
-fsm_state_encoding {4418311838} TWO_DAT {10}
+fsm_registers {5023102318} {currState[7]}  {currState[6]}  {currState[5]}  {currState[4]}  {currState[3]}  {currState[2]}  {currState[1]}  {currState[0]} 
 
-fsm_state_encoding {4418311838} ONE_DAT {11}
+fsm_encoding {4518311836} sequential
 
-fsm_registers {4418311838} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311836} IDLE {00}
 
-fsm_encoding {4418311837} sequential
+fsm_state_encoding {4518311836} NO_DAT {01}
 
-fsm_state_encoding {4418311837} IDLE {00}
+fsm_state_encoding {4518311836} TWO_DAT {10}
 
-fsm_state_encoding {4418311837} NO_DAT {01}
+fsm_state_encoding {4518311836} ONE_DAT {11}
 
-fsm_state_encoding {4418311837} TWO_DAT {10}
+fsm_registers {4518311836} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311837} ONE_DAT {11}
+fsm_encoding {4518311835} sequential
 
-fsm_registers {4418311837} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311835} IDLE {00}
 
-fsm_encoding {4418311836} sequential
+fsm_state_encoding {4518311835} NO_DAT {01}
 
-fsm_state_encoding {4418311836} IDLE {00}
+fsm_state_encoding {4518311835} TWO_DAT {10}
 
-fsm_state_encoding {4418311836} NO_DAT {01}
+fsm_state_encoding {4518311835} ONE_DAT {11}
 
-fsm_state_encoding {4418311836} TWO_DAT {10}
+fsm_registers {4518311835} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311836} ONE_DAT {11}
+fsm_encoding {4518311834} sequential
 
-fsm_registers {4418311836} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311834} IDLE {00}
 
-fsm_encoding {4418311835} sequential
+fsm_state_encoding {4518311834} NO_DAT {01}
 
-fsm_state_encoding {4418311835} IDLE {00}
+fsm_state_encoding {4518311834} TWO_DAT {10}
 
-fsm_state_encoding {4418311835} NO_DAT {01}
+fsm_state_encoding {4518311834} ONE_DAT {11}
 
-fsm_state_encoding {4418311835} TWO_DAT {10}
+fsm_registers {4518311834} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311835} ONE_DAT {11}
+fsm_encoding {4518311837} sequential
 
-fsm_registers {4418311835} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311837} IDLE {00}
 
-fsm_encoding {4418311834} sequential
+fsm_state_encoding {4518311837} NO_DAT {01}
 
-fsm_state_encoding {4418311834} IDLE {00}
+fsm_state_encoding {4518311837} TWO_DAT {10}
 
-fsm_state_encoding {4418311834} NO_DAT {01}
+fsm_state_encoding {4518311837} ONE_DAT {11}
 
-fsm_state_encoding {4418311834} TWO_DAT {10}
+fsm_registers {4518311837} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311834} ONE_DAT {11}
+fsm_encoding {4518311837} sequential
 
-fsm_registers {4418311834} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311837} IDLE {00}
 
-fsm_encoding {4418311833} sequential
+fsm_state_encoding {4518311837} NO_DAT {01}
 
-fsm_state_encoding {4418311833} IDLE {00}
+fsm_state_encoding {4518311837} TWO_DAT {10}
 
-fsm_state_encoding {4418311833} NO_DAT {01}
+fsm_state_encoding {4518311837} ONE_DAT {11}
 
-fsm_state_encoding {4418311833} TWO_DAT {10}
+fsm_registers {4518311837} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311833} ONE_DAT {11}
+fsm_encoding {4518311833} sequential
 
-fsm_registers {4418311833} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311833} IDLE {00}
 
-fsm_encoding {4418311831} sequential
+fsm_state_encoding {4518311833} NO_DAT {01}
 
-fsm_state_encoding {4418311831} IDLE {00}
+fsm_state_encoding {4518311833} TWO_DAT {10}
 
-fsm_state_encoding {4418311831} NO_DAT {01}
+fsm_state_encoding {4518311833} ONE_DAT {11}
 
-fsm_state_encoding {4418311831} TWO_DAT {10}
+fsm_registers {4518311833} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311831} ONE_DAT {11}
+fsm_encoding {4518311833} sequential
 
-fsm_registers {4418311831} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311833} IDLE {00}
 
-fsm_encoding {4418311834} sequential
+fsm_state_encoding {4518311833} NO_DAT {01}
 
-fsm_state_encoding {4418311834} IDLE {00}
+fsm_state_encoding {4518311833} TWO_DAT {10}
 
-fsm_state_encoding {4418311834} NO_DAT {01}
+fsm_state_encoding {4518311833} ONE_DAT {11}
 
-fsm_state_encoding {4418311834} TWO_DAT {10}
+fsm_registers {4518311833} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311834} ONE_DAT {11}
+fsm_encoding {4518311832} sequential
 
-fsm_registers {4418311834} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311832} IDLE {00}
 
-fsm_encoding {4418311834} sequential
+fsm_state_encoding {4518311832} NO_DAT {01}
 
-fsm_state_encoding {4418311834} IDLE {00}
+fsm_state_encoding {4518311832} TWO_DAT {10}
 
-fsm_state_encoding {4418311834} NO_DAT {01}
+fsm_state_encoding {4518311832} ONE_DAT {11}
 
-fsm_state_encoding {4418311834} TWO_DAT {10}
+fsm_registers {4518311832} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311834} ONE_DAT {11}
+fsm_encoding {4518311831} sequential
 
-fsm_registers {4418311834} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311831} IDLE {00}
 
-fsm_encoding {4418311833} sequential
+fsm_state_encoding {4518311831} NO_DAT {01}
 
-fsm_state_encoding {4418311833} IDLE {00}
+fsm_state_encoding {4518311831} TWO_DAT {10}
 
-fsm_state_encoding {4418311833} NO_DAT {01}
+fsm_state_encoding {4518311831} ONE_DAT {11}
 
-fsm_state_encoding {4418311833} TWO_DAT {10}
+fsm_registers {4518311831} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
 
-fsm_state_encoding {4418311833} ONE_DAT {11}
+fsm_encoding {4518311837} sequential
 
-fsm_registers {4418311833} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_state_encoding {4518311837} IDLE {00}
 
-fsm_encoding {4418311832} sequential
+fsm_state_encoding {4518311837} NO_DAT {01}
 
-fsm_state_encoding {4418311832} IDLE {00}
+fsm_state_encoding {4518311837} TWO_DAT {10}
 
-fsm_state_encoding {4418311832} NO_DAT {01}
+fsm_state_encoding {4518311837} ONE_DAT {11}
 
-fsm_state_encoding {4418311832} TWO_DAT {10}
-
-fsm_state_encoding {4418311832} ONE_DAT {11}
-
-fsm_registers {4418311832} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
-
-fsm_encoding {4418311831} sequential
-
-fsm_state_encoding {4418311831} IDLE {00}
-
-fsm_state_encoding {4418311831} NO_DAT {01}
-
-fsm_state_encoding {4418311831} TWO_DAT {10}
-
-fsm_state_encoding {4418311831} ONE_DAT {11}
-
-fsm_registers {4418311831} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 
+fsm_registers {4518311837} {gen_ready_reg_en®currState[1]}  {gen_ready_reg_en®currState[0]} 

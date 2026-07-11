@@ -1,4 +1,4 @@
-# Sun Jul 12 05:42:02 2026
+# Sun Jul 12 07:18:24 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -32,37 +32,36 @@ Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s
 Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 514MB peak: 516MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 514MB peak: 516MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 514MB peak: 516MB)
 
 
 Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic. 
 
-@N: MF104 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/Axi4CrossBar.v":18:7:18:36|Found compile point of type hard on View view:work.caxi4interconnect_Axi4CrossBar_Z40(verilog) 
 @N: MF104 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":20:7:20:26|Found compile point of type hard on View view:work.COREAXI4INTERCONNECT_Z21(verilog) 
 @N: MF104 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":9:7:9:10|Found compile point of type hard on View view:work.CAPE(verilog) 
 
 
 @N: MF105 |Performing bottom-up mapping of Compile point view:work.CAPE(verilog) 
 
-Begin environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
+Begin environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 605MB peak: 605MB)
 
 
-Finished environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 607MB peak: 607MB)
+Finished environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 605MB peak: 605MB)
 
 
-Start loading ILMs (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 607MB peak: 607MB)
+Start loading ILMs (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 605MB peak: 605MB)
 
 
-Start creating ILM for FPGA COREAXI4INTERCONNECT_Z21 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 621MB peak: 621MB)
+Start creating ILM for FPGA COREAXI4INTERCONNECT_Z21 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 620MB peak: 620MB)
 
 
-Finished creating ILM for FPGA COREAXI4INTERCONNECT_Z21 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 621MB peak: 621MB)
+Finished creating ILM for FPGA COREAXI4INTERCONNECT_Z21 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 620MB peak: 620MB)
 
 
-Finished loading ILMs (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 621MB peak: 621MB)
+Finished loading ILMs (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 620MB peak: 620MB)
 
 
 Begin compile point sub-process log
@@ -71,7 +70,7 @@ Begin compile point sub-process log
 		 no database from previous run found.
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 621MB peak: 621MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 620MB peak: 620MB)
 
 @N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/corepwm.v":182:7:182:13|Tristate driver TACHINT (in view: work.corepwm_Z19_0(verilog)) on net TACHINT (in view: work.corepwm_Z19_0(verilog)) has its enable tied to GND.
 @N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/corepwm.v":182:7:182:13|Tristate driver TACHINT (in view: work.corepwm_Z19(verilog)) on net TACHINT (in view: work.corepwm_Z19(verilog)) has its enable tied to GND.
@@ -90,9 +89,9 @@ Available hyper_sources - for debug and ip models
 @N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
 @N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
 @N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) with 6 words by 6 bits.
-@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_614BB23D(verilog)) mapped in logic.
-@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_614BB23D(verilog)) mapped in logic.
-@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_614BB23D(verilog)) with 9 words by 3 bits.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_8BB3E556(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_8BB3E556(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_8BB3E556(verilog)) with 9 words by 3 bits.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both_147[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_neg_147[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_both_43[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_neg_43[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_both_238[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_neg_238[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -151,7 +150,7 @@ Available hyper_sources - for debug and ip models
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_pos[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_both[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_pos[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 620MB peak: 621MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 619MB peak: 620MB)
 
 Encoding state machine state[4:0] (in view: work.pixel_proc(verilog))
 original code -> new code
@@ -162,12 +161,6 @@ original code -> new code
    100 -> 10000
 @N: MO231 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Found counter in view:work.pixel_proc(verilog) instance mc[4:0] 
 @N: MO231 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Found counter in view:work.pixel_proc(verilog) instance rcnt[4:0] 
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[32] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[33] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[34] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[35] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[36] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance ARADDR[37] (in view: work.pixel_proc(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: MO231 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":73:0:73:5|Found counter in view:work.corepwm_timebase_32s_0s_CAPE(verilog) instance period_cnt[31:0] 
 @N: MO231 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":51:0:51:5|Found counter in view:work.corepwm_timebase_32s_0s_CAPE(verilog) instance prescale_cnt[31:0] 
 @N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":85:16:85:44|Found 32 by 32 bit equality operator ('==') un1_prescale_reg (in view: work.corepwm_timebase_32s_0s_CAPE(verilog))
@@ -181,69 +174,61 @@ original code -> new code
 @N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
 @N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[2\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
 
-Starting factoring (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 620MB peak: 621MB)
+Starting factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 619MB peak: 620MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:11s; Memory used current: 623MB peak: 623MB)
+Finished factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 627MB peak: 627MB)
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 626MB peak: 640MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 646MB peak: 646MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 626MB peak: 640MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 646MB peak: 646MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 627MB peak: 640MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 646MB peak: 646MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 627MB peak: 640MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 646MB peak: 646MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 628MB peak: 640MB)
+Finished preparing to map (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:21s; Memory used current: 646MB peak: 646MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:24s; Memory used current: 650MB peak: 650MB)
+Finished technology mapping (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 654MB peak: 654MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:24s		    -3.00ns		3351 /      2440
-   2		0h:00m:25s		    -3.00ns		3268 /      2440
-@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":55:15:55:19|Replicating instance cape_regs_0.u_pix.m12 (in view: work.CAPE(verilog)) with 46 loads 3 times to improve timing.
+   1		0h:00m:23s		    -1.69ns		3354 /      2446
+   2		0h:00m:23s		    -1.69ns		3276 /      2446
+@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":143:44:143:74|Replicating instance cape_regs_0.u_pix.un16_rbuflto4_1 (in view: work.CAPE(verilog)) with 42 loads 3 times to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[1] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[2] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[3] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[4] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cg[1] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cg[2] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
+@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[5] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cg[3] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cg[4] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cr[1] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cr[2] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cr[3] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 @N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cr[4] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
+@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":143:44:143:74|Replicating instance cape_regs_0.u_pix.un16_rbuflto4_2_0 (in view: work.CAPE(verilog)) with 40 loads 3 times to improve timing.
+@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[0] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
 Timing driven replication report
-Added 12 Registers via timing driven replication
-Added 3 LUTs via timing driven replication
+Added 14 Registers via timing driven replication
+Added 6 LUTs via timing driven replication
 
-   3		0h:00m:27s		    -2.70ns		3271 /      2452
-   4		0h:00m:27s		    -2.36ns		3272 /      2452
-   5		0h:00m:27s		    -2.14ns		3273 /      2452
-   6		0h:00m:27s		    -1.81ns		3275 /      2452
-@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cb[5] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
-@N: FX271 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Replicating instance cape_regs_0.u_pix.cg[5] (in view: work.CAPE(verilog)) with 6 loads 1 time to improve timing.
-Timing driven replication report
-Added 2 Registers via timing driven replication
-Added 0 LUTs via timing driven replication
+   3		0h:00m:24s		    -1.70ns		3282 /      2460
+   4		0h:00m:24s		    -1.32ns		3283 /      2460
 
 
-   7		0h:00m:29s		    -1.82ns		3275 /      2454
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[37] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[36] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[35] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[34] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[33] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[32] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
+   5		0h:00m:25s		    -1.29ns		3289 /      2460
+   6		0h:00m:25s		    -1.15ns		3289 /      2460
+   7		0h:00m:25s		    -1.12ns		3292 /      2460
 
 Added 0 Buffers
 Added 0 Cells via replication
@@ -255,10 +240,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:30s; CPU Time elapsed 0h:00m:30s; Memory used current: 651MB peak: 651MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:26s; CPU Time elapsed 0h:00m:26s; Memory used current: 654MB peak: 654MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:30s; CPU Time elapsed 0h:00m:31s; Memory used current: 653MB peak: 653MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:27s; CPU Time elapsed 0h:00m:27s; Memory used current: 656MB peak: 656MB)
 
 
 End compile point sub-process log
@@ -273,15 +258,15 @@ End compile point sub-process log
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Jul 12 05:42:34 2026
+# Timing report written on Sun Jul 12 07:18:52 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_614BB23D
+Top view:               MY_CUSTOM_FPGA_DESIGN_8BB3E556
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_614BB23D/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_8BB3E556/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -293,18 +278,18 @@ Performance Summary
 *******************
 
 
-Worst slack in design: -0.375
+Worst slack in design: 0.169
 
                                                                          Requested     Estimated     Requested     Estimated                Clock                             Clock           
 Starting Clock                                                           Frequency     Frequency     Period        Period        Slack      Type                              Group           
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     126.8 MHz     7.512         7.886         -0.375     generated (from osc_rc160mhz)     FIC0_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     136.2 MHz     7.512         7.343         0.169      generated (from osc_rc160mhz)     FIC0_clks       
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     133.1 MHz     NA            7.512         NA            NA         generated (from osc_rc160mhz)     FIC1_clks       
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 MHz     NA            7.512         NA            NA         generated (from osc_rc160mhz)     FIC2_clks       
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      99.8 MHz      18.779        10.018        8.762      generated (from osc_rc160mhz)     FIC3_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      103.2 MHz     18.779        9.689         9.091      generated (from osc_rc160mhz)     FIC3_clks       
 CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       NA            191.041       NA            NA         generated (from osc_rc160mhz)     default_clkgroup
 osc_rc160mhz                                                             170.4 MHz     NA            5.869         NA            NA         declared                          default_clkgroup
-System                                                                   100.0 MHz     NA            10.000        NA            18.127     system                            system_clkgroup 
+System                                                                   100.0 MHz     NA            10.000        NA            18.089     system                            system_clkgroup 
 ==============================================================================================================================================================================================
 Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
 
@@ -319,11 +304,11 @@ Clocks                                                                          
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Starting                                                              Ending                                                                |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      18.127  |  No paths    -      |  No paths    -      |  No paths    -    
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  |  7.512       -0.375  |  No paths    -      |  No paths    -      |  No paths    -    
+System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      18.089  |  No paths    -      |  No paths    -      |  No paths    -    
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  |  7.512       0.169   |  No paths    -      |  No paths    -      |  No paths    -    
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      8.762   |  No paths    -      |  No paths    -      |  No paths    -    
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      9.091   |  No paths    -      |  No paths    -      |  No paths    -    
 ===================================================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -346,41 +331,41 @@ Detailed Report for Clock: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/
 Starting Points with Worst Slack
 ********************************
 
-                                                                                                                                      Starting                                                                                                          Arrival           
-Instance                                                                                                                              Reference                                                                Type     Pin     Net                     Time        Slack 
-                                                                                                                                      Clock                                                                                                                               
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[17]     0.257       -0.375
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[20]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[16]     0.257       -0.365
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[22]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[18]     0.257       -0.365
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[23]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[19]     0.257       -0.356
-CAPE_inst_0.cape_regs_0.u_pix.cb[0]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       cb[0]                   0.257       -0.351
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[24]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[20]     0.257       -0.346
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[52]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[48]     0.257       -0.341
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[25]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[21]     0.257       -0.337
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[53]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[49]     0.257       -0.332
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[54]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[50]     0.257       -0.323
-==========================================================================================================================================================================================================================================================================
+                                                                                                                                      Starting                                                                                                          Arrival          
+Instance                                                                                                                              Reference                                                                Type     Pin     Net                     Time        Slack
+                                                                                                                                      Clock                                                                                                                              
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[52]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[48]     0.257       0.169
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[53]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[49]     0.257       0.178
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[54]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[50]     0.257       0.188
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[55]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[51]     0.257       0.197
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[56]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[52]     0.257       0.206
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[57]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[53]     0.257       0.216
+CAPE_inst_0.cape_regs_0.u_pix.cb[6]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       cb[6]                   0.257       0.220
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[58]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       INITIATOR_RDATA[54]     0.257       0.225
+CAPE_inst_0.cape_regs_0.u_pix.cb[3]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       cb[3]                   0.257       0.228
+CAPE_inst_0.cape_regs_0.u_pix.cb[1]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      Q       cb[1]                   0.257       0.229
+=========================================================================================================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                           Starting                                                                                               Required           
-Instance                                   Reference                                                                Type     Pin     Net          Time         Slack 
-                                           Clock                                                                                                                     
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[1]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1466_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[4]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1464_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[5]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1463_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[8]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1460_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[9]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1459_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[13]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1457_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[17]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1454_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[20]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1451_i     7.512        -0.375
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[21]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1450_i     7.512        -0.360
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[28]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1447_i     7.512        -0.360
-=====================================================================================================================================================================
+                                           Starting                                                                                                     Required          
+Instance                                   Reference                                                                Type     Pin     Net                Time         Slack
+                                           Clock                                                                                                                          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[21]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       N_1467_i           7.512        0.169
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[0]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux       7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[1]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_1     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[2]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_5     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[3]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_2     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[5]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_8     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[7]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_4     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[16]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_6     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[17]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_3     7.512        0.256
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[18]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     SLE      D       rbuf_N_5_mux_0     7.512        0.256
+==========================================================================================================================================================================
 
 
 
@@ -394,477 +379,81 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         7.512
 
-    - Propagation time:                      7.886
+    - Propagation time:                      7.343
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.375
+    = Slack (critical) :                     0.169
 
-    Number of logic level(s):                23
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21] / Q
-    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[1] / D
+    Number of logic level(s):                19
+    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[52] / Q
+    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[21] / D
     The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
     The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
 
 Instance / Net                                                                                                                                 Pin      Pin               Arrival     No. of    
 Name                                                                                                                                  Type     Name     Dir     Delay     Time        Fan Out(s)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     SLE      Q        Out     0.257     0.257 r     -         
-INITIATOR_RDATA[17]                                                                                                                   Net      -        -       0.683     -           5         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     B        In      -         0.941 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     FCO      Out     0.387     1.328 f     -         
-un1_RDATA_8_cry_1                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCI      In      -         1.328 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCO      Out     0.009     1.337 f     -         
-un1_RDATA_8_cry_2                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCI      In      -         1.337 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCO      Out     0.009     1.347 f     -         
-un1_RDATA_8_cry_3                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCI      In      -         1.347 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCO      Out     0.009     1.356 f     -         
-un1_RDATA_8_cry_4                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCI      In      -         1.356 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCO      Out     0.009     1.365 f     -         
-un1_RDATA_8_cry_5                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCI      In      -         1.365 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCO      Out     0.009     1.375 f     -         
-un1_RDATA_8_cry_6                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCI      In      -         1.375 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCO      Out     0.009     1.384 f     -         
-un1_RDATA_8_cry_7                                                                                                                     Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     C        In      -         2.120 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.294 r     -         
-da_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     C        In      -         2.441 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     Y        Out     0.362     2.802 r     -         
-da_r_0_m_RNIMNLBI_Y[0]                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     A        In      -         2.942 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     FCO      Out     0.336     3.278 r     -         
-da_r_0_m_RNIAE6TD1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCI      In      -         3.278 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCO      Out     0.009     3.287 r     -         
-da_r_0_m_RNI8D13N1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCI      In      -         3.287 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCO      Out     0.009     3.297 r     -         
-da_r_0_m_RNIHSTBN3_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCI      In      -         3.297 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCO      Out     0.009     3.306 r     -         
-da_r_0_m_RNIIUOH04_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCI      In      -         3.306 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCO      Out     0.009     3.316 r     -         
-da_r_0_m_RNI82D9A8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCI      In      -         3.316 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCO      Out     0.009     3.325 r     -         
-da_r_0_m_RNIC78FJ8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCI      In      -         3.325 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCO      Out     0.009     3.334 r     -         
-da_r_0_m_RNIVMB4GH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCI      In      -         3.334 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCO      Out     0.009     3.344 r     -         
-da_r_0_m_RNI6V6APH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     FCI      In      -         3.344 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     S        Out     0.354     3.698 f     -         
-un1_THRlto6                                                                                                                           Net      -        -       0.701     -           6         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     C        In      -         4.399 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     Y        Out     0.172     4.571 f     -         
-un1_THRlto6_d                                                                                                                         Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     D        In      -         5.306 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     Y        Out     0.274     5.580 r     -         
-un1_THRlto6_d_RNIGVJ2PK1                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     B        In      -         5.719 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     Y        Out     0.103     5.822 f     -         
-N_110_mux                                                                                                                             Net      -        -       0.847     -           16        
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     A        In      -         6.669 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     Y        Out     0.056     6.725 f     -         
-un16_rbuf_i_0_rep1                                                                                                                    Net      -        -       0.796     -           12        
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[1]                                                                                             CFG4     D        In      -         7.521 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[1]                                                                                             CFG4     Y        Out     0.226     7.747 f     -         
-N_1466_i                                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[1]                                                                                                 SLE      D        In      -         7.886 f     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[52]     SLE      Q        Out     0.257     0.257 r     -         
+INITIATOR_RDATA[48]                                                                                                                   Net      -        -       0.645     -           3         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_0                                                                                      ARI1     B        In      -         0.903 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_0                                                                                      ARI1     FCO      Out     0.387     1.290 f     -         
+un1_RDATA_11_cry_0                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_1                                                                                      ARI1     FCI      In      -         1.290 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_1                                                                                      ARI1     FCO      Out     0.009     1.299 f     -         
+un1_RDATA_11_cry_1                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_2                                                                                      ARI1     FCI      In      -         1.299 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_2                                                                                      ARI1     FCO      Out     0.009     1.308 f     -         
+un1_RDATA_11_cry_2                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_3                                                                                      ARI1     FCI      In      -         1.308 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_3                                                                                      ARI1     FCO      Out     0.009     1.318 f     -         
+un1_RDATA_11_cry_3                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_4                                                                                      ARI1     FCI      In      -         1.318 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_4                                                                                      ARI1     FCO      Out     0.009     1.327 f     -         
+un1_RDATA_11_cry_4                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_5                                                                                      ARI1     FCI      In      -         1.327 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_5                                                                                      ARI1     FCO      Out     0.009     1.337 f     -         
+un1_RDATA_11_cry_5                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_6                                                                                      ARI1     FCI      In      -         1.337 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_6                                                                                      ARI1     FCO      Out     0.009     1.346 f     -         
+un1_RDATA_11_cry_6                                                                                                                    Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_7                                                                                      ARI1     FCI      In      -         1.346 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_11_cry_7                                                                                      ARI1     FCO      Out     0.009     1.355 f     -         
+un1_RDATA_11_cry_7                                                                                                                    Net      -        -       0.735     -           8         
+CAPE_inst_0.cape_regs_0.u_pix.db_b_0_m[0]                                                                                             CFG3     C        In      -         2.091 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.db_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.265 r     -         
+db_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNISDFAM[0]                                                                                    ARI1     C        In      -         2.412 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNISDFAM[0]                                                                                    ARI1     Y        Out     0.362     2.774 r     -         
+db_r_0_m_RNISDFAM_Y[0]                                                                                                                Net      -        -       0.139     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIPL6QN1[1]                                                                                   ARI1     A        In      -         2.913 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIPL6QN1[1]                                                                                   ARI1     FCO      Out     0.336     3.249 r     -         
+db_r_0_m_RNIPL6QN1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIQFEV22[1]                                                                                   ARI1     FCI      In      -         3.249 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIQFEV22[1]                                                                                   ARI1     FCO      Out     0.009     3.259 r     -         
+db_r_0_m_RNIQFEV22_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIOS44H4[2]                                                                                   ARI1     FCI      In      -         3.259 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.db_r_0_m_RNIOS44H4[2]                                                                                   ARI1     S        Out     0.354     3.612 r     -         
+db_r_0_m_RNIOS44H4_S[2]                                                                                                               Net      -        -       0.665     -           4         
+CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto4_0                                                                                         CFG2     A        In      -         4.277 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto4_0                                                                                         CFG2     Y        Out     0.060     4.337 r     -         
+un1_THR_1lto4_0                                                                                                                       Net      -        -       0.146     -           2         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_N_2L1_sx                                                                                  CFG4     D        In      -         4.483 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_N_2L1_sx                                                                                  CFG4     Y        Out     0.198     4.681 r     -         
+un16_rbuflto4_N_2L1_sx                                                                                                                Net      -        -       0.139     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_N_2L1                                                                                     CFG4     D        In      -         4.820 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_N_2L1                                                                                     CFG4     Y        Out     0.250     5.070 f     -         
+un16_rbuflto4_N_2L1                                                                                                                   Net      -        -       0.146     -           2         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4                                                                                           CFG4     D        In      -         5.217 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4                                                                                           CFG4     Y        Out     0.226     5.443 f     -         
+un16_rbuflto4_2                                                                                                                       Net      -        -       0.665     -           4         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_2_0_fast                                                                                  CFG2     A        In      -         6.108 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.un16_rbuflto4_2_0_fast                                                                                  CFG2     Y        Out     0.056     6.164 f     -         
+un16_rbuflto4_2_0_fast                                                                                                                Net      -        -       0.766     -           10        
+CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[21]                                                                                            CFG4     D        In      -         6.930 f     -         
+CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[21]                                                                                            CFG4     Y        Out     0.274     7.204 r     -         
+N_1467_i                                                                                                                              Net      -        -       0.139     -           1         
+CAPE_inst_0.cape_regs_0.u_pix.rbuf[21]                                                                                                SLE      D        In      -         7.343 r     -         
 ================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 7.886 is 2.824(35.8%) logic and 5.062(64.2%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 2: 
-      Requested Period:                      7.512
-    - Setup time:                            0.000
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         7.512
-
-    - Propagation time:                      7.886
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.375
-
-    Number of logic level(s):                23
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21] / Q
-    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[20] / D
-    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-
-Instance / Net                                                                                                                                 Pin      Pin               Arrival     No. of    
-Name                                                                                                                                  Type     Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     SLE      Q        Out     0.257     0.257 r     -         
-INITIATOR_RDATA[17]                                                                                                                   Net      -        -       0.683     -           5         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     B        In      -         0.941 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     FCO      Out     0.387     1.328 f     -         
-un1_RDATA_8_cry_1                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCI      In      -         1.328 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCO      Out     0.009     1.337 f     -         
-un1_RDATA_8_cry_2                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCI      In      -         1.337 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCO      Out     0.009     1.347 f     -         
-un1_RDATA_8_cry_3                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCI      In      -         1.347 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCO      Out     0.009     1.356 f     -         
-un1_RDATA_8_cry_4                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCI      In      -         1.356 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCO      Out     0.009     1.365 f     -         
-un1_RDATA_8_cry_5                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCI      In      -         1.365 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCO      Out     0.009     1.375 f     -         
-un1_RDATA_8_cry_6                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCI      In      -         1.375 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCO      Out     0.009     1.384 f     -         
-un1_RDATA_8_cry_7                                                                                                                     Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     C        In      -         2.120 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.294 r     -         
-da_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     C        In      -         2.441 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     Y        Out     0.362     2.802 r     -         
-da_r_0_m_RNIMNLBI_Y[0]                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     A        In      -         2.942 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     FCO      Out     0.336     3.278 r     -         
-da_r_0_m_RNIAE6TD1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCI      In      -         3.278 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCO      Out     0.009     3.287 r     -         
-da_r_0_m_RNI8D13N1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCI      In      -         3.287 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCO      Out     0.009     3.297 r     -         
-da_r_0_m_RNIHSTBN3_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCI      In      -         3.297 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCO      Out     0.009     3.306 r     -         
-da_r_0_m_RNIIUOH04_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCI      In      -         3.306 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCO      Out     0.009     3.316 r     -         
-da_r_0_m_RNI82D9A8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCI      In      -         3.316 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCO      Out     0.009     3.325 r     -         
-da_r_0_m_RNIC78FJ8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCI      In      -         3.325 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCO      Out     0.009     3.334 r     -         
-da_r_0_m_RNIVMB4GH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCI      In      -         3.334 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCO      Out     0.009     3.344 r     -         
-da_r_0_m_RNI6V6APH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     FCI      In      -         3.344 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     S        Out     0.354     3.698 f     -         
-un1_THRlto6                                                                                                                           Net      -        -       0.701     -           6         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     C        In      -         4.399 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     Y        Out     0.172     4.571 f     -         
-un1_THRlto6_d                                                                                                                         Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     D        In      -         5.306 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     Y        Out     0.274     5.580 r     -         
-un1_THRlto6_d_RNIGVJ2PK1                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     B        In      -         5.719 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     Y        Out     0.103     5.822 f     -         
-N_110_mux                                                                                                                             Net      -        -       0.847     -           16        
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     A        In      -         6.669 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     Y        Out     0.056     6.725 f     -         
-un16_rbuf_i_0_rep1                                                                                                                    Net      -        -       0.796     -           12        
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[20]                                                                                            CFG4     D        In      -         7.521 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[20]                                                                                            CFG4     Y        Out     0.226     7.747 f     -         
-N_1451_i                                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[20]                                                                                                SLE      D        In      -         7.886 f     -         
-================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 7.886 is 2.824(35.8%) logic and 5.062(64.2%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 3: 
-      Requested Period:                      7.512
-    - Setup time:                            0.000
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         7.512
-
-    - Propagation time:                      7.886
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.375
-
-    Number of logic level(s):                23
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21] / Q
-    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[17] / D
-    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-
-Instance / Net                                                                                                                                 Pin      Pin               Arrival     No. of    
-Name                                                                                                                                  Type     Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     SLE      Q        Out     0.257     0.257 r     -         
-INITIATOR_RDATA[17]                                                                                                                   Net      -        -       0.683     -           5         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     B        In      -         0.941 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     FCO      Out     0.387     1.328 f     -         
-un1_RDATA_8_cry_1                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCI      In      -         1.328 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCO      Out     0.009     1.337 f     -         
-un1_RDATA_8_cry_2                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCI      In      -         1.337 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCO      Out     0.009     1.347 f     -         
-un1_RDATA_8_cry_3                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCI      In      -         1.347 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCO      Out     0.009     1.356 f     -         
-un1_RDATA_8_cry_4                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCI      In      -         1.356 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCO      Out     0.009     1.365 f     -         
-un1_RDATA_8_cry_5                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCI      In      -         1.365 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCO      Out     0.009     1.375 f     -         
-un1_RDATA_8_cry_6                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCI      In      -         1.375 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCO      Out     0.009     1.384 f     -         
-un1_RDATA_8_cry_7                                                                                                                     Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     C        In      -         2.120 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.294 r     -         
-da_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     C        In      -         2.441 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     Y        Out     0.362     2.802 r     -         
-da_r_0_m_RNIMNLBI_Y[0]                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     A        In      -         2.942 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     FCO      Out     0.336     3.278 r     -         
-da_r_0_m_RNIAE6TD1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCI      In      -         3.278 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCO      Out     0.009     3.287 r     -         
-da_r_0_m_RNI8D13N1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCI      In      -         3.287 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCO      Out     0.009     3.297 r     -         
-da_r_0_m_RNIHSTBN3_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCI      In      -         3.297 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCO      Out     0.009     3.306 r     -         
-da_r_0_m_RNIIUOH04_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCI      In      -         3.306 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCO      Out     0.009     3.316 r     -         
-da_r_0_m_RNI82D9A8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCI      In      -         3.316 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCO      Out     0.009     3.325 r     -         
-da_r_0_m_RNIC78FJ8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCI      In      -         3.325 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCO      Out     0.009     3.334 r     -         
-da_r_0_m_RNIVMB4GH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCI      In      -         3.334 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCO      Out     0.009     3.344 r     -         
-da_r_0_m_RNI6V6APH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     FCI      In      -         3.344 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     S        Out     0.354     3.698 f     -         
-un1_THRlto6                                                                                                                           Net      -        -       0.701     -           6         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     C        In      -         4.399 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     Y        Out     0.172     4.571 f     -         
-un1_THRlto6_d                                                                                                                         Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     D        In      -         5.306 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     Y        Out     0.274     5.580 r     -         
-un1_THRlto6_d_RNIGVJ2PK1                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     B        In      -         5.719 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     Y        Out     0.103     5.822 f     -         
-N_110_mux                                                                                                                             Net      -        -       0.847     -           16        
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     A        In      -         6.669 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     Y        Out     0.056     6.725 f     -         
-un16_rbuf_i_0_rep1                                                                                                                    Net      -        -       0.796     -           12        
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[17]                                                                                            CFG4     D        In      -         7.521 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[17]                                                                                            CFG4     Y        Out     0.226     7.747 f     -         
-N_1454_i                                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[17]                                                                                                SLE      D        In      -         7.886 f     -         
-================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 7.886 is 2.824(35.8%) logic and 5.062(64.2%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 4: 
-      Requested Period:                      7.512
-    - Setup time:                            0.000
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         7.512
-
-    - Propagation time:                      7.886
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.375
-
-    Number of logic level(s):                23
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21] / Q
-    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[13] / D
-    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-
-Instance / Net                                                                                                                                 Pin      Pin               Arrival     No. of    
-Name                                                                                                                                  Type     Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     SLE      Q        Out     0.257     0.257 r     -         
-INITIATOR_RDATA[17]                                                                                                                   Net      -        -       0.683     -           5         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     B        In      -         0.941 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     FCO      Out     0.387     1.328 f     -         
-un1_RDATA_8_cry_1                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCI      In      -         1.328 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCO      Out     0.009     1.337 f     -         
-un1_RDATA_8_cry_2                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCI      In      -         1.337 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCO      Out     0.009     1.347 f     -         
-un1_RDATA_8_cry_3                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCI      In      -         1.347 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCO      Out     0.009     1.356 f     -         
-un1_RDATA_8_cry_4                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCI      In      -         1.356 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCO      Out     0.009     1.365 f     -         
-un1_RDATA_8_cry_5                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCI      In      -         1.365 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCO      Out     0.009     1.375 f     -         
-un1_RDATA_8_cry_6                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCI      In      -         1.375 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCO      Out     0.009     1.384 f     -         
-un1_RDATA_8_cry_7                                                                                                                     Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     C        In      -         2.120 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.294 r     -         
-da_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     C        In      -         2.441 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     Y        Out     0.362     2.802 r     -         
-da_r_0_m_RNIMNLBI_Y[0]                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     A        In      -         2.942 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     FCO      Out     0.336     3.278 r     -         
-da_r_0_m_RNIAE6TD1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCI      In      -         3.278 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCO      Out     0.009     3.287 r     -         
-da_r_0_m_RNI8D13N1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCI      In      -         3.287 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCO      Out     0.009     3.297 r     -         
-da_r_0_m_RNIHSTBN3_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCI      In      -         3.297 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCO      Out     0.009     3.306 r     -         
-da_r_0_m_RNIIUOH04_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCI      In      -         3.306 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCO      Out     0.009     3.316 r     -         
-da_r_0_m_RNI82D9A8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCI      In      -         3.316 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCO      Out     0.009     3.325 r     -         
-da_r_0_m_RNIC78FJ8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCI      In      -         3.325 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCO      Out     0.009     3.334 r     -         
-da_r_0_m_RNIVMB4GH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCI      In      -         3.334 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCO      Out     0.009     3.344 r     -         
-da_r_0_m_RNI6V6APH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     FCI      In      -         3.344 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     S        Out     0.354     3.698 f     -         
-un1_THRlto6                                                                                                                           Net      -        -       0.701     -           6         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     C        In      -         4.399 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     Y        Out     0.172     4.571 f     -         
-un1_THRlto6_d                                                                                                                         Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     D        In      -         5.306 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     Y        Out     0.274     5.580 r     -         
-un1_THRlto6_d_RNIGVJ2PK1                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     B        In      -         5.719 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     Y        Out     0.103     5.822 f     -         
-N_110_mux                                                                                                                             Net      -        -       0.847     -           16        
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     A        In      -         6.669 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     Y        Out     0.056     6.725 f     -         
-un16_rbuf_i_0_rep1                                                                                                                    Net      -        -       0.796     -           12        
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[13]                                                                                            CFG4     D        In      -         7.521 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[13]                                                                                            CFG4     Y        Out     0.226     7.747 f     -         
-N_1457_i                                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[13]                                                                                                SLE      D        In      -         7.886 f     -         
-================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 7.886 is 2.824(35.8%) logic and 5.062(64.2%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 5: 
-      Requested Period:                      7.512
-    - Setup time:                            0.000
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         7.512
-
-    - Propagation time:                      7.886
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.375
-
-    Number of logic level(s):                23
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21] / Q
-    Ending point:                            CAPE_inst_0.cape_regs_0.u_pix.rbuf[9] / D
-    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 [rising] (rise=0.000 fall=3.756 period=7.512) on pin CLK
-
-Instance / Net                                                                                                                                 Pin      Pin               Arrival     No. of    
-Name                                                                                                                                  Type     Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     SLE      Q        Out     0.257     0.257 r     -         
-INITIATOR_RDATA[17]                                                                                                                   Net      -        -       0.683     -           5         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     B        In      -         0.941 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_1                                                                                       ARI1     FCO      Out     0.387     1.328 f     -         
-un1_RDATA_8_cry_1                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCI      In      -         1.328 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_2                                                                                       ARI1     FCO      Out     0.009     1.337 f     -         
-un1_RDATA_8_cry_2                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCI      In      -         1.337 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_3                                                                                       ARI1     FCO      Out     0.009     1.347 f     -         
-un1_RDATA_8_cry_3                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCI      In      -         1.347 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_4                                                                                       ARI1     FCO      Out     0.009     1.356 f     -         
-un1_RDATA_8_cry_4                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCI      In      -         1.356 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_5                                                                                       ARI1     FCO      Out     0.009     1.365 f     -         
-un1_RDATA_8_cry_5                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCI      In      -         1.365 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_6                                                                                       ARI1     FCO      Out     0.009     1.375 f     -         
-un1_RDATA_8_cry_6                                                                                                                     Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCI      In      -         1.375 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_RDATA_8_cry_7                                                                                       ARI1     FCO      Out     0.009     1.384 f     -         
-un1_RDATA_8_cry_7                                                                                                                     Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     C        In      -         2.120 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_b_0_m[0]                                                                                             CFG3     Y        Out     0.175     2.294 r     -         
-da_b_n[0]                                                                                                                             Net      -        -       0.146     -           2         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     C        In      -         2.441 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIMNLBI[0]                                                                                    ARI1     Y        Out     0.362     2.802 r     -         
-da_r_0_m_RNIMNLBI_Y[0]                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     A        In      -         2.942 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIAE6TD1[1]                                                                                   ARI1     FCO      Out     0.336     3.278 r     -         
-da_r_0_m_RNIAE6TD1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCI      In      -         3.278 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI8D13N1[1]                                                                                   ARI1     FCO      Out     0.009     3.287 r     -         
-da_r_0_m_RNI8D13N1_FCO[1]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCI      In      -         3.287 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIHSTBN3[2]                                                                                   ARI1     FCO      Out     0.009     3.297 r     -         
-da_r_0_m_RNIHSTBN3_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCI      In      -         3.297 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIIUOH04[2]                                                                                   ARI1     FCO      Out     0.009     3.306 r     -         
-da_r_0_m_RNIIUOH04_FCO[2]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCI      In      -         3.306 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI82D9A8[3]                                                                                   ARI1     FCO      Out     0.009     3.316 r     -         
-da_r_0_m_RNI82D9A8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCI      In      -         3.316 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIC78FJ8[3]                                                                                   ARI1     FCO      Out     0.009     3.325 r     -         
-da_r_0_m_RNIC78FJ8_FCO[3]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCI      In      -         3.325 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIVMB4GH[4]                                                                                   ARI1     FCO      Out     0.009     3.334 r     -         
-da_r_0_m_RNIVMB4GH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCI      In      -         3.334 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNI6V6APH[4]                                                                                   ARI1     FCO      Out     0.009     3.344 r     -         
-da_r_0_m_RNI6V6APH_FCO[4]                                                                                                             Net      -        -       0.000     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     FCI      In      -         3.344 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.da_r_0_m_RNIM99QR31[5]                                                                                  ARI1     S        Out     0.354     3.698 f     -         
-un1_THRlto6                                                                                                                           Net      -        -       0.701     -           6         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     C        In      -         4.399 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d                                                                                           CFG4     Y        Out     0.172     4.571 f     -         
-un1_THRlto6_d                                                                                                                         Net      -        -       0.735     -           8         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     D        In      -         5.306 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THRlto6_d_RNIGVJ2PK1                                                                                CFG4     Y        Out     0.274     5.580 r     -         
-un1_THRlto6_d_RNIGVJ2PK1                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     B        In      -         5.719 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.un1_THR_1lto6_0_0_RNI1D8BVF                                                                             CFG4     Y        Out     0.103     5.822 f     -         
-N_110_mux                                                                                                                             Net      -        -       0.847     -           16        
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     A        In      -         6.669 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.mc_RNI8N9Q761[4]                                                                                        CFG3     Y        Out     0.056     6.725 f     -         
-un16_rbuf_i_0_rep1                                                                                                                    Net      -        -       0.796     -           12        
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[9]                                                                                             CFG4     D        In      -         7.521 f     -         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf_RNO[9]                                                                                             CFG4     Y        Out     0.226     7.747 f     -         
-N_1459_i                                                                                                                              Net      -        -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.rbuf[9]                                                                                                 SLE      D        In      -         7.886 f     -         
-================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 7.886 is 2.824(35.8%) logic and 5.062(64.2%) route.
+Total path delay (propagation time + setup) of 7.343 is 3.010(41.0%) logic and 4.333(59.0%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -883,16 +472,16 @@ Starting Points with Worst Slack
 Instance                                               Reference                                                                Type     Pin                       Net                                                                             Time        Slack 
                                                        Clock                                                                                                                                                                                                         
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[28]     inp[409]                                                                        1.793       8.762 
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PSEL          inp[410]                                                                        1.678       8.836 
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[2]      inp[349]                                                                        1.739       10.026
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[6]      inp[234]                                                                        1.855       10.077
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[4]      inp[290]                                                                        1.744       10.227
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[3]      inp[319]                                                                        1.728       10.292
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[28]     inp[409]                                                                        1.793       9.091 
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PSEL          inp[410]                                                                        1.678       9.165 
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[2]      inp[349]                                                                        1.739       10.027
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[4]      inp[290]                                                                        1.744       10.230
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[6]      inp[234]                                                                        1.855       10.258
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[3]      inp[319]                                                                        1.728       10.306
 BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[7]      inp[206]                                                                        1.822       10.456
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[24]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[24]     1.768       10.685
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[27]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[27]     1.796       10.694
 BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[5]      inp[262]                                                                        1.731       10.998
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[24]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[24]     1.768       11.014
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[27]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[27]     1.796       11.023
 =====================================================================================================================================================================================================================================================================
 
 
@@ -903,16 +492,16 @@ Ending Points with Worst Slack
 Instance                                               Reference                                                                Type     Pin                        Net                                                                     Time         Slack
                                                        Clock                                                                                                                                                                                                  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[14]     BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[14]     18.779       8.762
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[0]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[0]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[1]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[1]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[2]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[2]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[3]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[3]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[4]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[4]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[5]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[5]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[6]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[6]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[7]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[7]      18.779       8.802
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[8]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[8]      18.779       8.802
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[14]     BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[14]     18.779       9.091
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[0]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[0]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[1]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[1]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[2]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[2]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[3]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[3]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[4]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[4]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[5]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[5]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[6]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[6]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[7]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[7]      18.779       9.190
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PRDATA[8]      BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[8]      18.779       9.190
 ==============================================================================================================================================================================================================================================================
 
 
@@ -927,9 +516,9 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         18.779
 
-    - Propagation time:                      10.018
+    - Propagation time:                      9.689
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 8.762
+    = Slack (non-critical) :                 9.091
 
     Number of logic level(s):                7
     Starting point:                          BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS / FIC_3_APB_M_PADDR[28]
@@ -937,35 +526,35 @@ Path information for path number 1:
     The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin FIC_3_PCLK
     The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin FIC_3_PCLK
 
-Instance / Net                                                                           Pin                        Pin               Arrival      No. of    
-Name                                                                            Type     Name                       Dir     Delay     Time         Fan Out(s)
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                              MSS      FIC_3_APB_M_PADDR[28]      Out     1.793     1.793 r      -         
-inp[409]                                                                        Net      -                          -       1.119     -            2         
-BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.out_low_psel                           CFG2     A                          In      -         2.912 r      -         
-BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.out_low_psel                           CFG2     Y                          Out     0.054     2.966 f      -         
-inp[411]                                                                        Net      -                          -       1.149     -            3         
-BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS[1]     CFG4     C                          In      -         4.115 f      -         
-BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS[1]     CFG4     Y                          Out     0.172     4.287 f      -         
-inp[407]                                                                        Net      -                          -       1.149     -            6         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_0_a2_1_i_o2[2]               CFG2     A                          In      -         5.436 f      -         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_0_a2_1_i_o2[2]               CFG2     Y                          Out     0.056     5.492 r      -         
-N_61                                                                            Net      -                          -       0.645     -            3         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.N_88_i                CFG4     B                          In      -         6.137 r      -         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.N_88_i                CFG4     Y                          Out     0.103     6.240 f      -         
-N_88_i                                                                          Net      -                          -       1.089     -            50        
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA_sn_m6_0        CFG4     B                          In      -         7.330 f      -         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA_sn_m6_0        CFG4     Y                          Out     0.103     7.433 r      -         
-PRDATA_sn_N_8_mux                                                               Net      -                          -       0.993     -            32        
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA[14]            CFG4     D                          In      -         8.426 r      -         
-CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA[14]            CFG4     Y                          Out     0.274     8.700 r      -         
-APB_SLAVE_SLAVE_PRDATA[14]                                                      Net      -                          -       0.139     -            1         
-BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.in_prdata[14]                          CFG3     A                          In      -         8.839 r      -         
-BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.in_prdata[14]                          CFG3     Y                          Out     0.060     8.899 r      -         
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[14]             Net      -                          -       1.119     -            1         
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                              MSS      FIC_3_APB_M_PRDATA[14]     In      -         10.018 r     -         
-=============================================================================================================================================================
-Total path delay (propagation time + setup) of 10.018 is 2.615(26.1%) logic and 7.403(73.9%) route.
+Instance / Net                                                                           Pin                        Pin               Arrival     No. of    
+Name                                                                            Type     Name                       Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                              MSS      FIC_3_APB_M_PADDR[28]      Out     1.793     1.793 r     -         
+inp[409]                                                                        Net      -                          -       1.119     -           2         
+BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.out_low_psel                           CFG2     A                          In      -         2.912 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.out_low_psel                           CFG2     Y                          Out     0.054     2.966 f     -         
+inp[411]                                                                        Net      -                          -       1.149     -           3         
+BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS[1]     CFG4     C                          In      -         4.115 f     -         
+BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS[1]     CFG4     Y                          Out     0.172     4.287 f     -         
+inp[407]                                                                        Net      -                          -       1.149     -           7         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_0_a2_1_i_o2[2]               CFG2     A                          In      -         5.436 f     -         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_0_a2_1_i_o2[2]               CFG2     Y                          Out     0.056     5.492 r     -         
+N_61                                                                            Net      -                          -       0.146     -           2         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.N_88_i                CFG4     B                          In      -         5.638 r     -         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.N_88_i                CFG4     Y                          Out     0.103     5.742 f     -         
+N_88_i                                                                          Net      -                          -       1.089     -           50        
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA_sn_m6_0        CFG4     D                          In      -         6.831 f     -         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA_sn_m6_0        CFG4     Y                          Out     0.274     7.104 r     -         
+PRDATA_sn_N_8_mux                                                               Net      -                          -       0.993     -           32        
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA[14]            CFG4     D                          In      -         8.098 r     -         
+CAPE_inst_0.CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.u_mux_p_to_b3.PRDATA[14]            CFG4     Y                          Out     0.274     8.371 r     -         
+APB_SLAVE_SLAVE_PRDATA[14]                                                      Net      -                          -       0.139     -           1         
+BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.in_prdata[14]                          CFG3     A                          In      -         8.510 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.APB_ARBITER_0.in_prdata[14]                          CFG3     Y                          Out     0.060     8.570 r     -         
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.FIC_3_APB_M_PRDATA[14]             Net      -                          -       1.119     -           1         
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                              MSS      FIC_3_APB_M_PRDATA[14]     In      -         9.689 r     -         
+============================================================================================================================================================
+Total path delay (propagation time + setup) of 9.689 is 2.785(28.7%) logic and 6.904(71.3%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -984,8 +573,8 @@ Starting Points with Worst Slack
 Instance                                                          Reference     Type     Pin               Net                                    Time        Slack 
                                                                   Clock                                                                                             
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     RFU[0]            CLOCKS_AND_RESETS_XCVR_INIT_DONE       0.000       18.127
-CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     UIC_INIT_DONE     CLOCKS_AND_RESETS_DEVICE_INIT_DONE     0.000       18.127
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     RFU[0]            CLOCKS_AND_RESETS_XCVR_INIT_DONE       0.000       18.089
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     UIC_INIT_DONE     CLOCKS_AND_RESETS_DEVICE_INIT_DONE     0.000       18.089
 ====================================================================================================================================================================
 
 
@@ -996,8 +585,8 @@ Ending Points with Worst Slack
 Instance                                     Reference     Type     Pin     Net              Time         Slack 
                                              Clock                                                              
 ----------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.cape_regs_0.u_pix.prdata[18]     System        SLE      D       prdata_9[18]     18.779       18.127
-CAPE_inst_0.cape_regs_0.u_pix.prdata[19]     System        SLE      D       prdata_9[19]     18.779       18.127
+CAPE_inst_0.cape_regs_0.u_pix.prdata[18]     System        SLE      D       prdata_9[18]     18.779       18.089
+CAPE_inst_0.cape_regs_0.u_pix.prdata[19]     System        SLE      D       prdata_9[19]     18.779       18.089
 ================================================================================================================
 
 
@@ -1012,10 +601,10 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         18.779
 
-    - Propagation time:                      0.652
+    - Propagation time:                      0.690
     - Clock delay at starting point:         0.000 (ideal)
     - Estimated clock delay at start point:  -0.000
-    = Slack (non-critical) :                 18.127
+    = Slack (non-critical) :                 18.089
 
     Number of logic level(s):                2
     Starting point:                          CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT / RFU[0]
@@ -1031,12 +620,12 @@ CLOCKS_AND_RESETS_XCVR_INIT_DONE                                  Net      -    
 CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv_3[19]                 CFG4     C          In      -         0.139 r     -         
 CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv_3[19]                 CFG4     Y          Out     0.175     0.314 r     -         
 prdata_9_0_iv_3[19]                                               Net      -          -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     A          In      -         0.453 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     Y          Out     0.060     0.513 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     B          In      -         0.453 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     Y          Out     0.098     0.551 r     -         
 prdata_9[19]                                                      Net      -          -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.prdata[19]                          SLE      D          In      -         0.652 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata[19]                          SLE      D          In      -         0.690 r     -         
 ==============================================================================================================================
-Total path delay (propagation time + setup) of 0.652 is 0.234(36.0%) logic and 0.418(64.0%) route.
+Total path delay (propagation time + setup) of 0.690 is 0.273(39.5%) logic and 0.418(60.5%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1053,7 +642,7 @@ Name     Status     Reason
 CAPE     Mapped     No database
 ===============================
 
-Process took 0h:00m:31s realtime, 0h:00m:31s cputime
-# Sun Jul 12 05:42:34 2026
+Process took 0h:00m:27s realtime, 0h:00m:27s cputime
+# Sun Jul 12 07:18:52 2026
 
 ###########################################################]
