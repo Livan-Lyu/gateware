@@ -41,16 +41,20 @@ module pixel_proc(
             irq<=0; irq_pclk<=0; irq_s1<=0; irq_s2<=0;
             start_pclk<=0; ack_req<=0;
         end else begin
+            start_pclk <= 0;
+            ack_req <= 0;
+
             if (wr_en) case (paddr)
-                A_CTRL:   ctrl   <= pwdata;
+                A_CTRL: begin
+                    ctrl <= pwdata;
+                    start_pclk <= pwdata[0];
+                    ack_req <= pwdata[7];
+                end
                 A_SRC_LO: src_lo <= pwdata;
                 A_SRC_HI: src_hi <= pwdata;
                 A_CNT:    pxl_cnt<= pwdata;
                 default: ;
             endcase
-
-            start_pclk <= ctrl[0];
-            ack_req <= (wr_en && paddr==A_CTRL && pwdata[7]);
 
             irq_s1 <= irq_aclk_s;
             irq_s2 <= irq_s1;
