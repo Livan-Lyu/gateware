@@ -92,6 +92,10 @@ Bus Address   Module
 | 18 | `DEVICE_INIT_DONE` |
 | 17 | `FIC_3_FABRIC_RESET_N` |
 | 16 | `FIC_0_FABRIC_RESET_N` |
+| 14 | AXI `RVALID` |
+| 13 | AXI `RREADY` |
+| 12 | AXI `ARREADY` |
+| 11 | AXI `ARVALID` |
 | 10:8 | `pixel_proc` ACLK FSM state |
 | 7 | `irq_aclk_s` |
 | 6 | `done_s` |
