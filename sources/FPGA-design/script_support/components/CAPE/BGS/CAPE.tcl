@@ -233,7 +233,13 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave5" "PW
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "cape_regs_0:APBslave" }
 
 # BGS: AXI clock/reset connections
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
+#
+# TEMP DEBUG OVERRIDE:
+# Drive the local ACLK domain from PCLK to validate whether the AXI_ACLK path
+# is getting lost inside SmartDesign/generated connectivity. This is a debug
+# experiment only. Revert by restoring XBAR_0:ACLK and cape_regs_0:ACLK to
+# the AXI_ACLK net below.
+sd_connect_pins -sd_name ${sd_name} -pin_names {"PCLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
 #
 # TEMP DEBUG OVERRIDE:
 # Keep the crossbar on AXI_ARESETN, but drive cape_regs_0:ARESETN from
