@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 05:25:34 2026
+// Created by SmartDesign Sun Jul 12 05:41:24 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -16,6 +16,7 @@ module CAPE(
     AXI_ACLK,
     AXI_ARESETN,
     DBG_DEVICE_INIT_DONE,
+    DBG_FIC0_ACLK,
     DBG_FIC0_RESET_N,
     DBG_FIC3_RESET_N,
     DBG_MSS_DLL_LOCKS,
@@ -76,6 +77,7 @@ input         APB_SLAVE_SLAVE_PWRITE;
 input         AXI_ACLK;
 input         AXI_ARESETN;
 input         DBG_DEVICE_INIT_DONE;
+input         DBG_FIC0_ACLK;
 input         DBG_FIC0_RESET_N;
 input         DBG_FIC3_RESET_N;
 input         DBG_MSS_DLL_LOCKS;
@@ -233,6 +235,7 @@ wire           CoreAPB3_CAPE_0_APBmslave5_PREADY;
 wire           CoreAPB3_CAPE_0_APBmslave5_PSELx;
 wire           CoreAPB3_CAPE_0_APBmslave5_PSLVERR;
 wire           DBG_DEVICE_INIT_DONE;
+wire           DBG_FIC0_ACLK;
 wire           DBG_FIC0_RESET_N;
 wire           DBG_FIC3_RESET_N;
 wire           DBG_MSS_DLL_LOCKS;
@@ -565,7 +568,7 @@ cape_regs cape_regs_0(
         .paddr                ( CoreAPB3_CAPE_0_APBmslave0_PADDR ),
         .pwdata               ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
         .status               ( status_const_net_0 ),
-        .ACLK                 ( PCLK ),
+        .ACLK                 ( DBG_FIC0_ACLK ),
         .ARESETN              ( DBG_FIC0_RESET_N ),
         .ARREADY              ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
         .RDATA                ( cape_regs_0_AXI4_INITIATOR_RDATA ),
@@ -803,7 +806,7 @@ CAPE_PWM PWM_2(
 //--------CAPE_AXI_XBAR
 CAPE_AXI_XBAR XBAR_0(
         // Inputs
-        .ACLK                ( PCLK ),
+        .ACLK                ( DBG_FIC0_ACLK ),
         .ARESETN             ( AXI_ARESETN ),
         .TARGET0_AWREADY     ( ms_awready ),
         .TARGET0_WREADY      ( ms_wready ),
