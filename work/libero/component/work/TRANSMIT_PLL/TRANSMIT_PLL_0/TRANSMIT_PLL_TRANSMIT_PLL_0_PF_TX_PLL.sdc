@@ -1,6 +1,6 @@
 set_component TRANSMIT_PLL_TRANSMIT_PLL_0_PF_TX_PLL
 # Microchip Technology Inc.
-# Date: 2026-Jul-12 02:50:56
+# Date: 2026-Jul-12 03:52:31
 #
 
 create_clock -period 10 [ get_pins { txpll_isnt_0/REF_CLK_P } ]

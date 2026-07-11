@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 02:51:05 2026
+// Created by SmartDesign Sun Jul 12 03:52:41 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -15,6 +15,11 @@ module CAPE(
     APB_SLAVE_SLAVE_PWRITE,
     AXI_ACLK,
     AXI_ARESETN,
+    DBG_DEVICE_INIT_DONE,
+    DBG_FIC0_RESET_N,
+    DBG_FIC3_RESET_N,
+    DBG_MSS_DLL_LOCKS,
+    DBG_XCVR_INIT_DONE,
     GPIO_OE,
     GPIO_OUT,
     PCLK,
@@ -70,6 +75,11 @@ input  [31:0] APB_SLAVE_SLAVE_PWDATA;
 input         APB_SLAVE_SLAVE_PWRITE;
 input         AXI_ACLK;
 input         AXI_ARESETN;
+input         DBG_DEVICE_INIT_DONE;
+input         DBG_FIC0_RESET_N;
+input         DBG_FIC3_RESET_N;
+input         DBG_MSS_DLL_LOCKS;
+input         DBG_XCVR_INIT_DONE;
 input  [27:0] GPIO_OE;
 input  [27:0] GPIO_OUT;
 input         PCLK;
@@ -222,6 +232,11 @@ wire   [31:0]  CoreAPB3_CAPE_0_APBmslave5_PRDATA;
 wire           CoreAPB3_CAPE_0_APBmslave5_PREADY;
 wire           CoreAPB3_CAPE_0_APBmslave5_PSELx;
 wire           CoreAPB3_CAPE_0_APBmslave5_PSLVERR;
+wire           DBG_DEVICE_INIT_DONE;
+wire           DBG_FIC0_RESET_N;
+wire           DBG_FIC3_RESET_N;
+wire           DBG_MSS_DLL_LOCKS;
+wire           DBG_XCVR_INIT_DONE;
 wire   [27:0]  GPIO_IN_net_0;
 wire   [27:0]  GPIO_OE;
 wire   [27:0]  GPIO_OUT;
@@ -261,11 +276,12 @@ wire   [63:0]  AXI4mtarget0_WDATA_net_0;
 wire   [7:0]   AXI4mtarget0_WSTRB_net_0;
 wire           AXI4mtarget0_WVALID_net_0;
 wire           AXI4mtarget0_BREADY_net_0;
+wire   [31:0]  status_net_0;
 //--------------------------------------------------------------------
 // TiedOff Nets
 //--------------------------------------------------------------------
 wire   [39:38] INT_const_net_0;
-wire   [31:0]  status_const_net_0;
+wire   [31:5]  status_const_net_0;
 wire           VCC_net;
 wire   [1:0]   TARGET0_BID_const_net_0;
 wire   [1:0]   TARGET0_RID_const_net_0;
@@ -353,7 +369,7 @@ wire   [7:0]   CoreAPB3_CAPE_0_APBmslave0_PADDR_4_7to0;
 // Constant assignments
 //--------------------------------------------------------------------
 assign INT_const_net_0                 = 2'h0;
-assign status_const_net_0              = 32'h00000000;
+assign status_const_net_0              = 27'h0000000;
 assign VCC_net                         = 1'b1;
 assign TARGET0_BID_const_net_0         = 2'h0;
 assign TARGET0_RID_const_net_0         = 2'h0;
@@ -436,6 +452,10 @@ assign AXI4mtarget0_WVALID_net_0    = AXI4mtarget0_WVALID;
 assign ms_wvalid                    = AXI4mtarget0_WVALID_net_0;
 assign AXI4mtarget0_BREADY_net_0    = AXI4mtarget0_BREADY;
 assign ms_bready                    = AXI4mtarget0_BREADY_net_0;
+//--------------------------------------------------------------------
+// Concatenation assignments
+//--------------------------------------------------------------------
+assign status_net_0 = { 27'h0000000 , DBG_MSS_DLL_LOCKS , DBG_XCVR_INIT_DONE , DBG_DEVICE_INIT_DONE , DBG_FIC3_RESET_N , DBG_FIC0_RESET_N };
 //--------------------------------------------------------------------
 // Bus Interface Nets Assignments - Unequal Pin Widths
 //--------------------------------------------------------------------
@@ -549,7 +569,7 @@ cape_regs cape_regs_0(
         .pwrite  ( CoreAPB3_CAPE_0_APBmslave0_PWRITE ),
         .paddr   ( CoreAPB3_CAPE_0_APBmslave0_PADDR ),
         .pwdata  ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
-        .status  ( status_const_net_0 ),
+        .status  ( status_net_0 ),
         .ACLK    ( AXI_ACLK ),
         .ARESETN ( AXI_ARESETN ),
         .ARREADY ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
