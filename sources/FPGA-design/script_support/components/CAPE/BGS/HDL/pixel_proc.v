@@ -68,7 +68,7 @@ module pixel_proc(
                 A_SRC_HI: prdata <= src_hi;
                 A_CNT:   prdata <= pxl_cnt;
                 A_RES:   prdata <= result_s;
-                A_DBG:   prdata <= 32'hDEADBEEF;
+                A_DBG:   prdata <= debug_s;
                 default: prdata <= 0;
             endcase
         end
@@ -88,6 +88,7 @@ module pixel_proc(
     reg        irq_aclk_s, busy_s, done_s;
     reg        start_s1, start_s2, start_stb;
     reg        ack_s1, ack_s2, ack_stb;
+    wire [31:0] debug_s;
 
     wire [7:0] ha_r=RDATA[7:0],   ha_g=RDATA[15:8],  ha_b=RDATA[23:16];
     wire [7:0] hb_r=RDATA[39:32], hb_g=RDATA[47:40], hb_b=RDATA[55:48];
@@ -180,5 +181,21 @@ module pixel_proc(
     assign AWADDR=0; assign AWVALID=0;
     assign WDATA=0; assign WSTRB=0; assign WVALID=0; assign BREADY=0;
     wire [31:0] result_s = result;
+    assign debug_s = {
+        8'hDB,
+        10'b0,
+        state,
+        done_s,
+        busy_s,
+        irq_aclk_s,
+        ack_stb,
+        ack_s2,
+        ack_s1,
+        start_stb,
+        start_s2,
+        start_s1,
+        ARESETN,
+        start_pclk
+    };
 
 endmodule
