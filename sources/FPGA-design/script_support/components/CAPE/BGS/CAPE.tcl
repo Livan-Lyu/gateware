@@ -234,7 +234,15 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "ca
 
 # BGS: AXI clock/reset connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN" "cape_regs_0:ARESETN"}
+#
+# TEMP DEBUG OVERRIDE:
+# Keep the crossbar on AXI_ARESETN, but drive cape_regs_0:ARESETN from
+# DBG_FIC0_RESET_N (which is tied to CLOCKS_AND_RESETS:FIC_0_FABRIC_RESET_N
+# in ADD_CAPE.tcl) to validate whether the AXI_ARESETN path is getting lost
+# inside SmartDesign/generated connectivity.
+# Revert by restoring cape_regs_0:ARESETN to the AXI_ARESETN net below.
+sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:ARESETN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:DBG_FIC0_RESET_N"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC3_RESET_N" "cape_regs_0:DBG_FIC3_RESET_N"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_DEVICE_INIT_DONE" "cape_regs_0:DBG_DEVICE_INIT_DONE"}
