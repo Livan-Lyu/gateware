@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sat Jul 11 00:48:35 2026
+// Created by SmartDesign Sun Jul 12 02:51:01 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -55,19 +55,19 @@ output        SLAVE_PSLVERR;
 wire   [31:0] SLAVE_PADDR;
 wire          SLAVE_PENABLE;
 wire          SLAVE_PSEL;
-wire          SLAVE_PWRITE;
+wire   [31:0] SLAVE_PWDATA;
 wire   [31:0] MASTER_PRDATA;
 wire          MASTER_PREADY;
 wire          MASTER_PSLVERR;
-wire   [31:0] SLAVE_PWDATA;
+wire          SLAVE_PWRITE;
 wire   [31:0] SLAVE_PRDATA_net_0;
 wire          SLAVE_PSLVERR_net_0;
 wire          SLAVE_PREADY_net_0;
 wire   [31:0] MASTER_PADDR_net_0;
 wire          MASTER_PENABLE_net_0;
-wire          MASTER_PWRITE_net_0;
+wire          SLAVE_PWRITE_net_0;
 wire          MASTER_PSEL_net_0;
-wire   [31:0] SLAVE_PWDATA_net_0;
+wire   [31:0] MASTER_PWDATA_net_0;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
@@ -81,11 +81,11 @@ assign MASTER_PADDR_net_0   = SLAVE_PADDR;
 assign MASTER_PADDR[31:0]   = MASTER_PADDR_net_0;
 assign MASTER_PENABLE_net_0 = SLAVE_PENABLE;
 assign MASTER_PENABLE       = MASTER_PENABLE_net_0;
-assign MASTER_PWRITE_net_0  = SLAVE_PWRITE;
-assign MASTER_PWRITE        = MASTER_PWRITE_net_0;
+assign SLAVE_PWRITE_net_0   = SLAVE_PWRITE;
+assign MASTER_PWRITE        = SLAVE_PWRITE_net_0;
 assign MASTER_PSEL_net_0    = SLAVE_PSEL;
 assign MASTER_PSEL          = MASTER_PSEL_net_0;
-assign SLAVE_PWDATA_net_0   = SLAVE_PWDATA;
-assign MASTER_PWDATA[31:0]  = SLAVE_PWDATA_net_0;
+assign MASTER_PWDATA_net_0  = SLAVE_PWDATA;
+assign MASTER_PWDATA[31:0]  = MASTER_PWDATA_net_0;
 
 endmodule

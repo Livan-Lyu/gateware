@@ -41,16 +41,20 @@ module pixel_proc(
             irq<=0; irq_pclk<=0; irq_s1<=0; irq_s2<=0;
             start_pclk<=0; ack_req<=0;
         end else begin
+            start_pclk <= 0;
+            ack_req <= 0;
+
             if (wr_en) case (paddr)
-                A_CTRL:   ctrl   <= pwdata;
+                A_CTRL: begin
+                    ctrl <= pwdata;
+                    start_pclk <= pwdata[0];
+                    ack_req <= pwdata[7];
+                end
                 A_SRC_LO: src_lo <= pwdata;
                 A_SRC_HI: src_hi <= pwdata;
                 A_CNT:    pxl_cnt<= pwdata;
                 default: ;
             endcase
-
-            start_pclk <= ctrl[0];
-            ack_req <= (wr_en && paddr==A_CTRL && pwdata[7]);
 
             irq_s1 <= irq_aclk_s;
             irq_s2 <= irq_s1;
@@ -64,7 +68,7 @@ module pixel_proc(
                 A_SRC_HI: prdata <= src_hi;
                 A_CNT:   prdata <= pxl_cnt;
                 A_RES:   prdata <= result_s;
-                A_DBG:   prdata <= 32'hDEADBEEF;
+                A_DBG:   prdata <= debug_s;
                 default: prdata <= 0;
             endcase
         end
@@ -84,6 +88,7 @@ module pixel_proc(
     reg        irq_aclk_s, busy_s, done_s;
     reg        start_s1, start_s2, start_stb;
     reg        ack_s1, ack_s2, ack_stb;
+    wire [31:0] debug_s;
 
     wire [7:0] ha_r=RDATA[7:0],   ha_g=RDATA[15:8],  ha_b=RDATA[23:16];
     wire [7:0] hb_r=RDATA[39:32], hb_g=RDATA[47:40], hb_b=RDATA[55:48];
@@ -130,15 +135,23 @@ module pixel_proc(
                             beat<=beat+1; src_addr<=src_addr+64'd8;
                             RREADY<=0; state<=S_AR;
                         end else if (beat==PPR-1) begin
-                            if ((mc+{4'b0,ma}+{4'b0,mb})>MTH) rbuf[rcnt]<=1; else rbuf[rcnt]<=0;
+                            rbuf[rcnt] <= ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH);
                             if (rcnt==31) begin
-                                result<={rbuf[30:0],((mc+{4'b0,ma}+{4'b0,mb})>MTH)};
-                                irq_aclk_s<=1; state<=S_ACK;
+                                result <= rbuf | ({31'b0, ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH)} << rcnt);
+                                irq_aclk_s<=1;
+                                rcnt<=0;
+                                state<=S_ACK;
                             end else if (pxl_done+1>=total) begin
-                                result<={rbuf[30:0],((mc+{4'b0,ma}+{4'b0,mb})>MTH)};
-                                busy_s<=0; done_s<=1; state<=S_DONE;
+                                result <= rbuf | ({31'b0, ((mc+{4'b0,ma}+{4'b0,mb}) <= MTH)} << rcnt);
+                                busy_s<=0;
+                                done_s<=1;
+                                rcnt<=0;
+                                state<=S_DONE;
                             end else begin
-                                src_addr<=src_addr+64'd8; RREADY<=0; state<=S_AR;
+                                rcnt<=rcnt+1;
+                                src_addr<=src_addr+64'd8;
+                                RREADY<=0;
+                                state<=S_AR;
                             end
                             beat<=0; pxl_done<=pxl_done+1; mc<=0;
                         end else begin
@@ -168,5 +181,21 @@ module pixel_proc(
     assign AWADDR=0; assign AWVALID=0;
     assign WDATA=0; assign WSTRB=0; assign WVALID=0; assign BREADY=0;
     wire [31:0] result_s = result;
+    assign debug_s = {
+        8'hDB,
+        10'b0,
+        state,
+        done_s,
+        busy_s,
+        irq_aclk_s,
+        ack_stb,
+        ack_s2,
+        ack_s1,
+        start_stb,
+        start_s2,
+        start_s1,
+        ARESETN,
+        start_pclk
+    };
 
 endmodule

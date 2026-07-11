@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<SynplifyOutput>
-	<result>Success</result>
-	<design>MY_CUSTOM_FPGA_DESIGN_709E0BD6</design>
-	<target_verilog>/home/livan/gateware/gateware/work/libero/synthesis/MY_CUSTOM_FPGA_DESIGN_709E0BD6.vm</target_verilog>
-</SynplifyOutput>

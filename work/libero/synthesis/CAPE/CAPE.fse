@@ -1,12 +1,14 @@
 
-fsm_encoding {1289549511} sequential
+fsm_encoding {128100410011} onehot
 
-fsm_state_encoding {1289549511} S_IDLE {00}
+fsm_state_encoding {128100410011} S_IDLE {00001}
 
-fsm_state_encoding {1289549511} S_AR {01}
+fsm_state_encoding {128100410011} S_AR {00010}
 
-fsm_state_encoding {1289549511} S_RD {10}
+fsm_state_encoding {128100410011} S_RD {00100}
 
-fsm_state_encoding {1289549511} S_DONE {11}
+fsm_state_encoding {128100410011} S_ACK {01000}
 
-fsm_registers {1289549511} {state[1]}  {state[0]} 
+fsm_state_encoding {128100410011} S_DONE {10000}
+
+fsm_registers {128100410011} {state[4]}  {state[3]}  {state[2]}  {state[1]}  {state[0]} 

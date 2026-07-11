@@ -1,4 +1,4 @@
-Selecting top level module MY_CUSTOM_FPGA_DESIGN_709E0BD6
+Selecting top level module MY_CUSTOM_FPGA_DESIGN_AD23179A
 @N: CG775 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":31:7:31:14|Component CoreAPB3 not found in library "work" or "__hyper__lib__", but found in library COREAPB3_LIB
 @N: CG364 :"/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro/lib/generic/acg5.v":187:7:187:10|Synthesizing module AND4 in library work.
 Running optimization stage 1 on AND4 .......
@@ -698,14 +698,6 @@ Running optimization stage 1 on apb_ctrl_status .......
 Finished optimization stage 1 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 257MB peak: 257MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":2:7:2:16|Synthesizing module pixel_proc in library work.
 Running optimization stage 1 on pixel_proc .......
-@W: CL265 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Removing unused bit 31 of rbuf[31:0]. Either assign all bits or reduce the width of the signal.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[0] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[1] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[2] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[3] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[4] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rcnt[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Pruning unused register rcnt[5:0]. Make sure that there are no unused intermediate registers.
 Finished optimization stage 1 on pixel_proc (CPU Time 0h:00m:00s, Memory Used current: 257MB peak: 258MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":5:7:5:15|Synthesizing module cape_regs in library work.
 @W: CS263 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":42:18:42:22|Port-width mismatch for port paddr. The port definition is 8 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
@@ -1319,7 +1311,7 @@ Finished optimization stage 1 on CAPE_PWM (CPU Time 0h:00m:00s, Memory Used curr
 	NUM_STAGES=32'b00000000000000000000000000000011
    Generated name = caxi4interconnect_ResetSync_0s_27s_3s
 Running optimization stage 1 on caxi4interconnect_ResetSync_0s_27s_3s .......
-Finished optimization stage 1 on caxi4interconnect_ResetSync_0s_27s_3s (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
+Finished optimization stage 1 on caxi4interconnect_ResetSync_0s_27s_3s (CPU Time 0h:00m:00s, Memory Used current: 265MB peak: 265MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":20:7:20:26|Synthesizing module COREAXI4INTERCONNECT in library work.
 
 	FAMILY=32'b00000000000000000000000000011011
@@ -3721,7 +3713,7 @@ Finished optimization stage 1 on caxi4interconnect_ResetSync_0s_27s_3s (CPU Time
 	MAX_TRANS_WIDTH=32'b00000000000000000000000000000010
    Generated name = caxi4interconnect_TargetMuxController_Z22
 Running optimization stage 1 on caxi4interconnect_TargetMuxController_Z22 .......
-Finished optimization stage 1 on caxi4interconnect_TargetMuxController_Z22 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_TargetMuxController_Z22 (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":19:7:19:41|Synthesizing module caxi4interconnect_AddressController in library work.
 
 	NUM_INITIATORS=32'b00000000000000000000000000000010
@@ -3786,7 +3778,7 @@ Finished optimization stage 1 on caxi4interconnect_TargetMuxController_Z22 (CPU 
 	CONNECTIVITY=2'b11
    Generated name = caxi4interconnect_InitiatorAddressDecoder_2s_2s_0s_32s_32s_0s_0_1610612736_2147483647_3_Z25
 Running optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_0s_32s_32s_0s_0_1610612736_2147483647_3_Z25 .......
-Finished optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_0s_32s_32s_0s_0_1610612736_2147483647_3_Z25 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_0s_32s_32s_0s_0_1610612736_2147483647_3_Z25 (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorAddressDecoder.v":19:7:19:47|Synthesizing module caxi4interconnect_InitiatorAddressDecoder in library work.
 
 	NUM_TARGETS_WIDTH=32'b00000000000000000000000000000010
@@ -3801,9 +3793,9 @@ Finished optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s
 	CONNECTIVITY=2'b11
    Generated name = caxi4interconnect_InitiatorAddressDecoder_2s_2s_1s_32s_32s_0s_0_18446744071562067968_18446744071830503423_3_Z26
 Running optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_1s_32s_32s_0s_0_18446744071562067968_18446744071830503423_3_Z26 .......
-Finished optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_1s_32s_32s_0s_0_18446744071562067968_18446744071830503423_3_Z26 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_InitiatorAddressDecoder_2s_2s_1s_32s_32s_0s_0_18446744071562067968_18446744071830503423_3_Z26 (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 Running optimization stage 1 on caxi4interconnect_DependenceChecker_Z24 .......
-Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z24 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z24 (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":24:7:24:45|Synthesizing module caxi4interconnect_TransactionController in library work.
 
 	NUM_TARGETS_WIDTH=32'b00000000000000000000000000000010
@@ -3816,7 +3808,7 @@ Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z24 (CPU Ti
    Generated name = caxi4interconnect_TransactionController_2s_2s_1_1_0_1s_1s
 @W: CG133 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":82:11:82:11|Object k is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_0_1s_1s .......
-Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorControl.v":18:7:18:40|Synthesizing module caxi4interconnect_InitiatorControl in library work.
 
 	NUM_TARGETS=32'b00000000000000000000000000000011
@@ -3837,7 +3829,7 @@ Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1
 	TARGET_READ_INTERLEAVE=3'b000
    Generated name = caxi4interconnect_InitiatorControl_Z27
 Running optimization stage 1 on caxi4interconnect_InitiatorControl_Z27 .......
-Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z27 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z27 (CPU Time 0h:00m:00s, Memory Used current: 268MB peak: 268MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":19:7:19:37|Synthesizing module caxi4interconnect_RegisterSlice in library work.
 
 	AWCHAN=32'b00000000000000000000000000000001
@@ -3862,9 +3854,9 @@ Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z27 (CPU Tim
 	TWO_DAT=2'b10
    Generated name = caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2
 Running optimization stage 1 on caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2 .......
-Finished optimization stage 1 on caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 Running optimization stage 1 on caxi4interconnect_RegisterSlice_Z28 .......
-Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z28 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z28 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARID on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARADDR on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARLEN on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
@@ -3937,7 +3929,7 @@ Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z28 (CPU Time 0
 	STATUS_WORD=5'b00000
    Generated name = caxi4interconnect_RoundRobinArb_2s_1s_1s_0
 Running optimization stage 1 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 .......
-Finished optimization stage 1 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":182:47:182:60|Removing wire initiatorready, as there is no assignment to it.
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":204:39:204:51|Removing wire outstnd_wrrdy, as there is no assignment to it.
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":205:39:205:52|Removing wire outstnd_fifowr, as there is no assignment to it.
@@ -3946,7 +3938,7 @@ Finished optimization stage 1 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 (CPU
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":212:39:212:55|Removing wire outstnd_fifo_full, as there is no assignment to it.
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":213:36:213:47|Removing wire initiatorrdy, as there is no assignment to it.
 Running optimization stage 1 on caxi4interconnect_AddressController_Z23 .......
-Finished optimization stage 1 on caxi4interconnect_AddressController_Z23 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_AddressController_Z23 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RDataController.v":19:7:19:39|Synthesizing module caxi4interconnect_RDataController in library work.
 
 	NUM_INITIATORS=32'b00000000000000000000000000000010
@@ -3985,7 +3977,7 @@ Finished optimization stage 1 on caxi4interconnect_AddressController_Z23 (CPU Ti
 	THREAD_VEC_WIDTH=32'b00000000000000000000000000000100
    Generated name = caxi4interconnect_ReadDataMux_Z30
 Running optimization stage 1 on caxi4interconnect_ReadDataMux_Z30 .......
-Finished optimization stage 1 on caxi4interconnect_ReadDataMux_Z30 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_ReadDataMux_Z30 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataController.v":19:7:19:42|Synthesizing module caxi4interconnect_ReadDataController in library work.
 
 	INITIATOR_NUM=4'b0000
@@ -4020,7 +4012,7 @@ Finished optimization stage 1 on caxi4interconnect_ReadDataMux_Z30 (CPU Time 0h:
 	INITIATORID_WIDTH=32'b00000000000000000000000000000010
    Generated name = caxi4interconnect_RequestQual_3s_1s_1s_1s_2s
 Running optimization stage 1 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s .......
-Finished optimization stage 1 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RdFifoDualPort.v":18:7:18:38|Synthesizing module caxi4interconnect_RdFifoDualPort in library work.
 
 	HI_FREQ=32'b00000000000000000000000000000001
@@ -4042,11 +4034,11 @@ Finished optimization stage 1 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s (C
    Generated name = caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s
 Running optimization stage 1 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s .......
 @N: CL134 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|Found RAM mem, depth=8, width=2
-Finished optimization stage 1 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 Running optimization stage 1 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 .......
-Finished optimization stage 1 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 Running optimization stage 1 on caxi4interconnect_ReadDataController_Z31 .......
-Finished optimization stage 1 on caxi4interconnect_ReadDataController_Z31 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_ReadDataController_Z31 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataController.v":19:7:19:42|Synthesizing module caxi4interconnect_ReadDataController in library work.
 
 	INITIATOR_NUM=4'b0001
@@ -4073,9 +4065,9 @@ Finished optimization stage 1 on caxi4interconnect_ReadDataController_Z31 (CPU T
 	OPEN_RDTRANS_MAX_FIFO_AWIDTH=32'b00000000000000000000000000000011
    Generated name = caxi4interconnect_ReadDataController_Z32
 Running optimization stage 1 on caxi4interconnect_ReadDataController_Z32 .......
-Finished optimization stage 1 on caxi4interconnect_ReadDataController_Z32 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_ReadDataController_Z32 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 Running optimization stage 1 on caxi4interconnect_RDataController_Z29 .......
-Finished optimization stage 1 on caxi4interconnect_RDataController_Z29 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RDataController_Z29 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":19:7:19:41|Synthesizing module caxi4interconnect_AddressController in library work.
 
 	NUM_INITIATORS=32'b00000000000000000000000000000010
@@ -4127,7 +4119,7 @@ Finished optimization stage 1 on caxi4interconnect_RDataController_Z29 (CPU Time
 	BIN_WIDTH=32'b00000000000000000000000000000001
    Generated name = caxi4interconnect_DependenceChecker_Z34
 Running optimization stage 1 on caxi4interconnect_DependenceChecker_Z34 .......
-Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z34 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z34 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":24:7:24:45|Synthesizing module caxi4interconnect_TransactionController in library work.
 
 	NUM_TARGETS_WIDTH=32'b00000000000000000000000000000010
@@ -4140,7 +4132,7 @@ Finished optimization stage 1 on caxi4interconnect_DependenceChecker_Z34 (CPU Ti
    Generated name = caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s
 @W: CG133 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":82:11:82:11|Object k is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s .......
-Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/InitiatorControl.v":18:7:18:40|Synthesizing module caxi4interconnect_InitiatorControl in library work.
 
 	NUM_TARGETS=32'b00000000000000000000000000000011
@@ -4161,7 +4153,7 @@ Finished optimization stage 1 on caxi4interconnect_TransactionController_2s_2s_1
 	TARGET_READ_INTERLEAVE=3'b001
    Generated name = caxi4interconnect_InitiatorControl_Z35
 Running optimization stage 1 on caxi4interconnect_InitiatorControl_Z35 .......
-Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z35 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z35 (CPU Time 0h:00m:00s, Memory Used current: 269MB peak: 269MB)
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARID on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARADDR on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARLEN on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
@@ -4199,7 +4191,7 @@ Finished optimization stage 1 on caxi4interconnect_InitiatorControl_Z35 (CPU Tim
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARLEN on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 @W: CG781 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/AddressController.v":298:18:298:29|Input srcARSIZE on instance addr_ctrl_rs is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
 
-Only the first 100 messages of id 'CG781' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_compiler.srr -id CG781' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG781} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CG781' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_AD23179A_compiler.srr -id CG781' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG781} -count unlimited' in the Tcl shell.
 Running optimization stage 1 on caxi4interconnect_AddressController_Z33 .......
 Finished optimization stage 1 on caxi4interconnect_AddressController_Z33 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/WDataController.v":19:7:19:39|Synthesizing module caxi4interconnect_WDataController in library work.
@@ -4441,7 +4433,7 @@ Finished optimization stage 1 on caxi4interconnect_IntrClockDomainCrossing_Z42 (
 	READY_REG=32'b00000000000000000000000000000001
    Generated name = caxi4interconnect_RegisterSlice_Z43
 Running optimization stage 1 on caxi4interconnect_RegisterSlice_Z43 .......
-Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z43 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z43 (CPU Time 0h:00m:00s, Memory Used current: 271MB peak: 271MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":19:7:19:41|Synthesizing module caxi4interconnect_IntrDataWidthConv in library work.
 
 	INITIATOR_TYPE=2'b00
@@ -4460,7 +4452,7 @@ Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z43 (CPU Time 0
 	SYNC_RESET=32'b00000000000000000000000000000000
    Generated name = caxi4interconnect_IntrDataWidthConv_Z44
 Running optimization stage 1 on caxi4interconnect_IntrDataWidthConv_Z44 .......
-Finished optimization stage 1 on caxi4interconnect_IntrDataWidthConv_Z44 (CPU Time 0h:00m:00s, Memory Used current: 270MB peak: 270MB)
+Finished optimization stage 1 on caxi4interconnect_IntrDataWidthConv_Z44 (CPU Time 0h:00m:00s, Memory Used current: 271MB peak: 271MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":19:7:19:37|Synthesizing module caxi4interconnect_RegisterSlice in library work.
 
 	AWCHAN=1'b1
@@ -4619,7 +4611,7 @@ Finished optimization stage 1 on caxi4interconnect_InitiatorConvertor_Z41 (CPU T
 Running optimization stage 1 on caxi4interconnect_IntrProtocolConverter_4s_1s_32s_64s_0_1s_1s .......
 Finished optimization stage 1 on caxi4interconnect_IntrProtocolConverter_4s_1s_32s_64s_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 272MB peak: 272MB)
 
-Only the first 100 messages of id 'CG364' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_compiler.srr -id CG364' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG364} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CG364' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_AD23179A_compiler.srr -id CG364' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG364} -count unlimited' in the Tcl shell.
 
 	INITIATOR_TYPE=2'b00
 	INITIATOR_NUMBER=32'b00000000000000000000000000000001
@@ -4905,7 +4897,7 @@ Finished optimization stage 1 on caxi4interconnect_TrgtProtocolConverter_Z53 (CP
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":300:39:300:57|Removing wire cdc_dwc_targetRRESP, as there is no assignment to it.
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":301:36:301:54|Removing wire cdc_dwc_targetRLAST, as there is no assignment to it.
 
-Only the first 100 messages of id 'CG360' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_compiler.srr -id CG360' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG360} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CG360' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_AD23179A_compiler.srr -id CG360' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG360} -count unlimited' in the Tcl shell.
 @W: CG133 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":1671:7:1671:13|Object trgt_rs is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on caxi4interconnect_TargetConvertor_Z49 .......
 Finished optimization stage 1 on caxi4interconnect_TargetConvertor_Z49 (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
@@ -4994,10 +4986,10 @@ Finished optimization stage 1 on caxi4interconnect_TrgtDataWidthConverter_Z55 (C
 	BYPASS_CROSSBAR=1'b0
    Generated name = caxi4interconnect_TrgtProtocolConverter_Z56
 Running optimization stage 1 on caxi4interconnect_TrgtProtocolConverter_Z56 .......
-Finished optimization stage 1 on caxi4interconnect_TrgtProtocolConverter_Z56 (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
+Finished optimization stage 1 on caxi4interconnect_TrgtProtocolConverter_Z56 (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
 @W: CG133 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":1671:7:1671:13|Object trgt_rs is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on caxi4interconnect_TargetConvertor_Z54 .......
-Finished optimization stage 1 on caxi4interconnect_TargetConvertor_Z54 (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
+Finished optimization stage 1 on caxi4interconnect_TargetConvertor_Z54 (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
 Running optimization stage 1 on COREAXI4INTERCONNECT_Z21 .......
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2009:66:2009:82|*Output INITIATOR2_HREADY has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2009:88:2009:104|*Output INITIATOR3_HREADY has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
@@ -5099,7 +5091,7 @@ Running optimization stage 1 on COREAXI4INTERCONNECT_Z21 .......
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2227:32:2227:48|*Output INITIATOR15_BRESP has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2229:74:2229:89|*Output INITIATOR2_BUSER has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
 
-Only the first 100 messages of id 'CL318' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_compiler.srr -id CL318' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL318} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CL318' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_AD23179A_compiler.srr -id CL318' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL318} -count unlimited' in the Tcl shell.
 Finished optimization stage 1 on COREAXI4INTERCONNECT_Z21 (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
 Running optimization stage 1 on CAPE_AXI_XBAR .......
 Finished optimization stage 1 on CAPE_AXI_XBAR (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
@@ -5144,16 +5136,16 @@ Running optimization stage 1 on PF_CCC_ADC .......
 Finished optimization stage 1 on PF_CCC_ADC (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
 Running optimization stage 1 on CLOCKS_AND_RESETS .......
 Finished optimization stage 1 on CLOCKS_AND_RESETS (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":784:35:784:53|Port-width mismatch for port ms_arid. The port definition is 2 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":785:35:785:53|Port-width mismatch for port ms_awid. The port definition is 2 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
-@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":160:14:160:35|Removing wire CAPE_AXI4mtarget0_ACLK, as it has the load but no drivers.
-@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":162:14:162:38|Removing wire CAPE_AXI4mtarget0_ARESETN, as it has the load but no drivers.
-Running optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_709E0BD6 .......
-Finished optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_709E0BD6 (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
-Running optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_709E0BD6 .......
-@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":160:14:160:35|*Input CAPE_AXI4mtarget0_ACLK to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
-@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_709E0BD6/MY_CUSTOM_FPGA_DESIGN_709E0BD6.v":162:14:162:38|*Input CAPE_AXI4mtarget0_ARESETN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
-Finished optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_709E0BD6 (CPU Time 0h:00m:00s, Memory Used current: 279MB peak: 279MB)
+@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":784:35:784:53|Port-width mismatch for port ms_arid. The port definition is 2 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
+@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":785:35:785:53|Port-width mismatch for port ms_awid. The port definition is 2 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
+@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":160:14:160:35|Removing wire CAPE_AXI4mtarget0_ACLK, as it has the load but no drivers.
+@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":162:14:162:38|Removing wire CAPE_AXI4mtarget0_ARESETN, as it has the load but no drivers.
+Running optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_AD23179A .......
+Finished optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_AD23179A (CPU Time 0h:00m:00s, Memory Used current: 277MB peak: 277MB)
+Running optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_AD23179A .......
+@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":160:14:160:35|*Input CAPE_AXI4mtarget0_ACLK to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_AD23179A/MY_CUSTOM_FPGA_DESIGN_AD23179A.v":162:14:162:38|*Input CAPE_AXI4mtarget0_ARESETN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Finished optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_AD23179A (CPU Time 0h:00m:00s, Memory Used current: 279MB peak: 279MB)
 Running optimization stage 2 on CLOCKS_AND_RESETS .......
 Finished optimization stage 2 on CLOCKS_AND_RESETS (CPU Time 0h:00m:00s, Memory Used current: 279MB peak: 279MB)
 Running optimization stage 2 on PF_CCC_ADC .......
@@ -5254,7 +5246,7 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_76s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_76s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_70s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5263,7 +5255,7 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_70s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_70s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5272,20 +5264,20 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_65s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegisterSlice_Z48 .......
-Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z48 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z48 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z47 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":42:26:42:29|Input ACLK is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":43:25:43:33|Input arst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":44:25:44:33|Input srst_sync is unused.
-Finished optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z47 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z47 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_1s_32s_64s_0_1s_1s .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":37:38:37:41|Input ACLK is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":38:37:38:46|Input iarst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":39:37:39:46|Input isrst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":137:31:137:43|Input INITIATOR_WID is unused.
-Finished optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_1s_32s_64s_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_1s_32s_64s_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z46 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":65:25:65:31|Input ARESETN is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":184:45:184:59|Input INITIATOR_HADDR is unused.
@@ -5298,7 +5290,7 @@ Running optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z46 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":191:45:191:60|Input INITIATOR_HWDATA is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":193:45:193:60|Input INITIATOR_HWRITE is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":196:45:196:58|Input INITIATOR_HSEL is unused.
-Finished optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z46 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z46 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_4s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5307,7 +5299,7 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_4s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_4s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_75s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5316,7 +5308,7 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_75s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_75s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_69s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5325,7 +5317,7 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_69s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_69s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5334,19 +5326,19 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegisterSlice_Z45 .......
-Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z45 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z45 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z44 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":42:26:42:29|Input ACLK is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":43:25:43:33|Input arst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrDataWidthConv.v":44:25:44:33|Input srst_sync is unused.
-Finished optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z44 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_IntrDataWidthConv_Z44 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegisterSlice_Z43 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":41:26:41:31|Input sysClk is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":42:25:42:33|Input arst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegisterSlice.v":43:25:43:33|Input srst_sync is unused.
-Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z43 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RegisterSlice_Z43 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_IntrClockDomainCrossing_Z42 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrClockDomainCrossing.v":38:26:38:34|Input INITR_CLK is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrClockDomainCrossing.v":39:33:39:40|Input XBAR_CLK is unused.
@@ -5354,13 +5346,13 @@ Running optimization stage 2 on caxi4interconnect_IntrClockDomainCrossing_Z42 ..
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrClockDomainCrossing.v":41:25:41:34|Input isrst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrClockDomainCrossing.v":42:25:42:33|Input arst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrClockDomainCrossing.v":43:25:43:33|Input srst_sync is unused.
-Finished optimization stage 2 on caxi4interconnect_IntrClockDomainCrossing_Z42 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_IntrClockDomainCrossing_Z42 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_0s_32s_64s_0_1s_1s .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":37:38:37:41|Input ACLK is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":38:37:38:46|Input iarst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":39:37:39:46|Input isrst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/IntrProtocolConverter.v":137:31:137:43|Input INITIATOR_WID is unused.
-Finished optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_0s_32s_64s_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_IntrProtocolConverter_4s_0s_32s_64s_0_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z41 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":65:25:65:31|Input ARESETN is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":184:45:184:59|Input INITIATOR_HADDR is unused.
@@ -5373,11 +5365,11 @@ Running optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z41 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":191:45:191:60|Input INITIATOR_HWDATA is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":193:45:193:60|Input INITIATOR_HWRITE is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/InitiatorConvertor.v":196:45:196:58|Input INITIATOR_HSEL is unused.
-Finished optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z41 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_InitiatorConvertor_Z41 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_Axi4CrossBar_Z40 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/Axi4CrossBar.v":85:53:85:70|Input INITIATOR_AWREGION is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/Axi4CrossBar.v":116:44:116:61|Input INITIATOR_ARREGION is unused.
-Finished optimization stage 2 on caxi4interconnect_Axi4CrossBar_Z40 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_Axi4CrossBar_Z40 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_DERR_Target_Z39 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Trying to extract state machine for register currState.
 Extracted state machine for register currState
@@ -5395,25 +5387,25 @@ State machine has 8 reachable states with original encodings of:
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":55:39:55:48|Input DERR_WDATA is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":56:51:56:60|Input DERR_WSTRB is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":58:43:58:52|Input DERR_WUSER is unused.
-Finished optimization stage 2 on caxi4interconnect_DERR_Target_Z39 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_DERR_Target_Z39 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_revision .......
-Finished optimization stage 2 on caxi4interconnect_revision (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_revision (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RespController_Z38 .......
-Finished optimization stage 2 on caxi4interconnect_RespController_Z38 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RespController_Z38 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_TargetDataMuxController_Z37 .......
-Finished optimization stage 2 on caxi4interconnect_TargetDataMuxController_Z37 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_TargetDataMuxController_Z37 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RoundRobinArb_3s_2s_0s_0 .......
-Finished optimization stage 2 on caxi4interconnect_RoundRobinArb_3s_2s_0s_0 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RoundRobinArb_3s_2s_0s_0 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_0_3s_3s_8s .......
-Finished optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_0_3s_3s_8s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_0_3s_3s_8s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_FifoDualPort_0_2_3s_3s_1 .......
-Finished optimization stage 2 on caxi4interconnect_FifoDualPort_0_2_3s_3s_1 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_FifoDualPort_0_2_3s_3s_1 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_WDataController_Z36 .......
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/WDataController.v":77:55:77:61|Input port bit 0 of srcPort[1:0] is unused
 
-Finished optimization stage 2 on caxi4interconnect_WDataController_Z36 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_WDataController_Z36 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_InitiatorControl_Z35 .......
-Finished optimization stage 2 on caxi4interconnect_InitiatorControl_Z35 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_InitiatorControl_Z35 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":52:32:52:48|Input currTransTargetID is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":53:32:53:42|Input currTransID is unused.
@@ -5422,22 +5414,22 @@ Running optimization stage 2 on caxi4interconnect_TransactionController_2s_2s_1_
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":66:40:66:50|Input query_valid is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":67:40:67:54|Input query_target_id is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TransactionController.v":68:40:68:53|Input query_trans_id is unused.
-Finished optimization stage 2 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_TransactionController_2s_2s_1_1_1_1s_1s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_DependenceChecker_Z34 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":45:50:45:55|Input sysClk is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":46:50:46:58|Input arst_sync is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DependenceChecker.v":47:50:47:58|Input srst_sync is unused.
-Finished optimization stage 2 on caxi4interconnect_DependenceChecker_Z34 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_DependenceChecker_Z34 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_AddressController_Z33 .......
-Finished optimization stage 2 on caxi4interconnect_AddressController_Z33 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_AddressController_Z33 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_ReadDataController_Z32 .......
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataController.v":89:55:89:63|Input port bit 0 of rdSrcPort[1:0] is unused
 
-Finished optimization stage 2 on caxi4interconnect_ReadDataController_Z32 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_ReadDataController_Z32 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s .......
-Finished optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_DualPort_FF_SyncWr_SyncRd_1s_3s_2s_8s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 .......
-Finished optimization stage 2 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RdFifoDualPort_1s_2_3s_2s_3s_0s_3s_0s_2 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RequestQual.v":28:57:28:69|Input port bits 3 to 1 of INITIATOR_NUM[3:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RequestQual.v":29:68:29:76|Input port bit 4 of TARGET_ID[5:0] is unused
@@ -5446,17 +5438,17 @@ Running optimization stage 2 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s ...
 
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RequestQual.v":29:68:29:76|Input port bit 0 of TARGET_ID[5:0] is unused
 
-Finished optimization stage 2 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RequestQual_3s_1s_1s_1s_2s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_ReadDataController_Z31 .......
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ReadDataController.v":89:55:89:63|Input port bit 0 of rdSrcPort[1:0] is unused
 
-Finished optimization stage 2 on caxi4interconnect_ReadDataController_Z31 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_ReadDataController_Z31 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_ReadDataMux_Z30 .......
-Finished optimization stage 2 on caxi4interconnect_ReadDataMux_Z30 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_ReadDataMux_Z30 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RDataController_Z29 .......
-Finished optimization stage 2 on caxi4interconnect_RDataController_Z29 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RDataController_Z29 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 .......
-Finished optimization stage 2 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 281MB)
+Finished optimization stage 2 on caxi4interconnect_RoundRobinArb_2s_1s_1s_0 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_RegSliceFull_67s_1s_0_1_3_2 .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Trying to extract state machine for register gen_ready_reg_en.currState.
 Extracted state machine for register gen_ready_reg_en.currState
@@ -5501,7 +5493,7 @@ Running optimization stage 2 on COREAXI4INTERCONNECT_Z21 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1978:44:1978:59|Input INITIATOR6_HADDR is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1978:66:1978:81|Input INITIATOR7_HADDR is unused.
 
-Only the first 100 messages of id 'CL159' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_709E0BD6_compiler.srr -id CL159' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL159} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CL159' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_AD23179A_compiler.srr -id CL159' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL159} -count unlimited' in the Tcl shell.
 Finished optimization stage 2 on COREAXI4INTERCONNECT_Z21 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
 Running optimization stage 2 on caxi4interconnect_ResetSync_0s_27s_3s .......
 Finished optimization stage 2 on caxi4interconnect_ResetSync_0s_27s_3s (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
@@ -5542,82 +5534,21 @@ Running optimization stage 2 on cape_regs .......
 Finished optimization stage 2 on cape_regs (CPU Time 0h:00m:00s, Memory Used current: 284MB peak: 284MB)
 Running optimization stage 2 on pixel_proc .......
 @N: CL135 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":38:4:38:9|Found sequential shift irq_pclk with address depth of 3 words and data bit width of 1.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit irq_aclk_s to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[1] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[2] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[3] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[4] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[6] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[7] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[8] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[9] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[10] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[11] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[12] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[13] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[14] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[15] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[16] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[17] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[18] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[19] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[20] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[21] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[22] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[23] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[24] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[25] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[26] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[27] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[28] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[29] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit rbuf[30] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Pruning register bits 30 to 1 of rbuf[30:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL169 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Pruning unused register irq_aclk_s. Make sure that there are no unused intermediate registers.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[2] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[3] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[4] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[6] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[7] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[8] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[9] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[10] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[11] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[12] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[13] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[14] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[15] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[16] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[17] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[18] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[19] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[20] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[21] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[22] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[23] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[24] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[25] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[26] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[27] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[28] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[29] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[30] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Optimizing register bit result[31] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Pruning register bits 31 to 2 of result[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@N: CL201 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":95:4:95:9|Trying to extract state machine for register state.
+@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":100:4:100:9|Optimizing register bit rcnt[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":100:4:100:9|Pruning register bit 5 of rcnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":100:4:100:9|Trying to extract state machine for register state.
 Extracted state machine for register state
-State machine has 4 reachable states with original encodings of:
+State machine has 5 reachable states with original encodings of:
    000
    001
    010
+   011
    100
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":14:24:14:28|Input port bits 63 to 56 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":14:24:14:28|Input port bits 31 to 24 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on pixel_proc (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on pixel_proc (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on apb_ctrl_status .......
-Finished optimization stage 2 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on CAPE_DEFAULT_GPIOS .......
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE_DEFAULT_GPIOS/CAPE_DEFAULT_GPIOS.v":47:14:47:20|Input port bit 16 of GPIO_OE[27:0] is unused
 
@@ -5627,89 +5558,89 @@ Running optimization stage 2 on CAPE_DEFAULT_GPIOS .......
 
 @W: CL247 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE_DEFAULT_GPIOS/CAPE_DEFAULT_GPIOS.v":48:14:48:21|Input port bit 10 of GPIO_OUT[27:0] is unused
 
-Finished optimization stage 2 on CAPE_DEFAULT_GPIOS (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on CAPE_DEFAULT_GPIOS (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on APB_BUS_CONVERTER .......
-Finished optimization stage 2 on APB_BUS_CONVERTER (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on APB_BUS_CONVERTER (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on BVF_RISCV_SUBSYSTEM .......
-Finished optimization stage 2 on BVF_RISCV_SUBSYSTEM (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on BVF_RISCV_SUBSYSTEM (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on PF_SOC_MSS .......
-Finished optimization stage 2 on PF_SOC_MSS (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on PF_SOC_MSS (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on MSS .......
-Finished optimization stage 2 on MSS (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on MSS (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on GND .......
-Finished optimization stage 2 on GND (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on GND (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on VCC .......
-Finished optimization stage 2 on VCC (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on VCC (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on BIBUF_DIFF .......
-Finished optimization stage 2 on BIBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on BIBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on OUTBUF_DIFF .......
-Finished optimization stage 2 on OUTBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on OUTBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on INBUF_DIFF .......
-Finished optimization stage 2 on INBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on INBUF_DIFF (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on INV .......
-Finished optimization stage 2 on INV (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on INV (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on INBUF .......
-Finished optimization stage 2 on INBUF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on INBUF (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on OUTBUF .......
-Finished optimization stage 2 on OUTBUF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on OUTBUF (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on MIV_IHC_C0 .......
-Finished optimization stage 2 on MIV_IHC_C0 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on MIV_IHC_C0 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_apb_target_top_0s_0s_0s_0s_0s_0s_0s_0s_0s .......
-Finished optimization stage 2 on miv_ihc_apb_target_top_0s_0s_0s_0s_0s_0s_0s_0s_0s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_apb_target_top_0s_0s_0s_0s_0s_0s_0s_0s_0s (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15 .......
-Finished optimization stage 2 on MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on MIV_IHC_C0_MIV_IHC_C0_0_MIV_IHC_Z15 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_interrupt_module_0s_8s_32s_0_8 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1786:65:1786:69|Input port bits 31 to 12 of WDATA[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_interrupt_module_0s_8s_32s_0_8 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_interrupt_module_0s_8s_32s_0_8 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z14 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z14 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z14 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z13 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z13 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z13 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z12 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z12 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z12 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z11 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z11 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z11 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z10 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z10 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z10 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z9 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z9 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z9 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z8 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z8 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z8 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z7 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z7 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z7 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z6 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z6 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z6 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_channel_Z5 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1394:59:1394:68|Input port bits 31 to 6 of WDATA_CH_A[31:0] are unused. Assign logic for all port bits or change the input port size.
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1395:59:1395:68|Input port bits 31 to 6 of WDATA_CH_B[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_channel_Z5 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_channel_Z5 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_core_Z4 .......
-Finished optimization stage 2 on miv_ihc_core_Z4 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_core_Z4 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_mailbox_address_decoder_Z3 .......
-Finished optimization stage 2 on miv_ihc_mailbox_address_decoder_Z3 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_mailbox_address_decoder_Z3 (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_ram_singleport_addreg_128s_7s_32s .......
-Finished optimization stage 2 on miv_ihc_ram_singleport_addreg_128s_7s_32s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_ram_singleport_addreg_128s_7s_32s (CPU Time 0h:00m:00s, Memory Used current: 301MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_address_controller_Z2 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1940:32:1940:35|Input port bits 31 to 20 of ADDR[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on miv_ihc_address_controller_Z2 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_address_controller_Z2 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_apb_target_0s_32s_32s .......
 @N: CL201 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3403:0:3403:5|Trying to extract state machine for register fsm.
 Extracted state machine for register fsm
@@ -5718,21 +5649,21 @@ State machine has 4 reachable states with original encodings of:
    01
    10
    11
-Finished optimization stage 2 on miv_ihc_apb_target_0s_32s_32s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_apb_target_0s_32s_32s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on miv_ihc_apb_arbiter_top_0s_1_0_0 .......
-Finished optimization stage 2 on miv_ihc_apb_arbiter_top_0s_1_0_0 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on miv_ihc_apb_arbiter_top_0s_1_0_0 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on BIBUF .......
-Finished optimization stage 2 on BIBUF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on BIBUF (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on FIC3_INITIATOR .......
-Finished optimization stage 2 on FIC3_INITIATOR (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on FIC3_INITIATOR (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on CoreAPB3_Z1 .......
-Finished optimization stage 2 on CoreAPB3_Z1 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on CoreAPB3_Z1 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on COREAPB3_MUXPTOB3 .......
-Finished optimization stage 2 on COREAPB3_MUXPTOB3 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on COREAPB3_MUXPTOB3 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on APB_ARBITER_28s .......
-Finished optimization stage 2 on APB_ARBITER_28s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on APB_ARBITER_28s (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 Running optimization stage 2 on AND4 .......
-Finished optimization stage 2 on AND4 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 309MB)
+Finished optimization stage 2 on AND4 (CPU Time 0h:00m:00s, Memory Used current: 309MB peak: 313MB)
 
 For a summary of runtime per design unit, please see file:
 ==========================================================

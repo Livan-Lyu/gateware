@@ -1,6 +1,6 @@
 set_component PF_CCC_ADC_PF_CCC_ADC_0_PF_CCC
 # Microchip Technology Inc.
-# Date: 2026-Jul-11 00:48:32
+# Date: 2026-Jul-12 02:50:59
 #
 
 # Base clock for PLL #0

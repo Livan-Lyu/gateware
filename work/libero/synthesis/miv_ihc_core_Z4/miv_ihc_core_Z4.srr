@@ -1,4 +1,4 @@
-# Sat Jul 11 00:49:14 2026
+# Sun Jul 12 02:51:39 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -12,7 +12,7 @@ Install: /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro
 OS: Ubuntu 24.04.4 LTS
 Hostname: libero-VMware-Virtual-Platform
 max virtual memory: unlimited (bytes)
-max user processes: 31242
+max user processes: 31243
 max stack size: 8388608 (bytes)
 
 
@@ -20,22 +20,22 @@ Implementation : synthesis
 Synopsys Microchip Technology Mapper, Version map202309act, Build 395R, Built Apr 29 2025 06:16:31, @6004904
 
 
-Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 502MB peak: 502MB)
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 502MB peak: 502MB)
 
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 515MB peak: 517MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 515MB peak: 517MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 515MB peak: 517MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 515MB peak: 517MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 515MB peak: 517MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 515MB peak: 517MB)
 
 
-Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 515MB peak: 517MB)
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 515MB peak: 517MB)
 
 
 Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic. 
@@ -45,18 +45,18 @@ Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic.
 
 @N: MF105 |Performing bottom-up mapping of Compile point view:work.miv_ihc_core_Z4(verilog) 
 
-Begin environment creation (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 575MB peak: 575MB)
+Begin environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 575MB peak: 575MB)
 
-@W: BN114 :|Removing instance CP_fanout_cell_miv_ihc_core_Z4_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_miv_ihc_core_Z4_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_miv_ihc_core_Z4_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_miv_ihc_core_Z4_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
 
-Finished environment creation (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 576MB peak: 576MB)
-
-
-Start loading ILMs (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 576MB peak: 576MB)
+Finished environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 576MB peak: 576MB)
 
 
-Finished loading ILMs (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 576MB peak: 576MB)
+Start loading ILMs (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 576MB peak: 576MB)
+
+
+Finished loading ILMs (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 576MB peak: 576MB)
 
 
 Begin compile point sub-process log
@@ -65,14 +65,14 @@ Begin compile point sub-process log
 		 no database from previous run found.
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 576MB peak: 576MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 576MB peak: 576MB)
 
 
 Available hyper_sources - for debug and ip models
 	None Found
 
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:03s; Memory used current: 576MB peak: 576MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 576MB peak: 576MB)
 
 @N: FX106 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1319:4:1319:9|Using block RAM for single-port RAM
 @W: FX107 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1319:4:1319:9|RAM common_mailbox_ram.mem[31:0] (in view: work.miv_ihc_core_Z4(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
@@ -84,29 +84,29 @@ original code -> new code
    11 -> 11
 @N: MO225 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":3403:0:3403:5|There are no possible illegal states for state machine fsm[3:0] (in view: work.miv_ihc_apb_target_0s_32s_32s(verilog)); safe FSM implementation is not required.
 
-Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 578MB peak: 578MB)
+Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 578MB peak: 578MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 602MB peak: 602MB)
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 602MB peak: 602MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 602MB peak: 602MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 602MB peak: 602MB)
+Finished preparing to map (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 602MB peak: 602MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 650MB peak: 650MB)
+Finished technology mapping (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 650MB peak: 650MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
@@ -117,10 +117,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:08s; Memory used current: 650MB peak: 650MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 650MB peak: 650MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:08s; Memory used current: 650MB peak: 650MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 650MB peak: 650MB)
 
 
 End compile point sub-process log
@@ -134,15 +134,15 @@ End compile point sub-process log
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sat Jul 11 00:49:22 2026
+# Timing report written on Sun Jul 12 02:51:47 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_709E0BD6
+Top view:               MY_CUSTOM_FPGA_DESIGN_AD23179A
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_AD23179A/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -317,7 +317,7 @@ Name                Status     Reason
 miv_ihc_core_Z4     Mapped     No database
 ==========================================
 
-Process took 0h:00m:07s realtime, 0h:00m:08s cputime
-# Sat Jul 11 00:49:22 2026
+Process took 0h:00m:07s realtime, 0h:00m:07s cputime
+# Sun Jul 12 02:51:47 2026
 
 ###########################################################]

@@ -1,4 +1,4 @@
-# Sat Jul 11 00:49:13 2026
+# Sun Jul 12 02:51:38 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -12,7 +12,7 @@ Install: /home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro
 OS: Ubuntu 24.04.4 LTS
 Hostname: libero-VMware-Virtual-Platform
 max virtual memory: unlimited (bytes)
-max user processes: 31242
+max user processes: 31243
 max stack size: 8388608 (bytes)
 
 
@@ -72,23 +72,23 @@ Begin compile point sub-process log
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 615MB peak: 615MB)
 
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
-@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_709E0BD6(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_COREAXI4INTERCONNECT_Z21_verilog_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_AD23179A(verilog)) because it does not drive other instances.
 @N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2849:26:2849:40|Tristate driver TARGET31_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET31_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
 @N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2849:9:2849:23|Tristate driver TARGET30_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET30_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
 @N: MO111 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2848:121:2848:135|Tristate driver TARGET29_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) on net TARGET29_RREADY (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) has its enable tied to GND.
@@ -104,7 +104,7 @@ Available hyper_sources - for debug and ip models
 	None Found
 
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:09s; Memory used current: 616MB peak: 616MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 616MB peak: 616MB)
 
 Encoding state machine gen_ready_reg_en\.currState[3:0] (in view: work.caxi4interconnect_RegSliceFull_64s_1s_0_1_3_2_COREAXI4INTERCONNECT_Z21(verilog))
 original code -> new code
@@ -304,7 +304,7 @@ Starting factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; M
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.sDat[2] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":78:1:78:6|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.sDat[64] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
 
-Finished factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 616MB peak: 616MB)
+Finished factoring (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:11s; Memory used current: 616MB peak: 616MB)
 
 NConnInternalConnection caching is on
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|Removing sequential instance IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrch_rs_en\.awrs.gen_ready_reg_en\.currState[1] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
@@ -340,26 +340,26 @@ NConnInternalConnection caching is on
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.fifo_empty (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/FIFO_CTRL.v":96:0:96:5|Removing sequential instance TrgtConvertor_loop\[0\]\.trgtcnv.genblk2\.trgtProtConv.genblk1\.u_TrgtAxi4WriteID.genblk1\.genblk1\.rdata_interleave_fifo.fifo_ctrl_inst.rdptr[0] (in view: work.COREAXI4INTERCONNECT_Z21(verilog)) because it does not drive other instances.
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:15s; Memory used current: 616MB peak: 616MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:16s; Memory used current: 616MB peak: 616MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+Finished preparing to map (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 616MB peak: 616MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+Finished technology mapping (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 616MB peak: 616MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:17s		     3.65ns		 260 /       434
+   1		0h:00m:18s		     3.65ns		 260 /       434
 
 Added 0 Buffers
 Added 0 Cells via replication
@@ -371,10 +371,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 616MB peak: 616MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:17s; Memory used current: 616MB peak: 616MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 616MB peak: 616MB)
 
 
 End compile point sub-process log
@@ -388,15 +388,15 @@ End compile point sub-process log
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sat Jul 11 00:49:31 2026
+# Timing report written on Sun Jul 12 02:51:58 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_709E0BD6
+Top view:               MY_CUSTOM_FPGA_DESIGN_AD23179A
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_709E0BD6/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_AD23179A/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -625,7 +625,7 @@ Name                         Status     Reason
 COREAXI4INTERCONNECT_Z21     Mapped     No database
 ===================================================
 
-Process took 0h:00m:18s realtime, 0h:00m:18s cputime
-# Sat Jul 11 00:49:31 2026
+Process took 0h:00m:19s realtime, 0h:00m:19s cputime
+# Sun Jul 12 02:51:58 2026
 
 ###########################################################]

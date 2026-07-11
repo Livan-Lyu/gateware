@@ -1,1 +1,1 @@
-run_tcl -fg MY_CUSTOM_FPGA_DESIGN_709E0BD6_syn.tcl
+run_tcl -fg MY_CUSTOM_FPGA_DESIGN_AD23179A_syn.tcl
