@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version V-2023.09M-5
 #--  Project file /home/livan/gateware/gateware/work/libero/synthesis/run_options.txt
-#--  Written on Sun Jul 12 04:25:17 2026
+#--  Written on Sun Jul 12 04:42:41 2026
 
 
 #project files
@@ -142,8 +142,8 @@ add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/OSCI
 add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/PF_CCC_ADC/PF_CCC_ADC_0/PF_CCC_ADC_PF_CCC_ADC_0_PF_CCC.v"
 add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/PF_CCC_ADC/PF_CCC_ADC.v"
 add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.v"
-add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_0613B7DB/MY_CUSTOM_FPGA_DESIGN_0613B7DB.v"
-add_file -fpga_constraint "/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_0613B7DB/synthesis.fdc"
+add_file -verilog "/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_5AF3A212/MY_CUSTOM_FPGA_DESIGN_5AF3A212.v"
+add_file -fpga_constraint "/home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_5AF3A212/synthesis.fdc"
 
 
 #implementation: "synthesis"
@@ -163,7 +163,7 @@ set_option -part_companion ""
 
 #compilation/mapping options
 set_option -use_fsm_explorer 0
-set_option -top_module "MY_CUSTOM_FPGA_DESIGN_0613B7DB"
+set_option -top_module "MY_CUSTOM_FPGA_DESIGN_5AF3A212"
 
 # hdl_compiler_options
 set_option -hdl_strict_syntax 0
@@ -238,5 +238,5 @@ set_option -auto_infer_blackbox 0
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "./MY_CUSTOM_FPGA_DESIGN_0613B7DB.vm"
+project -result_file "./MY_CUSTOM_FPGA_DESIGN_5AF3A212.vm"
 impl -active "synthesis"

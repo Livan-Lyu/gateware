@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 04:25:01 2026
+// Created by SmartDesign Sun Jul 12 04:42:25 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -566,7 +566,7 @@ cape_regs cape_regs_0(
         .pwdata               ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
         .status               ( status_const_net_0 ),
         .ACLK                 ( AXI_ACLK ),
-        .ARESETN              ( AXI_ARESETN ),
+        .ARESETN              ( DBG_FIC0_RESET_N ),
         .ARREADY              ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
         .RDATA                ( cape_regs_0_AXI4_INITIATOR_RDATA ),
         .RVALID               ( cape_regs_0_AXI4_INITIATOR_RVALID ),
