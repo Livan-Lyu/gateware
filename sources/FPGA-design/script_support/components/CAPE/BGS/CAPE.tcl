@@ -148,16 +148,30 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms_rid} -port_direction {OUT}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awid} -port_direction {IN} -port_range {[3:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_bid} -port_direction {OUT} -port_range {[3:0]}
 sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mtarget0}     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" "ARADDR:ms_araddr" "ARVALID:ms_arvalid" "ARREADY:ms_arready" "RDATA:ms_rdata"   "RVALID:ms_rvalid"   "RREADY:ms_rready"   "RRESP:ms_rresp" "AWADDR:ms_awaddr" "AWVALID:ms_awvalid" "AWREADY:ms_awready" "WDATA:ms_wdata"   "WSTRB:ms_wstrb"     "WVALID:ms_wvalid"   "WREADY:ms_wready" "BRESP:ms_bresp"   "BVALID:ms_bvalid"   "BREADY:ms_bready" "ARID:ms_arid" "RID:ms_rid" "AWID:ms_awid" "BID:ms_bid" }
-create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:*}     -component_name {CAPE_AXI_XBAR} -params {
-    "NUM_INITIATORS:1" "NUM_TARGETS:1"
-    "ADDR_WIDTH:38" "DATA_WIDTH:64" "ID_WIDTH:4"
-    "INITIATOR0_DATA_WIDTH:64" "TARGET0_DATA_WIDTH:64"
-    "INITIATOR0_ADDR_WIDTH:38" "TARGET0_ADDR_WIDTH:38"
-    "INITIATOR0_ID_WIDTH:4" "TARGET0_ID_WIDTH:4"
-    "INITIATOR0_READ_ACCEPTANCE:8" "TARGET0_READ_ACCEPTANCE:8"
-    "INITIATOR0_WRITE_ACCEPTANCE:8" "TARGET0_WRITE_ACCEPTANCE:8"
-    "ADVANCED:0" "AREG:1" "RREG:1"
-    "TARGET0_ADDR_RANGE_START:0x80000000" "TARGET0_ADDR_RANGE_END:0xDFFFFFFF"
+create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:3.0.130} -component_name {CAPE_AXI_XBAR} -params {\
+"ADDR_WIDTH:38" \
+"DATA_WIDTH:64" \
+"ID_WIDTH:4" \
+"INITIATOR0_CHAN_RS:true" \
+"INITIATOR0_CLOCK_DOMAIN_CROSSING:false" \
+"INITIATOR0_DATA_WIDTH:64" \
+"INITIATOR0_DWC_DATA_FIFO_DEPTH:16" \
+"INITIATOR0_READ_TARGET0:true" \
+"INITIATOR0_TYPE:0" \
+"INITIATOR0_WRITE_TARGET0:true" \
+"NUM_INITIATORS:1" \
+"NUM_INITIATORS_WIDTH:1" \
+"NUM_TARGETS:1" \
+"OPTIMIZATION:1" \
+"TARGET0_CHAN_RS:true" \
+"TARGET0_CLOCK_DOMAIN_CROSSING:false" \
+"TARGET0_DATA_WIDTH:64" \
+"TARGET0_DWC_DATA_FIFO_DEPTH:16" \
+"TARGET0_END_ADDR:0xdfffffff" \
+"TARGET0_END_ADDR_UPPER:0x0" \
+"TARGET0_START_ADDR:0x80000000" \
+"TARGET0_START_ADDR_UPPER:0x0" \
+"TARGET0_TYPE:0" \
 }
 sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_AXI_XBAR} -instance_name {XBAR_0}
 

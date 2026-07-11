@@ -34,6 +34,7 @@ import shutil
 import sys
 import subprocess
 import platform
+import pathlib
 
 def check_dtc_installed():
     if shutil.which("dtc") is None:
@@ -88,6 +89,13 @@ def exe_sys_cmd(cmd):
         ascii_line = line.decode('ascii')
         sys.stdout.write(ascii_line)
     proc.wait()
+
+
+def verify_cape_axi_xbar(build_dir_path):
+    work_libero_dir = pathlib.Path(build_dir_path) / "work" / "libero"
+    verify_script = pathlib.Path(build_dir_path) / "gateware_scripts" / "verify_cape_axi_xbar.py"
+    cmd = [sys.executable, str(verify_script), str(work_libero_dir)]
+    subprocess.run(cmd, check=True)
 
 
 def check_native_platform():
@@ -1229,6 +1237,7 @@ def generate_libero_project(libero, build_options_input_yaml_file, board_options
 
     call_libero(libero, script, script_args, project_location, hss_image_location, mss_component_file_location, prog_export_path, top_level_name, initial_directory, design_version)
     os.chdir(initial_directory)
+    verify_cape_axi_xbar(build_dir_path)
 
 
 def build_gateware(build_options_yaml_arg, board_options_yaml_arg, build_dir, gateware_top_dir):
