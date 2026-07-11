@@ -235,6 +235,11 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "ca
 # BGS: AXI clock/reset connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN" "cape_regs_0:ARESETN"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:DBG_FIC0_RESET_N"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC3_RESET_N" "cape_regs_0:DBG_FIC3_RESET_N"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_DEVICE_INIT_DONE" "cape_regs_0:DBG_DEVICE_INIT_DONE"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_XCVR_INIT_DONE" "cape_regs_0:DBG_XCVR_INIT_DONE"}
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_MSS_DLL_LOCKS" "cape_regs_0:DBG_MSS_DLL_LOCKS"}
 
 # BGS: AXI4 initiator -> crossbar
 sd_connect_pins -sd_name ${sd_name} -pin_names {"cape_regs_0:AXI4_INITIATOR" "XBAR_0:AXI4minitiator0"}
@@ -271,13 +276,7 @@ sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {P9_16_BIBUF:E} -valu
 # BGS: connect cape_regs irq and tie off unused ports
 sd_connect_pins -sd_name ${sd_name} -pin_names {"INT[37]" "cape_regs_0:irq"}
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {cape_regs_0:control}
-sd_create_pin_slices -sd_name ${sd_name} -pin_name {cape_regs_0:status} -pin_slices {[0:0] [1:1] [2:2] [3:3] [4:4] [31:5]}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:status[0:0]"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC3_RESET_N" "cape_regs_0:status[1:1]"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_DEVICE_INIT_DONE" "cape_regs_0:status[2:2]"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_XCVR_INIT_DONE" "cape_regs_0:status[3:3]"}
-sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_MSS_DLL_LOCKS" "cape_regs_0:status[4:4]"}
-sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {cape_regs_0:status[31:5]} -value {GND}
+sd_connect_pins_to_constant -sd_name ${sd_name} -pin_names {cape_regs_0:status} -value {GND}
 
 # Re-enable auto promotion of pins of type 'pad'
 auto_promote_pad_pins -promote_all 1

@@ -51,7 +51,7 @@ Bus Address   Module
 |--------|------------|--------|------------|--------------------------------|
 | 0x00   | CONTROL_0  | RO     | 0xDEADBEEF | Magic number / alive check     |
 | 0x10   | CONTROL_1  | RW     | 0x00000000 | General-purpose control output |
-| 0x20   | STATUS     | RO     | —          | Board-level debug status input |
+| 0x20   | STATUS     | RO     | —          | External status input          |
 
 ### Control Signals (Verilog ports)
 
@@ -59,17 +59,6 @@ Bus Address   Module
 |----------|-------|-----------|---------------------------------|
 | control  | 32    | output    | Drives CONTROL_1 value to fabric |
 | status   | 32    | input     | Read back via STATUS register   |
-
-### STATUS Bit Assignments
-
-| Bit | Meaning |
-|-----|---------|
-| 0   | `FIC_0_FABRIC_RESET_N` |
-| 1   | `FIC_3_FABRIC_RESET_N` |
-| 2   | `DEVICE_INIT_DONE` |
-| 3   | `XCVR_INIT_DONE` |
-| 4   | `MSS_DLL_LOCKS` |
-| 31:5| Reserved, read as `0` |
 
 ---
 
@@ -85,13 +74,33 @@ Bus Address   Module
 | 0x8C   | A_SRC_HI| RW     | 0x00000000 | Source address upper 32 bits                            |
 | 0x90   | A_CNT   | RW     | 0x00000000 | Total pixel count to process                            |
 | 0x94   | A_RES   | RO     | 0x00000000 | 32-bit foreground mask, `1=foreground`, `0=background` |
-| 0x98   | A_DBG   | RO     | 0xDEADBEEF | Debug / alive check                                     |
+| 0x98   | A_DBG   | RO     | 0xDB000000 | Debug state snapshot                                    |
 
 ### pixel_proc Interrupt
 
 | Signal | Source Domain | Description                      |
 |--------|---------------|----------------------------------|
 | irq    | ACLK→PCLK sync| Asserted when 32-pixel batch completes. Write A_CTRL[7]=1 to acknowledge. |
+
+### A_DBG Bit Assignments
+
+| Bit | Meaning |
+|-----|---------|
+| 31:24 | Debug signature `0xDB` |
+| 20 | `MSS_DLL_LOCKS` |
+| 19 | `XCVR_INIT_DONE` |
+| 18 | `DEVICE_INIT_DONE` |
+| 17 | `FIC_3_FABRIC_RESET_N` |
+| 16 | `FIC_0_FABRIC_RESET_N` |
+| 10:8 | `pixel_proc` ACLK FSM state |
+| 7 | `irq_aclk_s` |
+| 6 | `done_s` |
+| 5 | `busy_s` |
+| 4 | `start_stb` |
+| 3 | `start_s2` |
+| 2 | `start_s1` |
+| 1 | Local `ARESETN` seen by `pixel_proc` |
+| 0 | `start_pclk` |
 
 ### pixel_proc Operation Flow
 
