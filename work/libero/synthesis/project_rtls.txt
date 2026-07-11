@@ -136,4 +136,4 @@
 "/home/livan/gateware/gateware/work/libero/component/work/PF_CCC_ADC/PF_CCC_ADC_0/PF_CCC_ADC_PF_CCC_ADC_0_PF_CCC.v"
 "/home/livan/gateware/gateware/work/libero/component/work/PF_CCC_ADC/PF_CCC_ADC.v"
 "/home/livan/gateware/gateware/work/libero/component/work/CLOCKS_AND_RESETS/CLOCKS_AND_RESETS.v"
-"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_4CFFA326/MY_CUSTOM_FPGA_DESIGN_4CFFA326.v"
+"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_0613B7DB/MY_CUSTOM_FPGA_DESIGN_0613B7DB.v"

@@ -29,7 +29,12 @@ module cape_regs(
     output wire [37:0] AWADDR,   output wire AWVALID,   input wire AWREADY,
     output wire [63:0] WDATA,    output wire [7:0] WSTRB, output wire WVALID, input wire WREADY,
     output wire [3:0]  AWID,     input wire [3:0] BID,
-    input  wire [1:0]  BRESP,    input wire BVALID,     output wire BREADY
+    input  wire [1:0]  BRESP,    input wire BVALID,     output wire BREADY,
+    input  wire        DBG_FIC0_RESET_N,
+    input  wire        DBG_FIC3_RESET_N,
+    input  wire        DBG_DEVICE_INIT_DONE,
+    input  wire        DBG_XCVR_INIT_DONE,
+    input  wire        DBG_MSS_DLL_LOCKS
 );
 
     wire [31:0] ctrl_prdata, pix_prdata;
@@ -70,7 +75,12 @@ module cape_regs(
         .AWADDR  (AWADDR),  .AWVALID(AWVALID),  .AWREADY(AWREADY),
         .WDATA   (WDATA),   .WSTRB  (WSTRB),    .WVALID (WVALID), .WREADY(WREADY),
         .AWID    (AWID),    .BID    (BID),
-        .BRESP   (BRESP),   .BVALID (BVALID),   .BREADY (BREADY)
+        .BRESP   (BRESP),   .BVALID (BVALID),   .BREADY (BREADY),
+        .DBG_FIC0_RESET_N     (DBG_FIC0_RESET_N),
+        .DBG_FIC3_RESET_N     (DBG_FIC3_RESET_N),
+        .DBG_DEVICE_INIT_DONE (DBG_DEVICE_INIT_DONE),
+        .DBG_XCVR_INIT_DONE   (DBG_XCVR_INIT_DONE),
+        .DBG_MSS_DLL_LOCKS    (DBG_MSS_DLL_LOCKS)
     );
 
     assign prdata = paddr[7] ? pix_prdata : ctrl_prdata;

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 03:52:41 2026
+// Created by SmartDesign Sun Jul 12 04:25:01 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -276,12 +276,11 @@ wire   [63:0]  AXI4mtarget0_WDATA_net_0;
 wire   [7:0]   AXI4mtarget0_WSTRB_net_0;
 wire           AXI4mtarget0_WVALID_net_0;
 wire           AXI4mtarget0_BREADY_net_0;
-wire   [31:0]  status_net_0;
 //--------------------------------------------------------------------
 // TiedOff Nets
 //--------------------------------------------------------------------
 wire   [39:38] INT_const_net_0;
-wire   [31:5]  status_const_net_0;
+wire   [31:0]  status_const_net_0;
 wire           VCC_net;
 wire   [1:0]   TARGET0_BID_const_net_0;
 wire   [1:0]   TARGET0_RID_const_net_0;
@@ -369,7 +368,7 @@ wire   [7:0]   CoreAPB3_CAPE_0_APBmslave0_PADDR_4_7to0;
 // Constant assignments
 //--------------------------------------------------------------------
 assign INT_const_net_0                 = 2'h0;
-assign status_const_net_0              = 27'h0000000;
+assign status_const_net_0              = 32'h00000000;
 assign VCC_net                         = 1'b1;
 assign TARGET0_BID_const_net_0         = 2'h0;
 assign TARGET0_RID_const_net_0         = 2'h0;
@@ -452,10 +451,6 @@ assign AXI4mtarget0_WVALID_net_0    = AXI4mtarget0_WVALID;
 assign ms_wvalid                    = AXI4mtarget0_WVALID_net_0;
 assign AXI4mtarget0_BREADY_net_0    = AXI4mtarget0_BREADY;
 assign ms_bready                    = AXI4mtarget0_BREADY_net_0;
-//--------------------------------------------------------------------
-// Concatenation assignments
-//--------------------------------------------------------------------
-assign status_net_0 = { 27'h0000000 , DBG_MSS_DLL_LOCKS , DBG_XCVR_INIT_DONE , DBG_DEVICE_INIT_DONE , DBG_FIC3_RESET_N , DBG_FIC0_RESET_N };
 //--------------------------------------------------------------------
 // Bus Interface Nets Assignments - Unequal Pin Widths
 //--------------------------------------------------------------------
@@ -562,43 +557,48 @@ CAPE_DEFAULT_GPIOS CAPE_DEFAULT_GPIOS_inst_0(
 //--------cape_regs
 cape_regs cape_regs_0(
         // Inputs
-        .pclk    ( PCLK ),
-        .presetn ( PRESETN ),
-        .psel    ( CoreAPB3_CAPE_0_APBmslave3_PSELx ),
-        .penable ( CoreAPB3_CAPE_0_APBmslave0_PENABLE ),
-        .pwrite  ( CoreAPB3_CAPE_0_APBmslave0_PWRITE ),
-        .paddr   ( CoreAPB3_CAPE_0_APBmslave0_PADDR ),
-        .pwdata  ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
-        .status  ( status_net_0 ),
-        .ACLK    ( AXI_ACLK ),
-        .ARESETN ( AXI_ARESETN ),
-        .ARREADY ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
-        .RDATA   ( cape_regs_0_AXI4_INITIATOR_RDATA ),
-        .RVALID  ( cape_regs_0_AXI4_INITIATOR_RVALID ),
-        .RRESP   ( cape_regs_0_AXI4_INITIATOR_RRESP ),
-        .RID     ( cape_regs_0_AXI4_INITIATOR_RID_0 ),
-        .AWREADY ( cape_regs_0_AXI4_INITIATOR_AWREADY ),
-        .WREADY  ( cape_regs_0_AXI4_INITIATOR_WREADY ),
-        .BID     ( cape_regs_0_AXI4_INITIATOR_BID_0 ),
-        .BRESP   ( cape_regs_0_AXI4_INITIATOR_BRESP ),
-        .BVALID  ( cape_regs_0_AXI4_INITIATOR_BVALID ),
+        .pclk                 ( PCLK ),
+        .presetn              ( PRESETN ),
+        .psel                 ( CoreAPB3_CAPE_0_APBmslave3_PSELx ),
+        .penable              ( CoreAPB3_CAPE_0_APBmslave0_PENABLE ),
+        .pwrite               ( CoreAPB3_CAPE_0_APBmslave0_PWRITE ),
+        .paddr                ( CoreAPB3_CAPE_0_APBmslave0_PADDR ),
+        .pwdata               ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
+        .status               ( status_const_net_0 ),
+        .ACLK                 ( AXI_ACLK ),
+        .ARESETN              ( AXI_ARESETN ),
+        .ARREADY              ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
+        .RDATA                ( cape_regs_0_AXI4_INITIATOR_RDATA ),
+        .RVALID               ( cape_regs_0_AXI4_INITIATOR_RVALID ),
+        .RRESP                ( cape_regs_0_AXI4_INITIATOR_RRESP ),
+        .RID                  ( cape_regs_0_AXI4_INITIATOR_RID_0 ),
+        .AWREADY              ( cape_regs_0_AXI4_INITIATOR_AWREADY ),
+        .WREADY               ( cape_regs_0_AXI4_INITIATOR_WREADY ),
+        .BID                  ( cape_regs_0_AXI4_INITIATOR_BID_0 ),
+        .BRESP                ( cape_regs_0_AXI4_INITIATOR_BRESP ),
+        .BVALID               ( cape_regs_0_AXI4_INITIATOR_BVALID ),
+        .DBG_FIC0_RESET_N     ( DBG_FIC0_RESET_N ),
+        .DBG_FIC3_RESET_N     ( DBG_FIC3_RESET_N ),
+        .DBG_DEVICE_INIT_DONE ( DBG_DEVICE_INIT_DONE ),
+        .DBG_XCVR_INIT_DONE   ( DBG_XCVR_INIT_DONE ),
+        .DBG_MSS_DLL_LOCKS    ( DBG_MSS_DLL_LOCKS ),
         // Outputs
-        .prdata  ( CoreAPB3_CAPE_0_APBmslave3_PRDATA ),
-        .pready  ( CoreAPB3_CAPE_0_APBmslave3_PREADY ),
-        .pslverr ( CoreAPB3_CAPE_0_APBmslave3_PSLVERR ),
-        .control (  ),
-        .irq     ( INT_1 ),
-        .ARADDR  ( cape_regs_0_AXI4_INITIATOR_ARADDR ),
-        .ARVALID ( cape_regs_0_AXI4_INITIATOR_ARVALID ),
-        .RREADY  ( cape_regs_0_AXI4_INITIATOR_RREADY ),
-        .ARID    ( cape_regs_0_AXI4_INITIATOR_ARID ),
-        .AWADDR  ( cape_regs_0_AXI4_INITIATOR_AWADDR ),
-        .AWVALID ( cape_regs_0_AXI4_INITIATOR_AWVALID ),
-        .WDATA   ( cape_regs_0_AXI4_INITIATOR_WDATA ),
-        .WSTRB   ( cape_regs_0_AXI4_INITIATOR_WSTRB ),
-        .WVALID  ( cape_regs_0_AXI4_INITIATOR_WVALID ),
-        .AWID    ( cape_regs_0_AXI4_INITIATOR_AWID ),
-        .BREADY  ( cape_regs_0_AXI4_INITIATOR_BREADY ) 
+        .prdata               ( CoreAPB3_CAPE_0_APBmslave3_PRDATA ),
+        .pready               ( CoreAPB3_CAPE_0_APBmslave3_PREADY ),
+        .pslverr              ( CoreAPB3_CAPE_0_APBmslave3_PSLVERR ),
+        .control              (  ),
+        .irq                  ( INT_1 ),
+        .ARADDR               ( cape_regs_0_AXI4_INITIATOR_ARADDR ),
+        .ARVALID              ( cape_regs_0_AXI4_INITIATOR_ARVALID ),
+        .RREADY               ( cape_regs_0_AXI4_INITIATOR_RREADY ),
+        .ARID                 ( cape_regs_0_AXI4_INITIATOR_ARID ),
+        .AWADDR               ( cape_regs_0_AXI4_INITIATOR_AWADDR ),
+        .AWVALID              ( cape_regs_0_AXI4_INITIATOR_AWVALID ),
+        .WDATA                ( cape_regs_0_AXI4_INITIATOR_WDATA ),
+        .WSTRB                ( cape_regs_0_AXI4_INITIATOR_WSTRB ),
+        .WVALID               ( cape_regs_0_AXI4_INITIATOR_WVALID ),
+        .AWID                 ( cape_regs_0_AXI4_INITIATOR_AWID ),
+        .BREADY               ( cape_regs_0_AXI4_INITIATOR_BREADY ) 
         );
 
 //--------CoreAPB3_CAPE

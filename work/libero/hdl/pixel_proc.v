@@ -19,7 +19,12 @@ module pixel_proc(
     output      [37:0]  AWADDR,     output AWVALID,   input AWREADY,
     output      [63:0]  WDATA,       output [7:0] WSTRB, output WVALID, input WREADY,
     output      [3:0]   AWID,       input [3:0] BID,
-    input       [1:0]   BRESP,      input BVALID,     output BREADY
+    input       [1:0]   BRESP,      input BVALID,     output BREADY,
+    input               DBG_FIC0_RESET_N,
+    input               DBG_FIC3_RESET_N,
+    input               DBG_DEVICE_INIT_DONE,
+    input               DBG_XCVR_INIT_DONE,
+    input               DBG_MSS_DLL_LOCKS
 );
 
     localparam [7:0] A_CTRL=8'h80, A_STAT=8'h84, A_SRC_LO=8'h88, A_SRC_HI=8'h8C, A_CNT=8'h90, A_RES=8'h94, A_DBG=8'h98;
@@ -182,20 +187,23 @@ module pixel_proc(
     assign WDATA=0; assign WSTRB=0; assign WVALID=0; assign BREADY=0;
     wire [31:0] result_s = result;
     assign debug_s = {
-        8'hDB,
-        10'b0,
-        state,
-        done_s,
-        busy_s,
-        irq_aclk_s,
-        ack_stb,
-        ack_s2,
-        ack_s1,
-        start_stb,
-        start_s2,
-        start_s1,
-        ARESETN,
-        start_pclk
+        8'hDB,                // [31:24] signature
+        3'b0,                 // [23:21] reserved
+        DBG_MSS_DLL_LOCKS,    // [20]
+        DBG_XCVR_INIT_DONE,   // [19]
+        DBG_DEVICE_INIT_DONE, // [18]
+        DBG_FIC3_RESET_N,     // [17]
+        DBG_FIC0_RESET_N,     // [16]
+        5'b0,                 // [15:11] reserved
+        state,                // [10:8]
+        irq_aclk_s,           // [7]
+        done_s,               // [6]
+        busy_s,               // [5]
+        start_stb,            // [4]
+        start_s2,             // [3]
+        start_s1,             // [2]
+        ARESETN,              // [1]
+        start_pclk            // [0]
     };
 
 endmodule

@@ -259,6 +259,26 @@
         <spirit:name>BREADY</spirit:name>
         <spirit:direction>out</spirit:direction>
       </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DBG_FIC0_RESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DBG_FIC3_RESET_N</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DBG_DEVICE_INIT_DONE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DBG_XCVR_INIT_DONE</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>DBG_MSS_DLL_LOCKS</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
     </spirit:signals>
     <spirit:hwParameters>
     </spirit:hwParameters>
