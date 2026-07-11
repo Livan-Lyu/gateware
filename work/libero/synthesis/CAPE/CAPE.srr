@@ -1,4 +1,4 @@
-# Sun Jul 12 05:05:39 2026
+# Sun Jul 12 05:26:07 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -47,13 +47,13 @@ Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic.
 
 @N: MF105 |Performing bottom-up mapping of Compile point view:work.CAPE(verilog) 
 
-Begin environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
+Begin environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
 
 
-Finished environment creation (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
+Finished environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
 
 
-Start loading ILMs (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
+Start loading ILMs (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 607MB peak: 607MB)
 
 
 Start creating ILM for FPGA COREAXI4INTERCONNECT_Z21 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 621MB peak: 621MB)
@@ -90,9 +90,9 @@ Available hyper_sources - for debug and ip models
 @N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
 @N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) mapped in logic.
 @N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM CoreAPB3_CAPE_0.CoreAPB3_CAPE_0.iPSELS_raw_5[5:0] (in view: work.CAPE(verilog)) with 6 words by 6 bits.
-@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) mapped in logic.
-@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) mapped in logic.
-@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) with 9 words by 3 bits.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) mapped in logic.
+@N: BZ173 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) mapped in logic.
+@N: MO106 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":267:2:267:5|Found ROM BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.iPSELS_raw_2[2:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) with 9 words by 3 bits.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both_147[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_neg_147[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_both_43[3] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[3].APB_32.edge_neg_43[3]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":474:16:474:45|Removing user instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_both_238[18] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[18].APB_32.edge_neg_238[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
@@ -151,7 +151,7 @@ Available hyper_sources - for debug and ip models
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_pos[6] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[6].APB_32.edge_both[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":424:0:424:5|Removing sequential instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_pos[11] because it is equivalent to instance CAPE_inst_0.P9_GPIO_0.CoreGPIO_P9_0.CoreGPIO_P9_0.xhdl1.GEN_BITS[11].APB_32.edge_both[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 620MB peak: 621MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 620MB peak: 621MB)
 
 Encoding state machine state[4:0] (in view: work.pixel_proc(verilog))
 original code -> new code
@@ -181,33 +181,33 @@ original code -> new code
 @N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[1\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
 @N: MF179 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/pwm_gen.v":84:17:84:82|Found 32 by 32 bit equality operator ('==') PWM_output_generation\[2\]\.genblk1\.un1_period_cnt_1 (in view: work.corepwm_pwm_gen_2s_32s_0_0s_CAPE(verilog))
 
-Starting factoring (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 620MB peak: 621MB)
+Starting factoring (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 620MB peak: 621MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:09s; Memory used current: 627MB peak: 627MB)
+Finished factoring (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 624MB peak: 624MB)
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 630MB peak: 646MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 644MB peak: 644MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 630MB peak: 646MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 644MB peak: 644MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:14s; Memory used current: 630MB peak: 646MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:13s; Memory used current: 644MB peak: 644MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 630MB peak: 646MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:14s; Memory used current: 644MB peak: 644MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:17s; Memory used current: 630MB peak: 646MB)
+Finished preparing to map (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:15s; Memory used current: 644MB peak: 644MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:18s; Memory used current: 649MB peak: 649MB)
+Finished technology mapping (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 649MB peak: 649MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:18s		     1.49ns		3265 /      2440
+   1		0h:00m:17s		     1.49ns		3273 /      2440
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[37] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[36] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Removing sequential instance cape_regs_0.u_pix.src_addr[35] (in view: work.CAPE(verilog)) of type view:ACG4.SLE(PRIM) because it does not drive other instances.
@@ -225,10 +225,10 @@ Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 650MB peak: 650MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:19s; Memory used current: 650MB peak: 650MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 652MB peak: 652MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 652MB peak: 652MB)
 
 
 End compile point sub-process log
@@ -243,15 +243,15 @@ End compile point sub-process log
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Jul 12 05:06:00 2026
+# Timing report written on Sun Jul 12 05:26:27 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_45D2B20D
+Top view:               MY_CUSTOM_FPGA_DESIGN_75E2C1DD
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_45D2B20D/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_75E2C1DD/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -274,7 +274,7 @@ CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 M
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      97.8 MHz      18.779        10.226        8.553      generated (from osc_rc160mhz)     FIC3_clks       
 CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       NA            191.041       NA            NA         generated (from osc_rc160mhz)     default_clkgroup
 osc_rc160mhz                                                             170.4 MHz     NA            5.869         NA            NA         declared                          default_clkgroup
-System                                                                   100.0 MHz     NA            10.000        NA            18.127     system                            system_clkgroup 
+System                                                                   100.0 MHz     NA            10.000        NA            18.089     system                            system_clkgroup 
 ==============================================================================================================================================================================================
 Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
 
@@ -289,7 +289,7 @@ Clocks                                                                          
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Starting                                                              Ending                                                                |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      18.127  |  No paths    -      |  No paths    -      |  No paths    -    
+System                                                                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      18.089  |  No paths    -      |  No paths    -      |  No paths    -    
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      8.553   |  No paths    -      |  No paths    -      |  No paths    -    
 ===================================================================================================================================================================================================================================
@@ -314,21 +314,21 @@ Detailed Report for Clock: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/
 Starting Points with Worst Slack
 ********************************
 
-                                                                                                                                      Starting                                                                                                                            Arrival          
-Instance                                                                                                                              Reference                                                                Type     Pin                       Net                     Time        Slack
-                                                                                                                                      Clock                                                                                                                                                
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                                                                                    CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[28]     inp[409]                1.793       8.553
-BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS                                                                                    CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PSEL          inp[410]                1.678       8.627
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[20]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         INITIATOR_RDATA[16]     0.257       9.341
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[21]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         INITIATOR_RDATA[17]     0.257       9.351
-CAPE_inst_0.cape_regs_0.u_pix.cb[0]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         cb[0]                   0.257       9.355
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[22]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         INITIATOR_RDATA[18]     0.257       9.360
-CAPE_inst_0.cape_regs_0.u_pix.cb[1]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         cb[1]                   0.257       9.365
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[23]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         INITIATOR_RDATA[19]     0.257       9.370
-CAPE_inst_0.cape_regs_0.u_pix.cb[2]                                                                                                   CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         cb[2]                   0.257       9.374
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[24]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q                         INITIATOR_RDATA[20]     0.257       9.379
-===========================================================================================================================================================================================================================================================================================
+                                                       Starting                                                                                                                                                                                    Arrival           
+Instance                                               Reference                                                                Type     Pin                       Net                                                                             Time        Slack 
+                                                       Clock                                                                                                                                                                                                         
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[28]     inp[409]                                                                        1.793       8.553 
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PSEL          inp[410]                                                                        1.678       8.627 
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[2]      inp[349]                                                                        1.739       10.028
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[6]      inp[234]                                                                        1.855       10.077
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[4]      inp[290]                                                                        1.744       10.229
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[3]      inp[319]                                                                        1.728       10.259
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[7]      inp[206]                                                                        1.822       10.456
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[25]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[25]     1.768       10.464
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[27]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[27]     1.796       10.485
+BVF_RISCV_SUBSYSTEM_inst_0.PF_SOC_MSS_inst_0.I_MSS     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     MSS      FIC_3_APB_M_PADDR[26]     BVF_RISCV_SUBSYSTEM_inst_0.FIC3_INITIATOR_inst_0.FIC3_INITIATOR_0.PADDR[26]     1.762       10.836
+=====================================================================================================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
@@ -419,8 +419,8 @@ Starting Points with Worst Slack
 Instance                                                          Reference     Type     Pin               Net                                    Time        Slack 
                                                                   Clock                                                                                             
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     RFU[0]            CLOCKS_AND_RESETS_XCVR_INIT_DONE       0.000       18.127
-CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     UIC_INIT_DONE     CLOCKS_AND_RESETS_DEVICE_INIT_DONE     0.000       18.127
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     RFU[0]            CLOCKS_AND_RESETS_XCVR_INIT_DONE       0.000       18.089
+CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT     System        INIT     UIC_INIT_DONE     CLOCKS_AND_RESETS_DEVICE_INIT_DONE     0.000       18.089
 ====================================================================================================================================================================
 
 
@@ -431,8 +431,8 @@ Ending Points with Worst Slack
 Instance                                     Reference     Type     Pin     Net              Time         Slack 
                                              Clock                                                              
 ----------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.cape_regs_0.u_pix.prdata[18]     System        SLE      D       prdata_9[18]     18.779       18.127
-CAPE_inst_0.cape_regs_0.u_pix.prdata[19]     System        SLE      D       prdata_9[19]     18.779       18.127
+CAPE_inst_0.cape_regs_0.u_pix.prdata[18]     System        SLE      D       prdata_9[18]     18.779       18.089
+CAPE_inst_0.cape_regs_0.u_pix.prdata[19]     System        SLE      D       prdata_9[19]     18.779       18.089
 ================================================================================================================
 
 
@@ -447,10 +447,10 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         18.779
 
-    - Propagation time:                      0.652
+    - Propagation time:                      0.690
     - Clock delay at starting point:         0.000 (ideal)
     - Estimated clock delay at start point:  -0.000
-    = Slack (non-critical) :                 18.127
+    = Slack (non-critical) :                 18.089
 
     Number of logic level(s):                2
     Starting point:                          CLOCKS_AND_RESETS_inst_0.INIT_MONITOR_0.INIT_MONITOR_0.I_INIT / RFU[0]
@@ -466,12 +466,12 @@ CLOCKS_AND_RESETS_XCVR_INIT_DONE                                  Net      -    
 CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv_3[19]                 CFG4     C          In      -         0.139 r     -         
 CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv_3[19]                 CFG4     Y          Out     0.175     0.314 r     -         
 prdata_9_0_iv_3[19]                                               Net      -          -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     A          In      -         0.453 r     -         
-CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     Y          Out     0.060     0.513 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     B          In      -         0.453 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata_9_0_iv[19]                   CFG3     Y          Out     0.098     0.551 r     -         
 prdata_9[19]                                                      Net      -          -       0.139     -           1         
-CAPE_inst_0.cape_regs_0.u_pix.prdata[19]                          SLE      D          In      -         0.652 r     -         
+CAPE_inst_0.cape_regs_0.u_pix.prdata[19]                          SLE      D          In      -         0.690 r     -         
 ==============================================================================================================================
-Total path delay (propagation time + setup) of 0.652 is 0.234(36.0%) logic and 0.418(64.0%) route.
+Total path delay (propagation time + setup) of 0.690 is 0.273(39.5%) logic and 0.418(60.5%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -488,7 +488,7 @@ Name     Status     Reason
 CAPE     Mapped     No database
 ===============================
 
-Process took 0h:00m:21s realtime, 0h:00m:21s cputime
-# Sun Jul 12 05:06:01 2026
+Process took 0h:00m:19s realtime, 0h:00m:19s cputime
+# Sun Jul 12 05:26:27 2026
 
 ###########################################################]

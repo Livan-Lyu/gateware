@@ -194,7 +194,11 @@ module pixel_proc(
         DBG_DEVICE_INIT_DONE, // [18]
         DBG_FIC3_RESET_N,     // [17]
         DBG_FIC0_RESET_N,     // [16]
-        5'b0,                 // [15:11] reserved
+        1'b0,                 // [15] reserved
+        RVALID,               // [14]
+        RREADY,               // [13]
+        ARREADY,              // [12]
+        ARVALID,              // [11]
         state,                // [10:8]
         irq_aclk_s,           // [7]
         done_s,               // [6]

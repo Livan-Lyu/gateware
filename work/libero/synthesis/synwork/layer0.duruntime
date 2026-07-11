@@ -3,7 +3,7 @@ Runtime Summary:
 
 	The following design units have negligible CPU times:
 	=====================================================
-		* Library: work, DesignUnit: MY_CUSTOM_FPGA_DESIGN_45D2B20D
+		* Library: work, DesignUnit: MY_CUSTOM_FPGA_DESIGN_75E2C1DD
 			Hardware Generation Phase, Optimization Phase: Negligible CPU time
 		* Library: work, DesignUnit: CLOCKS_AND_RESETS
 			Hardware Generation Phase, Optimization Phase: Negligible CPU time

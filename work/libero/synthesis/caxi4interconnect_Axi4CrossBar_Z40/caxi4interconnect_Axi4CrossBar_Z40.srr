@@ -1,4 +1,4 @@
-# Sun Jul 12 05:05:40 2026
+# Sun Jul 12 05:26:08 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -65,7 +65,7 @@ Begin compile point sub-process log
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
 
-@W: BN114 :|Removing instance CP_fanout_cell_work_caxi4interconnect_Axi4CrossBar_Z40_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_caxi4interconnect_Axi4CrossBar_Z40_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) because it does not drive other instances.
 
 Available hyper_sources - for debug and ip models
 	None Found
@@ -74,78 +74,78 @@ Available hyper_sources - for debug and ip models
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 567MB peak: 567MB)
 
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[1] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[0] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[1] (in view: work.MY_CUSTOM_FPGA_DESIGN_75E2C1DD(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
 @N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.fifoRdAddr[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
@@ -223,7 +223,7 @@ Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; M
 NConnInternalConnection caching is on
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":292:0:292:5|Removing sequential instance derr.writeID[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
@@ -272,15 +272,15 @@ End compile point sub-process log
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Jul 12 05:05:41 2026
+# Timing report written on Sun Jul 12 05:26:09 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_45D2B20D
+Top view:               MY_CUSTOM_FPGA_DESIGN_75E2C1DD
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_45D2B20D/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_75E2C1DD/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -441,6 +441,6 @@ caxi4interconnect_Axi4CrossBar_Z40     Mapped     No database
 =============================================================
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sun Jul 12 05:05:41 2026
+# Sun Jul 12 05:26:09 2026
 
 ###########################################################]
