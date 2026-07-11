@@ -26,6 +26,7 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN27} -port_direction 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN30} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN41} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {DBG_FIC0_RESET_N} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {DBG_FIC0_ACLK} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {DBG_FIC3_RESET_N} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {DBG_DEVICE_INIT_DONE} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {DBG_XCVR_INIT_DONE} -port_direction {IN}
@@ -235,11 +236,13 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "ca
 # BGS: AXI clock/reset connections
 #
 # TEMP DEBUG OVERRIDE:
-# Drive the local ACLK domain from PCLK to validate whether the AXI_ACLK path
-# is getting lost inside SmartDesign/generated connectivity. This is a debug
-# experiment only. Revert by restoring XBAR_0:ACLK and cape_regs_0:ACLK to
-# the AXI_ACLK net below.
-sd_connect_pins -sd_name ${sd_name} -pin_names {"PCLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
+# Drive the local ACLK domain from DBG_FIC0_ACLK (tied to
+# CLOCKS_AND_RESETS:FIC_0_ACLK in ADD_CAPE.tcl) to validate whether the
+# AXI_ACLK port path is getting lost inside SmartDesign/generated
+# connectivity. This keeps the original FIC_0 clock source while bypassing
+# the AXI_ACLK top-level port.
+# Revert by restoring XBAR_0:ACLK and cape_regs_0:ACLK to the AXI_ACLK net.
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_ACLK" "XBAR_0:ACLK" "cape_regs_0:ACLK"}
 #
 # TEMP DEBUG OVERRIDE:
 # Keep the crossbar on AXI_ARESETN, but drive cape_regs_0:ARESETN from
