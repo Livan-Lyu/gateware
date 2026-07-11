@@ -3,15 +3,15 @@
   Synopsys, Inc.
   Version V-2023.09M-5
   Project file /home/livan/gateware/gateware/work/libero/synthesis/syntmp/run_option.xml
-  Written on Sun Jul 12 02:51:21 2026
+  Written on Sun Jul 12 03:52:57 2026
 
 
 --> 
 <project_attribute_list name="Project Settings"> 
-     <option name="project_name" display_name="Project Name">MY_CUSTOM_FPGA_DESIGN_AD23179A_syn</option>
+     <option name="project_name" display_name="Project Name">MY_CUSTOM_FPGA_DESIGN_4CFFA326_syn</option>
      <option name="device_name" display_name="Device Name">synthesis: Microchip PolarFireSoC : MPFS025T</option>
      <option name="impl_name" display_name="Implementation Name">synthesis</option>
-     <option name="top_module" display_name="Top Module">MY_CUSTOM_FPGA_DESIGN_AD23179A</option>
+     <option name="top_module" display_name="Top Module">MY_CUSTOM_FPGA_DESIGN_4CFFA326</option>
      <option name="retiming" display_name="Retiming">0</option>
      <option name="resource_sharing" display_name="Resource Sharing">1</option>
      <option name="maxfan" display_name="Fanout Guide">10000</option>
