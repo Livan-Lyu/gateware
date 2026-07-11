@@ -1,1 +1,1 @@
--link -encrypt -top MY_CUSTOM_FPGA_DESIGN_5AF3A212 -osyn /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_5AF3A212_comp.srs /home/livan/gateware/gateware/work/libero/synthesis/synwork/layer0.srs  -jobname linker  
+-link -encrypt -top MY_CUSTOM_FPGA_DESIGN_45D2B20D -osyn /home/livan/gateware/gateware/work/libero/synthesis/synwork/MY_CUSTOM_FPGA_DESIGN_45D2B20D_comp.srs /home/livan/gateware/gateware/work/libero/synthesis/synwork/layer0.srs  -jobname linker  

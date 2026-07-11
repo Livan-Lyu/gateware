@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 04:42:25 2026
+// Created by SmartDesign Sun Jul 12 05:05:04 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -565,7 +565,7 @@ cape_regs cape_regs_0(
         .paddr                ( CoreAPB3_CAPE_0_APBmslave0_PADDR ),
         .pwdata               ( CoreAPB3_CAPE_0_APBmslave0_PWDATA ),
         .status               ( status_const_net_0 ),
-        .ACLK                 ( AXI_ACLK ),
+        .ACLK                 ( PCLK ),
         .ARESETN              ( DBG_FIC0_RESET_N ),
         .ARREADY              ( cape_regs_0_AXI4_INITIATOR_ARREADY ),
         .RDATA                ( cape_regs_0_AXI4_INITIATOR_RDATA ),
@@ -803,7 +803,7 @@ CAPE_PWM PWM_2(
 //--------CAPE_AXI_XBAR
 CAPE_AXI_XBAR XBAR_0(
         // Inputs
-        .ACLK                ( AXI_ACLK ),
+        .ACLK                ( PCLK ),
         .ARESETN             ( AXI_ARESETN ),
         .TARGET0_AWREADY     ( ms_awready ),
         .TARGET0_WREADY      ( ms_wready ),

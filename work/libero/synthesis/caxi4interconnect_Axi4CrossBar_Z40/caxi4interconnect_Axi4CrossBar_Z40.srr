@@ -1,4 +1,4 @@
-# Sun Jul 12 04:43:02 2026
+# Sun Jul 12 05:05:40 2026
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -45,7 +45,7 @@ Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic.
 
 @N: MF105 |Performing bottom-up mapping of Compile point view:work.caxi4interconnect_Axi4CrossBar_Z40(verilog) 
 
-Begin environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 565MB peak: 565MB)
+Begin environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
 
 
 Finished environment creation (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
@@ -65,87 +65,87 @@ Begin compile point sub-process log
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
 
-@W: BN114 :|Removing instance CP_fanout_cell_work_caxi4interconnect_Axi4CrossBar_Z40_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)) because it does not drive other instances.
+@W: BN114 :|Removing instance CP_fanout_cell_work_caxi4interconnect_Axi4CrossBar_Z40_verilog_inst (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) because it does not drive other instances.
 
 Available hyper_sources - for debug and ip models
 	None Found
 
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[1].genblk1.wrFif.fifoRdAddr[2:0] because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.wDCon.iWrConXB.iWrConFif[0].genblk1.wrFif.fifoRdAddr[2:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 567MB peak: 567MB)
 
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrrsp_rs_en\.brs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog))
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+Encoding state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog))
 original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
    11 -> 11
-@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)); safe FSM implementation is not required.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[0] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[1] (in view: work.MY_CUSTOM_FPGA_DESIGN_5AF3A212(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: MO225 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/RegSliceFull.v":183:1:183:6|There are no possible illegal states for state machine CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.wrdata_rs_en\.wrs.gen_ready_reg_en\.currState[3:0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)); safe FSM implementation is not required.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[0] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/ResetSync.v":44:6:44:11|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.arst_aclk_sync.genblk1\.sync_ff[1] (in view: work.MY_CUSTOM_FPGA_DESIGN_45D2B20D(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[1\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
 @N: MF135 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DualPort_FF_SyncWr_SyncRd.v":90:0:90:5|RAM CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[0] is 8 words by 1 bits.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/FifoDualPort.v":168:0:168:5|Removing sequential instance wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.fifoRdAddr[0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
@@ -212,27 +212,27 @@ original code -> new code
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_RVALID because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_RLAST. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":231:0:231:5|Removing sequential instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.DERR_ARREADY because it is equivalent to instance CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en.axicb.derr.currState[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 566MB peak: 566MB)
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 567MB peak: 568MB)
 
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":185:0:185:5|Removing sequential instance rcon.rrArb.priorityMask[2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":161:0:161:5|Removing sequential instance rcon.rrArb.grant[2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/RoundRobinArb.v":161:0:161:5|Removing sequential instance rcon.rrArb.grantEnc[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 
-Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 570MB peak: 570MB)
 
 NConnInternalConnection caching is on
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/DERR_Target.v":292:0:292:5|Removing sequential instance derr.writeID[1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[1\][2] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[1\][1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
@@ -241,40 +241,46 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CP
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[0\][1] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 @N: BN362 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4CrossBar/TargetMuxController.v":242:4:242:9|Removing sequential instance awcon.trgmx.target_busy_cnt\[0\][0] (in view: work.caxi4interconnect_Axi4CrossBar_Z40(verilog)) because it does not drive other instances.
 
-Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:01s		     4.65ns		 376 /       252
+   1		0h:00m:01s		    12.33ns		 547 /       550
 
 Added 0 Buffers
 Added 0 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 0 Combinational Cells via replication
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 569MB peak: 569MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 570MB peak: 570MB)
 
 
 End compile point sub-process log
 
+@W: MT246 :"/home/livan/gateware/gateware/work/libero/component/work/OSCILLATOR_160MHz/OSCILLATOR_160MHz_0/OSCILLATOR_160MHz_OSCILLATOR_160MHz_0_PF_OSC.v":15:17:15:25|Blackbox OSC_RC160MHZ is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@N: MT615 |Found clock osc_rc160mhz with period 5.87ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2 with period 7.51ns 
+@N: MT615 |Found clock CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 with period 18.78ns 
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sun Jul 12 04:43:03 2026
+# Timing report written on Sun Jul 12 05:05:41 2026
 #
 
 
-Top view:               MY_CUSTOM_FPGA_DESIGN_5AF3A212
+Top view:               MY_CUSTOM_FPGA_DESIGN_45D2B20D
 Requested Frequency:    5.2 MHz
 Wire load mode:         top
 Paths requested:        5
-Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_5AF3A212/synthesis.fdc
+Constraint File(s):    /home/livan/gateware/gateware/work/libero/designer/MY_CUSTOM_FPGA_DESIGN_45D2B20D/synthesis.fdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -286,19 +292,18 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 5.649
+Worst slack in design: 13.457
 
-                                                                         Requested     Estimated     Requested     Estimated               Clock                             Clock           
-Starting Clock                                                           Frequency     Frequency     Period        Period        Slack     Type                              Group           
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     NA            7.512         NA            NA        generated (from osc_rc160mhz)     FIC0_clks       
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     133.1 MHz     NA            7.512         NA            NA        generated (from osc_rc160mhz)     FIC1_clks       
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 MHz     NA            7.512         NA            NA        generated (from osc_rc160mhz)     FIC2_clks       
-CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      NA            18.779        NA            NA        generated (from osc_rc160mhz)     FIC3_clks       
-CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       NA            191.041       NA            NA        generated (from osc_rc160mhz)     default_clkgroup
-osc_rc160mhz                                                             170.4 MHz     NA            5.869         NA            NA        declared                          default_clkgroup
-System                                                                   100.0 MHz     229.8 MHz     10.000        4.351         5.649     system                            system_clkgroup 
-=============================================================================================================================================================================================
+                                                                         Requested     Estimated     Requested     Estimated                Clock                             Clock           
+Starting Clock                                                           Frequency     Frequency     Period        Period        Slack      Type                              Group           
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0     133.1 MHz     NA            7.512         NA            NA         generated (from osc_rc160mhz)     FIC0_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1     133.1 MHz     NA            7.512         NA            NA         generated (from osc_rc160mhz)     FIC1_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT2     133.1 MHz     NA            7.512         NA            NA         generated (from osc_rc160mhz)     FIC2_clks       
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     53.3 MHz      187.9 MHz     18.779        5.322         13.457     generated (from osc_rc160mhz)     FIC3_clks       
+CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0       5.2 MHz       NA            191.041       NA            NA         generated (from osc_rc160mhz)     default_clkgroup
+osc_rc160mhz                                                             170.4 MHz     NA            5.869         NA            NA         declared                          default_clkgroup
+==============================================================================================================================================================================================
 Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
 
 
@@ -308,12 +313,12 @@ Estimated period and frequency reported as NA means no slack depends directly on
 Clock Relationships
 *******************
 
-Clocks            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
---------------------------------------------------------------------------------------------------------
-Starting  Ending  |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
---------------------------------------------------------------------------------------------------------
-System    System  |  10.000      5.649  |  No paths    -      |  No paths    -      |  No paths    -    
-========================================================================================================
+Clocks                                                                                                                                      |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                                              Ending                                                                |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3  |  18.779      13.457  |  No paths    -      |  No paths    -      |  No paths    -    
+===================================================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -327,7 +332,7 @@ No IO constraint found
 
 
 ====================================
-Detailed Report for Clock: System
+Detailed Report for Clock: CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3
 ====================================
 
 
@@ -335,41 +340,41 @@ Detailed Report for Clock: System
 Starting Points with Worst Slack
 ********************************
 
-                                                                                                                                               Starting                                                 Arrival          
-Instance                                                                                                                                       Reference     Type     Pin     Net                       Time        Slack
-                                                                                                                                               Clock                                                                     
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[1]     System        SLE      Q       rdfifoRdData_i[1]         0.257       5.649
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.requestorSelValid                 System        SLE      Q       requestorSelValid         0.257       5.664
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.derr.DERR_RLAST                                                                            System        SLE      Q       DERR_RLAST                0.237       5.837
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.arcon.rrArb\.rrArb.grantEnc[0]                                                             System        SLE      Q       grantEnc[0]               0.257       6.080
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[0]     System        SLE      Q       rdfifoRdData_i[0]         0.257       6.173
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.derr.readID[1]                                                                             System        SLE      Q       DERR_RID[1]               0.257       6.268
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.arcon.intrctrlBlk\[0\]\.addr_ctrl_rs.wrch_rs_en\.awrs.gen_ready_reg_en\.sDat[64]           System        SLE      Q       dst_trgtmatch\[0\][1]     0.257       6.454
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.requestorSelValid                 System        SLE      Q       requestorSelValid         0.257       6.473
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[0]     System        SLE      Q       rdfifoRdData[0]           0.257       6.512
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[1]     System        SLE      Q       rdfifoRdData_i[1]         0.237       6.544
-=========================================================================================================================================================================================================================
+                                                                                                                                               Starting                                                                                                                                            Arrival           
+Instance                                                                                                                                       Reference                                                                Type     Pin     Net                                                       Time        Slack 
+                                                                                                                                               Clock                                                                                                                                                                 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.requestorSelValid                 CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       requestorSelValid                                         0.257       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[1]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       rdfifoRdData_i[1]                                         0.237       13.484
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sValid                           CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.targetRVALID[0]        0.257       13.599
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[69]                         CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.targetRID[1]           0.237       13.662
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[0]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       rdfifoRdData_i[0]                                         0.257       14.137
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.derr.DERR_RLAST                                                                            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       DERR_RLAST                                                0.257       14.447
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[0\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.mReady                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.initiatorRREADY[0]     0.257       14.451
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[1\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sValid                           CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.targetRVALID[1]        0.257       14.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.IntrConvertor_loop\[1\]\.initrconv.genblk3\.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.mReady                CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.initiatorRREADY[1]     0.257       14.589
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.derr.readID[1]                                                                             CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      Q       DERR_RID[1]                                               0.237       14.928
+=====================================================================================================================================================================================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                                                                                                               Starting                                             Required          
-Instance                                                                                                                       Reference     Type     Pin     Net                   Time         Slack
-                                                                                                                               Clock                                                                  
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[3]      System        SLE      D       fifoSpace_11[3]       10.000       5.649
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[2]      System        SLE      D       fifoSpace_11[2]       10.000       5.908
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoWrAddr[2]     System        SLE      D       fifoWrAddr_8[2]       10.000       5.967
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoWrAddr[2]     System        SLE      D       fifoWrAddr_8[2]       10.000       6.000
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[1\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoWrAddr[1]     System        SLE      D       N_52_i                10.000       6.066
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.arcon.trgmx.genblk1\.targetAVALID[0]                                       System        SLE      D       targetAVALID_4[0]     10.000       6.080
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.arcon.trgmx.genblk1\.targetAVALID[1]                                       System        SLE      D       targetAVALID_4[1]     10.000       6.080
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.arcon.trgmx.genblk1\.targetAVALID[2]                                       System        SLE      D       targetAVALID_4[2]     10.000       6.080
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[0]      System        SLE      D       fifoSpace_11[0]       10.000       6.096
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[1]      System        SLE      D       fifoSpace_11[1]       10.000       6.146
-======================================================================================================================================================================================================
+                                                                                                                           Starting                                                                                               Required           
+Instance                                                                                                                   Reference                                                                Type     Pin     Net          Time         Slack 
+                                                                                                                           Clock                                                                                                                     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[2]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[3]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[4]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[5]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[6]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[7]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[8]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[9]      CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[10]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[11]     CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3     SLE      EN      N_3341_i     18.630       13.457
+=====================================================================================================================================================================================================================================================
 
 
 
@@ -378,49 +383,47 @@ Worst Path Information
 
 
 Path information for path number 1: 
-      Requested Period:                      10.000
-    - Setup time:                            0.000
+      Requested Period:                      18.779
+    - Setup time:                            0.150
     + Clock delay at ending point:           0.000 (ideal)
-    + Estimated clock delay at ending point: 0.000
-    = Required time:                         10.000
+    = Required time:                         18.630
 
-    - Propagation time:                      4.351
+    - Propagation time:                      5.172
     - Clock delay at starting point:         0.000 (ideal)
-    - Estimated clock delay at start point:  -0.000
-    = Slack (critical) :                     5.649
+    = Slack (critical) :                     13.457
 
     Number of logic level(s):                6
-    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[1] / Q
-    Ending point:                            CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[3] / D
-    The start point is clocked by            System [rising] on pin CLK
-    The end   point is clocked by            System [rising] on pin CLK
+    Starting point:                          CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.requestorSelValid / Q
+    Ending point:                            CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[2] / EN
+    The start point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin CLK
+    The end   point is clocked by            CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3 [rising] (rise=0.000 fall=9.390 period=18.779) on pin CLK
 
-Instance / Net                                                                                                                                          Pin      Pin               Arrival     No. of    
-Name                                                                                                                                           Type     Name     Dir     Delay     Time        Fan Out(s)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.fifoRdDataQ1[1]     SLE      Q        Out     0.257     0.257 r     -         
-rdfifoRdData_i[1]                                                                                                                              Net      -        -       0.719     -           7         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m64_e_0                                                 CFG2     A        In      -         0.976 r     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m64_e_0                                                 CFG2     Y        Out     0.060     1.036 r     -         
-m64_e_0                                                                                                                                        Net      -        -       0.796     -           12        
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.arbEnable_fc                                            CFG4     C        In      -         1.831 r     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.arbEnable_fc                                            CFG4     Y        Out     0.175     2.006 r     -         
-arbEnable_0                                                                                                                                    Net      -        -       0.766     -           10        
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.fifoWrAddr_0_sqmuxa                             CFG4     C        In      -         2.772 r     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.fifoWrAddr_0_sqmuxa                             CFG4     Y        Out     0.156     2.928 f     -         
-fifoWrAddr_0_sqmuxa                                                                                                                            Net      -        -       0.683     -           5         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.CO2_0_tz        CFG4     B        In      -         3.612 f     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.CO2_0_tz        CFG4     Y        Out     0.091     3.703 f     -         
-CO2_0_tz                                                                                                                                       Net      -        -       0.139     -           1         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.CO2_0           CFG2     A        In      -         3.842 f     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.CO2_0           CFG2     Y        Out     0.056     3.898 f     -         
-CO2_0                                                                                                                                          Net      -        -       0.139     -           1         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.SUM[3]          CFG4     C        In      -         4.038 f     -         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.un1_mem_async_rd\.fifoSpace_2_1.SUM[3]          CFG4     Y        Out     0.175     4.212 r     -         
-fifoSpace_11[3]                                                                                                                                Net      -        -       0.139     -           1         
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.fifoSpace[3]                      SLE      D        In      -         4.351 r     -         
-=========================================================================================================================================================================================================
-Total path delay (propagation time + setup) of 4.351 is 0.970(22.3%) logic and 3.382(77.7%) route.
+Instance / Net                                                                                                                              Pin      Pin               Arrival     No. of    
+Name                                                                                                                               Type     Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.requestorSelValid     SLE      Q        Out     0.257     0.257 r     -         
+requestorSelValid                                                                                                                  Net      -        -       0.822     -           14        
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m14                                         CFG2     B        In      -         1.080 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m14                                         CFG2     Y        Out     0.098     1.178 r     -         
+N_15_0                                                                                                                             Net      -        -       1.116     -           57        
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m73_e                                       CFG4     C        In      -         2.293 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.m73_e                                       CFG4     Y        Out     0.175     2.468 r     -         
+N_113                                                                                                                              Net      -        -       0.139     -           1         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.N_113_mux_i                                 CFG4     B        In      -         2.607 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdmx.N_113_mux_i                                 CFG4     Y        Out     0.098     2.705 r     -         
+N_113_mux_i                                                                                                                        Net      -        -       0.701     -           6         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.nextState_0_sqmuxa_1                   CFG2     A        In      -         3.407 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.nextState_0_sqmuxa_1                   CFG2     Y        Out     0.060     3.466 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.sDatEn_0_sqmuxa_1                      Net      -        -       0.139     -           1         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.sDatEn_0_sqmuxa_3                      CFG2     A        In      -         3.606 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.sDatEn_0_sqmuxa_3                      CFG2     Y        Out     0.060     3.665 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.sDatEn_0_sqmuxa_3                      Net      -        -       0.139     -           1         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.N_3341_i                               CFG3     A        In      -         3.805 r     -         
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.N_3341_i                               CFG3     Y        Out     0.060     3.864 r     -         
+N_3341_i                                                                                                                           Net      -        -       1.308     -           67        
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.TrgtConvertor_loop\[0\]\.trgtcnv.rgsl.rdatach_rs_en\.rrs.gen_ready_reg_en\.sDat[2]              SLE      EN       In      -         5.172 r     -         
+=============================================================================================================================================================================================
+Total path delay (propagation time + setup) of 5.322 is 0.957(18.0%) logic and 4.365(82.0%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -438,6 +441,6 @@ caxi4interconnect_Axi4CrossBar_Z40     Mapped     No database
 =============================================================
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sun Jul 12 04:43:03 2026
+# Sun Jul 12 05:05:41 2026
 
 ###########################################################]

@@ -13,13 +13,13 @@ The file contains the job information from mapper to be displayed as part of the
 </job_status>
 <job_info>
 <info name="Notes">
-<data>56</data>
+<data>61</data>
 <report_link name="more">
 <data>/home/livan/gateware/gateware/work/libero/synthesis/caxi4interconnect_Axi4CrossBar_Z40/report/caxi4interconnect_Axi4CrossBar_Z40_notes.txt</data>
 </report_link>
 </info>
 <info name="Warnings">
-<data>13</data>
+<data>14</data>
 <report_link name="more">
 <data>/home/livan/gateware/gateware/work/libero/synthesis/caxi4interconnect_Axi4CrossBar_Z40/report/caxi4interconnect_Axi4CrossBar_Z40_warnings.txt</data>
 </report_link>
@@ -37,10 +37,10 @@ The file contains the job information from mapper to be displayed as part of the
 <data>0h:00m:01s</data>
 </info>
 <info name="Peak Memory">
-<data>569MB</data>
+<data>570MB</data>
 </info>
 <info name="Date &amp; Time">
-<data type="timestamp">1783802583</data>
+<data type="timestamp">1783803941</data>
 </info>
 </job_info>
 </job_run_status>
