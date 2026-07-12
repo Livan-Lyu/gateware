@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------
-// Created by Microsemi SmartDesign Sun Jul 12 19:45:14 2026
+// Created by Microsemi SmartDesign Sun Jul 12 21:05:39 2026
 // Parameters for COREAXI4INTERCONNECT
 //--------------------------------------------------------------------
 
