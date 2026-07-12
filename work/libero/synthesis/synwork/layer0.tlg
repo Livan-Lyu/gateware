@@ -1,4 +1,4 @@
-Selecting top level module MY_CUSTOM_FPGA_DESIGN_8BB3E556
+Selecting top level module MY_CUSTOM_FPGA_DESIGN_6E920468
 @N: CG775 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":31:7:31:14|Component CoreAPB3 not found in library "work" or "__hyper__lib__", but found in library COREAPB3_LIB
 @N: CG364 :"/home/livan/Microchip/Libero_SoC_2025.1/Libero_SoC/Synplify_Pro/lib/generic/acg5.v":187:7:187:10|Synthesizing module AND4 in library work.
 Running optimization stage 1 on AND4 .......
@@ -391,7 +391,7 @@ Finished optimization stage 1 on miv_ihc_channel_Z7 (CPU Time 0h:00m:00s, Memory
 	MESSAGE_BASE_ADDR_IN=8'b00100000
    Generated name = miv_ihc_channel_Z8
 Running optimization stage 1 on miv_ihc_channel_Z8 .......
-Finished optimization stage 1 on miv_ihc_channel_Z8 (CPU Time 0h:00m:00s, Memory Used current: 250MB peak: 250MB)
+Finished optimization stage 1 on miv_ihc_channel_Z8 (CPU Time 0h:00m:00s, Memory Used current: 251MB peak: 251MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/work/MIV_IHC_C0/MIV_IHC_C0_0/rtl/core/core_merged/miv_ihc_core_merged.v":1393:7:1393:21|Synthesizing module miv_ihc_channel in library work.
 
 	SYNC_RESET=32'b00000000000000000000000000000000
@@ -692,16 +692,16 @@ Running optimization stage 1 on APB_BUS_CONVERTER .......
 Finished optimization stage 1 on APB_BUS_CONVERTER (CPU Time 0h:00m:00s, Memory Used current: 255MB peak: 255MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE_DEFAULT_GPIOS/CAPE_DEFAULT_GPIOS.v":9:7:9:24|Synthesizing module CAPE_DEFAULT_GPIOS in library work.
 Running optimization stage 1 on CAPE_DEFAULT_GPIOS .......
-Finished optimization stage 1 on CAPE_DEFAULT_GPIOS (CPU Time 0h:00m:00s, Memory Used current: 255MB peak: 255MB)
+Finished optimization stage 1 on CAPE_DEFAULT_GPIOS (CPU Time 0h:00m:00s, Memory Used current: 256MB peak: 256MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/hdl/apb_ctrl_status.v":2:7:2:21|Synthesizing module apb_ctrl_status in library work.
 Running optimization stage 1 on apb_ctrl_status .......
-Finished optimization stage 1 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 256MB peak: 256MB)
+Finished optimization stage 1 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 257MB peak: 257MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":2:7:2:16|Synthesizing module pixel_proc in library work.
 Running optimization stage 1 on pixel_proc .......
 Finished optimization stage 1 on pixel_proc (CPU Time 0h:00m:00s, Memory Used current: 257MB peak: 258MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":5:7:5:15|Synthesizing module cape_regs in library work.
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":47:18:47:22|Port-width mismatch for port paddr. The port definition is 8 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":61:18:61:22|Port-width mismatch for port paddr. The port definition is 8 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
+@W: CS263 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":77:18:77:22|Port-width mismatch for port paddr. The port definition is 8 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
+@W: CS263 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":91:18:91:22|Port-width mismatch for port paddr. The port definition is 8 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
 Running optimization stage 1 on cape_regs .......
 Finished optimization stage 1 on cape_regs (CPU Time 0h:00m:00s, Memory Used current: 257MB peak: 258MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/CoreAPB3/4.2.100/rtl/vlog/core/coreapb3.v":31:7:31:14|Synthesizing module CoreAPB3 in library COREAPB3_LIB.
@@ -931,13 +931,13 @@ Finished optimization stage 1 on CoreAPB3_CAPE (CPU Time 0h:00m:00s, Memory Used
 @N: CG179 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/core/coregpio.v":512:16:512:28|Removing redundant assignment.
 @N: CG179 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/core/coregpio.v":515:16:515:28|Removing redundant assignment.
 Running optimization stage 1 on CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17 .......
-Finished optimization stage 1 on CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17 (CPU Time 0h:00m:00s, Memory Used current: 260MB peak: 260MB)
+Finished optimization stage 1 on CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17 (CPU Time 0h:00m:00s, Memory Used current: 261MB peak: 261MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER.v":153:7:153:23|Synthesizing module CoreGPIO_P8_UPPER in library work.
 Running optimization stage 1 on CoreGPIO_P8_UPPER .......
-Finished optimization stage 1 on CoreGPIO_P8_UPPER (CPU Time 0h:00m:00s, Memory Used current: 260MB peak: 260MB)
+Finished optimization stage 1 on CoreGPIO_P8_UPPER (CPU Time 0h:00m:00s, Memory Used current: 261MB peak: 261MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/work/P8_GPIO_UPPER/P8_GPIO_UPPER.v":9:7:9:19|Synthesizing module P8_GPIO_UPPER in library work.
 Running optimization stage 1 on P8_GPIO_UPPER .......
-Finished optimization stage 1 on P8_GPIO_UPPER (CPU Time 0h:00m:00s, Memory Used current: 260MB peak: 260MB)
+Finished optimization stage 1 on P8_GPIO_UPPER (CPU Time 0h:00m:00s, Memory Used current: 261MB peak: 261MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":23:7:23:40|Synthesizing module CoreGPIO_P9_CoreGPIO_P9_0_CoreGPIO in library work.
 
 	IO_NUM=32'b00000000000000000000000000010101
@@ -1260,7 +1260,7 @@ Running optimization stage 1 on corepwm_reg_if_Z20 .......
 @W: CL271 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/reg_if.v":240:0:240:5|Pruning unused bits 16 to 3 of pwm_enable_reg[16:1]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL271 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/reg_if.v":93:0:93:5|Pruning unused bits 8 to 3 of psh_enable_reg1[8:1]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL169 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/reg_if.v":93:0:93:5|Pruning unused register psh_enable_reg2[16:9]. Make sure that there are no unused intermediate registers.
-Finished optimization stage 1 on corepwm_reg_if_Z20 (CPU Time 0h:00m:00s, Memory Used current: 264MB peak: 264MB)
+Finished optimization stage 1 on corepwm_reg_if_Z20 (CPU Time 0h:00m:00s, Memory Used current: 265MB peak: 265MB)
 @N: CG364 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/corepwm/4.5.100/rtl/vlog/core/timebase.v":26:7:26:22|Synthesizing module corepwm_timebase in library work.
 
 	APB_DWIDTH=32'b00000000000000000000000000100000
@@ -4562,7 +4562,7 @@ Finished optimization stage 1 on caxi4interconnect_RegisterSlice_Z44 (CPU Time 0
 	DWC_ENABLED=1'b0
    Generated name = caxi4interconnect_TargetConvertor_Z45
 
-Only the first 100 messages of id 'CG364' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_8BB3E556_compiler.srr -id CG364' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG364} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CG364' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_6E920468_compiler.srr -id CG364' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG364} -count unlimited' in the Tcl shell.
 
 	NUM_TARGETS=32'b00000000000000000000000000000100
 	TARGET_DATA_WIDTH=32'b00000000000000000000000001000000
@@ -4732,7 +4732,7 @@ Finished optimization stage 1 on caxi4interconnect_TrgtProtocolConverter_Z49 (CP
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":300:39:300:57|Removing wire cdc_dwc_targetRRESP, as there is no assignment to it.
 @W: CG360 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":301:36:301:54|Removing wire cdc_dwc_targetRLAST, as there is no assignment to it.
 
-Only the first 100 messages of id 'CG360' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_8BB3E556_compiler.srr -id CG360' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG360} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CG360' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_6E920468_compiler.srr -id CG360' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CG360} -count unlimited' in the Tcl shell.
 @W: CG133 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/Axi4Convertors/TargetConvertor.v":1671:7:1671:13|Object trgt_rs is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on caxi4interconnect_TargetConvertor_Z45 .......
 Finished optimization stage 1 on caxi4interconnect_TargetConvertor_Z45 (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
@@ -4837,14 +4837,10 @@ Running optimization stage 1 on COREAXI4INTERCONNECT_Z21 .......
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2225:95:2225:110|*Output INITIATOR8_BRESP has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
 @W: CL318 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":2225:116:2225:131|*Output INITIATOR9_BRESP has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
 
-Only the first 100 messages of id 'CL318' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_8BB3E556_compiler.srr -id CL318' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL318} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CL318' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_6E920468_compiler.srr -id CL318' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL318} -count unlimited' in the Tcl shell.
 Finished optimization stage 1 on COREAXI4INTERCONNECT_Z21 (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
 Running optimization stage 1 on CAPE_AXI_XBAR .......
 Finished optimization stage 1 on CAPE_AXI_XBAR (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
-@W: CS142 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":28:4:28:10|Range of port ms_arid in port declaration and body are different.
-@W: CS142 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":30:4:30:10|Range of port ms_awid in port declaration and body are different.
-@W: CG1273 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":788:31:788:37|An input port (port ms_arid) is the target of an assignment - please check if this is intentional
-@W: CG1273 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":772:31:772:37|An input port (port ms_awid) is the target of an assignment - please check if this is intentional
 Running optimization stage 1 on CAPE .......
 Finished optimization stage 1 on CAPE (CPU Time 0h:00m:00s, Memory Used current: 274MB peak: 274MB)
 Running optimization stage 1 on CORERESET_CORERESET_0_CORERESET_PF .......
@@ -4882,16 +4878,14 @@ Running optimization stage 1 on PF_CCC_ADC .......
 Finished optimization stage 1 on PF_CCC_ADC (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
 Running optimization stage 1 on CLOCKS_AND_RESETS .......
 Finished optimization stage 1 on CLOCKS_AND_RESETS (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":792:35:792:53|Port-width mismatch for port ms_arid. The port definition is 5 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
-@W: CS263 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":793:35:793:53|Port-width mismatch for port ms_awid. The port definition is 5 bits, but the actual port connection bit width is 4. Adjust either the definition or the instantiation of this port.
-@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":160:14:160:35|Removing wire CAPE_AXI4mtarget0_ACLK, as it has the load but no drivers.
-@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":162:14:162:38|Removing wire CAPE_AXI4mtarget0_ARESETN, as it has the load but no drivers.
-Running optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_8BB3E556 .......
-Finished optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_8BB3E556 (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
-Running optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_8BB3E556 .......
-@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":160:14:160:35|*Input CAPE_AXI4mtarget0_ACLK to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
-@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_8BB3E556/MY_CUSTOM_FPGA_DESIGN_8BB3E556.v":162:14:162:38|*Input CAPE_AXI4mtarget0_ARESETN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
-Finished optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_8BB3E556 (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
+@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_6E920468/MY_CUSTOM_FPGA_DESIGN_6E920468.v":160:14:160:35|Removing wire CAPE_AXI4mtarget0_ACLK, as it has the load but no drivers.
+@W: CG184 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_6E920468/MY_CUSTOM_FPGA_DESIGN_6E920468.v":164:14:164:38|Removing wire CAPE_AXI4mtarget0_ARESETN, as it has the load but no drivers.
+Running optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_6E920468 .......
+Finished optimization stage 1 on MY_CUSTOM_FPGA_DESIGN_6E920468 (CPU Time 0h:00m:00s, Memory Used current: 275MB peak: 275MB)
+Running optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_6E920468 .......
+@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_6E920468/MY_CUSTOM_FPGA_DESIGN_6E920468.v":160:14:160:35|*Input CAPE_AXI4mtarget0_ACLK to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+@W: CL156 :"/home/livan/gateware/gateware/work/libero/component/work/MY_CUSTOM_FPGA_DESIGN_6E920468/MY_CUSTOM_FPGA_DESIGN_6E920468.v":164:14:164:38|*Input CAPE_AXI4mtarget0_ARESETN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Finished optimization stage 2 on MY_CUSTOM_FPGA_DESIGN_6E920468 (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
 Running optimization stage 2 on CLOCKS_AND_RESETS .......
 Finished optimization stage 2 on CLOCKS_AND_RESETS (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
 Running optimization stage 2 on PF_CCC_ADC .......
@@ -4926,9 +4920,7 @@ Running optimization stage 2 on CORERESET_CORERESET_0_CORERESET_PF .......
 @N: CL135 :"/home/livan/gateware/gateware/work/libero/component/work/CORERESET/CORERESET_0/core/corereset_pf.v":58:0:58:5|Found sequential shift dff with address depth of 16 words and data bit width of 1.
 Finished optimization stage 2 on CORERESET_CORERESET_0_CORERESET_PF (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
 Running optimization stage 2 on CAPE .......
-@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":77:14:77:21|Input AXI_ACLK is unused.
-@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":89:14:89:20|Input ms_arid is unused.
-@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":91:14:91:20|Input ms_awid is unused.
+@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/work/CAPE/CAPE.v":100:14:100:21|Input AXI_ACLK is unused.
 Finished optimization stage 2 on CAPE (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
 Running optimization stage 2 on CAPE_AXI_XBAR .......
 Finished optimization stage 2 on CAPE_AXI_XBAR (CPU Time 0h:00m:00s, Memory Used current: 276MB peak: 276MB)
@@ -5209,8 +5201,10 @@ Running optimization stage 2 on COREAXI4INTERCONNECT_Z21 .......
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1983:29:1983:46|Input INITIATOR11_HBURST is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1983:51:1983:68|Input INITIATOR12_HBURST is unused.
 @N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1983:73:1983:90|Input INITIATOR13_HBURST is unused.
+@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1983:95:1983:112|Input INITIATOR14_HBURST is unused.
+@N: CL159 :"/home/livan/gateware/gateware/work/libero/component/Actel/DirectCore/COREAXI4INTERCONNECT/3.0.130/rtl/vlog/core/CoreAxi4Interconnect.v":1984:7:1984:24|Input INITIATOR15_HBURST is unused.
 
-Only the first 100 messages of id 'CL159' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_8BB3E556_compiler.srr -id CL159' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL159} -count unlimited' in the Tcl shell.
+Only the first 100 messages of id 'CL159' are reported. To see all messages use 'report_messages -log /home/livan/gateware/gateware/work/libero/synthesis/synlog/MY_CUSTOM_FPGA_DESIGN_6E920468_compiler.srr -id CL159' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {CL159} -count unlimited' in the Tcl shell.
 Finished optimization stage 2 on COREAXI4INTERCONNECT_Z21 (CPU Time 0h:00m:00s, Memory Used current: 279MB peak: 279MB)
 Running optimization stage 2 on caxi4interconnect_ResetSync_0s_27s_3s .......
 Finished optimization stage 2 on caxi4interconnect_ResetSync_0s_27s_3s (CPU Time 0h:00m:00s, Memory Used current: 279MB peak: 279MB)
@@ -5234,11 +5228,11 @@ Running optimization stage 2 on CoreGPIO_P9 .......
 Finished optimization stage 2 on CoreGPIO_P9 (CPU Time 0h:00m:00s, Memory Used current: 280MB peak: 280MB)
 Running optimization stage 2 on CoreGPIO_P9_CoreGPIO_P9_0_CoreGPIO_Z18 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P9/CoreGPIO_P9_0/rtl/vlog/core/coregpio.v":182:26:182:31|Input port bits 31 to 21 of PWDATA[31:0] are unused. Assign logic for all port bits or change the input port size.
-Finished optimization stage 2 on CoreGPIO_P9_CoreGPIO_P9_0_CoreGPIO_Z18 (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
+Finished optimization stage 2 on CoreGPIO_P9_CoreGPIO_P9_0_CoreGPIO_Z18 (CPU Time 0h:00m:00s, Memory Used current: 282MB peak: 282MB)
 Running optimization stage 2 on P8_GPIO_UPPER .......
-Finished optimization stage 2 on P8_GPIO_UPPER (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
+Finished optimization stage 2 on P8_GPIO_UPPER (CPU Time 0h:00m:00s, Memory Used current: 282MB peak: 282MB)
 Running optimization stage 2 on CoreGPIO_P8_UPPER .......
-Finished optimization stage 2 on CoreGPIO_P8_UPPER (CPU Time 0h:00m:00s, Memory Used current: 281MB peak: 281MB)
+Finished optimization stage 2 on CoreGPIO_P8_UPPER (CPU Time 0h:00m:00s, Memory Used current: 282MB peak: 282MB)
 Running optimization stage 2 on CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17 .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/component/work/CoreGPIO_P8_UPPER/CoreGPIO_P8_UPPER_0/rtl/vlog/core/coregpio.v":182:26:182:31|Input port bits 31 to 16 of PWDATA[31:0] are unused. Assign logic for all port bits or change the input port size.
 Finished optimization stage 2 on CoreGPIO_P8_UPPER_CoreGPIO_P8_UPPER_0_CoreGPIO_Z17 (CPU Time 0h:00m:00s, Memory Used current: 282MB peak: 282MB)
@@ -5250,10 +5244,10 @@ Running optimization stage 2 on cape_regs .......
 @W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/cape_regs.v":9:23:9:27|Input port bits 31 to 8 of paddr[31:0] are unused. Assign logic for all port bits or change the input port size.
 Finished optimization stage 2 on cape_regs (CPU Time 0h:00m:00s, Memory Used current: 282MB peak: 282MB)
 Running optimization stage 2 on pixel_proc .......
-@N: CL135 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":43:4:43:9|Found sequential shift irq_pclk with address depth of 3 words and data bit width of 1.
-@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Optimizing register bit rcnt[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL260 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Pruning register bit 5 of rcnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":105:4:105:9|Trying to extract state machine for register state.
+@N: CL135 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":77:4:77:9|Found sequential shift irq_pclk with address depth of 3 words and data bit width of 1.
+@W: CL190 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":139:4:139:9|Optimizing register bit rcnt[5] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL260 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":139:4:139:9|Pruning register bit 5 of rcnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":139:4:139:9|Trying to extract state machine for register state.
 Extracted state machine for register state
 State machine has 5 reachable states with original encodings of:
    000
@@ -5261,8 +5255,8 @@ State machine has 5 reachable states with original encodings of:
    010
    011
    100
-@W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":14:24:14:28|Input port bits 63 to 56 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
-@W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":14:24:14:28|Input port bits 31 to 24 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
+@W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":23:24:23:28|Input port bits 63 to 56 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
+@W: CL246 :"/home/livan/gateware/gateware/work/libero/hdl/pixel_proc.v":23:24:23:28|Input port bits 31 to 24 of RDATA[63:0] are unused. Assign logic for all port bits or change the input port size.
 Finished optimization stage 2 on pixel_proc (CPU Time 0h:00m:00s, Memory Used current: 300MB peak: 312MB)
 Running optimization stage 2 on apb_ctrl_status .......
 Finished optimization stage 2 on apb_ctrl_status (CPU Time 0h:00m:00s, Memory Used current: 300MB peak: 312MB)

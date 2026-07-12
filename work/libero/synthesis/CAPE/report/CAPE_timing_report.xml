@@ -17,8 +17,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT0</data>
 <data>133.1 MHz</data>
-<data>136.2 MHz</data>
-<data>0.169</data>
+<data>134.9 MHz</data>
+<data>0.096</data>
 </row>
 <row>
 <data>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT1</data>
@@ -35,8 +35,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>CLOCKS_AND_RESETS_inst_0/FPGA_CCC_C0_0/FPGA_CCC_C0_0/pll_inst_0/OUT3</data>
 <data>53.3 MHz</data>
-<data>103.2 MHz</data>
-<data>9.091</data>
+<data>99.6 MHz</data>
+<data>8.742</data>
 </row>
 <row>
 <data>CLOCKS_AND_RESETS_inst_0/PF_CCC_ADC_0/PF_CCC_ADC_0/pll_inst_0/OUT0</data>
@@ -54,6 +54,6 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data>System</data>
 <data>100.0 MHz</data>
 <data>NA</data>
-<data>18.089</data>
+<data>18.127</data>
 </row>
 </report_table>

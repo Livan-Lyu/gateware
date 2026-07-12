@@ -17,9 +17,9 @@ INSTANTIATED     RTL_INSTANCE     PRIMITIVE_TYPE     USER_ATTRIBUTE     MAPPED_I
 
 RTL_INSTANCE                                                                                                                          PRIMITIVE_TYPE     USER_ATTRIBUTE             COMMENTS                                                                    
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[1:0]             RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
-                                                                                                                                                                                                                                                                
 CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.rDCon.MD\.genblk1\[0\]\.rdcon.rdFif\.rdFif.mem_async_rd\.genblk1\.DPFF.mem[0]     RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
+                                                                                                                                                                                                                                                                
+CAPE_inst_0.XBAR_0.CAPE_AXI_XBAR_0.gen_cb_en\.axicb.wDCon.iWrConXB\.iWrConFif\[0\]\.genblk1\.wrFif.genblk1\.DPFF.mem[1:0]             RAM                syn_ramstyle=registers     Found property syn_ramstyle="registers". Inferring instance using registers.
 ================================================================================================================================================================================================================================================================
 
 #####  END OF RAM REPORT FOR COMPILE POINT: COREAXI4INTERCONNECT_Z21  #####

@@ -37,6 +37,22 @@
       <spirit:signalName>
         <spirit:componentSignalName>AWADDR</spirit:componentSignalName><spirit:busSignalName>AWADDR</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
+        <spirit:componentSignalName>AWLEN</spirit:componentSignalName><spirit:busSignalName>AWLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWSIZE</spirit:componentSignalName><spirit:busSignalName>AWSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWBURST</spirit:componentSignalName><spirit:busSignalName>AWBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWLOCK</spirit:componentSignalName><spirit:busSignalName>AWLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWCACHE</spirit:componentSignalName><spirit:busSignalName>AWCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWPROT</spirit:componentSignalName><spirit:busSignalName>AWPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWQOS</spirit:componentSignalName><spirit:busSignalName>AWQOS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWREGION</spirit:componentSignalName><spirit:busSignalName>AWREGION</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
         <spirit:componentSignalName>AWVALID</spirit:componentSignalName><spirit:busSignalName>AWVALID</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
         <spirit:componentSignalName>AWREADY</spirit:componentSignalName><spirit:busSignalName>AWREADY</spirit:busSignalName></spirit:signalName>
@@ -44,6 +60,8 @@
         <spirit:componentSignalName>WDATA</spirit:componentSignalName><spirit:busSignalName>WDATA</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
         <spirit:componentSignalName>WSTRB</spirit:componentSignalName><spirit:busSignalName>WSTRB</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>WLAST</spirit:componentSignalName><spirit:busSignalName>WLAST</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
         <spirit:componentSignalName>WVALID</spirit:componentSignalName><spirit:busSignalName>WVALID</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
@@ -61,6 +79,22 @@
       <spirit:signalName>
         <spirit:componentSignalName>ARADDR</spirit:componentSignalName><spirit:busSignalName>ARADDR</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
+        <spirit:componentSignalName>ARLEN</spirit:componentSignalName><spirit:busSignalName>ARLEN</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARSIZE</spirit:componentSignalName><spirit:busSignalName>ARSIZE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARBURST</spirit:componentSignalName><spirit:busSignalName>ARBURST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARLOCK</spirit:componentSignalName><spirit:busSignalName>ARLOCK</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARCACHE</spirit:componentSignalName><spirit:busSignalName>ARCACHE</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARPROT</spirit:componentSignalName><spirit:busSignalName>ARPROT</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARQOS</spirit:componentSignalName><spirit:busSignalName>ARQOS</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARREGION</spirit:componentSignalName><spirit:busSignalName>ARREGION</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
         <spirit:componentSignalName>ARVALID</spirit:componentSignalName><spirit:busSignalName>ARVALID</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
         <spirit:componentSignalName>ARREADY</spirit:componentSignalName><spirit:busSignalName>ARREADY</spirit:busSignalName></spirit:signalName>
@@ -71,9 +105,21 @@
       <spirit:signalName>
         <spirit:componentSignalName>RRESP</spirit:componentSignalName><spirit:busSignalName>RRESP</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
+        <spirit:componentSignalName>RLAST</spirit:componentSignalName><spirit:busSignalName>RLAST</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
         <spirit:componentSignalName>RVALID</spirit:componentSignalName><spirit:busSignalName>RVALID</spirit:busSignalName></spirit:signalName>
       <spirit:signalName>
-        <spirit:componentSignalName>RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName></spirit:signalMap>
+        <spirit:componentSignalName>RREADY</spirit:componentSignalName><spirit:busSignalName>RREADY</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>AWUSER</spirit:componentSignalName><spirit:busSignalName>AWUSER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>WUSER</spirit:componentSignalName><spirit:busSignalName>WUSER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>BUSER</spirit:componentSignalName><spirit:busSignalName>BUSER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>ARUSER</spirit:componentSignalName><spirit:busSignalName>ARUSER</spirit:busSignalName></spirit:signalName>
+      <spirit:signalName>
+        <spirit:componentSignalName>RUSER</spirit:componentSignalName><spirit:busSignalName>RUSER</spirit:busSignalName></spirit:signalName></spirit:signalMap>
     <spirit:vendorExtensions></spirit:vendorExtensions>
   </spirit:busInterface>
   </spirit:busInterfaces>
@@ -160,6 +206,60 @@
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
+        <spirit:name>ARBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARCACHE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARLOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARPROT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARQOS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARREGION</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>ARUSER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
         <spirit:name>ARVALID</spirit:name>
         <spirit:direction>out</spirit:direction>
       </spirit:signal>
@@ -171,6 +271,16 @@
         <spirit:name>RDATA</spirit:name>
         <spirit:direction>in</spirit:direction>
         <spirit:left>63</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RLAST</spirit:name>
+        <spirit:direction>in</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>RUSER</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>0</spirit:left>
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
@@ -206,6 +316,60 @@
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
+        <spirit:name>AWBURST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWCACHE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWLEN</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWLOCK</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWPROT</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWQOS</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWREGION</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>3</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWSIZE</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>2</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>AWUSER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>0</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
         <spirit:name>AWVALID</spirit:name>
         <spirit:direction>out</spirit:direction>
       </spirit:signal>
@@ -220,9 +384,19 @@
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
+        <spirit:name>WLAST</spirit:name>
+        <spirit:direction>out</spirit:direction>
+      </spirit:signal>
+      <spirit:signal>
         <spirit:name>WSTRB</spirit:name>
         <spirit:direction>out</spirit:direction>
         <spirit:left>7</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>WUSER</spirit:name>
+        <spirit:direction>out</spirit:direction>
+        <spirit:left>0</spirit:left>
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
@@ -249,6 +423,12 @@
         <spirit:name>BRESP</spirit:name>
         <spirit:direction>in</spirit:direction>
         <spirit:left>1</spirit:left>
+        <spirit:right>0</spirit:right>
+      </spirit:signal>
+      <spirit:signal>
+        <spirit:name>BUSER</spirit:name>
+        <spirit:direction>in</spirit:direction>
+        <spirit:left>0</spirit:left>
         <spirit:right>0</spirit:right>
       </spirit:signal>
       <spirit:signal>
