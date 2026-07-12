@@ -331,7 +331,12 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_ACLK" "XBAR_0:ACLK" "c
 # in ADD_CAPE.tcl) to validate whether the AXI_ARESETN path is getting lost
 # inside SmartDesign/generated connectivity.
 # Revert by restoring cape_regs_0:ARESETN to the AXI_ARESETN net below.
-sd_connect_pins -sd_name ${sd_name} -pin_names {"AXI_ARESETN" "XBAR_0:ARESETN"}
+#
+# TEMP DEBUG OVERRIDE:
+# Also drive XBAR_0:ARESETN from DBG_FIC0_RESET_N so both cape_regs and the
+# interconnect share the same known-good reset source during debugging.
+# Revert by restoring XBAR_0:ARESETN to the AXI_ARESETN net below.
+sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "XBAR_0:ARESETN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:ARESETN"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC0_RESET_N" "cape_regs_0:DBG_FIC0_RESET_N"}
 sd_connect_pins -sd_name ${sd_name} -pin_names {"DBG_FIC3_RESET_N" "cape_regs_0:DBG_FIC3_RESET_N"}
