@@ -9,17 +9,47 @@ module pixel_proc(
     // AXI4 master — AMBA standard naming
     input               ACLK, ARESETN,
     output  reg [37:0]  ARADDR,
+    output      [1:0]   ARBURST,
+    output      [3:0]   ARCACHE,
+    output      [7:0]   ARLEN,
+    output      [0:0]   ARLOCK,
+    output      [2:0]   ARPROT,
+    output      [3:0]   ARQOS,
+    output      [3:0]   ARREGION,
+    output      [2:0]   ARSIZE,
+    output      [0:0]   ARUSER,
     output  reg         ARVALID,
     input               ARREADY,
     input       [63:0]  RDATA,
+    input               RLAST,
+    input       [0:0]   RUSER,
     input               RVALID,
     output  reg         RREADY,
     input       [1:0]   RRESP,
     output      [3:0]   ARID,       input [3:0] RID,
-    output      [37:0]  AWADDR,     output AWVALID,   input AWREADY,
-    output      [63:0]  WDATA,       output [7:0] WSTRB, output WVALID, input WREADY,
+    output      [37:0]  AWADDR,
+    output      [1:0]   AWBURST,
+    output      [3:0]   AWCACHE,
+    output      [7:0]   AWLEN,
+    output      [0:0]   AWLOCK,
+    output      [2:0]   AWPROT,
+    output      [3:0]   AWQOS,
+    output      [3:0]   AWREGION,
+    output      [2:0]   AWSIZE,
+    output      [0:0]   AWUSER,
+    output              AWVALID,
+    input               AWREADY,
+    output      [63:0]  WDATA,
+    output              WLAST,
+    output      [7:0]   WSTRB,
+    output      [0:0]   WUSER,
+    output              WVALID,
+    input               WREADY,
     output      [3:0]   AWID,       input [3:0] BID,
-    input       [1:0]   BRESP,      input BVALID,     output BREADY,
+    input       [1:0]   BRESP,
+    input       [0:0]   BUSER,
+    input               BVALID,
+    output              BREADY,
     input               DBG_FIC0_RESET_N,
     input               DBG_FIC3_RESET_N,
     input               DBG_DEVICE_INIT_DONE,
@@ -32,6 +62,10 @@ module pixel_proc(
     localparam [3:0] PPR=4'd12;
     localparam [4:0] MTH=5'd2;
     localparam [2:0] S_IDLE=0, S_AR=1, S_RD=2, S_ACK=3, S_DONE=4;
+    localparam [2:0] AXI_SIZE_8_BYTES = 3'b011;
+    localparam [1:0] AXI_BURST_INCR   = 2'b01;
+    localparam [3:0] AXI_CACHE_NORMAL = 4'b0011;
+    localparam [2:0] AXI_PROT_DATA    = 3'b000;
 
     // ======== PCLK domain ========
     reg [31:0] ctrl, src_lo, src_hi, pxl_cnt;
@@ -182,9 +216,36 @@ module pixel_proc(
         end
     end
 
-    assign ARID=0; assign AWID=0;
-    assign AWADDR=0; assign AWVALID=0;
-    assign WDATA=0; assign WSTRB=0; assign WVALID=0; assign BREADY=0;
+    assign ARID     = 4'd0;
+    assign ARLEN    = 8'd0;
+    assign ARSIZE   = AXI_SIZE_8_BYTES;
+    assign ARBURST  = AXI_BURST_INCR;
+    assign ARLOCK   = 1'b0;
+    assign ARCACHE  = AXI_CACHE_NORMAL;
+    assign ARPROT   = AXI_PROT_DATA;
+    assign ARQOS    = 4'd0;
+    assign ARREGION = 4'd0;
+    assign ARUSER   = 1'b0;
+
+    assign AWID     = 4'd0;
+    assign AWADDR   = 38'd0;
+    assign AWLEN    = 8'd0;
+    assign AWSIZE   = AXI_SIZE_8_BYTES;
+    assign AWBURST  = AXI_BURST_INCR;
+    assign AWLOCK   = 1'b0;
+    assign AWCACHE  = AXI_CACHE_NORMAL;
+    assign AWPROT   = AXI_PROT_DATA;
+    assign AWQOS    = 4'd0;
+    assign AWREGION = 4'd0;
+    assign AWUSER   = 1'b0;
+    assign AWVALID  = 1'b0;
+
+    assign WDATA    = 64'd0;
+    assign WLAST    = 1'b1;
+    assign WSTRB    = 8'd0;
+    assign WUSER    = 1'b0;
+    assign WVALID   = 1'b0;
+    assign BREADY   = 1'b0;
     wire [31:0] result_s = result;
     assign debug_s = {
         8'hDB,                // [31:24] signature

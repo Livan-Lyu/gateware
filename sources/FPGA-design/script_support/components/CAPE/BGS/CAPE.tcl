@@ -120,16 +120,80 @@ hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {APB_BIF} -bif_s
 hdl_core_rename_bif -hdl_core_name {cape_regs} -current_bif_name {APB_BIF} -new_bif_name {APBslave}
 # AXI4 master BIF (pixel_proc DMA)
 hdl_core_add_bif -hdl_core_name {cape_regs} -bif_definition {AXI4:AMBA:AMBA4:master} -bif_name {AXI_BIF} -signal_map {}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARID}     -core_signal_name {ARID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARADDR}   -core_signal_name {ARADDR}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARLEN}    -core_signal_name {ARLEN}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARSIZE}   -core_signal_name {ARSIZE}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARBURST}  -core_signal_name {ARBURST}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARLOCK}   -core_signal_name {ARLOCK}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARCACHE}  -core_signal_name {ARCACHE}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARPROT}   -core_signal_name {ARPROT}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARQOS}    -core_signal_name {ARQOS}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARREGION} -core_signal_name {ARREGION}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARVALID}  -core_signal_name {ARVALID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARREADY}  -core_signal_name {ARREADY}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RID}      -core_signal_name {RID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RDATA}    -core_signal_name {RDATA}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RRESP}    -core_signal_name {RRESP}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RLAST}    -core_signal_name {RLAST}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RVALID}   -core_signal_name {RVALID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RREADY}   -core_signal_name {RREADY}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {ARUSER}   -core_signal_name {ARUSER}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {RUSER}    -core_signal_name {RUSER}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWID}     -core_signal_name {AWID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWADDR}   -core_signal_name {AWADDR}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWLEN}    -core_signal_name {AWLEN}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWSIZE}   -core_signal_name {AWSIZE}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWBURST}  -core_signal_name {AWBURST}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWLOCK}   -core_signal_name {AWLOCK}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWCACHE}  -core_signal_name {AWCACHE}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWPROT}   -core_signal_name {AWPROT}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWQOS}    -core_signal_name {AWQOS}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWREGION} -core_signal_name {AWREGION}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWVALID}  -core_signal_name {AWVALID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWREADY}  -core_signal_name {AWREADY}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WDATA}    -core_signal_name {WDATA}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WSTRB}    -core_signal_name {WSTRB}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WLAST}    -core_signal_name {WLAST}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WVALID}   -core_signal_name {WVALID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WREADY}   -core_signal_name {WREADY}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {BID}      -core_signal_name {BID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {BRESP}    -core_signal_name {BRESP}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {BVALID}   -core_signal_name {BVALID}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {BREADY}   -core_signal_name {BREADY}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {AWUSER}   -core_signal_name {AWUSER}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {WUSER}    -core_signal_name {WUSER}
+hdl_core_assign_bif_signal -hdl_core_name {cape_regs} -bif_name {AXI_BIF} -bif_signal_name {BUSER}    -core_signal_name {BUSER}
 hdl_core_rename_bif -hdl_core_name {cape_regs} -current_bif_name {AXI_BIF} -new_bif_name {AXI4_INITIATOR}
 sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {cape_regs} -instance_name {cape_regs_0}
 
 # BGS: AXI4 crossbar for pixel_proc DMA
 sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ACLK} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {AXI_ARESETN} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_rlast} -port_direction {IN}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_araddr} -port_direction {OUT} -port_range {[37:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arburst} -port_direction {OUT} -port_range {[1:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arcache} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arlen} -port_direction {OUT} -port_range {[7:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arlock} -port_direction {OUT} -port_range {[0:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arprot} -port_direction {OUT} -port_range {[2:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arqos} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arregion} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arsize} -port_direction {OUT} -port_range {[2:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_aruser} -port_direction {OUT} -port_range {[0:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_arvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_arready} -port_direction {IN}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awburst} -port_direction {OUT} -port_range {[1:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awcache} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awlen} -port_direction {OUT} -port_range {[7:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awlock} -port_direction {OUT} -port_range {[0:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awprot} -port_direction {OUT} -port_range {[2:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awqos} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awregion} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awsize} -port_direction {OUT} -port_range {[2:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awuser} -port_direction {OUT} -port_range {[0:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_rdata} -port_direction {IN} -port_range {[63:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_ruser} -port_direction {IN} -port_range {[0:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_rvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_rready} -port_direction {OUT}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_rresp} -port_direction {IN} -port_range {[1:0]}
@@ -137,17 +201,20 @@ sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awaddr} -port_direction {O
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_awvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_awready} -port_direction {IN}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_wdata} -port_direction {OUT} -port_range {[63:0]}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_wlast} -port_direction {OUT}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_wstrb} -port_direction {OUT} -port_range {[7:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_wuser} -port_direction {OUT} -port_range {[0:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_wvalid} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_wready} -port_direction {IN}
 sd_create_bus_port -sd_name ${sd_name} -port_name {ms_bresp} -port_direction {IN} -port_range {[1:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_buser} -port_direction {IN} -port_range {[0:0]}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_bvalid} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {ms_bready} -port_direction {OUT}
-sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arid} -port_direction {IN} -port_range {[3:0]}
-sd_create_bus_port -sd_name ${sd_name} -port_name {ms_rid} -port_direction {OUT} -port_range {[3:0]}
-sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awid} -port_direction {IN} -port_range {[3:0]}
-sd_create_bus_port -sd_name ${sd_name} -port_name {ms_bid} -port_direction {OUT} -port_range {[3:0]}
-sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mtarget0}     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0} -port_bif_role {mirroredSlave} -port_bif_mapping {"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" "ARADDR:ms_araddr" "ARVALID:ms_arvalid" "ARREADY:ms_arready" "RDATA:ms_rdata"   "RVALID:ms_rvalid"   "RREADY:ms_rready"   "RRESP:ms_rresp" "AWADDR:ms_awaddr" "AWVALID:ms_awvalid" "AWREADY:ms_awready" "WDATA:ms_wdata"   "WSTRB:ms_wstrb"     "WVALID:ms_wvalid"   "WREADY:ms_wready" "BRESP:ms_bresp"   "BVALID:ms_bvalid"   "BREADY:ms_bready" "ARID:ms_arid" "RID:ms_rid" "AWID:ms_awid" "BID:ms_bid" }
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_arid} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_rid} -port_direction {IN} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_awid} -port_direction {OUT} -port_range {[3:0]}
+sd_create_bus_port -sd_name ${sd_name} -port_name {ms_bid} -port_direction {IN} -port_range {[3:0]}
+sd_create_bif_port -sd_name ${sd_name} -port_name {AXI4mtarget0}     -port_bif_vlnv {AMBA:AMBA4:AXI4:r0p0_0} -port_bif_role {mirroredSlave} -port_bif_mapping {"ACLK:AXI_ACLK" "ARESETN:AXI_ARESETN" "AWID:ms_awid" "AWADDR:ms_awaddr" "AWLEN:ms_awlen" "AWSIZE:ms_awsize" "AWBURST:ms_awburst" "AWLOCK:ms_awlock" "AWCACHE:ms_awcache" "AWPROT:ms_awprot" "AWQOS:ms_awqos" "AWREGION:ms_awregion" "AWVALID:ms_awvalid" "AWREADY:ms_awready" "WDATA:ms_wdata" "WSTRB:ms_wstrb" "WLAST:ms_wlast" "WVALID:ms_wvalid" "WREADY:ms_wready" "BID:ms_bid" "BRESP:ms_bresp" "BVALID:ms_bvalid" "BREADY:ms_bready" "ARID:ms_arid" "ARADDR:ms_araddr" "ARLEN:ms_arlen" "ARSIZE:ms_arsize" "ARBURST:ms_arburst" "ARLOCK:ms_arlock" "ARCACHE:ms_arcache" "ARPROT:ms_arprot" "ARQOS:ms_arqos" "ARREGION:ms_arregion" "ARVALID:ms_arvalid" "ARREADY:ms_arready" "RID:ms_rid" "RDATA:ms_rdata" "RRESP:ms_rresp" "RLAST:ms_rlast" "RVALID:ms_rvalid" "RREADY:ms_rready" "AWUSER:ms_awuser" "WUSER:ms_wuser" "BUSER:ms_buser" "ARUSER:ms_aruser" "RUSER:ms_ruser" }
 create_and_configure_core -core_vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:3.0.130} -component_name {CAPE_AXI_XBAR} -params {\
 "ADDR_WIDTH:38" \
 "DATA_WIDTH:64" \
