@@ -1,15 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <stdlib.h>
-
-#if __has_include("hls/hls_alloc.h")
 #include "hls/hls_alloc.h"
-#define PIXEL_PROC_ALLOC(bytes) hls_malloc((bytes), HLS_ALLOC_NONCACHED)
-#define PIXEL_PROC_FREE(ptr) hls_free((ptr))
-#else
-#define PIXEL_PROC_ALLOC(bytes) malloc((bytes))
-#define PIXEL_PROC_FREE(ptr) free((ptr))
-#endif
 
 #ifndef MAX_PIXELS
 #define MAX_PIXELS 2073600
@@ -82,9 +73,10 @@ static uint32_t make_rgbx(uint8_t r, uint8_t g, uint8_t b)
 int main()
 {
   const uint32_t pixel_count = 4;
-  uint32_t *input = (uint32_t *)PIXEL_PROC_ALLOC(
-      sizeof(uint32_t) * pixel_count * ENTRIES_PER_PIXEL);
-  uint8_t *output = (uint8_t *)PIXEL_PROC_ALLOC(sizeof(uint8_t) * pixel_count);
+  uint32_t *input = (uint32_t *)hls_malloc(
+      sizeof(uint32_t) * pixel_count * ENTRIES_PER_PIXEL, HLS_ALLOC_NONCACHED);
+  uint8_t *output = (uint8_t *)hls_malloc(
+      sizeof(uint8_t) * pixel_count, HLS_ALLOC_NONCACHED);
 
   if (!input || !output) {
     printf("failed: allocation\n");
@@ -103,7 +95,7 @@ int main()
 
   pixel_proc(input, output, pixel_count);
 
-  uint8_t expected[pixel_count] = {
+  const uint8_t expected[4] = {
     COLOR_BACKGROUND,
     COLOR_FOREGROUND,
     COLOR_BACKGROUND,
@@ -118,8 +110,8 @@ int main()
     }
   }
 
-  PIXEL_PROC_FREE(output);
-  PIXEL_PROC_FREE(input);
+  hls_free(output);
+  hls_free(input);
   printf("Passed!\n");
   return 0;
 }
