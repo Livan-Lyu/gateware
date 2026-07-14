@@ -28,7 +28,7 @@ History update remains software-owned. The accelerator only performs segmentatio
 From the BeagleV-Fire gateware directory:
 
 ```bash
-python build-bitstream.py build-options/pixel-proc-shls-apu.yaml
+python3 build-bitstream.py build-options/pixel-proc-shls-apu.yaml
 ```
 
 The generated RISC-V test binary is:
