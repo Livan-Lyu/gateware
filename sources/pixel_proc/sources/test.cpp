@@ -59,7 +59,6 @@ void pixel_proc(uint32_t input[MAX_PIXELS * ENTRIES_PER_PIXEL],
 
   uint32_t bounded_count = (pixel_count > MAX_PIXELS) ? (uint32_t)MAX_PIXELS : pixel_count;
 
-  #pragma HLS loop pipeline
   for (uint32_t i = 0; i < bounded_count; ++i)
     output[i] = classify_pixel(input, i);
 }
