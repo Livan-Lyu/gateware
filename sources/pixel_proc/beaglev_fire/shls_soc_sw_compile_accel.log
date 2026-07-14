@@ -1,0 +1,193 @@
+Running: shls -a soc_sw_compile_accel
+Info: Running the following targets: hw soc_source_transform soc_sw_compile_accel
+----------------------------------------------------------------------------
+Smart High-Level Synthesis Tool Version 2025.1
+Copyright (c) 2015-2025 Microchip Technology Inc. All Rights Reserved.
+For support, please visit https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=techsupport&redirect=true&version=latest.
+Date: Tue Jul 14 22:29:26 2026
+----------------------------------------------------------------------------
+Info: Checking for Libero license.
+Info: Libero license found.
+clang version 15.0.7 (https://bitbucket.microchip.com/scm/hls/llvm-project.git 4d0968842216a41a98c324aedd221658d0746522)
+Target: i386-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin
+Found candidate GCC installation: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0
+Selected GCC installation: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: 32;@m32
+ (in-process)
+ "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang-15" -cc1 -triple i386-unknown-linux-gnu -emit-llvm-bc -emit-llvm-uselists -disable-free -clear-ast-before-backend -main-file-name test.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu pentium4 -target-feature -sse -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire -resource-dir /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7 -I ../../../../.. -D MAX_PIXELS=2073600 -D INPUT_BYTES_PER_PIXEL=96 -D __SYNTHESIS__ -D LEGUP_DEFAULT_FIFO_DEPTH=2 -I /usr/include/i386-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -D _GLIBCXX_USE_CXX11_ABI=1 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/x86_64-pc-linux-gnu/32 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/backward -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include -internal-isystem /usr/local/include -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Werror=implicit-function-declaration -Wno-ignored-attributes -std=gnu++14 -fdeprecated-macro -fdebug-compilation-dir=/home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire -ferror-limit 19 -fno-builtin -fno-use-cxa-atexit -fgnuc-version=4.2.1 -hls -no-opaque-pointers -disable-llvm-optzns -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc -x c++ ../sources/test.cpp
+clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/include/i386-linux-gnu"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ ../../../../..
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/x86_64-pc-linux-gnu/32
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/backward
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include
+ /usr/local/include
+ /usr/include
+End of search list.
+In file included from ../sources/test.cpp:1:
+In file included from /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include/stdint.h:52:
+/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+#include <bits/libc-header-start.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang -fno-exceptions -O3 ../sources/test.cpp -emit-llvm -c -I../../../../.. -DMAX_PIXELS=2073600 -DINPUT_BYTES_PER_PIXEL=96 -v -D__SYNTHESIS__ -D LEGUP_DEFAULT_FIFO_DEPTH=2 -m32 -I /usr/include/i386-linux-gnu -O3 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -fno-builtin -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library -std=c++14 -std=gnu++14 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -target i386-unknown-linux-gnu --gcc-toolchain=/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc -mno-sse -hls -fno-vectorize -fno-slp-vectorize -fno-use-cxa-atexit -fstandalone-debug -Werror=implicit-function-declaration -Wno-ignored-attributes -D_GLIBCXX_USE_CXX11_ABI=1 -g -Xclang -no-opaque-pointers -mllvm -disable-llvm-optzns -o /home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc
+1.	../sources/test.cpp:65:1: current parser token '}'
+2.	../sources/test.cpp:54:1: parsing function body 'pixel_proc'
+3.	../sources/test.cpp:54:1: in compound statement ('{}')
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x1e3973f]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN4llvm3sys15CleanupOnSignalEm+0xe4)[0x1e374b4]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x1d855b8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330)[0x77d507a45330]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN11LegUpPragma9AddToLoopERN5clang4SemaEPNS0_5ScopeEPNS0_4StmtE+0x1a)[0x3855c2a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN11LegUpPragma9AddToStmtERN5clang4SemaEPNS0_5ScopeEPNS0_4StmtE+0x25)[0x3856885]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser16ParsePragmaLegUpERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationERNS_16ParsedAttributesE+0x10b)[0x390ec0b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser42ParseStatementOrDeclarationAfterAttributesERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationERNS_16ParsedAttributesESB_+0xabf)[0x390e7df]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser27ParseStatementOrDeclarationERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationE+0xfc)[0x390f5cc]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser26ParseCompoundStatementBodyEb+0x574)[0x39104a4]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser26ParseFunctionStatementBodyEPNS_4DeclERNS0_10ParseScopeE+0xcb)[0x3910adb]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser23ParseFunctionDefinitionERNS_17ParsingDeclaratorERKNS0_18ParsedTemplateInfoEPNS0_18LateParsedAttrListE+0xa33)[0x383b5c3]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser14ParseDeclGroupERNS_15ParsingDeclSpecENS_17DeclaratorContextERNS_16ParsedAttributesEPNS_14SourceLocationEPNS0_12ForRangeInitE+0x917)[0x38841a7]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser30ParseDeclOrFunctionDefInternalERNS_16ParsedAttributesERNS_15ParsingDeclSpecENS_15AccessSpecifierE+0xe2)[0x3834aa2]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x38352d9]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser24ParseExternalDeclarationERNS_16ParsedAttributesEPNS_15ParsingDeclSpecE+0x57a)[0x383ca5a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser17ParseTopLevelDeclERNS_9OpaquePtrINS_12DeclGroupRefEEERNS_4Sema17ModuleImportStateE+0x228)[0x383dc38]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang8ParseASTERNS_4SemaEbb+0x22a)[0x3830b6a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang13CodeGenAction13ExecuteActionEv+0x148)[0x2ea10d8]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang14FrontendAction7ExecuteEv+0x99)[0x2852b29]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang16CompilerInstance13ExecuteActionERNS_14FrontendActionE+0x141)[0x27ea581]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang25ExecuteCompilerInvocationEPNS_16CompilerInstanceE+0x20b)[0x291bd9b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_Z8cc1_mainN4llvm8ArrayRefIPKcEES2_Pv+0x894)[0xa45594]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0xa3f0d7]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x2675355]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN4llvm20CrashRecoveryContext9RunSafelyENS_12function_refIFvvEEE+0xb2)[0x1d85722]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x2675a1f]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZNK5clang6driver11Compilation14ExecuteCommandERKNS0_7CommandERPS3_b+0x92)[0x2645d02]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZNK5clang6driver11Compilation11ExecuteJobsERKNS0_7JobListERN4llvm15SmallVectorImplISt4pairIiPKNS0_7CommandEEEEb+0x103)[0x26467e3]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6driver6Driver18ExecuteCompilationERNS0_11CompilationERN4llvm15SmallVectorImplISt4pairIiPKNS0_7CommandEEEE+0x11c)[0x2651c0c]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_Z10clang_mainiPPc+0x2a97)[0xa43cc7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca)[0x77d507a2a1ca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b)[0x77d507a2a28b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_start+0x2e)[0xa3ec4e]
+clang-15: error: clang frontend command failed with exit code 139 (use -v to see invocation)
+clang version 15.0.7 (https://bitbucket.microchip.com/scm/hls/llvm-project.git 4d0968842216a41a98c324aedd221658d0746522)
+Target: i386-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin
+clang-15: note: diagnostic msg: Error generating preprocessed source(s).
+Error: Command failed!
+Command: '/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang'
+Args: '['-fno-exceptions', '-O3', '../sources/test.cpp', '-emit-llvm', '-c', '-I../../../../..', '-DMAX_PIXELS=2073600', '-DINPUT_BYTES_PER_PIXEL=96', '-v', '-D__SYNTHESIS__', '-D', 'LEGUP_DEFAULT_FIFO_DEPTH=2', '-m32', '-I', '/usr/include/i386-linux-gnu', '-O3', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include', '-fno-builtin', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library', '-std=c++14', '-std=gnu++14', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu', '-I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include', '-target', 'i386-unknown-linux-gnu', '--gcc-toolchain=/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc', '-mno-sse', '-hls', '-fno-vectorize', '-fno-slp-vectorize', '-fno-use-cxa-atexit', '-fstandalone-debug', '-Werror=implicit-function-declaration', '-Wno-ignored-attributes', '-D_GLIBCXX_USE_CXX11_ABI=1', '-g', '-Xclang', '-no-opaque-pointers', '-mllvm', '-disable-llvm-optzns', '-o', '/home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc']'
+Shell Command: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang -fno-exceptions -O3 ../sources/test.cpp -emit-llvm -c -I../../../../.. -DMAX_PIXELS=2073600 -DINPUT_BYTES_PER_PIXEL=96 -v -D__SYNTHESIS__ -D LEGUP_DEFAULT_FIFO_DEPTH=2 -m32 -I /usr/include/i386-linux-gnu -O3 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -fno-builtin -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library -std=c++14 -std=gnu++14 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -target i386-unknown-linux-gnu --gcc-toolchain=/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc -mno-sse -hls -fno-vectorize -fno-slp-vectorize -fno-use-cxa-atexit -fstandalone-debug -Werror=implicit-function-declaration -Wno-ignored-attributes -D_GLIBCXX_USE_CXX11_ABI=1 -g -Xclang -no-opaque-pointers -mllvm -disable-llvm-optzns -o /home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc
+Return Code: 1
+Output: 'clang version 15.0.7 (https://bitbucket.microchip.com/scm/hls/llvm-project.git 4d0968842216a41a98c324aedd221658d0746522)
+Target: i386-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin
+Found candidate GCC installation: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0
+Selected GCC installation: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Selected multilib: 32;@m32
+ (in-process)
+ "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang-15" -cc1 -triple i386-unknown-linux-gnu -emit-llvm-bc -emit-llvm-uselists -disable-free -clear-ast-before-backend -main-file-name test.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu pentium4 -target-feature -sse -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire -resource-dir /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7 -I ../../../../.. -D MAX_PIXELS=2073600 -D INPUT_BYTES_PER_PIXEL=96 -D __SYNTHESIS__ -D LEGUP_DEFAULT_FIFO_DEPTH=2 -I /usr/include/i386-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -D _GLIBCXX_USE_CXX11_ABI=1 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/x86_64-pc-linux-gnu/32 -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/backward -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include -internal-isystem /usr/local/include -internal-isystem /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -O3 -Werror=implicit-function-declaration -Wno-ignored-attributes -std=gnu++14 -fdeprecated-macro -fdebug-compilation-dir=/home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire -ferror-limit 19 -fno-builtin -fno-use-cxa-atexit -fgnuc-version=4.2.1 -hls -no-opaque-pointers -disable-llvm-optzns -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc -x c++ ../sources/test.cpp
+clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/include/i386-linux-gnu"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include"
+ignoring nonexistent directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ ../../../../..
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/x86_64-pc-linux-gnu/32
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc/lib/gcc/x86_64-pc-linux-gnu/8.5.0/../../../../include/c++/8.5.0/backward
+ /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include
+ /usr/local/include
+ /usr/include
+End of search list.
+In file included from ../sources/test.cpp:1:
+In file included from /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/lib/clang/15.0.7/include/stdint.h:52:
+/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+#include <bits/libc-header-start.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang -fno-exceptions -O3 ../sources/test.cpp -emit-llvm -c -I../../../../.. -DMAX_PIXELS=2073600 -DINPUT_BYTES_PER_PIXEL=96 -v -D__SYNTHESIS__ -D LEGUP_DEFAULT_FIFO_DEPTH=2 -m32 -I /usr/include/i386-linux-gnu -O3 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -fno-builtin -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/lib/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/smarthls-library -std=c++14 -std=gnu++14 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/include -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0 -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/gcc/include/c++/8.5.0/x86_64-pc-linux-gnu -I/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/examples/../dependencies/usr/include -target i386-unknown-linux-gnu --gcc-toolchain=/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/dependencies/gcc -mno-sse -hls -fno-vectorize -fno-slp-vectorize -fno-use-cxa-atexit -fstandalone-debug -Werror=implicit-function-declaration -Wno-ignored-attributes -D_GLIBCXX_USE_CXX11_ABI=1 -g -Xclang -no-opaque-pointers -mllvm -disable-llvm-optzns -o /home/livan/gateware/gateware/sources/pixel_proc/beaglev_fire/hls_output/.hls/test.bc
+1.	../sources/test.cpp:65:1: current parser token '}'
+2.	../sources/test.cpp:54:1: parsing function body 'pixel_proc'
+3.	../sources/test.cpp:54:1: in compound statement ('{}')
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x1e3973f]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN4llvm3sys15CleanupOnSignalEm+0xe4)[0x1e374b4]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x1d855b8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330)[0x77d507a45330]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN11LegUpPragma9AddToLoopERN5clang4SemaEPNS0_5ScopeEPNS0_4StmtE+0x1a)[0x3855c2a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN11LegUpPragma9AddToStmtERN5clang4SemaEPNS0_5ScopeEPNS0_4StmtE+0x25)[0x3856885]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser16ParsePragmaLegUpERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationERNS_16ParsedAttributesE+0x10b)[0x390ec0b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser42ParseStatementOrDeclarationAfterAttributesERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationERNS_16ParsedAttributesESB_+0xabf)[0x390e7df]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser27ParseStatementOrDeclarationERN4llvm11SmallVectorIPNS_4StmtELj32EEENS0_17ParsedStmtContextEPNS_14SourceLocationE+0xfc)[0x390f5cc]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser26ParseCompoundStatementBodyEb+0x574)[0x39104a4]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser26ParseFunctionStatementBodyEPNS_4DeclERNS0_10ParseScopeE+0xcb)[0x3910adb]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser23ParseFunctionDefinitionERNS_17ParsingDeclaratorERKNS0_18ParsedTemplateInfoEPNS0_18LateParsedAttrListE+0xa33)[0x383b5c3]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser14ParseDeclGroupERNS_15ParsingDeclSpecENS_17DeclaratorContextERNS_16ParsedAttributesEPNS_14SourceLocationEPNS0_12ForRangeInitE+0x917)[0x38841a7]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser30ParseDeclOrFunctionDefInternalERNS_16ParsedAttributesERNS_15ParsingDeclSpecENS_15AccessSpecifierE+0xe2)[0x3834aa2]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x38352d9]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser24ParseExternalDeclarationERNS_16ParsedAttributesEPNS_15ParsingDeclSpecE+0x57a)[0x383ca5a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6Parser17ParseTopLevelDeclERNS_9OpaquePtrINS_12DeclGroupRefEEERNS_4Sema17ModuleImportStateE+0x228)[0x383dc38]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang8ParseASTERNS_4SemaEbb+0x22a)[0x3830b6a]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang13CodeGenAction13ExecuteActionEv+0x148)[0x2ea10d8]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang14FrontendAction7ExecuteEv+0x99)[0x2852b29]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang16CompilerInstance13ExecuteActionERNS_14FrontendActionE+0x141)[0x27ea581]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang25ExecuteCompilerInvocationEPNS_16CompilerInstanceE+0x20b)[0x291bd9b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_Z8cc1_mainN4llvm8ArrayRefIPKcEES2_Pv+0x894)[0xa45594]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0xa3f0d7]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x2675355]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN4llvm20CrashRecoveryContext9RunSafelyENS_12function_refIFvvEEE+0xb2)[0x1d85722]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang[0x2675a1f]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZNK5clang6driver11Compilation14ExecuteCommandERKNS0_7CommandERPS3_b+0x92)[0x2645d02]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZNK5clang6driver11Compilation11ExecuteJobsERKNS0_7JobListERN4llvm15SmallVectorImplISt4pairIiPKNS0_7CommandEEEEb+0x103)[0x26467e3]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_ZN5clang6driver6Driver18ExecuteCompilationERNS0_11CompilationERN4llvm15SmallVectorImplISt4pairIiPKNS0_7CommandEEEE+0x11c)[0x2651c0c]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_Z10clang_mainiPPc+0x2a97)[0xa43cc7]
+/lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca)[0x77d507a2a1ca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b)[0x77d507a2a28b]
+/home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin/clang(_start+0x2e)[0xa3ec4e]
+clang-15: error: clang frontend command failed with exit code 139 (use -v to see invocation)
+clang version 15.0.7 (https://bitbucket.microchip.com/scm/hls/llvm-project.git 4d0968842216a41a98c324aedd221658d0746522)
+Target: i386-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/livan/Microchip/Libero_SoC_2025.1/SmartHLS/SmartHLS/llvm-project/llvm/Release+Asserts/bin
+clang-15: note: diagnostic msg: Error generating preprocessed source(s).
+'
+
