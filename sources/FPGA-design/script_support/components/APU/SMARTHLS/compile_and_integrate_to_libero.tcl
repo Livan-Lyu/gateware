@@ -11,16 +11,37 @@ cd $hlsModuleDir
 # Detect SmartHLS location
 set shls_path [getHlsPath]
 
+proc run_shls_command {command log_path} {
+    puts "Running: $command"
+    puts "Logging SmartHLS output to: $log_path"
+
+    set log_fid [open $log_path w]
+    puts $log_fid "Running: $command"
+
+    if {[catch {open [list | sh -c "$command 2>&1"] r} fid]} {
+        puts $log_fid $fid
+        close $log_fid
+        error "ERROR: Failed to launch '$command': $fid"
+    }
+
+    while {[gets $fid line] != -1} {
+        puts $line
+        puts $log_fid $line
+    }
+
+    set close_status [catch {close $fid} close_error]
+    close $log_fid
+
+    if {$close_status} {
+        error "ERROR: SmartHLS command failed: '$command'. See $log_path. Tcl close error: $close_error"
+    }
+}
 
 #
 # Calling SmartHLS to setup the environment.
 #
 puts "Compiling SmartHLS accelerator..."
-set fid_pre [open "| shls clean" r]
-while {[gets $fid_pre line] != -1} {
-    puts $line
-}
-close $fid_pre
+run_shls_command "shls clean" [file join $hlsModuleDir "shls_clean.log"]
 
 #------------------------------------------------------------------------------
 # Compile SmartHLS accelerator
@@ -28,11 +49,7 @@ close $fid_pre
 # Generate and compile RISC-V software binary and Verilog hardware
 # The "soc_sw_compile_accel" target handles both software driver and hardware
 puts "Compiling SmartHLS accelerator..."
-set fid [open "| shls -a soc_sw_compile_accel" r]
-while {[gets $fid line] != -1} {
-    puts $line
-}
-close $fid
+run_shls_command "shls -a soc_sw_compile_accel" [file join $hlsModuleDir "shls_soc_sw_compile_accel.log"]
 
 #------------------------------------------------------------------------------
 # Integrate hardware modules into Libero project
