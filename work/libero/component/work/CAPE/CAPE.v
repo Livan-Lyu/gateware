@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Sun Jul 12 19:45:15 2026
+// Created by SmartDesign Sun Jul 12 21:05:41 2026
 // Version: 2025.1 2025.1.0.14
 //////////////////////////////////////////////////////////////////////
 
@@ -851,7 +851,7 @@ CAPE_PWM PWM_2(
 CAPE_AXI_XBAR XBAR_0(
         // Inputs
         .ACLK                ( DBG_FIC0_ACLK ),
-        .ARESETN             ( AXI_ARESETN ),
+        .ARESETN             ( DBG_FIC0_RESET_N ),
         .TARGET0_AWREADY     ( ms_awready ),
         .TARGET0_WREADY      ( ms_wready ),
         .TARGET0_BID         ( ms_bid_0 ),
