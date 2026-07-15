@@ -1,4 +1,6 @@
-source $env(SHLS_ROOT_DIR)/examples/shls.tcl
+source $env(SHLS_ROOT_DIR)/examples/legup.tcl
+# 旧版本（2024.2 及以前）：默认的 TCL 配置文件名叫 legup.tcl，配置命令为 legup-config。（原因是 SmartHLS 的前身是 LegUp，被 Microchip 收购后一直保留了旧命名）。
+# 新版本（2025.2 及以后）：官方全面将 legup.tcl 替换为 shls.tcl，并将 Makefile 中的 legup-config 替换为 shls-config
 set_project PolarFireSoC MPFS025T-FCVG484E Icicle_SoC
 set_parameter POINTSTO_ANALYZE_HW_ONLY 1
 
