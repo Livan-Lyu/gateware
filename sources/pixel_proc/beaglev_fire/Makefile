@@ -8,6 +8,8 @@ USER_CXX_FLAG += -I$(SHLS_LIBRARY_DIR)
 USER_CXX_FLAG += -DMAX_PIXELS=2073600
 USER_CXX_FLAG += -DINPUT_BYTES_PER_PIXEL=96
 
+LOCAL_CONFIG = -shls-config=config.tcl
+
 # 在 SmartHLS 中，BeagleC Fire 走的是 Cross-compile for MiV
 # 在 Libero_SoC_2025.1/SmartHLS/SmartHLS/lib/python/hls/cross_compile_sw.py:356
 #     # Building target
